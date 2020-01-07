@@ -1,0 +1,88 @@
+import React  from "react"
+import Layout from "../components/layout/layout"
+
+const SecondPage = () => (
+  <Layout>
+      <form id="st-form" className="example-form" autoComplete="off" noValidate>
+        <h1 className="example-form__title">
+          Secure Trading<span>AMOUNT: <strong>10.00 GBP</strong></span>
+        </h1>
+        <div className="example-form__section example-form__section--horizontal">
+          <div className="example-form__group">
+            <label htmlFor="example-form-name" className="example-form__label">AMOUNT</label>
+            <input
+              id="example-form-amount"
+              className="example-form__input"
+              type="number"
+              placeholder=""
+              name="myBillAmount"
+              data-st-name="billingamount"
+            />
+          </div>
+        </div>
+
+        <div className="example-form__section example-form__section--horizontal">
+          <div className="example-form__group">
+            <label htmlFor="example-form-name" className="example-form__label">NAME</label>
+            <input
+              id="example-form-name"
+              className="example-form__input"
+              type="text"
+              placeholder="John Doe"
+              autoComplete="name"
+              name="myBillName"
+              data-st-name="billingfirstname"
+            />
+          </div>
+          <div className="example-form__group">
+            <label htmlFor="example-form-email" className="example-form__label">E-MAIL</label>
+            <input
+              id="example-form-email"
+              className="example-form__input"
+              type="email"
+              placeholder="test@mail.com"
+              autoComplete="email"
+              name="myBillEmail"
+              data-st-name="billingemail"
+            />
+          </div>
+          <div className="example-form__group">
+            <label htmlFor="example-form-phone" className="example-form__label">PHONE</label>
+            <input
+              id="example-form-phone"
+              className="example-form__input"
+              type="tel"
+              placeholder="+00 000 000 000"
+              autoComplete="tel"
+              name="myBillTel"
+            />
+          </div>
+        </div>
+
+        <div className="example-form__spacer"></div>
+
+        <div className="example-form__section">
+          <div id="st-notification-frame" className="example-form__group"></div>
+          <div id="st-card-number" className="example-form__group"></div>
+          <div id="st-expiration-date" className="example-form__group"></div>
+          <div id="st-security-code" className="example-form__group"></div>
+          <div className="example-form__spacer"></div>
+        </div>
+
+        <div className="example-form__section">
+          <div className="example-form__group example-form__group--submit">
+            <button type="submit" className="example-form__button" id="merchant-submit-button">Zapłać</button>
+          </div>
+        </div>
+
+        <div className="example-form__section">
+          <div id="st-control-frame" className="example-form__group"></div>
+          <div id="st-visa-checkout" className="example-form__group"></div>
+          <div id="st-apple-pay" className="example-form__group"></div>
+        </div>
+        <div id="st-card"></div>
+      </form>
+  </Layout>
+)
+
+export default SecondPage
