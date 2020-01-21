@@ -1,32 +1,21 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import { HeaderStyled } from "./header.styled"
 import Image from "../image/image"
+import { headerDefaultProps, headerPropTypes } from "./header.prop"
+import { LinkStyled } from "../link/link.styled"
 
-const Header = ({ siteTitle }) => (
+export const Header = ({ siteTitle }) => (
   <HeaderStyled>
-    <Link
-      to="/"
-      style={{ textDecoration: `none`, color: "#fff" }}
-    >
-      <Image/>
-    </Link>
+    <LinkStyled>
+      <Link to="/" style={{ textDecoration: `none`,}}><Image/>{siteTitle}</Link>
+    </LinkStyled>
     <ul>
-      <Link to="/" style={{ "color": "#fff", textDecoration: "none", padding: "1rem 2rem" }}>ReactJS Secure
-        Trading</Link>
-      <Link to="/animated-card" style={{ "color": "#fff", textDecoration: "none", padding: "1rem 2rem" }}>ReactJS STJS
-        Animated Card</Link>
+      <LinkStyled><Link to="/">ReactJS Secure Trading</Link></LinkStyled>
+      <LinkStyled><Link to="/animated-card">ReactJS STJS Animated Card</Link></LinkStyled>
     </ul>
   </HeaderStyled>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+Header.propTypes = { ...headerPropTypes }
+Header.defaultProps = { headerDefaultProps }
