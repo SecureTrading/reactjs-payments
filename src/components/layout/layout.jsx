@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./layout.css"
+import "../../style.css"
 import PropTypes from "prop-types"
 import { Footer } from "../footer/footer"
 import { LayoutStyled } from "./layout.styled"
