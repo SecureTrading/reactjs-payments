@@ -15,8 +15,6 @@ const Header = ({ siteTitle }) => (
     <ul>
       <Link to="/" style={{ "color": "#fff", textDecoration: "none", padding: "1rem 2rem" }}>ReactJS Secure
         Trading</Link>
-      <Link to="/js-payments" style={{ "color": "#fff", textDecoration: "none", padding: "1rem 2rem" }}>ReactJS STJS
-        Library</Link>
       <Link to="/animated-card" style={{ "color": "#fff", textDecoration: "none", padding: "1rem 2rem" }}>ReactJS STJS
         Animated Card</Link>
     </ul>

@@ -13,13 +13,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-copy-files',
-      options: {
-        source: `${__dirname}/src/cert`,
-        destination: `${__dirname}/public/static`
-      }
-    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
