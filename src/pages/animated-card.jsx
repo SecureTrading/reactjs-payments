@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from "react"
+import React, { Component } from "react"
 import Card from "@securetrading/js-payments-card/dist/stcard"
 import "@securetrading/js-payments-card/dist/stcardstyle.css"
 import Layout from "../components/layout/layout"

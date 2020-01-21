@@ -5,7 +5,7 @@ import { Footer } from "../footer/footer"
 import { LayoutStyled } from "./layout.styled"
 import Helmet from "react-helmet/es/Helmet"
 import SecureTrading from "./../../../src/stjs/st"
-import Header from "../header/header"
+import { Header } from "../header/header"
 import "./../../../src/stjs/st.css"
 
 class Layout extends Component {
