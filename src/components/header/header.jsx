@@ -5,10 +5,10 @@ import Image from "../image/image"
 import { LinkStyled } from "../link/link.styled"
 import PropTypes from "prop-types"
 
-export const Header = ({ siteTitle }) => (
+export const Header = () => (
   <HeaderStyled>
     <LinkStyled>
-      <Link to="/" style={{ textDecoration: `none`,}}><Image/>{siteTitle}</Link>
+      <Link to="/"><Image/></Link>
     </LinkStyled>
     <ul>
       <LinkStyled><Link to="/">ReactJS Secure Trading</Link></LinkStyled>
