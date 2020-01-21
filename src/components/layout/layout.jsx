@@ -5,9 +5,9 @@ import { Footer } from "../footer/footer"
 import { LayoutStyled } from "./layout.styled"
 import { withPrefix } from "gatsby-link"
 import Helmet from "react-helmet/es/Helmet"
-import SecureTrading from "./../../../public/static/stumd"
+import SecureTrading from "./../../../src/stjs/st"
 import Header from "../header/header"
-import "./../../../public/static/st.css"
+import "./../../../src/stjs/st.css"
 
 class Layout extends Component {
   componentDidMount() {
@@ -56,7 +56,6 @@ class Layout extends Component {
         "An error occurred": "Wystąpił błąd",
       },
       "components": {},
-      "cybertonica": { "apikey": "" },
       "applePay": {
         "buttonStyle": "white-outline",
         "buttonText": "donate",
@@ -125,7 +124,6 @@ class Layout extends Component {
           "An error occurred": "Wystąpił błąd",
         },
         "components": {},
-        "cybertonica": { "apikey": "" },
         "applePay": {
           "buttonStyle": "white-outline",
           "buttonText": "donate",
