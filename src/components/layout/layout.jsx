@@ -7,8 +7,6 @@ import { Header } from "../header/header"
 import "./../../../src/stjs/st.css"
 
 class Layout extends Component {
-
-
   render() {
     return (
       <LayoutStyled>

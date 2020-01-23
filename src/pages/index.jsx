@@ -2,14 +2,10 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import SecureTrading from "../stjs/st"
 import Helmet from "react-helmet/es/Helmet"
+
 class IndexPage extends Component {
   componentDidMount() {
-    const int = setInterval(() => {
-      if (SecureTrading && document.readyState === "complete") {
-        this.loadST()
-        clearInterval(int)
-      }
-    }, 2000)
+    this.loadST()
   }
 
   loadST() {
@@ -80,23 +76,24 @@ class IndexPage extends Component {
           "displayName": "My Test Site",
         },
       },
-    };
-    this.property = SecureTrading({...this.config});
-    (() =>  {
-      var parsedUrl = new URL(window.location.href);
-      this.config.jwt = parsedUrl.searchParams.get('jwt') || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU3NjI0MDkwMy44NDgxOTIyLCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIxMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.dZf3tVclkUTXMR1uXo39jUIXHyjApGXYlAJ-5ujen00';
+    }
+    this.property = SecureTrading({ ...this.config });
+    (() => {
+      var parsedUrl = new URL(window.location.href)
+      this.config.jwt = parsedUrl.searchParams.get("jwt") || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU3NjI0MDkwMy44NDgxOTIyLCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIxMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.dZf3tVclkUTXMR1uXo39jUIXHyjApGXYlAJ-5ujen00"
 
       this.property.submitCallback = function someFancyfunction(data) {
-        var stringified = JSON.stringify(data);
-        var testVariable = 'This is what we have got after submit' + stringified;
-      };
-      this.property.Components(this.config.components);
-      this.property.ApplePay(this.config.applePay);
-      this.property.VisaCheckout(this.config.visaCheckout);
+        var stringified = JSON.stringify(data)
+        var testVariable = "This is what we have got after submit" + stringified
+      }
+      this.property.Components(this.config.components)
+      this.property.ApplePay(this.config.applePay)
+      this.property.VisaCheckout(this.config.visaCheckout)
     })()
   }
+
   render() {
-    return(
+    return (
       <Layout>
         <Helmet>
           {/*<script src={withPrefix('/static/stumd.js')} type="text/javascript" defer />*/}
