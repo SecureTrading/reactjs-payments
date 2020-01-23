@@ -5,25 +5,31 @@ import Layout from "../components/layout/layout"
 
 class AnimatedCard extends Component {
   componentDidMount() {
-    const card = new Card({
-      locale: "en_GB",
-      fields: {
-        inputs: {
-          cardNumber: "st-card-number-input",
-          expirationDate: "st-expiration-date-input",
-          securityCode: "st-security-code-input",
-        },
-        errors: {
-          cardNumber: "st-card-number-message",
-          expirationDate: "st-expiration-date-message",
-          securityCode: "st-security-code-message",
-        },
-      },
-      animatedCardContainer: "st-animated-card",
-    })
-    card.onCardNumberInput('st-card-number-input', function(event) {});
-    card.onExpirationDateInput('st-expiration-date-input', function(event) {});
-    card.onSecurityCodeInput('st-security-code-input', function(event) {});
+    let card;
+    const int = setInterval(() => {
+      if (Card && document.readyState === "complete") {
+        card = new Card({
+          locale: "en_GB",
+          fields: {
+            inputs: {
+              cardNumber: "st-card-number-input",
+              expirationDate: "st-expiration-date-input",
+              securityCode: "st-security-code-input",
+            },
+            errors: {
+              cardNumber: "st-card-number-message",
+              expirationDate: "st-expiration-date-message",
+              securityCode: "st-security-code-message",
+            },
+          },
+          animatedCardContainer: "st-animated-card",
+        })
+        card.onCardNumberInput('st-card-number-input', function(event) {});
+        card.onExpirationDateInput('st-expiration-date-input', function(event) {});
+        card.onSecurityCodeInput('st-security-code-input', function(event) {});
+        clearInterval(int)
+      }
+    }, 2000)
   }
 
   render() {
