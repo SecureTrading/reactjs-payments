@@ -1,82 +1,16 @@
 import React, { Component } from "react"
 import Layout from "../components/layout/layout"
-import SecureTrading from "../stjs/st"
+import SecureTrading from "./../../static/st"
 import Helmet from "react-helmet/es/Helmet"
+import { config }  from '../../static/config';
 
 class IndexPage extends Component {
   componentDidMount() {
+    this.config = config
     this.loadST()
   }
 
   loadST() {
-    this.config = {
-      "analytics": true,
-      "animatedCard": true,
-      "deferInit": false,
-      "fieldsToSubmit": ["pan", "expirydate", "securitycode"],
-      "buttonId": "merchant-submit-button",
-      "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU3ODY1NDU3Mi4wNTIxODg5LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.TH5XyEe3nLmZ6J2HYm02TjBTQejfXMVA0CyXQ4SpaWw",
-      "styles": {
-        "defaultStyles": {
-          "background-color-input": "AliceBlue",
-        },
-        "cardNumber": {
-          "font-size-input": "1.5rem",
-          "line-height-input": "1.6rem",
-        },
-        "expirationDate": {
-          "font-size-input": "1.5rem",
-          "line-height-input": "1.6rem",
-        },
-        "securityCode": {
-          "font-size-input": "1.5rem",
-          "line-height-input": "1.6rem",
-        },
-        "notificationFrame": {
-          "color-error": "#FFF333",
-        },
-        "controlFrame": {
-          "color-error": "#3358FF",
-        },
-      },
-      "submitOnSuccess": false,
-      "submitCallback": "",
-      "translations": {
-        "An error occurred": "Wystąpił błąd",
-      },
-      "components": {},
-      "applePay": {
-        "buttonStyle": "white-outline",
-        "buttonText": "donate",
-        "merchantId": "merchant.net.securetrading.test",
-        "paymentRequest": {
-          "countryCode": "US",
-          "currencyCode": "USD",
-          "merchantCapabilities": ["supports3DS", "supportsCredit", "supportsDebit"],
-          "supportedNetworks": [],
-          "total": {
-            "label": "Secure Trading Merchant",
-            "amount": "10.00",
-          },
-        },
-        "placement": "st-apple-pay",
-      },
-      "visaCheckout": {
-        "buttonSettings": {
-          "size": "154",
-          "color": "neutral",
-        },
-        "livestatus": 0,
-        "merchantId": "SDUT1MEXJO10RARJF2S521ImTyKfn3_JmxePdXcydQIUb4kx4",
-        "paymentRequest": {
-          "subtotal": "20.00",
-        },
-        "placement": "st-visa-checkout",
-        "settings": {
-          "displayName": "My Test Site",
-        },
-      },
-    }
     this.property = SecureTrading({ ...this.config });
     (() => {
       var parsedUrl = new URL(window.location.href)
@@ -100,7 +34,7 @@ class IndexPage extends Component {
         </Helmet>
         <form id="st-form" className="example-form" autoComplete="off" noValidate>
           <h1 className="example-form__title">
-            Secure Trading<span>AMOUNT: <strong>10.00 GBP</strong></span>
+            <img style={{maxWidth: '200px'}} src="./st.png" /><span>AMOUNT: <strong>10.00 GBP</strong></span>
           </h1>
           <div className="example-form__section example-form__section--horizontal">
             <div className="example-form__group">
@@ -175,7 +109,7 @@ class IndexPage extends Component {
             <div id="st-visa-checkout" className="example-form__group"></div>
             <div id="st-apple-pay" className="example-form__group"></div>
           </div>
-          <div id="st-card"></div>
+          <div id="st-animated-card"></div>
         </form>
       </Layout>
     )

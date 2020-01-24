@@ -1,18 +1,16 @@
 import { Link } from "gatsby"
 import React from "react"
 import { HeaderStyled } from "./header.styled"
-import Image from "../image/image"
 import { LinkStyled } from "../link/link.styled"
 import PropTypes from "prop-types"
+import { GatsbyLinkStyle } from "../link/link.styled"
 
 export const Header = () => (
   <HeaderStyled>
-    <LinkStyled>
-      <Link to="/"><Image/></Link>
-    </LinkStyled>
+    <h2>Secure Trading</h2>
     <ul>
-      <LinkStyled><Link to="/">ReactJS Secure Trading</Link></LinkStyled>
-      <LinkStyled><Link to="/animated-card">ReactJS STJS Animated Card</Link></LinkStyled>
+      <LinkStyled><Link to="/" style={GatsbyLinkStyle}>STJS Library</Link></LinkStyled>
+      <LinkStyled><Link to="/animated-card" style={GatsbyLinkStyle}>STJS Animated Card</Link></LinkStyled>
     </ul>
   </HeaderStyled>
 )

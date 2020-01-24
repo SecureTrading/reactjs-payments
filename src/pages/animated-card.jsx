@@ -33,6 +33,7 @@ class AnimatedCard extends Component {
     return (
       <Layout>
         <div className="merchants-form__fields">
+          <h1 className="example-form__title"><img style={{maxWidth: '200px'}} src="./st.png" /></h1>
           <div className="merchants-form__field">
             <label htmlFor="st-card-number-input">Card number: </label>
             <input type="text" className="merchants-form__input" id="st-card-number-input"

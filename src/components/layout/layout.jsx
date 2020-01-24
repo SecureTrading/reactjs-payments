@@ -1,23 +1,21 @@
-import React, { Component } from "react"
+import React  from "react"
 import "../../style.css"
 import PropTypes from "prop-types"
 import { Footer } from "../footer/footer"
 import { LayoutStyled } from "./layout.styled"
 import { Header } from "../header/header"
-import "./../../../src/stjs/st.css"
+import "./../../../static/st.css"
 
-class Layout extends Component {
-  render() {
+export const Layout = (props) =>  {
     return (
       <LayoutStyled>
         <Header siteTitle="SecureTrading"/>
         <main style={{ minHeight: "47rem" }}>
-          <div>{this.props.children}</div>
+          <div>{props.children}</div>
         </main>
         <Footer/>
       </LayoutStyled>
     )
-  }
 }
 
 Layout.propTypes = {

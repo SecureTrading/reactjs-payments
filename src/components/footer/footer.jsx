@@ -1,12 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { FooterStyled } from "./footer.styled"
 
-export class Footer extends Component {
-  render(){
-    return(
-      <FooterStyled>
-        Copyright &copy; SecureTrading 2020
-      </FooterStyled>
-    )
-  }
-}
+export const Footer = () => <FooterStyled>&copy; Secure Trading 2020</FooterStyled>;
