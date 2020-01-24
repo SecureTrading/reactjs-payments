@@ -2,25 +2,11 @@ import React, { Component } from "react"
 import Card from "@securetrading/js-payments-card/dist/stcard"
 import "@securetrading/js-payments-card/dist/stcardstyle.css"
 import Layout from "../components/layout/layout"
+import { animatedCardExampleConfig } from "../../static/animatedCardExampleConfig"
 
 class AnimatedCard extends Component {
   componentDidMount() {
-    const card = new Card({
-      locale: "en_GB",
-      fields: {
-        inputs: {
-          cardNumber: "st-card-number-input",
-          expirationDate: "st-expiration-date-input",
-          securityCode: "st-security-code-input",
-        },
-        errors: {
-          cardNumber: "st-card-number-message",
-          expirationDate: "st-expiration-date-message",
-          securityCode: "st-security-code-message",
-        },
-      },
-      animatedCardContainer: "st-animated-card",
-    })
+    const card = new Card(animatedCardExampleConfig)
     card.onCardNumberInput("st-card-number-input", function(event) {
     })
     card.onExpirationDateInput("st-expiration-date-input", function(event) {

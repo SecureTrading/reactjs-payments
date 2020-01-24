@@ -2,11 +2,11 @@ import React, { Component } from "react"
 import Layout from "../components/layout/layout"
 import SecureTrading from "./../../static/st"
 import Helmet from "react-helmet/es/Helmet"
-import { config }  from '../../static/config';
+import { libraryExampleConfig }  from '../../static/libraryExampleConfig';
 
 class IndexPage extends Component {
   componentDidMount() {
-    this.config = config
+    this.config = libraryExampleConfig
     this.loadST()
   }
 

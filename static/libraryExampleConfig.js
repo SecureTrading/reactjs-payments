@@ -1,4 +1,4 @@
-export const config = {
+export const libraryExampleConfig = {
   "analytics": true,
   "animatedCard": true,
   "deferInit": false,
