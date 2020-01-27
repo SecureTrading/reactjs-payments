@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Card from "@securetrading/js-payments-card/dist/stcard"
 import "@securetrading/js-payments-card/dist/stcardstyle.css"
 import Layout from "../components/layout/layout"
-import { animatedCardExampleConfig } from "../../static/animatedCardExampleConfig"
+import { animatedCardExampleConfig } from "../config/animatedCardExampleConfig"
 
 class AnimatedCard extends Component {
   componentDidMount() {

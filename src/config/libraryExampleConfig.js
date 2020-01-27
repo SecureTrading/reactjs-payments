@@ -4,7 +4,7 @@ export const libraryExampleConfig = {
   "deferInit": false,
   "fieldsToSubmit": ["securitycode"],
   "buttonId": "merchant-submit-button",
-  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDEyNTY4My4wMjI5MjY2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIiwicGFuIjoiNDExMTExMDAwMDAwMDIxMSIsImV4cGlyeWRhdGUiOiIwMS8yMiJ9fQ.YX4mSkfQnsw_qWh_hSULG98yZ4Z6DoRU6cJeMZkTvCs",
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDEzNjc2NC4zNTU1MzQ2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.OiETry5v816CAwFIqAa9oxoOp1Rv4cfnvB2Ensqs-_M",
   "styles": {
     "defaultStyles": {
       "background-color-input": "AliceBlue",

@@ -1,24 +1,19 @@
 import React, { Component } from "react"
 import Layout from "../components/layout/layout"
-import SecureTrading from "./../../static/st"
+import SecureTrading from "../libraries/st"
 import Helmet from "react-helmet/es/Helmet"
-import { libraryExampleConfig }  from '../../static/libraryExampleConfig';
+import { libraryExampleConfig }  from '../config/libraryExampleConfig';
 
 class IndexPage extends Component {
   componentDidMount() {
     this.config = libraryExampleConfig
-    console.error(this.config)
     this.loadST()
   }
 
   loadST() {
     (() => {
       var parsedUrl = new URL(window.location.href)
-      console.error(parsedUrl)
-      console.error(this.config.jwt);
       this.config.jwt = parsedUrl.searchParams.get("jwt") || this.config.jwt
-      console.error(this.config.jwt);
-
       this.instance = SecureTrading({ ...this.config });
       this.instance.submitCallback = function someFancyfunction(data) {
         var stringified = JSON.stringify(data)
