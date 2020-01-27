@@ -2,9 +2,9 @@ export const libraryExampleConfig = {
   "analytics": true,
   "animatedCard": true,
   "deferInit": false,
-  "fieldsToSubmit": ["pan", "expirydate", "securitycode"],
+  "fieldsToSubmit": ["securitycode"],
   "buttonId": "merchant-submit-button",
-  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDEyNDQ3Ny41MTk0NDU0LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.P-Zopn4YocvtqugiOYYHScHaRQOQsWnStf8lNArSslg",
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDEyNTY4My4wMjI5MjY2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIiwicGFuIjoiNDExMTExMDAwMDAwMDIxMSIsImV4cGlyeWRhdGUiOiIwMS8yMiJ9fQ.YX4mSkfQnsw_qWh_hSULG98yZ4Z6DoRU6cJeMZkTvCs",
   "styles": {
     "defaultStyles": {
       "background-color-input": "AliceBlue",
