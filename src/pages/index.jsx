@@ -7,22 +7,26 @@ import { libraryExampleConfig }  from '../../static/libraryExampleConfig';
 class IndexPage extends Component {
   componentDidMount() {
     this.config = libraryExampleConfig
+    console.error(this.config)
     this.loadST()
   }
 
   loadST() {
-    this.property = SecureTrading({ ...this.config });
     (() => {
       var parsedUrl = new URL(window.location.href)
-      this.config.jwt = parsedUrl.searchParams.get("jwt") || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU3NjI0MDkwMy44NDgxOTIyLCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIxMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.dZf3tVclkUTXMR1uXo39jUIXHyjApGXYlAJ-5ujen00"
+      console.error(parsedUrl)
+      console.error(this.config.jwt);
+      this.config.jwt = parsedUrl.searchParams.get("jwt") || this.config.jwt
+      console.error(this.config.jwt);
 
-      this.property.submitCallback = function someFancyfunction(data) {
+      this.instance = SecureTrading({ ...this.config });
+      this.instance.submitCallback = function someFancyfunction(data) {
         var stringified = JSON.stringify(data)
         var testVariable = "This is what we have got after submit" + stringified
       }
-      this.property.Components(this.config.components)
-      this.property.ApplePay(this.config.applePay)
-      this.property.VisaCheckout(this.config.visaCheckout)
+      this.instance.Components(this.config.components)
+      this.instance.ApplePay(this.config.applePay)
+      this.instance.VisaCheckout(this.config.visaCheckout)
     })()
   }
 
