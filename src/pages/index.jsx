@@ -33,7 +33,7 @@ class IndexPage extends Component {
         </Helmet>
         <form id="st-form" className="example-form" autoComplete="off" noValidate>
           <h1 className="example-form__title">
-            <img style={{maxWidth: '200px'}} src="./st.png" /><span>AMOUNT: <strong>10.00 GBP</strong></span>
+            <img style={{maxWidth: '200px'}} src="./images/st.png" /><span>AMOUNT: <strong>10.00 GBP</strong></span>
           </h1>
           <div className="example-form__section example-form__section--horizontal">
             <div className="example-form__group">
