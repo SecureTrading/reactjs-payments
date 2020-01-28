@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Layout from "../components/layout/layout"
-import SecureTrading from "../libraries/st"
+import SecureTrading from "../../static/libraries/st"
 import Helmet from "react-helmet/es/Helmet"
 import { libraryExampleConfig }  from '../config/libraryExampleConfig';
 

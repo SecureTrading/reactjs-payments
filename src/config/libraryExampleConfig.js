@@ -1,10 +1,11 @@
 export const libraryExampleConfig = {
   "analytics": true,
-  "animatedCard": false,
+  "animatedCard": true,
+  "bypassCards": ["PIBA"],
   "deferInit": false,
   "fieldsToSubmit": ["pan", "expirydate", "securitycode"],
   "buttonId": "merchant-submit-button",
-  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDEzNjc2NC4zNTU1MzQ2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.OiETry5v816CAwFIqAa9oxoOp1Rv4cfnvB2Ensqs-_M",
+  "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDIwNjcxMy41MTU5MDgyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.uEwZJlOXxMxuewK3uwPDQ99eiER3HMO_KEmgTFJu2lQ",
   "styles": {
     "defaultStyles": {
       "background-color-input": "AliceBlue",
@@ -28,7 +29,7 @@ export const libraryExampleConfig = {
       "color-error": "#3358FF",
     },
   },
-  "submitOnSuccess": false,
+  "submitOnSuccess": true,
   "submitCallback": "",
   "translations": {
     "An error occurred": "Wystąpił błąd",
