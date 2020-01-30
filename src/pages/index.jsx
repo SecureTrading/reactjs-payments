@@ -33,9 +33,6 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <Helmet>
-          {/*<script src={withPrefix('/static/stumd.js')} type="text/javascript" defer />*/}
-        </Helmet>
         <form id="st-form" className="example-form" autoComplete="off" noValidate>
           <h1 className="example-form__title">
             <img style={{maxWidth: '200px'}} src="./images/st.png" /><span>AMOUNT: <strong>10.00 GBP</strong></span>
