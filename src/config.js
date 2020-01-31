@@ -1,4 +1,4 @@
-export const libraryExampleConfig = {
+export const config = {
   "analytics": true,
   "animatedCard": true,
   "bypassCards": ["PIBA"],
