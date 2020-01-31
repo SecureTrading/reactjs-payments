@@ -1,7 +1,7 @@
 
 # ReactJS Payments
 
-This is an ReactJS example page for [js-payments](https://github.com/SecureTrading/js-payments) and [js-payments-card](https://github.com/SecureTrading/js-payments-card).
+This is an ReactJS example page for [js-payments](https://github.com/SecureTrading/js-payments).
 
 It's based on [GatsbyJS](https://www.gatsbyjs.org/) and [Styled Components](https://www.styled-components.com/).
 
