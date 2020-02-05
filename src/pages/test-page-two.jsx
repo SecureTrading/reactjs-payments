@@ -4,7 +4,7 @@ import '@securetrading/js-payments-card/dist/stcardstyle.css';
 import Layout from '../components/layout/layout';
 // import { animatedCardExampleConfig } from '../config/animatedCardExampleConfig';
 
-class AnimatedCard extends Component {
+class TestPageTwo extends Component {
   componentDidMount() {
     // const card = new Card(animatedCardExampleConfig);
     // card.onCardNumberInput('st-card-number-input', function(event) {});
@@ -59,4 +59,4 @@ class AnimatedCard extends Component {
   }
 }
 
-export default AnimatedCard;
+export default TestPageTwo;
