@@ -1,31 +1,32 @@
-import React, { Component } from 'react';
-import Layout from '../components/layout/layout';
-import SecureTrading from '../../static/libraries/st';
-import { config } from '../config';
+import React, { Component } from "react"
+import Layout from "../components/layout/layout"
+import SecureTrading from "../../static/libraries/st"
+import { libraryExampleConfig }  from '../config/libraryExampleConfig';
 
 class IndexPage extends Component {
   componentDidMount() {
-    this.config = config;
-    this.loadST();
+    this.config = libraryExampleConfig
+    this.loadST()
   }
 
   loadST() {
     (() => {
-      var parsedUrl = new URL(window.location.href);
-      this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
+      var parsedUrl = new URL(window.location.href)
+      this.config.jwt = parsedUrl.searchParams.get("jwt") || this.config.jwt
       const instance = SecureTrading({ ...this.config });
       instance.submitCallback = function someFancyfunction(data) {
-        var stringified = JSON.stringify(data);
-      };
-      instance.Components(this.config.components);
-      instance.ApplePay(this.config.applePay);
-      instance.VisaCheckout(this.config.visaCheckout);
+        var stringified = JSON.stringify(data)
+        var testVariable = "This is what we have got after submit" + stringified
+      }
+      instance.Components(this.config.components)
+      instance.ApplePay(this.config.applePay)
+      instance.VisaCheckout(this.config.visaCheckout)
       document.getElementById('example-form-amount').addEventListener('input', function() {
         instance.updateJWT(
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDgzMzA5OS4yNjAwMjM2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIiwicGFuIjoiNTAwMDAwMDAwMDAwMDYxMSIsImV4cGlyeWRhdGUiOiIwMS8yMiIsInNlY3VyaXR5Y29kZSI6IjEyMyJ9fQ.0Lwf8mgMOmRj_17uLMtOvDL4IVMAAX8ty4hylt418r8'
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDM4NTA1OC41NzU3NzA0LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.IdvWWKpOIUwuZawr_kuOIb_t0gSd0fg4b4w4mHDsIYE'
         );
       });
-    })();
+    })()
   }
 
   render() {
