@@ -10,22 +10,22 @@ class IndexPage extends Component {
   }
 
   loadST() {
-    (() => {
-      var parsedUrl = new URL(window.location.href);
-      this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
-      const instance = SecureTrading({ ...this.config });
-      instance.submitCallback = function someFancyfunction(data) {
-        var stringified = JSON.stringify(data);
-      };
-      instance.Components(this.config.components);
-      instance.ApplePay(this.config.applePay);
-      instance.VisaCheckout(this.config.visaCheckout);
-      document.getElementById('example-form-amount').addEventListener('input', function() {
-        instance.updateJWT(
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDgzMzA5OS4yNjAwMjM2LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIiwicGFuIjoiNTAwMDAwMDAwMDAwMDYxMSIsImV4cGlyeWRhdGUiOiIwMS8yMiIsInNlY3VyaXR5Y29kZSI6IjEyMyJ9fQ.0Lwf8mgMOmRj_17uLMtOvDL4IVMAAX8ty4hylt418r8'
-        );
-      });
-    })();
+    var parsedUrl = new URL(window.location.href);
+    this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
+    this.instance = SecureTrading({ ...this.config });
+    this.instance.submitCallback = function someFancyfunction(data) {
+      var stringified = JSON.stringify(data);
+      var testVariable = 'This is what we have got after submit' + stringified;
+    };
+    this.instance.Components(this.config.components);
+    this.instance.ApplePay(this.config.applePay);
+    this.instance.VisaCheckout(this.config.visaCheckout);
+    var self = this;
+    document.getElementById('example-form-amount').addEventListener('input', function() {
+      self.instance.updateJWT(
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU'
+      );
+    });
   }
 
   render() {

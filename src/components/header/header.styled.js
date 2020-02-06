@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
   padding: 0 4rem;
@@ -8,5 +8,4 @@ export const HeaderStyled = styled.header`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
- 
-`
+`;
