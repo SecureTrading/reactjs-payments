@@ -23278,11 +23278,7 @@
                 {
                   key: '_insertGALibrary',
                   value: function() {
-                    S.a
-                      .insertScript('head', { async: 'async', src: e.GA_SCRIPT_SRC, id: 'googleAnalytics' })
-                      .then(function() {
-                        return !0;
-                      });
+                    S.a.insertScript('head', { async: 'async', src: e.GA_SCRIPT_SRC, id: 'googleAnalytics' });
                   }
                 },
                 {
