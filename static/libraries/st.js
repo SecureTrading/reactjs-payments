@@ -23397,6 +23397,8 @@
                 value: function() {
                   var e = this;
                   Cardinal.configure(x.a.CARDINAL_COMMERCE.CONFIG),
+                    Cardinal.off(M),
+                    Cardinal.off(F),
                     Cardinal.on(M, function() {
                       e._onCardinalSetupComplete(),
                         B.sendGaData('event', 'Cardinal', 'init', 'Cardinal Setup Completed');
