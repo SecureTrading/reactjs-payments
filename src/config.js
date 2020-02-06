@@ -6,7 +6,7 @@ export const config = {
   fieldsToSubmit: ['pan', 'expirydate', 'securitycode'],
   buttonId: 'merchant-submit-button',
   jwt:
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDg5OTE1OC45OTE5OTQ5LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.Z5xQ4m8p7985RdlcDKAfIY-a0D8R7r7b8HxV55J2f-4',
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5MzkyMC45NDEyODIzLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.wGx0PCaXOmho2m6HTrHss6-lVCDU_8xQhbcCZLjq1Ws',
   styles: {
     defaultStyles: {
       'background-color-input': 'AliceBlue'
