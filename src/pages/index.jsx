@@ -9,11 +9,6 @@ class IndexPage extends Component {
     this.loadST();
   }
 
-  componentWillUnmount() {
-    this.instance.destroy();
-    this.instance = null;
-  }
-
   loadST() {
     var parsedUrl = new URL(window.location.href);
     this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
@@ -28,7 +23,7 @@ class IndexPage extends Component {
     var self = this;
     document.getElementById('example-form-amount').addEventListener('input', function() {
       self.instance.updateJWT(
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5MzkyMC45NDEyODIzLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.wGx0PCaXOmho2m6HTrHss6-lVCDU_8xQhbcCZLjq1Ws'
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU'
       );
     });
   }

@@ -25025,7 +25025,8 @@
                   this._googleAnalytics.init(),
                   this.CommonFrames(this._config),
                   this._commonFrames.init(),
-                  this.CardinalCommerce();
+                  this.CardinalCommerce(),
+                  this.watchForFrameUnload();
               }
             },
             {
@@ -25094,6 +25095,21 @@
               value: function(t) {
                 this._storage.setItem(e.MERCHANT_TRANSLATIONS_STORAGE, JSON.stringify(t.translations)),
                   this._storage.setItem(e.LOCALE_STORAGE, l()(t.jwt).payload.locale);
+              }
+            },
+            {
+              key: 'watchForFrameUnload',
+              value: function() {
+                var e = this,
+                  t = [!1, !1],
+                  n = new MutationObserver(function() {
+                    var r = document.getElementById(E.a.CONTROL_FRAME_IFRAME);
+                    t.push(Boolean(r)), t.shift();
+                    var i = t[0],
+                      o = t[1];
+                    i && !o && (e.destroy(), n.disconnect());
+                  });
+                n.observe(document, { subtree: !0, childList: !0 });
               }
             }
           ]),
