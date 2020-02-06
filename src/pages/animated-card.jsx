@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '@securetrading/js-payments-card/dist/stcardstyle.css';
 import Layout from '../components/layout/layout';
 
 class AnimatedCard extends Component {
