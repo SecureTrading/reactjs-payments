@@ -17,19 +17,19 @@ export const config = {
     },
     placement: 'st-apple-pay'
   },
-  // buttonId: 'merchant-submit-button',
+  buttonId: 'merchant-submit-button',
   bypassCards: ['PIBA'],
   components: {},
-  // componentIds: {},
-  // datacenterurl: "",
+  componentIds: {},
+  datacenterurl: 'https://webservices.securetrading.net/jwt/',
   deferInit: false,
-  // formId: '',
+  formId: 'st-form',
   fieldsToSubmit: ['pan', 'expirydate', 'securitycode'],
-  // init: {},
+  init: { cachetoken: '', threedinit: '' },
   jwt:
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU',
-  // livestatus: "",
-  // origin: "",
+  livestatus: 0,
+  origin: undefined,
   styles: {
     defaultStyles: {
       'background-color-input': 'AliceBlue'
@@ -54,8 +54,20 @@ export const config = {
     }
   },
   submitCallback: '',
-  // submitFields: [],
-  // submitOnError: false,
+  submitFields: [
+    'baseamount',
+    'currencyiso3a',
+    'eci',
+    'enrolled',
+    'errorcode',
+    'errordata',
+    'errormessage',
+    'orderreference',
+    'settlestatus',
+    'status',
+    'transactionreference'
+  ],
+  submitOnError: false,
   submitOnSuccess: false,
   translations: {
     'An error occurred': 'Wystąpił błąd'
