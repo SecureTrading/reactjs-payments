@@ -1,12 +1,35 @@
 export const config = {
   analytics: true,
   animatedCard: true,
+  applePay: {
+    buttonStyle: 'white-outline',
+    buttonText: 'donate',
+    merchantId: 'merchant.net.securetrading.test',
+    paymentRequest: {
+      countryCode: 'US',
+      currencyCode: 'USD',
+      merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
+      supportedNetworks: [],
+      total: {
+        label: 'Secure Trading Merchant',
+        amount: '10.00'
+      }
+    },
+    placement: 'st-apple-pay'
+  },
+  // buttonId: 'merchant-submit-button',
   bypassCards: ['PIBA'],
+  components: {},
+  // componentIds: {},
+  // datacenterurl: "",
   deferInit: false,
+  // formId: '',
   fieldsToSubmit: ['pan', 'expirydate', 'securitycode'],
-  buttonId: 'merchant-submit-button',
+  // init: {},
   jwt:
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU',
+  // livestatus: "",
+  // origin: "",
   styles: {
     defaultStyles: {
       'background-color-input': 'AliceBlue'
@@ -30,27 +53,12 @@ export const config = {
       'color-error': '#3358FF'
     }
   },
-  submitOnSuccess: false,
   submitCallback: '',
+  // submitFields: [],
+  // submitOnError: false,
+  submitOnSuccess: false,
   translations: {
     'An error occurred': 'Wystąpił błąd'
-  },
-  components: {},
-  applePay: {
-    buttonStyle: 'white-outline',
-    buttonText: 'donate',
-    merchantId: 'merchant.net.securetrading.test',
-    paymentRequest: {
-      countryCode: 'US',
-      currencyCode: 'USD',
-      merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
-      supportedNetworks: [],
-      total: {
-        label: 'Secure Trading Merchant',
-        amount: '10.00'
-      }
-    },
-    placement: 'st-apple-pay'
   },
   visaCheckout: {
     buttonSettings: {
