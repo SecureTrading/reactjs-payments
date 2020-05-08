@@ -16,6 +16,13 @@ class IndexPage extends Component {
     this.instance.submitCallback = function someFancyfunction(data) {
       var stringified = JSON.stringify(data);
       var testVariable = 'This is what we have got after submit' + stringified;
+      console.error(testVariable);
+    };
+    this.instance.successCallback = function() {
+      alert('Success alert');
+    };
+    this.instance.errorCallback = function() {
+      alert('This is error message');
     };
     this.instance.Components(this.config.components);
     this.instance.ApplePay(this.config.applePay);
