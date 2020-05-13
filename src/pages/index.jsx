@@ -19,10 +19,10 @@ class IndexPage extends Component {
       console.error(testVariable);
     };
     this.instance.successCallback = function() {
-      alert('Success alert');
+      console.log('Success alert');
     };
     this.instance.errorCallback = function() {
-      alert('This is error message');
+      console.log('This is error message');
     };
     this.instance.Components(this.config.components);
     this.instance.ApplePay(this.config.applePay);

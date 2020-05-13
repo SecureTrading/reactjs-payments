@@ -2842,14 +2842,12 @@ and limitations under the License.
                             .array()
                             .allow(null)
                             .required(),
-                          manifest: r
-                            .object()
-                            .pattern(/.+/, [
-                              r.valid('schema', 'single'),
-                              r.object({
-                                mapped: r.object({ from: r.string().required(), to: r.string().required() }).required()
-                              })
-                            ])
+                          manifest: r.object().pattern(/.+/, [
+                            r.valid('schema', 'single'),
+                            r.object({
+                              mapped: r.object({ from: r.string().required(), to: r.string().required() }).required()
+                            })
+                          ])
                         })
                       ),
                       validate: r.function().maxArity(3)
@@ -32445,13 +32443,11 @@ and limitations under the License.
             .array()
             .items(Te.a.string().valid('ACCOUNTCHECK', 'AUTH', 'JSINIT', 'RISKDEC', 'SUBSCRIPTION', 'THREEDQUERY')),
           panIcon: Te.a.boolean(),
-          placeholders: Te.a
-            .object()
-            .keys({
-              pan: Te.a.string().allow(''),
-              securitycode: Te.a.string().allow(''),
-              expirydate: Te.a.string().allow('')
-            }),
+          placeholders: Te.a.object().keys({
+            pan: Te.a.string().allow(''),
+            securitycode: Te.a.string().allow(''),
+            expirydate: Te.a.string().allow('')
+          }),
           styles: Te.a.object(),
           submitCallback: Te.a.any(),
           successCallback: Te.a.any(),
@@ -32462,69 +32458,59 @@ and limitations under the License.
           threedinit: Te.a.string().allow(''),
           translations: Te.a.object(),
           visaCheckout: {
-            buttonSettings: Te.a
-              .object()
-              .keys({
-                color: Te.a.string().allow('neutral', 'standard'),
-                size: Te.a.number(),
-                height: Te.a.number(),
-                width: Te.a.number(),
-                locale: Te.a.string(),
-                cardBrands: Te.a.string(),
-                acceptCanadianVisaDebit: Te.a.string(),
-                cobrand: Te.a.string()
-              }),
+            buttonSettings: Te.a.object().keys({
+              color: Te.a.string().allow('neutral', 'standard'),
+              size: Te.a.number(),
+              height: Te.a.number(),
+              width: Te.a.number(),
+              locale: Te.a.string(),
+              cardBrands: Te.a.string(),
+              acceptCanadianVisaDebit: Te.a.string(),
+              cobrand: Te.a.string()
+            }),
             livestatus: Te.a.number().valid(0, 1),
             merchantId: Te.a.string(),
-            paymentRequest: Te.a
-              .object()
-              .keys({
-                merchantRequestId: Te.a.string().allow(''),
-                currencyCode: Te.a.string().allow(''),
-                subtotal: Te.a.string().allow(''),
-                shippingHandling: Te.a.string().allow(''),
-                tax: Te.a.string().allow(''),
-                discount: Te.a.string().allow(''),
-                giftWrap: Te.a.string().allow(''),
-                misc: Te.a.string().allow(''),
-                total: Te.a.string().allow(''),
-                orderId: Te.a.string().allow(''),
-                description: Te.a.string().allow(''),
-                promoCode: Te.a.string().allow(''),
-                customData: Te.a.any()
-              }),
+            paymentRequest: Te.a.object().keys({
+              merchantRequestId: Te.a.string().allow(''),
+              currencyCode: Te.a.string().allow(''),
+              subtotal: Te.a.string().allow(''),
+              shippingHandling: Te.a.string().allow(''),
+              tax: Te.a.string().allow(''),
+              discount: Te.a.string().allow(''),
+              giftWrap: Te.a.string().allow(''),
+              misc: Te.a.string().allow(''),
+              total: Te.a.string().allow(''),
+              orderId: Te.a.string().allow(''),
+              description: Te.a.string().allow(''),
+              promoCode: Te.a.string().allow(''),
+              customData: Te.a.any()
+            }),
             placement: Te.a.string(),
             requestTypes: Te.a
               .array()
               .items(Te.a.string().valid('ACCOUNTCHECK', 'AUTH', 'JSINIT', 'RISKDEC', 'SUBSCRIPTION', 'THREEDQUERY')),
-            settings: Te.a
-              .object()
-              .keys({
-                locale: Te.a.string(),
-                countryCode: Te.a.string(),
-                displayName: Te.a.string(),
-                websiteUrl: Te.a.string(),
-                customerSupportUrl: Te.a.string(),
-                enableUserDataPrefill: Te.a.boolean(),
-                shipping: Te.a
-                  .object()
-                  .keys({ acceptedRegions: Te.a.array(), collectShipping: Te.a.string().allow('true', 'false') }),
-                payment: Te.a
-                  .object()
-                  .keys({
-                    cardBrands: Te.a.array(),
-                    acceptCanadianVisaDebit: Te.a.string().allow('true', 'false'),
-                    billingCountries: Te.a.array()
-                  }),
-                review: Te.a.object().keys({ message: Te.a.string(), buttonAction: Te.a.string() }),
-                threeDSSetup: Te.a
-                  .object()
-                  .keys({
-                    threeDSActive: Te.a.string().allow('true', 'false'),
-                    threeDSSuppressChallenge: Te.a.string().allow('true', 'false')
-                  }),
-                dataLevel: Te.a.string()
-              })
+            settings: Te.a.object().keys({
+              locale: Te.a.string(),
+              countryCode: Te.a.string(),
+              displayName: Te.a.string(),
+              websiteUrl: Te.a.string(),
+              customerSupportUrl: Te.a.string(),
+              enableUserDataPrefill: Te.a.boolean(),
+              shipping: Te.a
+                .object()
+                .keys({ acceptedRegions: Te.a.array(), collectShipping: Te.a.string().allow('true', 'false') }),
+              payment: Te.a.object().keys({
+                cardBrands: Te.a.array(),
+                acceptCanadianVisaDebit: Te.a.string().allow('true', 'false'),
+                billingCountries: Te.a.array()
+              }),
+              review: Te.a.object().keys({ message: Te.a.string(), buttonAction: Te.a.string() }),
+              threeDSSetup: Te.a.object().keys({
+                threeDSActive: Te.a.string().allow('true', 'false'),
+                threeDSSuppressChallenge: Te.a.string().allow('true', 'false')
+              }),
+              dataLevel: Te.a.string()
+            })
           }
         }),
         ke = [
