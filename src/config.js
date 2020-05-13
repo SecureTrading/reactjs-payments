@@ -1,12 +1,59 @@
 export const config = {
   analytics: true,
   animatedCard: true,
-  bypassCards: ['PIBA'],
-  deferInit: false,
-  fieldsToSubmit: ['pan', 'expirydate', 'securitycode'],
+  applePay: {
+    buttonStyle: 'white-outline',
+    buttonText: 'buy',
+    merchantId: 'merchant.net.securetrading.test',
+    paymentRequest: {
+      countryCode: 'US',
+      currencyCode: 'USD',
+      merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
+      supportedNetworks: [],
+      total: {
+        label: 'Secure Trading Merchant',
+        amount: '10.0'
+      }
+    },
+    placement: 'st-apple-pay',
+    requestTypes: ['RISKDEC', 'ACCOUNTCHECK', 'THREEDQUERY', 'AUTH']
+  },
   buttonId: 'merchant-submit-button',
+  bypassCards: ['VISA', 'MASTERCARD', 'AMEX', 'DISCOVER', 'JCB', 'DINERS'],
+  componentIds: {
+    animatedCard: '',
+    cardNumber: '',
+    expirationDate: '',
+    notificationFrame: '',
+    securityCode: ''
+  },
+  components: {
+    defaultPaymentType: '',
+    requestTypes: ['THREEDQUERY', 'RISKDEC', 'ACCOUNTCHECK', 'AUTH'],
+    paymentTypes: [],
+    startOnLoad: false
+  },
+  cybertonicaApiKey: 'stfs',
+  datacenterurl: '',
+  deferInit: false,
+  disableNotification: false,
+  errorCallback: null,
+  fieldsToSubmit: ['pan', 'expirydate', 'securitycode'],
+  formId: 'st-form',
+  init: {
+    cachetoken: '',
+    threedinit: ''
+  },
   jwt:
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU',
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4OTE4NDk2NC42MDA2MTE3LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.LPDuKKWZM18wvjPxm2zhTVTYYgMziKZylmjsyNY80WM',
+  livestatus: 0,
+  origin: '',
+  panIcon: true,
+  placeholders: {
+    pan: 'Card number',
+    expirydate: 'MM/YY',
+    securitycode: '***'
+  },
   styles: {
     defaultStyles: {
       'background-color-input': 'AliceBlue'
@@ -30,31 +77,17 @@ export const config = {
       'color-error': '#3358FF'
     }
   },
+  submitCallback: null,
+  submitFields: [],
   submitOnSuccess: false,
-  submitCallback: '',
+  submitOnError: false,
+  successCallback: null,
   translations: {
     'An error occurred': 'Wystąpił błąd'
   },
-  components: {},
-  applePay: {
-    buttonStyle: 'white-outline',
-    buttonText: 'donate',
-    merchantId: 'merchant.net.securetrading.test',
-    paymentRequest: {
-      countryCode: 'US',
-      currencyCode: 'USD',
-      merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
-      supportedNetworks: [],
-      total: {
-        label: 'Secure Trading Merchant',
-        amount: '10.00'
-      }
-    },
-    placement: 'st-apple-pay'
-  },
   visaCheckout: {
     buttonSettings: {
-      size: '154',
+      size: 154,
       color: 'neutral'
     },
     livestatus: 0,
@@ -63,6 +96,7 @@ export const config = {
       subtotal: '20.00'
     },
     placement: 'st-visa-checkout',
+    requestTypes: ['RISKDEC', 'ACCOUNTCHECK', 'THREEDQUERY', 'AUTH'],
     settings: {
       displayName: 'My Test Site'
     }

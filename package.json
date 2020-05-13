@@ -34,7 +34,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop --host=0.0.0.0 --https --open -p 8443 --key-file ./src/cert/key.pem --cert-file ./src/cert/cert.pem",
+    "develop": "gatsby develop --host=0.0.0.0 --https --open -p 3000 --key-file ./src/cert/key.pem --cert-file ./src/cert/cert.pem",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
