@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "reactjs-payments",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "ReactJS implementation of js-payments",
   "version": "1.0.0",
   "dependencies": {
-    "@securetrading/js-payments-card": "^1.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
+    "gatsby-plugin-copy-files": "^1.0.3",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.16",
@@ -20,22 +20,32 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-i18next": "^11.2.7",
+    "react-load-script": "0.0.6",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
+    "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby", "ReactJS"
+    "gatsby",
+    "ReactJS"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host=0.0.0.0 --https --open -p 3000 --key-file ./src/cert/key.pem --cert-file ./src/cert/cert.pem",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SecureTrading/reactjs-payments-card"
+  },
+  "bugs": {
+    "url": "https://github.com/SecureTrading/reactjs-payments-card/issues"
   }
 }
