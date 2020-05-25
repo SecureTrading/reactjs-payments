@@ -1,4 +1,4 @@
-!(function (e, t) {
+!(function(e, t) {
   'object' == typeof exports && 'object' == typeof module
     ? (module.exports = t())
     : 'function' == typeof define && define.amd
@@ -6,8 +6,8 @@
     : 'object' == typeof exports
     ? (exports.SecureTrading = t())
     : (e.SecureTrading = t());
-})(window, function () {
-  return (function (e) {
+})(window, function() {
+  return (function(e) {
     var t = {};
     function n(r) {
       if (t[r]) return t[r].exports;
@@ -17,16 +17,16 @@
     return (
       (n.m = e),
       (n.c = t),
-      (n.d = function (e, t, r) {
+      (n.d = function(e, t, r) {
         n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
       }),
-      (n.r = function (e) {
+      (n.r = function(e) {
         'undefined' != typeof Symbol &&
           Symbol.toStringTag &&
           Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
           Object.defineProperty(e, '__esModule', { value: !0 });
       }),
-      (n.t = function (e, t) {
+      (n.t = function(e, t) {
         if ((1 & t && (e = n(e)), 8 & t)) return e;
         if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
         var r = Object.create(null);
@@ -35,36 +35,36 @@
             n.d(
               r,
               i,
-              function (t) {
+              function(t) {
                 return e[t];
               }.bind(null, i)
             );
         return r;
       }),
-      (n.n = function (e) {
+      (n.n = function(e) {
         var t =
           e && e.__esModule
-            ? function () {
+            ? function() {
                 return e.default;
               }
-            : function () {
+            : function() {
                 return e;
               };
         return n.d(t, 'a', t), t;
       }),
-      (n.o = function (e, t) {
+      (n.o = function(e, t) {
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (n.p = ''),
       n((n.s = 319))
     );
   })([
-    function (e, t) {
-      e.exports = function (e, t) {
+    function(e, t) {
+      e.exports = function(e, t) {
         if (!(e instanceof t)) throw new TypeError('Cannot call a class as a function');
       };
     },
-    function (e, t) {
+    function(e, t) {
       function n(e, t) {
         for (var n = 0; n < t.length; n++) {
           var r = t[n];
@@ -74,13 +74,13 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      e.exports = function (e, t, r) {
+      e.exports = function(e, t, r) {
         return t && n(e.prototype, t), r && n(e, r), e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return _;
       });
       n(26), n(22), n(11), n(197), n(49), n(50);
@@ -109,7 +109,7 @@
                 void 0 === m.a ? Object : m.a,
                 void 0 === g.a ? Object : g.a
               ])(
-                ((a = i = (function () {
+                ((a = i = (function() {
                   function e(t, n, r, i) {
                     s()(this, e),
                       (this.communicator = t),
@@ -123,9 +123,9 @@
                     c()(e, [
                       {
                         key: 'publish',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = this;
-                          this.framesHub.waitForFrame(v.a.CONTROL_FRAME_IFRAME).subscribe(function (t) {
+                          this.framesHub.waitForFrame(v.a.CONTROL_FRAME_IFRAME).subscribe(function(t) {
                             return n.communicator.send(e, t);
                           }),
                             t && this.publishToParent(e);
@@ -133,10 +133,10 @@
                       },
                       {
                         key: 'subscribe',
-                        value: function () {
+                        value: function() {
                           for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                           if (!this.identifier.isParentFrame() && !this.identifier.isControlFrame())
-                            return this.getControlFrameMessageBus().subscribe(function (e) {
+                            return this.getControlFrameMessageBus().subscribe(function(e) {
                               e.subscribe.apply(e, t);
                             });
                           if ('string' == typeof t[0] && 'function' == typeof t[1]) {
@@ -145,7 +145,7 @@
                             return this.communicator.incomingEvent$
                               .pipe(
                                 Object(y.a)(r),
-                                Object(d.a)(function (e) {
+                                Object(d.a)(function(e) {
                                   return e.data;
                                 })
                               )
@@ -156,7 +156,7 @@
                       },
                       {
                         key: 'publishToParent',
-                        value: function (t) {
+                        value: function(t) {
                           if (!Object.values(e.EVENTS_PUBLIC).includes(t.type))
                             throw new Error('Cannot publish private event "'.concat(t.type, '" to parent frame.'));
                           this.communicator.send(t, v.a.MERCHANT_PARENT_FRAME);
@@ -164,10 +164,10 @@
                       },
                       {
                         key: 'getControlFrameMessageBus',
-                        value: function () {
+                        value: function() {
                           var e = this;
                           return this.framesHub.waitForFrame(v.a.CONTROL_FRAME_IFRAME).pipe(
-                            Object(d.a)(function (t) {
+                            Object(d.a)(function(t) {
                               return e.frameAccessor.getFrameCollection()[t].messageBus;
                             }),
                             Object(p.a)()
@@ -230,7 +230,7 @@
               ) || r)
           ) || r;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         for (var n in e) t.hasOwnProperty(n) || (t[n] = e[n]);
@@ -245,9 +245,9 @@
       var s = n(94);
       (t.Token = s.Token), (t.default = i.Container);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       /*! *****************************************************************************
@@ -264,14 +264,14 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-      var r = function (e, t) {
+      var r = function(e, t) {
         return (r =
           Object.setPrototypeOf ||
           ({ __proto__: [] } instanceof Array &&
-            function (e, t) {
+            function(e, t) {
               e.__proto__ = t;
             }) ||
-          function (e, t) {
+          function(e, t) {
             for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
           })(e, t);
       };
@@ -282,9 +282,9 @@ and limitations under the License.
         r(e, t), (e.prototype = null === t ? Object.create(t) : ((n.prototype = t.prototype), new n()));
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(0),
@@ -331,13 +331,13 @@ and limitations under the License.
         (o.ANIMATED_CARD_COMPONENT_IFRAME = 'st-animated-card-iframe'),
         (o.ANIMATED_CARD_COMPONENT_NAME = 'animatedCard');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14),
         i = n(51),
         a = n(40),
         o = n(39),
         s = n(54),
-        u = function (e, t, n) {
+        u = function(e, t, n) {
           var c,
             l,
             f,
@@ -368,8 +368,8 @@ and limitations under the License.
         (u.R = 128),
         (e.exports = u);
     },
-    function (e, t, n) {
-      (function (e) {
+    function(e, t, n) {
+      (function(e) {
         var r, i, a;
         n(83), n(218), n(321), n(322), n(323), n(324);
         var o = n(30);
@@ -396,7 +396,7 @@ and limitations under the License.
         var _,
           b = n(202);
         function E(e) {
-          return function () {
+          return function() {
             var t,
               n = d(e);
             if (w()) {
@@ -411,7 +411,7 @@ and limitations under the License.
           if (Reflect.construct.sham) return !1;
           if ('function' == typeof Proxy) return !0;
           try {
-            return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+            return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
           } catch (e) {
             return !1;
           }
@@ -420,7 +420,7 @@ and limitations under the License.
           if ('undefined' == typeof Symbol || null == e[Symbol.iterator]) {
             if (
               Array.isArray(e) ||
-              (e = (function (e, t) {
+              (e = (function(e, t) {
                 if (!e) return;
                 if ('string' == typeof e) return A(e, t);
                 var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -430,13 +430,13 @@ and limitations under the License.
               })(e))
             ) {
               var t = 0,
-                n = function () {};
+                n = function() {};
               return {
                 s: n,
-                n: function () {
+                n: function() {
                   return t >= e.length ? { done: !0 } : { done: !1, value: e[t++] };
                 },
-                e: function (e) {
+                e: function(e) {
                   throw e;
                 },
                 f: n
@@ -451,17 +451,17 @@ and limitations under the License.
             a = !0,
             o = !1;
           return {
-            s: function () {
+            s: function() {
               r = e[Symbol.iterator]();
             },
-            n: function () {
+            n: function() {
               var e = r.next();
               return (a = e.done), e;
             },
-            e: function (e) {
+            e: function(e) {
               (o = !0), (i = e);
             },
-            f: function () {
+            f: function() {
               try {
                 a || null == r.return || r.return();
               } finally {
@@ -476,8 +476,8 @@ and limitations under the License.
           return r;
         }
         window,
-          (_ = function () {
-            return (function (e) {
+          (_ = function() {
+            return (function(e) {
               var t = {};
               function n(r) {
                 if (t[r]) return t[r].exports;
@@ -487,16 +487,16 @@ and limitations under the License.
               return (
                 (n.m = e),
                 (n.c = t),
-                (n.d = function (e, t, r) {
+                (n.d = function(e, t, r) {
                   n.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
                 }),
-                (n.r = function (e) {
+                (n.r = function(e) {
                   'undefined' != typeof Symbol &&
                     Symbol.toStringTag &&
                     Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                     Object.defineProperty(e, '__esModule', { value: !0 });
                 }),
-                (n.t = function (e, t) {
+                (n.t = function(e, t) {
                   if ((1 & t && (e = n(e)), 8 & t)) return e;
                   if (4 & t && 'object' == b(e) && e && e.__esModule) return e;
                   var r = Object.create(null);
@@ -509,34 +509,34 @@ and limitations under the License.
                       n.d(
                         r,
                         i,
-                        function (t) {
+                        function(t) {
                           return e[t];
                         }.bind(null, i)
                       );
                   return r;
                 }),
-                (n.n = function (e) {
+                (n.n = function(e) {
                   var t =
                     e && e.__esModule
-                      ? function () {
+                      ? function() {
                           return e.default;
                         }
-                      : function () {
+                      : function() {
                           return e;
                         };
                   return n.d(t, 'a', t), t;
                 }),
-                (n.o = function (e, t) {
+                (n.o = function(e, t) {
                   return Object.prototype.hasOwnProperty.call(e, t);
                 }),
                 (n.p = ''),
                 n((n.s = 11))
               );
             })([
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(12);
-                e.exports = function (e) {
+                e.exports = function(e) {
                   if (!e) {
                     for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++)
                       n[i - 1] = arguments[i];
@@ -545,7 +545,7 @@ and limitations under the License.
                   }
                 };
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r,
                   i,
@@ -591,19 +591,19 @@ and limitations under the License.
                     values: Symbol('values'),
                     template: Symbol('template')
                   }),
-                  (t.assertOptions = function (e, t) {
+                  (t.assertOptions = function(e, t) {
                     var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 'Options';
                     a(e && 'object' == b(e) && !Array.isArray(e), 'Options must be of type object');
-                    var r = Object.keys(e).filter(function (e) {
+                    var r = Object.keys(e).filter(function(e) {
                       return !t.includes(e);
                     });
                     a(0 === r.length, ''.concat(n, ' contain unknown keys: ').concat(r));
                   }),
-                  (t.checkPreferences = function (e) {
+                  (t.checkPreferences = function(e) {
                     var t = (i = i || n(16)).preferences.validate(e);
                     if (t.error) throw new o([t.error.details[0].message]);
                   }),
-                  (t.compare = function (e, t, n) {
+                  (t.compare = function(e, t, n) {
                     switch (n) {
                       case '=':
                         return e === t;
@@ -617,19 +617,19 @@ and limitations under the License.
                         return e <= t;
                     }
                   }),
-                  (t.default = function (e, t) {
+                  (t.default = function(e, t) {
                     return void 0 === e ? t : e;
                   }),
-                  (t.isIsoDate = function (e) {
+                  (t.isIsoDate = function(e) {
                     return u.isoDate.test(e);
                   }),
-                  (t.isNumber = function (e) {
+                  (t.isNumber = function(e) {
                     return 'number' == typeof e && !isNaN(e);
                   }),
-                  (t.isResolvable = function (e) {
+                  (t.isResolvable = function(e) {
                     return !!e && (e[t.symbols.ref] || e[t.symbols.template]);
                   }),
-                  (t.isSchema = function (e) {
+                  (t.isSchema = function(e) {
                     var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                       r = e && e[t.symbols.any];
                     return (
@@ -637,13 +637,13 @@ and limitations under the License.
                       (a(n.legacy || r.version === t.version, 'Cannot mix different versions of joi schemas'), !0)
                     );
                   }),
-                  (t.isValues = function (e) {
+                  (t.isValues = function(e) {
                     return e[t.symbols.values];
                   }),
-                  (t.limit = function (e) {
+                  (t.limit = function(e) {
                     return Number.isSafeInteger(e) && e >= 0;
                   }),
-                  (t.preferences = function (e, i) {
+                  (t.preferences = function(e, i) {
                     (r = r || n(9)), (e = e || {}), (i = i || {});
                     var a = Object.assign({}, e, i);
                     return (
@@ -656,19 +656,17 @@ and limitations under the License.
                       a
                     );
                   }),
-                  (t.tryWithPath = function (e, t) {
+                  (t.tryWithPath = function(e, t) {
                     var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                     try {
                       return e();
                     } catch (e) {
-                      throw (
-                        (void 0 !== e.path ? (e.path = t + '.' + e.path) : (e.path = t),
-                        n.append && (e.message = ''.concat(e.message, ' (').concat(e.path, ')')),
-                        e)
-                      );
+                      throw (void 0 !== e.path ? (e.path = t + '.' + e.path) : (e.path = t),
+                      n.append && (e.message = ''.concat(e.message, ' (').concat(e.path, ')')),
+                      e);
                     }
                   }),
-                  (t.validateArg = function (e, n, r) {
+                  (t.validateArg = function(e, n, r) {
                     var i = r.assert,
                       a = r.message;
                     if (t.isSchema(i)) {
@@ -678,7 +676,7 @@ and limitations under the License.
                     }
                     if (!i(e)) return n ? ''.concat(n, ' ').concat(a) : a;
                   }),
-                  (t.verifyFlat = function (e, t) {
+                  (t.verifyFlat = function(e, t) {
                     var n,
                       r = S(e);
                     try {
@@ -693,13 +691,13 @@ and limitations under the License.
                     }
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(6),
                   i = n(13),
                   a = n(14),
                   o = { needsProtoHack: new Set([i.set, i.map, i.weakSet, i.weakMap]) };
-                (e.exports = o.clone = function (e) {
+                (e.exports = o.clone = function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                     n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
                   if ('object' != b(e) || null === e) return e;
@@ -707,7 +705,7 @@ and limitations under the License.
                     s = n;
                   if (t.shallow) {
                     if (!0 !== t.shallow) return o.cloneWithShallow(e, t);
-                    r = function (e) {
+                    r = function(e) {
                       return e;
                     };
                   } else if (s) {
@@ -784,7 +782,7 @@ and limitations under the License.
                   }
                   return l;
                 }),
-                  (o.cloneWithShallow = function (e, t) {
+                  (o.cloneWithShallow = function(e, t) {
                     var n = t.shallow;
                     (t = Object.assign({}, t)).shallow = !1;
                     var i,
@@ -803,7 +801,7 @@ and limitations under the License.
                     }
                     return o.clone(e, t, a);
                   }),
-                  (o.base = function (e, t, n) {
+                  (o.base = function(e, t, n) {
                     if (!1 === n.prototype)
                       return o.needsProtoHack.has(t) ? new t.constructor() : t === i.array ? [] : {};
                     var r = Object.getPrototypeOf(e);
@@ -819,7 +817,7 @@ and limitations under the License.
                     return Object.create(r);
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(34),
@@ -840,14 +838,14 @@ and limitations under the License.
                   },
                   rules: {
                     custom: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return (
                           r('function' == typeof e, 'Method must be a function'),
                           r(void 0 === t || (t && 'string' == typeof t), 'Description must be a non-empty string'),
                           this.$_addRule({ name: 'custom', args: { method: e, description: t } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.method;
                         try {
                           return r(e, t);
@@ -859,12 +857,12 @@ and limitations under the License.
                       multi: !0
                     },
                     messages: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.prefs({ messages: e });
                       }
                     },
                     shared: {
-                      method: function (e) {
+                      method: function(e) {
                         r(a.isSchema(e) && e._flags.id, 'Schema must be a schema with an id');
                         var t = this.clone();
                         return (
@@ -876,13 +874,13 @@ and limitations under the License.
                       }
                     },
                     warning: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return (
                           r(e && 'string' == typeof e, 'Invalid warning code'),
                           this.$_addRule({ name: 'warning', args: { code: e, local: t }, warn: !0 })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.code,
                           i = n.local;
                         return t.error(r, i);
@@ -892,20 +890,20 @@ and limitations under the License.
                     }
                   },
                   modifiers: {
-                    keep: function (e) {
+                    keep: function(e) {
                       var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
                       e.keep = t;
                     },
-                    message: function (e, t) {
+                    message: function(e, t) {
                       e.message = o.compile(t);
                     },
-                    warn: function (e) {
+                    warn: function(e) {
                       var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
                       e.warn = t;
                     }
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       for (var n in t) {
                         var r = t[n];
                         if (['examples', 'externals', 'metas', 'notes', 'tags'].includes(n)) {
@@ -1002,12 +1000,12 @@ and limitations under the License.
                   }
                 });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(32),
                   i = n(1),
                   a = n(7);
-                (t.Report = (function () {
+                (t.Report = (function() {
                   function e(n, r, i, a, o, s, u) {
                     if (
                       (y(this, e),
@@ -1033,7 +1031,7 @@ and limitations under the License.
                     m(e, [
                       {
                         key: '_setTemplate',
-                        value: function (e) {
+                        value: function(e) {
                           if (((this.template = e), !this.flags.label && 0 === this.path.length)) {
                             var t = this._template(this.template, 'root');
                             t && (this.local.label = t);
@@ -1042,7 +1040,7 @@ and limitations under the License.
                       },
                       {
                         key: 'toString',
-                        value: function () {
+                        value: function() {
                           if (this.message) return this.message;
                           var e = this.code;
                           if (!this.prefs.errors.render) return this.code;
@@ -1065,7 +1063,7 @@ and limitations under the License.
                       },
                       {
                         key: '_template',
-                        value: function (e, n) {
+                        value: function(e, n) {
                           return t.template(this.value, e, n || this.code, this.state, this.prefs);
                         }
                       }
@@ -1073,7 +1071,7 @@ and limitations under the License.
                     e
                   );
                 })()),
-                  (t.path = function (e) {
+                  (t.path = function(e) {
                     var t,
                       n = '',
                       r = S(e);
@@ -1090,7 +1088,7 @@ and limitations under the License.
                     }
                     return n;
                   }),
-                  (t.template = function (e, t, n, r, o) {
+                  (t.template = function(e, t, n, r, o) {
                     if (t) {
                       if (a.isTemplate(t)) return 'root' !== n ? t : null;
                       var s = o.errors.language;
@@ -1099,7 +1097,7 @@ and limitations under the License.
                       );
                     }
                   }),
-                  (t.label = function (e, n, r, i) {
+                  (t.label = function(e, n, r, i) {
                     if (e.label) return e.label;
                     if (!r.errors.label) return '';
                     var a = n.path;
@@ -1111,7 +1109,7 @@ and limitations under the License.
                         'value'
                     );
                   }),
-                  (t.process = function (e, n, r) {
+                  (t.process = function(e, n, r) {
                     if (!e) return null;
                     var i = t.details(e),
                       a = i.override,
@@ -1124,7 +1122,7 @@ and limitations under the License.
                     var c = new t.ValidationError(o, s, n);
                     return (Error.stackTraceLimit = u), c;
                   }),
-                  (t.details = function (e) {
+                  (t.details = function(e) {
                     var t,
                       n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                       r = [],
@@ -1142,7 +1140,7 @@ and limitations under the License.
                           r.push(u),
                             i.push({
                               message: u,
-                              path: o.path.filter(function (e) {
+                              path: o.path.filter(function(e) {
                                 return 'object' != b(e);
                               }),
                               type: o.code,
@@ -1157,7 +1155,7 @@ and limitations under the License.
                     }
                     return r.length > 1 && (r = v(new Set(r))), { message: r.join('. '), details: i };
                   }),
-                  (t.ValidationError = (function (e) {
+                  (t.ValidationError = (function(e) {
                     f(r, e);
                     var n = E(r);
                     function r(e, t, i) {
@@ -1168,7 +1166,7 @@ and limitations under the License.
                       m(r, null, [
                         {
                           key: 'isError',
-                          value: function (e) {
+                          value: function(e) {
                             return e instanceof t.ValidationError;
                           }
                         }
@@ -1180,7 +1178,7 @@ and limitations under the License.
                   (t.ValidationError.prototype.name = 'ValidationError'),
                   (t.ValidationError.prototype.annotate = r.error);
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r,
                   i = n(0),
@@ -1191,7 +1189,7 @@ and limitations under the License.
                     symbol: Symbol('ref'),
                     defaults: { adjust: null, in: !1, iterables: null, map: null, separator: '.', type: 'value' }
                   };
-                (t.create = function (e) {
+                (t.create = function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                   i('string' == typeof e, 'Invalid reference key:', e),
                     s.assertOptions(t, ['adjust', 'ancestor', 'in', 'iterables', 'map', 'prefix', 'separator']),
@@ -1220,14 +1218,14 @@ and limitations under the License.
                     }
                   return (n.path = r ? (null === e ? [] : e.split(r)) : [e]), new u.Ref(n);
                 }),
-                  (t.in = function (e) {
+                  (t.in = function(e) {
                     var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                     return t.create(e, Object.assign({}, n, { in: !0 }));
                   }),
-                  (t.isRef = function (e) {
+                  (t.isRef = function(e) {
                     return !!e && !!e[s.symbols.ref];
                   }),
-                  (u.Ref = (function () {
+                  (u.Ref = (function() {
                     function e(t) {
                       y(this, e),
                         i('object' == b(t), 'Invalid reference construction'),
@@ -1268,7 +1266,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'resolve',
-                          value: function (e, t, n, r) {
+                          value: function(e, t, n, r) {
                             var a = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : {};
                             return (
                               i(!this.in || a.in, 'Invalid in() reference usage'),
@@ -1291,7 +1289,7 @@ and limitations under the License.
                         },
                         {
                           key: '_resolve',
-                          value: function (e, t, n) {
+                          value: function(e, t, n) {
                             var r;
                             if (
                               ('value' === this.type &&
@@ -1310,25 +1308,25 @@ and limitations under the License.
                         },
                         {
                           key: 'toString',
-                          value: function () {
+                          value: function() {
                             return this.display;
                           }
                         },
                         {
                           key: 'absolute',
-                          value: function (e) {
+                          value: function(e) {
                             return [].concat(v(e.path.slice(0, -this.ancestor)), v(this.path));
                           }
                         },
                         {
                           key: 'clone',
-                          value: function () {
+                          value: function() {
                             return new u.Ref(this);
                           }
                         },
                         {
                           key: 'describe',
-                          value: function () {
+                          value: function() {
                             var e = { path: this.path };
                             'value' !== this.type && (e.type = this.type),
                               '.' !== this.separator && (e.separator = this.separator),
@@ -1343,7 +1341,7 @@ and limitations under the License.
                         },
                         {
                           key: 'updateDisplay',
-                          value: function () {
+                          value: function() {
                             var e = null !== this.key ? this.key : '';
                             if ('value' === this.type)
                               if (this.separator)
@@ -1364,7 +1362,7 @@ and limitations under the License.
                     );
                   })()),
                   (u.Ref.prototype[s.symbols.ref] = !0),
-                  (t.build = function (e) {
+                  (t.build = function(e) {
                     return (
                       'value' === (e = Object.assign({}, u.defaults, e)).type &&
                         void 0 === e.ancestor &&
@@ -1372,7 +1370,7 @@ and limitations under the License.
                       new u.Ref(e)
                     );
                   }),
-                  (u.context = function (e, t) {
+                  (u.context = function(e, t) {
                     var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                     if (((e = e.trim()), n)) {
                       var r = void 0 === n.global ? '$' : n.global;
@@ -1384,7 +1382,7 @@ and limitations under the License.
                     }
                     return { key: e, type: 'value' };
                   }),
-                  (u.ancestor = function (e, t) {
+                  (u.ancestor = function(e, t) {
                     if (!t) return [1, 0];
                     if (e[0] !== t) return [1, 0];
                     if (e[1] !== t) return [0, 1];
@@ -1393,7 +1391,7 @@ and limitations under the License.
                   }),
                   (t.toSibling = 0),
                   (t.toParent = 1),
-                  (t.Manager = (function () {
+                  (t.Manager = (function() {
                     function e() {
                       y(this, e), (this.refs = []);
                     }
@@ -1401,7 +1399,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'register',
-                          value: function (e, i) {
+                          value: function(e, i) {
                             if (e)
                               if (((i = void 0 === i ? t.toParent : i), Array.isArray(e))) {
                                 var a,
@@ -1439,32 +1437,32 @@ and limitations under the License.
                         },
                         {
                           key: 'clone',
-                          value: function () {
+                          value: function() {
                             var e = new t.Manager();
                             return (e.refs = a(this.refs)), e;
                           }
                         },
                         {
                           key: 'reset',
-                          value: function () {
+                          value: function() {
                             this.refs = [];
                           }
                         },
                         {
                           key: 'roots',
-                          value: function () {
+                          value: function() {
                             return this.refs
-                              .filter(function (e) {
+                              .filter(function(e) {
                                 return !e.ancestor;
                               })
-                              .map(function (e) {
+                              .map(function(e) {
                                 return e.root;
                               });
                           }
                         },
                         {
                           key: 'length',
-                          get: function () {
+                          get: function() {
                             return this.refs.length;
                           }
                         }
@@ -1473,11 +1471,11 @@ and limitations under the License.
                     );
                   })());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = {};
-                (e.exports = function (e, t, n) {
+                (e.exports = function(e, t, n) {
                   if (!1 === t || null == t) return e;
                   'string' == typeof (n = n || {}) && (n = { separator: n });
                   var a = Array.isArray(t);
@@ -1505,11 +1503,11 @@ and limitations under the License.
                   }
                   return s;
                 }),
-                  (i.iterables = function (e) {
+                  (i.iterables = function(e) {
                     return e instanceof Set ? 'set' : e instanceof Map ? 'map' : void 0;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
@@ -1530,7 +1528,7 @@ and limitations under the License.
                       utc: Date.prototype.toUTCString
                     }
                   };
-                (e.exports = l.Template = (function () {
+                (e.exports = l.Template = (function() {
                   function e(t, n) {
                     y(this, e),
                       r('string' == typeof t, 'Template source must be a string'),
@@ -1550,7 +1548,7 @@ and limitations under the License.
                       [
                         {
                           key: '_parse',
-                          value: function () {
+                          value: function() {
                             if (this.source.includes('{')) {
                               var e = l.encode(this.source),
                                 t = l.split(e),
@@ -1585,7 +1583,7 @@ and limitations under the License.
                         },
                         {
                           key: 'describe',
-                          value: function () {
+                          value: function() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                             if (!this._settings && e.compact) return this.source;
                             var t = { template: this.source };
@@ -1594,13 +1592,13 @@ and limitations under the License.
                         },
                         {
                           key: 'isDynamic',
-                          value: function () {
+                          value: function() {
                             return !!this._template;
                           }
                         },
                         {
                           key: 'refs',
-                          value: function () {
+                          value: function() {
                             if (this._template) {
                               var e,
                                 t = [],
@@ -1621,7 +1619,7 @@ and limitations under the License.
                         },
                         {
                           key: 'resolve',
-                          value: function (e, t, n, r) {
+                          value: function(e, t, n, r) {
                             return this._template && 1 === this._template.length
                               ? this._part(this._template[0], e, t, n, r, {})
                               : this.render(e, t, n, r);
@@ -1629,7 +1627,7 @@ and limitations under the License.
                         },
                         {
                           key: '_part',
-                          value: function (e) {
+                          value: function(e) {
                             for (var t, n = arguments.length, r = new Array(n > 1 ? n - 1 : 0), i = 1; i < n; i++)
                               r[i - 1] = arguments[i];
                             return e.ref ? (t = e.ref).resolve.apply(t, r) : e.formula.evaluate(r);
@@ -1637,7 +1635,7 @@ and limitations under the License.
                         },
                         {
                           key: 'render',
-                          value: function (e, t, n, r) {
+                          value: function(e, t, n, r) {
                             var i = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : {};
                             if (!this.isDynamic()) return this.rendered;
                             var o,
@@ -1668,16 +1666,16 @@ and limitations under the License.
                         },
                         {
                           key: '_ref',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             var n = this,
                               r = [];
                             try {
                               var i = new o.Parser(e, {
-                                reference: function (e) {
+                                reference: function(e) {
                                   var t = c.create(e, n._settings);
                                   return (
                                     r.push(t),
-                                    function (e) {
+                                    function(e) {
                                       return t.resolve.apply(t, v(e));
                                     }
                                   );
@@ -1686,12 +1684,10 @@ and limitations under the License.
                                 constants: l.constants
                               });
                             } catch (t) {
-                              throw (
-                                ((t.message = 'Invalid template variable "'
-                                  .concat(e, '" fails due to: ')
-                                  .concat(t.message)),
-                                t)
-                              );
+                              throw ((t.message = 'Invalid template variable "'
+                                .concat(e, '" fails due to: ')
+                                .concat(t.message)),
+                              t);
                             }
                             return i.single
                               ? 'reference' === i.single.type
@@ -1702,7 +1698,7 @@ and limitations under the License.
                         },
                         {
                           key: 'toString',
-                          value: function () {
+                          value: function() {
                             return this.source;
                           }
                         }
@@ -1710,19 +1706,19 @@ and limitations under the License.
                       [
                         {
                           key: 'date',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             return l.dateFormat[t.dateFormat].call(e);
                           }
                         },
                         {
                           key: 'build',
-                          value: function (e) {
+                          value: function(e) {
                             return new l.Template(e.template, e.options);
                           }
                         },
                         {
                           key: 'isTemplate',
-                          value: function (e) {
+                          value: function(e) {
                             return !!e && !!e[s.symbols.template];
                           }
                         }
@@ -1733,19 +1729,19 @@ and limitations under the License.
                 })()),
                   (l.Template.prototype[s.symbols.template] = !0),
                   (l.Template.prototype.isImmutable = !0),
-                  (l.encode = function (e) {
+                  (l.encode = function(e) {
                     return e
-                      .replace(/\\(\{+)/g, function (e, t) {
+                      .replace(/\\(\{+)/g, function(e, t) {
                         return l.opens.slice(0, t.length);
                       })
-                      .replace(/\\(\}+)/g, function (e, t) {
+                      .replace(/\\(\}+)/g, function(e, t) {
                         return l.closes.slice(0, t.length);
                       });
                   }),
-                  (l.decode = function (e) {
+                  (l.decode = function(e) {
                     return e.replace(/\u0000/g, '{').replace(/\u0001/g, '}');
                   }),
-                  (l.split = function (e) {
+                  (l.split = function(e) {
                     for (var t = [], n = '', r = 0; r < e.length; ++r) {
                       var i = e[r];
                       if ('{' === i) {
@@ -1755,14 +1751,20 @@ and limitations under the License.
                     }
                     return t.push(n), t;
                   }),
-                  (l.wrap = function (e, t) {
+                  (l.wrap = function(e, t) {
                     return t
                       ? 1 === t.length
-                        ? ''.concat(t).concat(e).concat(t)
-                        : ''.concat(t[0]).concat(e).concat(t[1])
+                        ? ''
+                            .concat(t)
+                            .concat(e)
+                            .concat(t)
+                        : ''
+                            .concat(t[0])
+                            .concat(e)
+                            .concat(t[1])
                       : e;
                   }),
-                  (l.stringify = function (e, t, n) {
+                  (l.stringify = function(e, t, n) {
                     var r = b(e);
                     if (null === e) return 'null';
                     if ('string' === r) return e;
@@ -1805,10 +1807,10 @@ and limitations under the License.
                   }),
                   (l.constants = { true: !0, false: !1, null: null, second: 1e3, minute: 6e4, hour: 36e5, day: 864e5 }),
                   (l.functions = {
-                    if: function (e, t, n) {
+                    if: function(e, t, n) {
                       return e ? t : n;
                     },
-                    msg: function (e) {
+                    msg: function(e) {
                       var t = g(this, 5),
                         n = t[0],
                         r = t[1],
@@ -1820,7 +1822,7 @@ and limitations under the License.
                       var c = u.template(n, s[0], e, r, i) || u.template(n, s[1], e, r, i);
                       return c ? c.render(n, r, i, a, o) : '';
                     },
-                    number: function (e) {
+                    number: function(e) {
                       return 'number' == typeof e
                         ? e
                         : 'string' == typeof e
@@ -1835,30 +1837,28 @@ and limitations under the License.
                     }
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(1),
                   a = n(5),
                   o = {};
-                (t.schema = function (e, t) {
+                (t.schema = function(e, t) {
                   var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                   i.assertOptions(n, ['appendPath', 'override']);
                   try {
                     return o.schema(e, t, n);
                   } catch (e) {
-                    throw (
-                      (n.appendPath &&
-                        void 0 !== e.path &&
-                        (e.message = ''.concat(e.message, ' (').concat(e.path, ')')),
-                      e)
-                    );
+                    throw (n.appendPath &&
+                      void 0 !== e.path &&
+                      (e.message = ''.concat(e.message, ' (').concat(e.path, ')')),
+                    e);
                   }
                 }),
-                  (o.schema = function (e, t, n) {
+                  (o.schema = function(e, t, n) {
                     r(void 0 !== t, 'Invalid undefined schema'),
                       Array.isArray(t) && (r(t.length, 'Invalid empty array schema'), 1 === t.length && (t = t[0]));
-                    var a = function (t) {
+                    var a = function(t) {
                       for (var r = arguments.length, i = new Array(r > 1 ? r - 1 : 0), a = 1; a < r; a++)
                         i[a - 1] = arguments[a];
                       return !1 !== n.override ? t.valid.apply(t, [e.override].concat(i)) : t.valid.apply(t, i);
@@ -1893,10 +1893,10 @@ and limitations under the License.
                         ),
                         e.object().keys(t));
                   }),
-                  (t.ref = function (e, t) {
+                  (t.ref = function(e, t) {
                     return a.isRef(e) ? e : a.create(e, t);
                   }),
-                  (t.compile = function (e, n) {
+                  (t.compile = function(e, n) {
                     var a = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                     i.assertOptions(a, ['legacy']);
                     var s = n && n[i.symbols.any];
@@ -1914,7 +1914,7 @@ and limitations under the License.
                     var u = o.walk(n);
                     return u ? u.compile(u.root, n) : t.schema(e, n, { appendPath: !0 });
                   }),
-                  (o.walk = function (e) {
+                  (o.walk = function(e) {
                     if ('object' != b(e)) return null;
                     if (Array.isArray(e)) {
                       var t,
@@ -1944,10 +1944,10 @@ and limitations under the License.
                     }
                     return null;
                   }),
-                  (o.simple = function (e) {
+                  (o.simple = function(e) {
                     return null === e || ['boolean', 'string', 'number'].includes(b(e));
                   }),
-                  (t.when = function (e, n, s) {
+                  (t.when = function(e, n, s) {
                     if (
                       (void 0 === s && (r(n && 'object' == b(n), 'Missing options'), (s = n), (n = a.create('.'))),
                       Array.isArray(s) && (s = { switch: s }),
@@ -2006,7 +2006,7 @@ and limitations under the License.
                     }
                     return l;
                   }),
-                  (o.condition = function (e, t) {
+                  (o.condition = function(e, t) {
                     for (var n = 0, r = ['then', 'otherwise']; n < r.length; n++) {
                       var i = r[n];
                       void 0 === t[i] ? delete t[i] : (t[i] = e.$_compile(t[i]));
@@ -2014,12 +2014,12 @@ and limitations under the License.
                     return t;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
                   a = n(7);
-                (t.compile = function (e, t) {
+                (t.compile = function(e, t) {
                   if ('string' == typeof e) return r(!t, 'Cannot set single message string'), new a(e);
                   if (a.isTemplate(e)) return r(!t, 'Cannot set single message template'), e;
                   for (var n in (r('object' == b(e) && !Array.isArray(e), 'Invalid message options'),
@@ -2040,7 +2040,7 @@ and limitations under the License.
                   }
                   return t;
                 }),
-                  (t.decompile = function (e) {
+                  (t.decompile = function(e) {
                     var t = {};
                     for (var n in e) {
                       var r = e[n];
@@ -2057,7 +2057,7 @@ and limitations under the License.
                     }
                     return t;
                   }),
-                  (t.merge = function (e, n) {
+                  (t.merge = function(e, n) {
                     if (!e) return t.compile(n);
                     if (!n) return e;
                     if ('string' == typeof n) return new a(n);
@@ -2080,14 +2080,14 @@ and limitations under the License.
                     return o;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(13),
                   i = { mismatched: null };
-                (e.exports = function (e, t, n) {
+                (e.exports = function(e, t, n) {
                   return (n = Object.assign({ prototype: !0 }, n)), !!i.isDeepEqual(e, t, n, []);
                 }),
-                  (i.isDeepEqual = function (e, t, n, a) {
+                  (i.isDeepEqual = function(e, t, n, a) {
                     if (e === t) return 0 !== e || 1 / e == 1 / t;
                     var o = b(e);
                     if (o !== b(t)) return !1;
@@ -2114,7 +2114,7 @@ and limitations under the License.
                       a.pop();
                     }
                   }),
-                  (i.getSharedType = function (e, t, n) {
+                  (i.getSharedType = function(e, t, n) {
                     if (n)
                       return Object.getPrototypeOf(e) !== Object.getPrototypeOf(t)
                         ? i.mismatched
@@ -2122,7 +2122,7 @@ and limitations under the License.
                     var a = r.getInternalProto(e);
                     return a !== r.getInternalProto(t) ? i.mismatched : a;
                   }),
-                  (i.valueOf = function (e) {
+                  (i.valueOf = function(e) {
                     var t = e.valueOf;
                     if (void 0 === t) return e;
                     try {
@@ -2131,10 +2131,10 @@ and limitations under the License.
                       return e;
                     }
                   }),
-                  (i.hasOwnEnumerableProperty = function (e, t) {
+                  (i.hasOwnEnumerableProperty = function(e, t) {
                     return Object.prototype.propertyIsEnumerable.call(e, t);
                   }),
-                  (i.isSetSimpleEqual = function (e, t) {
+                  (i.isSetSimpleEqual = function(e, t) {
                     var n,
                       r = S(e);
                     try {
@@ -2149,7 +2149,7 @@ and limitations under the License.
                     }
                     return !0;
                   }),
-                  (i.isDeepEqualObj = function (e, t, n, a, o) {
+                  (i.isDeepEqualObj = function(e, t, n, a, o) {
                     var s = i.isDeepEqual,
                       u = i.valueOf,
                       c = i.hasOwnEnumerableProperty,
@@ -2289,7 +2289,7 @@ and limitations under the License.
                     }
                     return !0;
                   }),
-                  (i.SeenEntry = (function () {
+                  (i.SeenEntry = (function() {
                     function e(t, n) {
                       y(this, e), (this.obj = t), (this.ref = n);
                     }
@@ -2297,7 +2297,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'isSame',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             return this.obj === e && this.ref === t;
                           }
                         }
@@ -2306,7 +2306,7 @@ and limitations under the License.
                     );
                   })());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r,
                   i = n(0),
@@ -2335,14 +2335,14 @@ and limitations under the License.
                       symbol: n(52)
                     },
                     aliases: { alt: 'alternatives', bool: 'boolean', func: 'function' },
-                    root: function () {
+                    root: function() {
                       var e,
                         t = { _types: new Set(Object.keys(m.types)) },
                         n = S(t._types);
                       try {
-                        var r = function () {
+                        var r = function() {
                           var n = e.value;
-                          t[n] = function () {
+                          t[n] = function() {
                             for (var e = arguments.length, t = new Array(e), r = 0; r < e; r++) t[r] = arguments[r];
                             return (
                               i(
@@ -2362,9 +2362,9 @@ and limitations under the License.
                         n.f();
                       }
                       for (
-                        var a = function () {
+                        var a = function() {
                             var e = s[o];
-                            t[e] = function () {
+                            t[e] = function() {
                               var t;
                               return (t = this.any())[e].apply(t, arguments);
                             };
@@ -2404,36 +2404,36 @@ and limitations under the License.
                   ValidationError: c.ValidationError,
                   version: s.version,
                   cache: o.provider,
-                  assert: function (e, t) {
+                  assert: function(e, t) {
                     for (var n = arguments.length, r = new Array(n > 2 ? n - 2 : 0), i = 2; i < n; i++)
                       r[i - 2] = arguments[i];
                     m.assert(e, t, !0, r);
                   },
-                  attempt: function (e, t) {
+                  attempt: function(e, t) {
                     for (var n = arguments.length, r = new Array(n > 2 ? n - 2 : 0), i = 2; i < n; i++)
                       r[i - 2] = arguments[i];
                     return m.assert(e, t, !1, r);
                   },
-                  build: function (e) {
+                  build: function(e) {
                     return i('function' == typeof h.build, 'Manifest functionality disabled'), h.build(this, e);
                   },
-                  checkPreferences: function (e) {
+                  checkPreferences: function(e) {
                     s.checkPreferences(e);
                   },
-                  compile: function (e, t) {
+                  compile: function(e, t) {
                     return u.compile(this, e, t);
                   },
-                  defaults: function (e) {
+                  defaults: function(e) {
                     i('function' == typeof e, 'modifier must be a function');
                     var t,
                       n = Object.assign({}, this),
                       r = S(n._types);
                     try {
-                      var a = function () {
+                      var a = function() {
                         var r = t.value,
                           a = e(n[r]());
                         i(s.isSchema(a), 'modifier must return a valid schema object'),
-                          (n[r] = function () {
+                          (n[r] = function() {
                             for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                             return m.generate(this, a, t);
                           });
@@ -2446,11 +2446,11 @@ and limitations under the License.
                     }
                     return n;
                   },
-                  expression: function () {
+                  expression: function() {
                     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                     return l(p, t);
                   },
-                  extend: function () {
+                  extend: function() {
                     for (var e = this, t = arguments.length, a = new Array(t), o = 0; o < t; o++) a[o] = arguments[o];
                     s.verifyFlat(a, 'extend'),
                       (r = r || n(16)),
@@ -2465,13 +2465,13 @@ and limitations under the License.
                         p = m.expandExtension(h, u),
                         v = S(p);
                       try {
-                        var y = function () {
+                        var y = function() {
                           var t = d.value;
                           i(void 0 === u[t.type] || u._types.has(t.type), 'Cannot override name', t.type);
                           var n = t.base || e.any(),
                             r = f.type(n, t);
                           u._types.add(t.type),
-                            (u[t.type] = function () {
+                            (u[t.type] = function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               return m.generate(this, r, t);
                             });
@@ -2489,14 +2489,14 @@ and limitations under the License.
                   isExpression: p.isTemplate,
                   isRef: d.isRef,
                   isSchema: s.isSchema,
-                  in: function () {
+                  in: function() {
                     return d.in.apply(d, arguments);
                   },
                   override: s.symbols.override,
-                  ref: function () {
+                  ref: function() {
                     return d.create.apply(d, arguments);
                   },
-                  types: function () {
+                  types: function() {
                     var e,
                       t = {},
                       n = S(this._types);
@@ -2514,7 +2514,7 @@ and limitations under the License.
                     return t;
                   }
                 }),
-                  (m.assert = function (e, t, n, r) {
+                  (m.assert = function(e, t, n, r) {
                     var i = r[0] instanceof Error || 'string' == typeof r[0] ? r[0] : null,
                       o = i ? r[1] : r[0],
                       u = t.validate(e, s.preferences({ errors: { stack: !0 } }, o || {})),
@@ -2522,13 +2522,11 @@ and limitations under the License.
                     if (!l) return u.value;
                     if (i instanceof Error) throw i;
                     var f = n && 'function' == typeof l.annotate ? l.annotate() : l.message;
-                    throw (
-                      (l instanceof c.ValidationError == 0 && (l = a(l)),
-                      (l.message = i ? ''.concat(i, ' ').concat(f) : f),
-                      l)
-                    );
+                    throw (l instanceof c.ValidationError == 0 && (l = a(l)),
+                    (l.message = i ? ''.concat(i, ' ').concat(f) : f),
+                    l);
                   }),
-                  (m.generate = function (e, t, n) {
+                  (m.generate = function(e, t, n) {
                     var r;
                     return (
                       i(e, 'Must be invoked on a Joi instance.'),
@@ -2536,7 +2534,7 @@ and limitations under the License.
                       t._definition.args && n.length ? (r = t._definition).args.apply(r, [t].concat(v(n))) : t
                     );
                   }),
-                  (m.expandExtension = function (e, t) {
+                  (m.expandExtension = function(e, t) {
                     if ('string' == typeof e.type) return [e];
                     var n,
                       r = [],
@@ -2558,10 +2556,10 @@ and limitations under the License.
                   }),
                   (e.exports = m.root());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(28);
-                e.exports = (function (e) {
+                e.exports = (function(e) {
                   f(i, e);
                   var n = E(i);
                   function i(e) {
@@ -2571,10 +2569,10 @@ and limitations under the License.
                       (a = n.call(
                         this,
                         e
-                          .filter(function (e) {
+                          .filter(function(e) {
                             return '' !== e;
                           })
-                          .map(function (e) {
+                          .map(function(e) {
                             return 'string' == typeof e ? e : e instanceof Error ? e.message : r(e);
                           })
                           .join(' ') || 'Unknown error'
@@ -2586,7 +2584,7 @@ and limitations under the License.
                   return i;
                 })(p(Error));
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = {};
                 (t = e.exports = {
@@ -2610,7 +2608,7 @@ and limitations under the License.
                     ['[object WeakMap]', t.weakMap],
                     ['[object WeakSet]', t.weakSet]
                   ])),
-                  (t.getInternalProto = function (e) {
+                  (t.getInternalProto = function(e) {
                     if (Array.isArray(e)) return t.array;
                     if (e instanceof Date) return t.date;
                     if (e instanceof RegExp) return t.regex;
@@ -2619,25 +2617,25 @@ and limitations under the License.
                     return r.typeMap.get(n) || t.generic;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
-                t.keys = function (e) {
+                t.keys = function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                   return !1 !== t.symbols ? Reflect.ownKeys(e) : Object.getOwnPropertyNames(e);
                 };
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
                   a = n(1),
                   o = { max: 1e3, supported: new Set(['undefined', 'boolean', 'number', 'string']) };
                 (t.provider = {
-                  provision: function (e) {
+                  provision: function(e) {
                     return new o.Cache(e);
                   }
                 }),
-                  (o.Cache = (function () {
+                  (o.Cache = (function() {
                     function e() {
                       var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                       y(this, e),
@@ -2651,7 +2649,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'set',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             if (null === e || o.supported.has(b(e))) {
                               var n = this._map.get(e);
                               if (n) return (n.value = t), void this._list.first(n);
@@ -2661,14 +2659,14 @@ and limitations under the License.
                         },
                         {
                           key: 'get',
-                          value: function (e) {
+                          value: function(e) {
                             var t = this._map.get(e);
                             if (t) return this._list.first(t), i(t.value);
                           }
                         },
                         {
                           key: '_compact',
-                          value: function () {
+                          value: function() {
                             if (this._map.size > this._max) {
                               var e = this._list.pop();
                               this._map.delete(e.key);
@@ -2677,7 +2675,7 @@ and limitations under the License.
                         },
                         {
                           key: 'length',
-                          get: function () {
+                          get: function() {
                             return this._map.size;
                           }
                         }
@@ -2685,7 +2683,7 @@ and limitations under the License.
                       e
                     );
                   })()),
-                  (o.List = (function () {
+                  (o.List = (function() {
                     function e() {
                       y(this, e), (this.tail = null), (this.head = null);
                     }
@@ -2693,7 +2691,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'unshift',
-                          value: function (e) {
+                          value: function(e) {
                             return (
                               (e.next = null),
                               (e.prev = this.head),
@@ -2706,19 +2704,19 @@ and limitations under the License.
                         },
                         {
                           key: 'first',
-                          value: function (e) {
+                          value: function(e) {
                             e !== this.head && (this._remove(e), this.unshift(e));
                           }
                         },
                         {
                           key: 'pop',
-                          value: function () {
+                          value: function() {
                             return this._remove(this.tail);
                           }
                         },
                         {
                           key: '_remove',
-                          value: function (e) {
+                          value: function(e) {
                             var t = e.next,
                               n = e.prev;
                             return (
@@ -2736,11 +2734,15 @@ and limitations under the License.
                     );
                   })());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(11),
                   i = {};
-                (i.wrap = r.string().min(1).max(2).allow(!1)),
+                (i.wrap = r
+                  .string()
+                  .min(1)
+                  .max(2)
+                  .allow(!1)),
                   (t.preferences = r
                     .object({
                       allowUnknown: r.boolean(),
@@ -2773,11 +2775,17 @@ and limitations under the License.
                     .strict()),
                   (i.nameRx = /^[a-zA-Z0-9]\w*$/),
                   (i.rule = r.object({
-                    alias: r.array().items(r.string().pattern(i.nameRx)).single(),
+                    alias: r
+                      .array()
+                      .items(r.string().pattern(i.nameRx))
+                      .single(),
                     args: r.array().items(
                       r.string(),
                       r.object({
-                        name: r.string().pattern(i.nameRx).required(),
+                        name: r
+                          .string()
+                          .pattern(i.nameRx)
+                          .required(),
                         ref: r.boolean(),
                         assert: r
                           .alternatives([r.function(), r.object().schema()])
@@ -2796,18 +2804,33 @@ and limitations under the License.
                     .object({
                       type: r.alternatives([r.string(), r.object().regex()]).required(),
                       args: r.function(),
-                      base: r.object().schema().when('type', { is: r.object().regex(), then: r.forbidden() }),
+                      base: r
+                        .object()
+                        .schema()
+                        .when('type', { is: r.object().regex(), then: r.forbidden() }),
                       coerce: [
                         r.function().maxArity(3),
                         r.object({
-                          method: r.function().maxArity(3).required(),
-                          from: r.array().items(r.string()).single()
+                          method: r
+                            .function()
+                            .maxArity(3)
+                            .required(),
+                          from: r
+                            .array()
+                            .items(r.string())
+                            .single()
                         })
                       ],
                       flags: r.object().pattern(i.nameRx, r.object({ setter: r.string(), default: r.any() })),
                       manifest: { build: r.function().arity(2) },
                       messages: [r.object(), r.string()],
-                      modifiers: r.object().pattern(i.nameRx, r.function().minArity(1).maxArity(2)),
+                      modifiers: r.object().pattern(
+                        i.nameRx,
+                        r
+                          .function()
+                          .minArity(1)
+                          .maxArity(2)
+                      ),
                       overrides: r.object().pattern(i.nameRx, r.function()),
                       prepare: r.function().maxArity(3),
                       rebuild: r.function().arity(1),
@@ -2815,7 +2838,10 @@ and limitations under the License.
                       terms: r.object().pattern(
                         i.nameRx,
                         r.object({
-                          init: r.array().allow(null).required(),
+                          init: r
+                            .array()
+                            .allow(null)
+                            .required(),
                           manifest: r.object().pattern(/.+/, [
                             r.valid('schema', 'single'),
                             r.object({
@@ -2827,7 +2853,10 @@ and limitations under the License.
                       validate: r.function().maxArity(3)
                     })
                     .strict()),
-                  (t.extensions = r.array().items(r.object(), r.function().arity(1)).strict()),
+                  (t.extensions = r
+                    .array()
+                    .items(r.object(), r.function().arity(1))
+                    .strict()),
                   (i.desc = {
                     buffer: r.object({ buffer: r.string() }),
                     func: r.object({ function: r.function().required(), options: { literal: !0 } }),
@@ -2837,9 +2866,19 @@ and limitations under the License.
                         .object({
                           type: r.valid('value', 'global', 'local'),
                           path: r.array().required(),
-                          separator: r.string().length(1).allow(!1),
-                          ancestor: r.number().min(0).integer().allow('root'),
-                          map: r.array().items(r.array().length(2)).min(1),
+                          separator: r
+                            .string()
+                            .length(1)
+                            .allow(!1),
+                          ancestor: r
+                            .number()
+                            .min(0)
+                            .integer()
+                            .allow('root'),
+                          map: r
+                            .array()
+                            .items(r.array().length(2))
+                            .min(1),
                           adjust: r.function(),
                           iterables: r.boolean(),
                           in: r.boolean()
@@ -2950,14 +2989,14 @@ and limitations under the License.
                     })
                     .pattern(/^[a-z]\w*$/, r.any()));
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
                   a = n(1),
                   o = n(9),
                   s = {};
-                (t.type = function (e, t) {
+                (t.type = function(e, t) {
                   var n = Object.getPrototypeOf(e),
                     c = i(n),
                     l = e._assign(Object.create(c)),
@@ -2988,13 +3027,13 @@ and limitations under the License.
                     (f.validate = s.validate(f.validate, h.validate));
                   var y = Object.assign({}, h.rules);
                   if (f.rules) {
-                    var m = function (e) {
+                    var m = function(e) {
                       var t = f.rules[e];
                       r('object' == b(t), 'Invalid rule definition for', f.type, e);
                       var n = t.method;
                       if (
                         (void 0 === n &&
-                          (n = function () {
+                          (n = function() {
                             return this.$_addRule(e);
                           }),
                         n && (r(!c[e], 'Rule conflict in', f.type, e), (c[e] = n)),
@@ -3017,7 +3056,7 @@ and limitations under the License.
                       }
                       t.args &&
                         ((t.argsByName = new Map()),
-                        (t.args = t.args.map(function (e) {
+                        (t.args = t.args.map(function(e) {
                           return (
                             'string' == typeof e && (e = { name: e }),
                             r(!t.argsByName.has(e.name), 'Duplicated argument name', e.name),
@@ -3032,11 +3071,11 @@ and limitations under the License.
                   f.rules = y;
                   var _ = Object.assign({}, h.modifiers);
                   if (f.modifiers) {
-                    var E = function (e) {
+                    var E = function(e) {
                       r(!c[e], 'Rule conflict in', f.type, e);
                       var t = f.modifiers[e];
                       r('function' == typeof t, 'Invalid modifier definition for', f.type, e),
-                        (c[e] = function (t) {
+                        (c[e] = function(t) {
                           return this.rule(u({}, e, t));
                         }),
                         (_[e] = t);
@@ -3057,18 +3096,18 @@ and limitations under the License.
                     l
                   );
                 }),
-                  (s.build = function (e, t) {
+                  (s.build = function(e, t) {
                     return e && t
-                      ? function (n, r) {
+                      ? function(n, r) {
                           return t(e(n, r), r);
                         }
                       : e || t;
                   }),
-                  (s.coerce = function (e, t) {
+                  (s.coerce = function(e, t) {
                     return e && t
                       ? {
                           from: e.from && t.from ? v(new Set([].concat(v(e.from), v(t.from)))) : null,
-                          method: function (n, r) {
+                          method: function(n, r) {
                             var i;
                             if ((!t.from || t.from.includes(b(n))) && (i = t.method(n, r))) {
                               if (i.errors || void 0 === i.value) return i;
@@ -3083,9 +3122,9 @@ and limitations under the License.
                         }
                       : e || t;
                   }),
-                  (s.prepare = function (e, t) {
+                  (s.prepare = function(e, t) {
                     return e && t
-                      ? function (n, r) {
+                      ? function(n, r) {
                           var i = e(n, r);
                           if (i) {
                             if (i.errors || void 0 === i.value) return i;
@@ -3095,16 +3134,16 @@ and limitations under the License.
                         }
                       : e || t;
                   }),
-                  (s.rebuild = function (e, t) {
+                  (s.rebuild = function(e, t) {
                     return e && t
-                      ? function (n) {
+                      ? function(n) {
                           t(n), e(n);
                         }
                       : e || t;
                   }),
-                  (s.validate = function (e, t) {
+                  (s.validate = function(e, t) {
                     return e && t
-                      ? function (n, r) {
+                      ? function(n, r) {
                           var i = t(n, r);
                           if (i) {
                             if (i.errors && (!Array.isArray(i.errors) || i.errors.length)) return i;
@@ -3115,15 +3154,15 @@ and limitations under the License.
                       : e || t;
                   });
               },
-              function (e, t) {},
-              function (e, t) {},
-              function (e, t, n) {
+              function(e, t) {},
+              function(e, t) {},
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
                   a = n(14),
                   o = {};
-                e.exports = o.merge = function (e, t, n) {
+                e.exports = o.merge = function(e, t, n) {
                   if (
                     (r(e && 'object' == b(e), 'Invalid target value: must be an object'),
                     r(null == t || 'object' == b(t), 'Invalid source value: must be null, undefined, or an object'),
@@ -3154,13 +3193,13 @@ and limitations under the License.
                   return e;
                 };
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(10),
                   a = n(1),
                   o = {};
-                (e.exports = o.Values = (function () {
+                (e.exports = o.Values = (function() {
                   function e(t, n) {
                     y(this, e),
                       (this._values = new Set(t)),
@@ -3174,7 +3213,7 @@ and limitations under the License.
                       [
                         {
                           key: 'add',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             a.isResolvable(e)
                               ? this._refs.has(e) || (this._refs.add(e), t && t.register(e))
                               : this.has(e, null, null, !1) ||
@@ -3183,7 +3222,7 @@ and limitations under the License.
                         },
                         {
                           key: 'remove',
-                          value: function (e) {
+                          value: function(e) {
                             a.isResolvable(e)
                               ? this._refs.delete(e)
                               : (this._values.delete(e),
@@ -3192,13 +3231,13 @@ and limitations under the License.
                         },
                         {
                           key: 'has',
-                          value: function (e, t, n, r) {
+                          value: function(e, t, n, r) {
                             return !!this.get(e, t, n, r);
                           }
                         },
                         {
                           key: 'get',
-                          value: function (e, t, n, r) {
+                          value: function(e, t, n, r) {
                             if (!this.length) return !1;
                             if (this._values.has(e)) return { value: e };
                             if ('string' == typeof e && e && r) {
@@ -3256,13 +3295,13 @@ and limitations under the License.
                         },
                         {
                           key: 'override',
-                          value: function () {
+                          value: function() {
                             this._override = !0;
                           }
                         },
                         {
                           key: 'values',
-                          value: function (e) {
+                          value: function(e) {
                             if (e && e.display) {
                               for (
                                 var t = [], n = 0, r = [].concat(v(this._values), v(this._refs));
@@ -3279,14 +3318,14 @@ and limitations under the License.
                         },
                         {
                           key: 'clone',
-                          value: function () {
+                          value: function() {
                             var e = new o.Values(this._values, this._refs);
                             return (e._override = this._override), e;
                           }
                         },
                         {
                           key: 'concat',
-                          value: function (e) {
+                          value: function(e) {
                             r(!e._override, 'Cannot concat override set of values');
                             var t = new o.Values(
                               [].concat(v(this._values), v(e._values)),
@@ -3297,7 +3336,7 @@ and limitations under the License.
                         },
                         {
                           key: 'describe',
-                          value: function () {
+                          value: function() {
                             var e = [];
                             this._override && e.push({ override: !0 });
                             var t,
@@ -3329,7 +3368,7 @@ and limitations under the License.
                         },
                         {
                           key: 'length',
-                          get: function () {
+                          get: function() {
                             return this._values.size + this._refs.size;
                           }
                         }
@@ -3337,7 +3376,7 @@ and limitations under the License.
                       [
                         {
                           key: 'merge',
-                          value: function (e, t, n) {
+                          value: function(e, t, n) {
                             if (((e = e || new o.Values()), t)) {
                               if (t._override) return t.clone();
                               for (var r = 0, i = [].concat(v(t._values), v(t._refs)); r < i.length; r++) {
@@ -3360,7 +3399,7 @@ and limitations under the License.
                 })()),
                   (o.Values.prototype[a.symbols.values] = !0),
                   (o.Values.prototype.slice = o.Values.prototype.clone),
-                  (o.lowercases = function (e) {
+                  (o.lowercases = function(e) {
                     var t = new Map();
                     if (e) {
                       var n,
@@ -3379,7 +3418,7 @@ and limitations under the License.
                     return t;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(43),
                   i = n(0),
@@ -3402,10 +3441,10 @@ and limitations under the License.
                     patterns: { init: null },
                     renames: { init: null }
                   },
-                  args: function (e, t) {
+                  args: function(e, t) {
                     return e.keys(t);
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       r = t.error,
                       i = t.state,
@@ -3481,25 +3520,25 @@ and limitations under the License.
                   },
                   rules: {
                     and: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         return c.verifyFlat(t, 'and'), w.dependency(this, 'and', null, t);
                       }
                     },
                     append: {
-                      method: function (e) {
+                      method: function(e) {
                         return null == e || 0 === Object.keys(e).length ? this : this.keys(e);
                       }
                     },
                     assert: {
-                      method: function (e, t, n) {
+                      method: function(e, t, n) {
                         _.isTemplate(e) || (e = h.ref(e)),
                           i(void 0 === n || 'string' == typeof n, 'Message must be a string'),
                           (t = this.$_compile(t, { appendPath: !0 }));
                         var r = this.$_addRule({ name: 'assert', args: { subject: e, schema: t, message: n } });
                         return r.$_mutateRegister(e), r.$_mutateRegister(t), r;
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = t.error,
                           i = t.prefs,
                           a = t.state,
@@ -3516,14 +3555,14 @@ and limitations under the License.
                       multi: !0
                     },
                     instance: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return (
                           i('function' == typeof e, 'constructor must be a function'),
                           (t = t || e.name),
                           this.$_addRule({ name: 'instance', args: { constructor: e, name: t } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.constructor,
                           i = n.name;
                         return e instanceof r ? e : t.error('object.instance', { type: i, value: e });
@@ -3531,7 +3570,7 @@ and limitations under the License.
                       args: ['constructor', 'name']
                     },
                     keys: {
-                      method: function (e) {
+                      method: function(e) {
                         var t = this;
                         i(void 0 === e || 'object' == b(e), 'Object schema must be a valid object'),
                           i(!c.isSchema(e), 'Object schema cannot be a joi schema');
@@ -3539,12 +3578,12 @@ and limitations under the License.
                         if (e)
                           if (Object.keys(e).length) {
                             n.$_terms.keys = n.$_terms.keys
-                              ? n.$_terms.keys.filter(function (t) {
+                              ? n.$_terms.keys.filter(function(t) {
                                   return !e.hasOwnProperty(t.key);
                                 })
                               : new w.Keys();
-                            var r = function (r) {
-                              c.tryWithPath(function () {
+                            var r = function(r) {
+                              c.tryWithPath(function() {
                                 return n.$_terms.keys.push({ key: r, schema: t.$_compile(e[r]) });
                               }, r);
                             };
@@ -3555,10 +3594,10 @@ and limitations under the License.
                       }
                     },
                     length: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'length', args: { limit: e }, operator: '=' });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.limit,
                           a = r.name,
                           o = r.operator,
@@ -3570,35 +3609,35 @@ and limitations under the License.
                       args: [{ name: 'limit', ref: !0, assert: c.limit, message: 'must be a positive integer' }]
                     },
                     max: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'max', method: 'length', args: { limit: e }, operator: '<=' });
                       }
                     },
                     min: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'min', method: 'length', args: { limit: e }, operator: '>=' });
                       }
                     },
                     nand: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         return c.verifyFlat(t, 'nand'), w.dependency(this, 'nand', null, t);
                       }
                     },
                     or: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         return c.verifyFlat(t, 'or'), w.dependency(this, 'or', null, t);
                       }
                     },
                     oxor: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         return w.dependency(this, 'oxor', null, t);
                       }
                     },
                     pattern: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         var n,
                           r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
                           a = e instanceof RegExp;
@@ -3628,23 +3667,23 @@ and limitations under the License.
                       }
                     },
                     ref: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('ref');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return g.isRef(e) ? e : t.error('object.refType', { value: e });
                       }
                     },
                     regex: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('regex');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return e instanceof RegExp ? e : t.error('object.regex', { value: e });
                       }
                     },
                     rename: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                         i('string' == typeof e || e instanceof RegExp, 'Rename missing the from argument'),
                           i('string' == typeof t || t instanceof _, 'Invalid rename to argument'),
@@ -3672,11 +3711,11 @@ and limitations under the License.
                       }
                     },
                     schema: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 'any';
                         return this.$_addRule({ name: 'schema', args: { type: e } });
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.type;
                         return !c.isSchema(e) || ('any' !== r && e.type !== r)
                           ? t.error('object.schema', { type: r })
@@ -3684,44 +3723,44 @@ and limitations under the License.
                       }
                     },
                     unknown: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_setFlag('unknown', !1 !== e);
                       }
                     },
                     with: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                         return w.dependency(this, 'with', e, t, n);
                       }
                     },
                     without: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                         return w.dependency(this, 'without', e, t, n);
                       }
                     },
                     xor: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         return c.verifyFlat(t, 'xor'), w.dependency(this, 'xor', null, t);
                       }
                     }
                   },
                   overrides: {
-                    default: function (e, t) {
+                    default: function(e, t) {
                       return void 0 === e && (e = c.symbols.deepDefault), this.$_super.default(e, t);
                     }
                   },
-                  rebuild: function (e) {
+                  rebuild: function(e) {
                     e.$_terms.keys &&
-                      (function () {
+                      (function() {
                         var t,
                           n = new o.Sorter(),
                           r = S(e.$_terms.keys);
                         try {
-                          var i = function () {
+                          var i = function() {
                             var e = t.value;
-                            c.tryWithPath(function () {
+                            c.tryWithPath(function() {
                               return n.add(e, { after: e.schema.$_rootReferences(), group: e.key });
                             }, e.key);
                           };
@@ -3735,7 +3774,7 @@ and limitations under the License.
                       })();
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       if ((t.keys && (e = e.keys(t.keys)), t.dependencies)) {
                         var n,
                           r = S(t.dependencies);
@@ -3822,13 +3861,13 @@ and limitations under the License.
                     'object.xor': '{{#label}} contains a conflict between exclusive peers {{#peersWithLabels}}'
                   }
                 })),
-                  (w.clone = function (e, t) {
+                  (w.clone = function(e, t) {
                     if ('object' == b(e)) {
                       if (t.nonEnumerables) return a(e, { shallow: !0 });
                       var n = Object.create(Object.getPrototypeOf(e));
                       return Object.assign(n, e), n;
                     }
-                    var r = function () {
+                    var r = function() {
                       for (var t = arguments.length, n = new Array(t), r = 0; r < t; r++) n[r] = arguments[r];
                       return e.apply(this, n);
                     };
@@ -3840,7 +3879,7 @@ and limitations under the License.
                       r
                     );
                   }),
-                  (w.dependency = function (e, t, n, r, a) {
+                  (w.dependency = function(e, t, n, r, a) {
                     i(null === n || 'string' == typeof n, t, 'key must be a strings'),
                       a || (a = r.length > 1 && 'object' == b(r[r.length - 1]) ? r.pop() : {}),
                       c.assertOptions(a, ['separator']),
@@ -3869,7 +3908,7 @@ and limitations under the License.
                     );
                   }),
                   (w.dependencies = {
-                    and: function (e, t, n, r, i) {
+                    and: function(e, t, n, r, i) {
                       var a,
                         o = [],
                         s = [],
@@ -3896,7 +3935,7 @@ and limitations under the License.
                           }
                         };
                     },
-                    nand: function (e, t, n, r, i) {
+                    nand: function(e, t, n, r, i) {
                       var a,
                         o = [],
                         s = S(t.peers);
@@ -3924,7 +3963,7 @@ and limitations under the License.
                         };
                       }
                     },
-                    or: function (e, t, n, r, i) {
+                    or: function(e, t, n, r, i) {
                       var a,
                         o = S(t.peers);
                       try {
@@ -3940,7 +3979,7 @@ and limitations under the License.
                         context: { peers: t.paths, peersWithLabels: w.keysToLabels(e, t.paths) }
                       };
                     },
-                    oxor: function (e, t, n, r, i) {
+                    oxor: function(e, t, n, r, i) {
                       var a,
                         o = [],
                         s = S(t.peers);
@@ -3963,7 +4002,7 @@ and limitations under the License.
                         );
                       }
                     },
-                    with: function (e, t, n, r, i) {
+                    with: function(e, t, n, r, i) {
                       var a,
                         o = S(t.peers);
                       try {
@@ -3986,7 +4025,7 @@ and limitations under the License.
                         o.f();
                       }
                     },
-                    without: function (e, t, n, r, i) {
+                    without: function(e, t, n, r, i) {
                       var a,
                         o = S(t.peers);
                       try {
@@ -4009,7 +4048,7 @@ and limitations under the License.
                         o.f();
                       }
                     },
-                    xor: function (e, t, n, r, i) {
+                    xor: function(e, t, n, r, i) {
                       var a,
                         o = [],
                         s = S(t.peers);
@@ -4033,14 +4072,14 @@ and limitations under the License.
                       }
                     }
                   }),
-                  (w.keysToLabels = function (e, t) {
+                  (w.keysToLabels = function(e, t) {
                     return Array.isArray(t)
-                      ? t.map(function (t) {
+                      ? t.map(function(t) {
                           return e.$_mapLabels(t);
                         })
                       : e.$_mapLabels(t);
                   }),
-                  (w.rename = function (e, t, n, r, i) {
+                  (w.rename = function(e, t, n, r, i) {
                     var a,
                       o = {},
                       s = S(e.$_terms.renames);
@@ -4094,11 +4133,11 @@ and limitations under the License.
                     }
                     return !0;
                   }),
-                  (w.unknown = function (e, t, n, r, i, a) {
+                  (w.unknown = function(e, t, n, r, i, a) {
                     if (e.$_terms.patterns) {
                       var o,
                         s = !1,
-                        u = e.$_terms.patterns.map(function (e) {
+                        u = e.$_terms.patterns.map(function(e) {
                           if (e.matches) return (s = !0), [];
                         }),
                         l = [t].concat(v(i.ancestors)),
@@ -4182,7 +4221,7 @@ and limitations under the License.
                       }
                     }
                   }),
-                  (w.Dependency = (function () {
+                  (w.Dependency = (function() {
                     function e(t, n, r, i) {
                       y(this, e), (this.rel = t), (this.key = n), (this.peers = r), (this.paths = i);
                     }
@@ -4190,7 +4229,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'describe',
-                          value: function () {
+                          value: function() {
                             var e = { rel: this.rel, peers: this.paths };
                             return (
                               null !== this.key && (e.key = this.key.key),
@@ -4203,7 +4242,7 @@ and limitations under the License.
                       e
                     );
                   })()),
-                  (w.Keys = (function (e) {
+                  (w.Keys = (function(e) {
                     f(n, e);
                     var t = E(n);
                     function n() {
@@ -4213,7 +4252,7 @@ and limitations under the License.
                       m(n, [
                         {
                           key: 'concat',
-                          value: function (e) {
+                          value: function(e) {
                             for (var t = this.slice(), n = new Map(), r = 0; r < t.length; ++r) n.set(t[r].key, r);
                             var i,
                               a = S(e);
@@ -4237,7 +4276,7 @@ and limitations under the License.
                     );
                   })(p(Array)));
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(24),
                   i = n(25),
@@ -4249,7 +4288,7 @@ and limitations under the License.
                     domainSegmentRx: /^[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?$/,
                     URL: r.URL || URL
                   };
-                (t.analyze = function (e) {
+                (t.analyze = function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                   if ('string' != typeof e) throw new Error('Invalid input: domain must be a string');
                   if (!e) return i.code('DOMAIN_NON_EMPTY_STRING');
@@ -4279,10 +4318,10 @@ and limitations under the License.
                   }
                   return null;
                 }),
-                  (t.isValid = function (e, n) {
+                  (t.isValid = function(e, n) {
                     return !t.analyze(e, n);
                   }),
-                  (a.punycode = function (e) {
+                  (a.punycode = function(e) {
                     try {
                       return new a.URL('http://'.concat(e)).host;
                     } catch (t) {
@@ -4290,8 +4329,8 @@ and limitations under the License.
                     }
                   });
               },
-              function (e, t) {},
-              function (e, t, n) {
+              function(e, t) {},
+              function(e, t, n) {
                 'use strict';
                 (t.codes = {
                   EMPTY_STRING: 'Address must be a non-empty string',
@@ -4313,16 +4352,16 @@ and limitations under the License.
                   DOMAIN_EMPTY_SEGMENT: 'Domain contains empty dot-separated segment',
                   DOMAIN_LONG_SEGMENT: 'Domain contains dot-separated segment that is too long'
                 }),
-                  (t.code = function (e) {
+                  (t.code = function(e) {
                     return { code: e, error: t.codes[e] };
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(27),
                   a = {
-                    generate: function () {
+                    generate: function() {
                       var e = {},
                         t = "!\\$&'\\(\\)\\*\\+,;=",
                         n = '\\w-\\.~%\\dA-Fa-f' + t + ':@',
@@ -4403,7 +4442,7 @@ and limitations under the License.
                     ipv6: a.rfc3986.ipv6address,
                     ipvfuture: a.rfc3986.ipvFuture
                   }),
-                  (a.createRegex = function (e) {
+                  (a.createRegex = function(e) {
                     var t = a.rfc3986,
                       n =
                         '(?:\\?' +
@@ -4443,7 +4482,7 @@ and limitations under the License.
                       d = e.allowRelative ? '(?:' + h + '|' + o + ')' : h;
                     return a.wrap(d + n, s);
                   }),
-                  (a.wrap = function (e, t) {
+                  (a.wrap = function(e, t) {
                     return {
                       raw: (e = '(?=.)(?!https?:/$)'.concat(e)),
                       regex: new RegExp('^'.concat(e, '$')),
@@ -4451,22 +4490,22 @@ and limitations under the License.
                     };
                   }),
                   (a.uriRegex = a.createRegex({})),
-                  (t.regex = function () {
+                  (t.regex = function() {
                     var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                     return e.scheme || e.allowRelative || e.relativeOnly || e.allowQuerySquareBrackets || e.domain
                       ? a.createRegex(e)
                       : a.uriRegex;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
-                e.exports = function (e) {
+                e.exports = function(e) {
                   return e.replace(/[\^\$\.\*\+\-\?\=\!\:\|\\\/\(\)\[\]\{\}\,]/g, '\\$&');
                 };
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
-                e.exports = function () {
+                e.exports = function() {
                   try {
                     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                     return JSON.stringify.apply(null, t);
@@ -4475,13 +4514,13 @@ and limitations under the License.
                   }
                 };
               },
-              function (e) {
+              function(e) {
                 e.exports = JSON.parse('{"version":"17.1.1"}');
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = {};
-                (e.exports = function (e) {
+                (e.exports = function(e) {
                   if (!e) return '';
                   for (var t = '', n = 0; n < e.length; ++n) {
                     var i = e.charCodeAt(n);
@@ -4489,14 +4528,14 @@ and limitations under the License.
                   }
                   return t;
                 }),
-                  (r.escapeHtmlChar = function (e) {
+                  (r.escapeHtmlChar = function(e) {
                     var t = r.namedHtml[e];
                     if (void 0 !== t) return t;
                     if (e >= 256) return '&#' + e + ';';
                     var n = e.toString(16).padStart(2, '0');
                     return '&#x'.concat(n, ';');
                   }),
-                  (r.isSafe = function (e) {
+                  (r.isSafe = function(e) {
                     return void 0 !== r.safeCharCodes[e];
                   }),
                   (r.namedHtml = {
@@ -4511,7 +4550,7 @@ and limitations under the License.
                     169: '&copy;',
                     174: '&reg;'
                   }),
-                  (r.safeCharCodes = (function () {
+                  (r.safeCharCodes = (function() {
                     for (var e = {}, t = 32; t < 123; ++t)
                       (t >= 97 ||
                         (t >= 65 && t <= 90) ||
@@ -4526,7 +4565,7 @@ and limitations under the License.
                     return e;
                   })());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = {
                   operators: ['!', '^', '*', '/', '%', '+', '-', '<', '<=', '>', '>=', '==', '!=', '&&', '||', '??'],
@@ -4547,7 +4586,7 @@ and limitations under the License.
                   symbol: Symbol('formula'),
                   settings: Symbol('settings')
                 };
-                (t.Parser = (function () {
+                (t.Parser = (function() {
                   function e(t) {
                     var n,
                       i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -4573,14 +4612,14 @@ and limitations under the License.
                     m(e, [
                       {
                         key: '_parse',
-                        value: function (e) {
+                        value: function(e) {
                           var n,
                             i = this,
                             a = [],
                             o = '',
                             s = 0,
                             u = !1,
-                            c = function (e) {
+                            c = function(e) {
                               if (s) throw new Error('Formula missing closing parenthesis');
                               var n = a.length ? a[a.length - 1] : null;
                               if (u || o || e) {
@@ -4642,7 +4681,7 @@ and limitations under the License.
                           var h,
                             d = !1,
                             p = S(
-                              (a = a.map(function (e, t) {
+                              (a = a.map(function(e, t) {
                                 return 'operator' !== e.type || '-' !== e.value || (t && 'operator' !== a[t - 1].type)
                                   ? e
                                   : { type: 'operator', value: 'n' };
@@ -4671,7 +4710,7 @@ and limitations under the License.
                               type: 'reference' === a[0].type ? 'reference' : 'value',
                               value: a[0].value
                             }),
-                            (this._parts = a.map(function (e) {
+                            (this._parts = a.map(function(e) {
                               if ('operator' === e.type) return r.operatorsPrefix.includes(e.value) ? e : e.value;
                               if ('reference' !== e.type) return e.value;
                               if (i.settings.tokenRx && !i.settings.tokenRx.test(e.value))
@@ -4682,7 +4721,7 @@ and limitations under the License.
                       },
                       {
                         key: '_subFormula',
-                        value: function (e, n) {
+                        value: function(e, n) {
                           var i = this,
                             a = this.settings.functions[n];
                           if ('function' != typeof a) throw new Error('Formula contains unknown function '.concat(n));
@@ -4692,7 +4731,7 @@ and limitations under the License.
                               var s = '',
                                 u = 0,
                                 c = !1,
-                                l = function () {
+                                l = function() {
                                   if (!s)
                                     throw new Error(
                                       'Formula contains function '.concat(n, ' with invalid arguments ').concat(e)
@@ -4715,10 +4754,10 @@ and limitations under the License.
                             l();
                           }
                           return (
-                            (o = o.map(function (e) {
+                            (o = o.map(function(e) {
                               return new t.Parser(e, i.settings);
                             })),
-                            function (e) {
+                            function(e) {
                               var t,
                                 n = [],
                                 r = S(o);
@@ -4739,7 +4778,7 @@ and limitations under the License.
                       },
                       {
                         key: 'evaluate',
-                        value: function (e) {
+                        value: function(e) {
                           for (var t = this._parts.slice(), n = t.length - 2; n >= 0; --n) {
                             var i = t[n];
                             if (i && 'operator' === i.type) {
@@ -4750,7 +4789,7 @@ and limitations under the License.
                             }
                           }
                           return (
-                            r.operatorsOrder.forEach(function (n) {
+                            r.operatorsOrder.forEach(function(n) {
                               for (var i = 1; i < t.length - 1; )
                                 if (n.includes(t[i])) {
                                   var a = t[i],
@@ -4770,20 +4809,20 @@ and limitations under the License.
                   );
                 })()),
                   (t.Parser.prototype[r.symbol] = !0),
-                  (r.reference = function (e) {
-                    return function (t) {
+                  (r.reference = function(e) {
+                    return function(t) {
                       return t && void 0 !== t[e] ? t[e] : null;
                     };
                   }),
-                  (r.evaluate = function (e, t) {
+                  (r.evaluate = function(e, t) {
                     return null === e ? null : 'function' == typeof e ? e(t) : e[r.symbol] ? e.evaluate(t) : e;
                   }),
-                  (r.single = function (e, t) {
+                  (r.single = function(e, t) {
                     if ('!' === e) return !t;
                     var n = -t;
                     return 0 === n ? 0 : n;
                   }),
-                  (r.calculate = function (e, t, n) {
+                  (r.calculate = function(e, t, n) {
                     if ('??' === e) return r.exists(t) ? t : n;
                     if ('string' == typeof t || 'string' == typeof n) {
                       if ('+' === e) return (t = r.exists(t) ? t : '') + (r.exists(n) ? n : '');
@@ -4822,12 +4861,12 @@ and limitations under the License.
                     }
                     return null;
                   }),
-                  (r.exists = function (e) {
+                  (r.exists = function(e) {
                     return null != e;
                   });
               },
-              function (e, t) {},
-              function (e, t, n) {
+              function(e, t) {},
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
@@ -4840,12 +4879,12 @@ and limitations under the License.
                   type: 'alternatives',
                   flags: { match: { default: 'any' } },
                   terms: { matches: { init: [], register: u.toSibling } },
-                  args: function (e) {
+                  args: function(e) {
                     for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
                       n[r - 1] = arguments[r];
                     return 1 === n.length && Array.isArray(n[0]) ? e.try.apply(e, v(n[0])) : e.try.apply(e, n);
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       r = t.error,
                       i = t.state,
@@ -4896,7 +4935,7 @@ and limitations under the License.
                   },
                   rules: {
                     conditional: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         r(!this._flags._endedSwitch, 'Unreachable condition'),
                           r(
                             !this._flags.match,
@@ -4926,7 +4965,7 @@ and limitations under the License.
                       }
                     },
                     match: {
-                      method: function (e) {
+                      method: function(e) {
                         if ((r(['any', 'one', 'all'].includes(e), 'Invalid alternatives match mode', e), 'any' !== e)) {
                           var t,
                             n = S(this.$_terms.matches);
@@ -4945,7 +4984,7 @@ and limitations under the License.
                       }
                     },
                     try: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         r(t.length, 'Missing alternative schemas'),
                           a.verifyFlat(t, 'try'),
@@ -4959,24 +4998,24 @@ and limitations under the License.
                     }
                   },
                   overrides: {
-                    label: function (e) {
+                    label: function(e) {
                       return this.$_super.label(e).$_modify({
-                        each: function (t, n) {
+                        each: function(t, n) {
                           return 'is' !== n.path[0] ? t.label(e) : void 0;
                         },
                         ref: !1
                       });
                     }
                   },
-                  rebuild: function (e) {
+                  rebuild: function(e) {
                     e.$_modify({
-                      each: function (t) {
+                      each: function(t) {
                         a.isSchema(t) && 'array' === t.type && e.$_setFlag('_arrayItems', !0, { clone: !1 });
                       }
                     });
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       if (t.matches) {
                         var n,
                           r = S(t.matches);
@@ -5012,7 +5051,7 @@ and limitations under the License.
                     'alternatives.types': '{{#label}} must be one of {{#types}}'
                   }
                 })),
-                  (c.errors = function (e, t) {
+                  (c.errors = function(e, t) {
                     var n = t.error,
                       r = t.state;
                     if (!e.length) return { errors: n('alternatives.any') };
@@ -5062,7 +5101,7 @@ and limitations under the License.
                         : c.unmatched(e, n)
                       : { errors: n('alternatives.types', { types: v(a) }) };
                   }),
-                  (c.unmatched = function (e, t) {
+                  (c.unmatched = function(e, t) {
                     var n,
                       r = [],
                       i = S(e);
@@ -5079,7 +5118,7 @@ and limitations under the License.
                     return { errors: t('alternatives.match', s.details(r, { override: !1 })) };
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
@@ -5098,7 +5137,7 @@ and limitations under the License.
                   w = n(36),
                   A = n(21),
                   O = {
-                    Base: (function () {
+                    Base: (function() {
                       function e(t) {
                         y(this, e),
                           (this.type = t),
@@ -5120,7 +5159,7 @@ and limitations under the License.
                         m(e, [
                           {
                             key: 'describe',
-                            value: function () {
+                            value: function() {
                               return (
                                 r('function' == typeof d.describe, 'Manifest functionality disabled'), d.describe(this)
                               );
@@ -5128,14 +5167,14 @@ and limitations under the License.
                           },
                           {
                             key: 'allow',
-                            value: function () {
+                            value: function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               return c.verifyFlat(t, 'allow'), this._values(t, '_valids');
                             }
                           },
                           {
                             key: 'alter',
-                            value: function (e) {
+                            value: function(e) {
                               r(e && 'object' == b(e) && !Array.isArray(e), 'Invalid targets argument'),
                                 r(!this._inRuleset(), 'Cannot set alterations inside a ruleset');
                               var t = this.clone();
@@ -5149,7 +5188,7 @@ and limitations under the License.
                           },
                           {
                             key: 'cast',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(!1 === e || 'string' == typeof e, 'Invalid to value'),
                                 r(
@@ -5165,13 +5204,13 @@ and limitations under the License.
                           },
                           {
                             key: 'default',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return this._default('default', e, t);
                             }
                           },
                           {
                             key: 'description',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(e && 'string' == typeof e, 'Description must be a non-empty string'),
                                 this.$_setFlag('description', e)
@@ -5180,7 +5219,7 @@ and limitations under the License.
                           },
                           {
                             key: 'empty',
-                            value: function (e) {
+                            value: function(e) {
                               var t = this.clone();
                               return (
                                 void 0 !== e && (e = t.$_compile(e, { override: !1 })),
@@ -5190,7 +5229,7 @@ and limitations under the License.
                           },
                           {
                             key: 'error',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(e, 'Missing error'),
                                 r(
@@ -5203,7 +5242,7 @@ and limitations under the License.
                           },
                           {
                             key: 'example',
-                            value: function (e) {
+                            value: function(e) {
                               var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                               return (
                                 r(void 0 !== e, 'Missing example'),
@@ -5214,7 +5253,7 @@ and limitations under the License.
                           },
                           {
                             key: 'external',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return (
                                 'object' == b(e) &&
                                   (r(!t, 'Cannot combine options with description'),
@@ -5231,19 +5270,19 @@ and limitations under the License.
                           },
                           {
                             key: 'failover',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return this._default('failover', e, t);
                             }
                           },
                           {
                             key: 'forbidden',
-                            value: function () {
+                            value: function() {
                               return this.presence('forbidden');
                             }
                           },
                           {
                             key: 'id',
-                            value: function (e) {
+                            value: function(e) {
                               return e
                                 ? (r('string' == typeof e, 'id must be a non-empty string'),
                                   r(/^[^\.]+$/.test(e), 'id cannot contain period character'),
@@ -5253,14 +5292,14 @@ and limitations under the License.
                           },
                           {
                             key: 'invalid',
-                            value: function () {
+                            value: function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               return this._values(t, '_invalids');
                             }
                           },
                           {
                             key: 'label',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(e && 'string' == typeof e, 'Label name must be a non-empty string'),
                                 this.$_setFlag('label', e)
@@ -5269,7 +5308,7 @@ and limitations under the License.
                           },
                           {
                             key: 'meta',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(void 0 !== e, 'Meta cannot be undefined'), this._inner('metas', e, { single: !0 })
                               );
@@ -5277,7 +5316,7 @@ and limitations under the License.
                           },
                           {
                             key: 'note',
-                            value: function () {
+                            value: function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               r(t.length, 'Missing notes');
                               for (var i = 0, a = t; i < a.length; i++) {
@@ -5289,20 +5328,20 @@ and limitations under the License.
                           },
                           {
                             key: 'only',
-                            value: function () {
+                            value: function() {
                               var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                               return r('boolean' == typeof e, 'Invalid mode:', e), this.$_setFlag('only', e);
                             }
                           },
                           {
                             key: 'optional',
-                            value: function () {
+                            value: function() {
                               return this.presence('optional');
                             }
                           },
                           {
                             key: 'prefs',
-                            value: function (e) {
+                            value: function(e) {
                               r(e, 'Missing preferences'),
                                 r(void 0 === e.context, 'Cannot override context'),
                                 r(void 0 === e.externals, 'Cannot override externals'),
@@ -5315,7 +5354,7 @@ and limitations under the License.
                           },
                           {
                             key: 'presence',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(['optional', 'required', 'forbidden'].includes(e), 'Unknown presence mode', e),
                                 this.$_setFlag('presence', e)
@@ -5324,14 +5363,14 @@ and limitations under the License.
                           },
                           {
                             key: 'raw',
-                            value: function () {
+                            value: function() {
                               var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                               return this.$_setFlag('result', e ? 'raw' : void 0);
                             }
                           },
                           {
                             key: 'result',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(['raw', 'strip'].includes(e), 'Unknown result mode', e), this.$_setFlag('result', e)
                               );
@@ -5339,13 +5378,13 @@ and limitations under the License.
                           },
                           {
                             key: 'required',
-                            value: function () {
+                            value: function() {
                               return this.presence('required');
                             }
                           },
                           {
                             key: 'strict',
-                            value: function (e) {
+                            value: function(e) {
                               var t = this.clone(),
                                 n = void 0 !== e && !e;
                               return (t._preferences = c.preferences(t._preferences, { convert: n })), t;
@@ -5353,14 +5392,14 @@ and limitations under the License.
                           },
                           {
                             key: 'strip',
-                            value: function () {
+                            value: function() {
                               var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                               return this.$_setFlag('result', e ? 'strip' : void 0);
                             }
                           },
                           {
                             key: 'tag',
-                            value: function () {
+                            value: function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               r(t.length, 'Missing tags');
                               for (var i = 0, a = t; i < a.length; i++) {
@@ -5372,7 +5411,7 @@ and limitations under the License.
                           },
                           {
                             key: 'unit',
-                            value: function (e) {
+                            value: function(e) {
                               return (
                                 r(e && 'string' == typeof e, 'Unit name must be a non-empty string'),
                                 this.$_setFlag('unit', e)
@@ -5381,7 +5420,7 @@ and limitations under the License.
                           },
                           {
                             key: 'valid',
-                            value: function () {
+                            value: function() {
                               for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                               c.verifyFlat(t, 'valid');
                               var r = this.allow.apply(this, t);
@@ -5390,7 +5429,7 @@ and limitations under the License.
                           },
                           {
                             key: 'when',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               var n = this.clone();
                               n.$_terms.whens || (n.$_terms.whens = []);
                               var i = l.when(n, e, t);
@@ -5426,7 +5465,7 @@ and limitations under the License.
                           },
                           {
                             key: 'cache',
-                            value: function (e) {
+                            value: function(e) {
                               r(!this._inRuleset(), 'Cannot set caching inside a ruleset'),
                                 r(!this._cache, 'Cannot override schema cache');
                               var t = this.clone();
@@ -5435,14 +5474,14 @@ and limitations under the License.
                           },
                           {
                             key: 'clone',
-                            value: function () {
+                            value: function() {
                               var e = Object.create(Object.getPrototypeOf(this));
                               return this._assign(e);
                             }
                           },
                           {
                             key: 'concat',
-                            value: function (e) {
+                            value: function(e) {
                               r(c.isSchema(e), 'Invalid schema object'),
                                 r(
                                   'any' === this.type || 'any' === e.type || e.type === this.type,
@@ -5471,10 +5510,10 @@ and limitations under the License.
                               var u,
                                 l = S(e._singleRules.keys());
                               try {
-                                var f = function () {
+                                var f = function() {
                                   var e = u.value;
                                   t._singleRules.has(e) &&
-                                    ((t._rules = t._rules.filter(function (t) {
+                                    ((t._rules = t._rules.filter(function(t) {
                                       return t.keep || t.name !== e;
                                     })),
                                     t._singleRules.delete(e));
@@ -5522,19 +5561,19 @@ and limitations under the License.
                           },
                           {
                             key: 'extend',
-                            value: function (e) {
+                            value: function(e) {
                               return r(!e.base, 'Cannot extend type with another base'), h.type(this, e);
                             }
                           },
                           {
                             key: 'extract',
-                            value: function (e) {
+                            value: function(e) {
                               return (e = Array.isArray(e) ? e : e.split('.')), this._ids.reach(e);
                             }
                           },
                           {
                             key: 'fork',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               r(!this._inRuleset(), 'Cannot fork inside a ruleset');
                               var n,
                                 i = this,
@@ -5554,7 +5593,7 @@ and limitations under the License.
                           },
                           {
                             key: 'rule',
-                            value: function (e) {
+                            value: function(e) {
                               var t = this._definition;
                               c.assertOptions(e, Object.keys(t.modifiers)),
                                 r(
@@ -5575,7 +5614,7 @@ and limitations under the License.
                           },
                           {
                             key: 'tailor',
-                            value: function (e) {
+                            value: function(e) {
                               (e = [].concat(e)), r(!this._inRuleset(), 'Cannot tailor inside a ruleset');
                               var t = this;
                               if (this.$_terms.alterations) {
@@ -5603,7 +5642,7 @@ and limitations under the License.
                               }
                               return (
                                 ((t = t.$_modify({
-                                  each: function (t) {
+                                  each: function(t) {
                                     return t.tailor(e);
                                   },
                                   ref: !1
@@ -5614,25 +5653,25 @@ and limitations under the License.
                           },
                           {
                             key: 'tracer',
-                            value: function () {
+                            value: function() {
                               return E.location ? E.location(this) : this;
                             }
                           },
                           {
                             key: 'validate',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return w.entry(e, this, t);
                             }
                           },
                           {
                             key: 'validateAsync',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return w.entryAsync(e, this, t);
                             }
                           },
                           {
                             key: '$_addRule',
-                            value: function (e) {
+                            value: function(e) {
                               for (var t in ('string' == typeof e && (e = { name: e }),
                               r(e && 'object' == b(e), 'Invalid options'),
                               r(e.name && 'string' == typeof e.name, 'Invalid rule name'),
@@ -5676,13 +5715,13 @@ and limitations under the License.
                           },
                           {
                             key: '$_compile',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               return l.schema(this.$_root, e, t);
                             }
                           },
                           {
                             key: '$_createError',
-                            value: function (e, t, n, r, i) {
+                            value: function(e, t, n, r, i) {
                               var a = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : {},
                                 o = !1 !== a.flags ? this._flags : {},
                                 s = a.messages
@@ -5693,25 +5732,25 @@ and limitations under the License.
                           },
                           {
                             key: '$_getFlag',
-                            value: function (e) {
+                            value: function(e) {
                               return this._flags[e];
                             }
                           },
                           {
                             key: '$_getRule',
-                            value: function (e) {
+                            value: function(e) {
                               return this._singleRules.get(e);
                             }
                           },
                           {
                             key: '$_mapLabels',
-                            value: function (e) {
+                            value: function(e) {
                               return (e = Array.isArray(e) ? e : e.split('.')), this._ids.labels(e);
                             }
                           },
                           {
                             key: '$_match',
-                            value: function (e, t, n, r) {
+                            value: function(e, t, n, r) {
                               ((n = Object.assign({}, n)).abortEarly = !0), (n._externals = !1), t.snapshot();
                               var i = !w.validate(e, this, t, n, r).errors;
                               return t.restore(), i;
@@ -5719,20 +5758,20 @@ and limitations under the License.
                           },
                           {
                             key: '$_modify',
-                            value: function (e) {
+                            value: function(e) {
                               return c.assertOptions(e, ['each', 'once', 'ref', 'schema']), g.schema(this, e) || this;
                             }
                           },
                           {
                             key: '$_mutateRebuild',
-                            value: function () {
+                            value: function() {
                               var e = this;
                               return (
                                 r(!this._inRuleset(), 'Cannot add this rule inside a ruleset'),
                                 this._refs.reset(),
                                 this._ids.reset(),
                                 this.$_modify({
-                                  each: function (t, n) {
+                                  each: function(t, n) {
                                     var r = n.source,
                                       i = n.name,
                                       a = (n.path, n.key),
@@ -5748,7 +5787,7 @@ and limitations under the License.
                           },
                           {
                             key: '$_mutateRegister',
-                            value: function (e) {
+                            value: function(e) {
                               var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                                 n = t.family,
                                 r = t.key;
@@ -5757,25 +5796,25 @@ and limitations under the License.
                           },
                           {
                             key: '$_property',
-                            value: function (e) {
+                            value: function(e) {
                               return this._definition.properties[e];
                             }
                           },
                           {
                             key: '$_reach',
-                            value: function (e) {
+                            value: function(e) {
                               return this._ids.reach(e);
                             }
                           },
                           {
                             key: '$_rootReferences',
-                            value: function () {
+                            value: function() {
                               return this._refs.roots();
                             }
                           },
                           {
                             key: '$_setFlag',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                               r('_' === e[0] || !this._inRuleset(), 'Cannot set flag inside a ruleset');
                               var i = this._definition.flags[e] || {};
@@ -5790,13 +5829,13 @@ and limitations under the License.
                           },
                           {
                             key: '$_validate',
-                            value: function (e, t, n) {
+                            value: function(e, t, n) {
                               return w.validate(e, this, t, n);
                             }
                           },
                           {
                             key: '_assign',
-                            value: function (e) {
+                            value: function(e) {
                               for (var t in ((e.type = this.type),
                               (e.$_root = this.$_root),
                               (e.$_temp = Object.assign({}, this.$_temp)),
@@ -5819,7 +5858,7 @@ and limitations under the License.
                           },
                           {
                             key: '_default',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               var n,
                                 i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                               return (
@@ -5835,7 +5874,7 @@ and limitations under the License.
                           },
                           {
                             key: '_generate',
-                            value: function (e, t, n) {
+                            value: function(e, t, n) {
                               if (!this.$_terms.whens) return { schema: this };
                               for (var r = [], i = [], a = 0; a < this.$_terms.whens.length; ++a) {
                                 var o = this.$_terms.whens[a];
@@ -5902,7 +5941,7 @@ and limitations under the License.
                           },
                           {
                             key: '_inner',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               var n,
                                 i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                               r(!this._inRuleset(), 'Cannot set '.concat(e, ' inside a ruleset'));
@@ -5917,13 +5956,13 @@ and limitations under the License.
                           },
                           {
                             key: '_inRuleset',
-                            value: function () {
+                            value: function() {
                               return null !== this.$_temp.ruleset && !1 !== this.$_temp.ruleset;
                             }
                           },
                           {
                             key: '_ruleRemove',
-                            value: function (e) {
+                            value: function(e) {
                               var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                               if (!this._singleRules.has(e)) return this;
                               var n = !1 !== t.clone ? this.clone() : this;
@@ -5939,7 +5978,7 @@ and limitations under the License.
                           },
                           {
                             key: '_values',
-                            value: function (e, t) {
+                            value: function(e, t) {
                               c.verifyFlat(e, t.slice(1, -1));
                               var n = this.clone(),
                                 i = e[0] === c.symbols.override;
@@ -5982,7 +6021,7 @@ and limitations under the License.
                           },
                           {
                             key: 'ruleset',
-                            get: function () {
+                            get: function() {
                               r(!this._inRuleset(), 'Cannot start a new ruleset without closing the previous one');
                               var e = this.clone();
                               return (e.$_temp.ruleset = e._rules.length), e;
@@ -5990,7 +6029,7 @@ and limitations under the License.
                           },
                           {
                             key: '$',
-                            get: function () {
+                            get: function() {
                               return this.ruleset;
                             }
                           }
@@ -6010,14 +6049,14 @@ and limitations under the License.
                   (O.Base.prototype.preferences = O.Base.prototype.prefs),
                   (e.exports = new O.Base());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 function r(e, t) {
                   var n = Object.keys(e);
                   if (Object.getOwnPropertySymbols) {
                     var r = Object.getOwnPropertySymbols(e);
                     t &&
-                      (r = r.filter(function (t) {
+                      (r = r.filter(function(t) {
                         return Object.getOwnPropertyDescriptor(e, t).enumerable;
                       })),
                       n.push.apply(n, r);
@@ -6036,7 +6075,7 @@ and limitations under the License.
                   o = n(1),
                   s = n(5),
                   u = {};
-                (t.Ids = u.Ids = (function () {
+                (t.Ids = u.Ids = (function() {
                   function e() {
                     y(this, e), (this._byId = new Map()), (this._byKey = new Map()), (this._schemaChain = !1);
                   }
@@ -6044,7 +6083,7 @@ and limitations under the License.
                     m(e, [
                       {
                         key: 'clone',
-                        value: function () {
+                        value: function() {
                           var e = new u.Ids();
                           return (
                             (e._byId = new Map(this._byId)),
@@ -6056,7 +6095,7 @@ and limitations under the License.
                       },
                       {
                         key: 'concat',
-                        value: function (e) {
+                        value: function(e) {
                           e._schemaChain && (this._schemaChain = !0);
                           var t,
                             n = S(e._byId.entries());
@@ -6090,7 +6129,7 @@ and limitations under the License.
                       },
                       {
                         key: 'fork',
-                        value: function (e, t, n) {
+                        value: function(e, t, n) {
                           var r = this._collect(e);
                           r.push({ schema: n });
                           var i = r.shift(),
@@ -6113,7 +6152,7 @@ and limitations under the License.
                       },
                       {
                         key: 'labels',
-                        value: function (e) {
+                        value: function(e) {
                           var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [],
                             n = e[0],
                             r = this._get(n);
@@ -6127,7 +6166,7 @@ and limitations under the License.
                       },
                       {
                         key: 'reach',
-                        value: function (e) {
+                        value: function(e) {
                           var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [],
                             n = e[0],
                             r = this._get(n);
@@ -6138,7 +6177,7 @@ and limitations under the License.
                       },
                       {
                         key: 'register',
-                        value: function (e) {
+                        value: function(e) {
                           var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                             n = t.key;
                           if (e && o.isSchema(e)) {
@@ -6159,13 +6198,13 @@ and limitations under the License.
                       },
                       {
                         key: 'reset',
-                        value: function () {
+                        value: function() {
                           (this._byId = new Map()), (this._byKey = new Map()), (this._schemaChain = !1);
                         }
                       },
                       {
                         key: '_collect',
-                        value: function (e) {
+                        value: function(e) {
                           var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [],
                             n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : [],
                             r = e[0],
@@ -6177,7 +6216,7 @@ and limitations under the License.
                       },
                       {
                         key: '_get',
-                        value: function (e) {
+                        value: function(e) {
                           return this._byId.get(e) || this._byKey.get(e);
                         }
                       }
@@ -6185,9 +6224,9 @@ and limitations under the License.
                     e
                   );
                 })()),
-                  (u.fork = function (e, n, r) {
+                  (u.fork = function(e, n, r) {
                     var i = t.schema(e, {
-                      each: function (e, t) {
+                      each: function(e, t) {
                         var i = t.key;
                         if (n === (e._flags.id || i)) return r;
                       },
@@ -6195,7 +6234,7 @@ and limitations under the License.
                     });
                     return i ? i.$_mutateRebuild() : e;
                   }),
-                  (t.schema = function (e, t) {
+                  (t.schema = function(e, t) {
                     var n;
                     for (var r in e._flags)
                       if ('_' !== r[0]) {
@@ -6220,7 +6259,7 @@ and limitations under the License.
                       }
                     return n;
                   }),
-                  (u.scan = function (e, t, n, a, c) {
+                  (u.scan = function(e, t, n, a, c) {
                     var l = a || [];
                     if (null !== e && 'object' == b(e)) {
                       var f;
@@ -6235,16 +6274,16 @@ and limitations under the License.
                       if ((!1 !== n.schema && o.isSchema(e)) || (!1 !== n.ref && s.isRef(e))) {
                         var y = n.each(
                           e,
-                          (function (e) {
+                          (function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                               var n = null != arguments[t] ? arguments[t] : {};
                               t % 2
-                                ? r(Object(n), !0).forEach(function (t) {
+                                ? r(Object(n), !0).forEach(function(t) {
                                     i(e, t, n[t]);
                                   })
                                 : Object.getOwnPropertyDescriptors
                                 ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                                : r(Object(n)).forEach(function (t) {
+                                : r(Object(n)).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                                   });
                             }
@@ -6263,7 +6302,7 @@ and limitations under the License.
                     }
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
@@ -6273,7 +6312,7 @@ and limitations under the License.
                   l = n(4),
                   f = n(38),
                   h = { result: Symbol('result') };
-                (t.entry = function (e, t, n) {
+                (t.entry = function(e, t, n) {
                   var i = c.defaults;
                   n &&
                     (r(void 0 === n.warnings, 'Cannot override warnings preference in synchronous validation'),
@@ -6288,12 +6327,12 @@ and limitations under the License.
                     o
                   );
                 }),
-                  (t.entryAsync = (function () {
+                  (t.entryAsync = (function() {
                     var e = s(
                       o.mark(function e(t, n, r) {
                         var i, a, s, f, d, p, v, y, m, g, _, b, E, w, A;
                         return o.wrap(
-                          function (e) {
+                          function(e) {
                             for (;;)
                               switch ((e.prev = e.next)) {
                                 case 0:
@@ -6342,9 +6381,10 @@ and limitations under the License.
                                   b ? (b[_] = w) : (f = w), (e.next = 26);
                                   break;
                                 case 23:
-                                  throw (
-                                    ((e.prev = 23), (e.t0 = e.catch(14)), (e.t0.message += ' ('.concat(g, ')')), e.t0)
-                                  );
+                                  throw ((e.prev = 23),
+                                  (e.t0 = e.catch(14)),
+                                  (e.t0.message += ' ('.concat(g, ')')),
+                                  e.t0);
                                 case 26:
                                   e.next = 10;
                                   break;
@@ -6380,18 +6420,15 @@ and limitations under the License.
                           },
                           e,
                           null,
-                          [
-                            [8, 30, 33, 36],
-                            [14, 23]
-                          ]
+                          [[8, 30, 33, 36], [14, 23]]
                         );
                       })
                     );
-                    return function (t, n, r) {
+                    return function(t, n, r) {
                       return e.apply(this, arguments);
                     };
                   })()),
-                  (h.entry = function (e, n, r) {
+                  (h.entry = function(e, n, r) {
                     var i = h.tracer(n, r),
                       a = i.tracer,
                       o = i.cleanup,
@@ -6409,7 +6446,7 @@ and limitations under the License.
                     var p = l.process(d.errors, e, r);
                     return { value: d.value, error: p, mainstay: s };
                   }),
-                  (h.tracer = function (e, t) {
+                  (h.tracer = function(e, t) {
                     return e.$_root._tracer
                       ? { tracer: e.$_root._tracer._register(e) }
                       : t.debug
@@ -6417,7 +6454,7 @@ and limitations under the License.
                         { tracer: e.$_root.trace()._register(e), cleanup: !0 })
                       : { tracer: h.ignore };
                   }),
-                  (t.validate = function (e, t, n, r) {
+                  (t.validate = function(e, t, n, r) {
                     var i = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : {};
                     if (
                       (t.$_terms.whens && (t = t._generate(e, n, r).schema),
@@ -6427,7 +6464,7 @@ and limitations under the License.
                       var a = t._cache.get(e);
                       if ((n.mainstay.tracer.debug(n, 'validate', 'cached', !!a), a)) return a;
                     }
-                    var o = function (i, a, o) {
+                    var o = function(i, a, o) {
                         return t.$_createError(i, e, a, o || n, r);
                       },
                       s = {
@@ -6436,10 +6473,10 @@ and limitations under the License.
                         schema: t,
                         state: n,
                         error: o,
-                        warn: function (e, t, r) {
+                        warn: function(e, t, r) {
                           return n.mainstay.warnings.push(o(e, t, r));
                         },
-                        message: function (i, a) {
+                        message: function(i, a) {
                           return t.$_createError('custom', e, a, n, r, { messages: i });
                         }
                       };
@@ -6514,7 +6551,7 @@ and limitations under the License.
                     }
                     return t._rules.length ? h.rules(e, y, s) : h.finalize(e, y, s);
                   }),
-                  (h.rules = function (e, t, n) {
+                  (h.rules = function(e, t, n) {
                     var r,
                       i = n.schema,
                       a = n.state,
@@ -6574,20 +6611,20 @@ and limitations under the License.
                     }
                     return h.finalize(e, t, n);
                   }),
-                  (h.rule = function (e, t) {
+                  (h.rule = function(e, t) {
                     return e instanceof l.Report
                       ? (h.error(e, t), { errors: [e], value: null })
                       : Array.isArray(e) && (e[0] instanceof l.Report || e[0] instanceof Error)
-                      ? (e.forEach(function (e) {
+                      ? (e.forEach(function(e) {
                           return h.error(e, t);
                         }),
                         { errors: e, value: null })
                       : { errors: null, value: e };
                   }),
-                  (h.error = function (e, t) {
+                  (h.error = function(e, t) {
                     return t.message && e._setTemplate(t.message), e;
                   }),
-                  (h.finalize = function (e, t, n) {
+                  (h.finalize = function(e, t, n) {
                     t = t || [];
                     var i = n.schema,
                       a = n.state,
@@ -6647,13 +6684,13 @@ and limitations under the License.
                       _
                     );
                   }),
-                  (h.prefs = function (e, t) {
+                  (h.prefs = function(e, t) {
                     var n = t === c.defaults;
                     return n && e._preferences[c.symbols.prefs]
                       ? e._preferences[c.symbols.prefs]
                       : ((t = c.preferences(t, e._preferences)), n && (e._preferences[c.symbols.prefs] = t), t);
                   }),
-                  (h.default = function (e, t, n, r) {
+                  (h.default = function(e, t, n, r) {
                     var a = r.schema,
                       o = r.state,
                       s = r.prefs,
@@ -6676,24 +6713,24 @@ and limitations under the License.
                       ? u.resolve(t, o, s)
                       : i(u);
                   }),
-                  (h.trim = function (e, t) {
+                  (h.trim = function(e, t) {
                     if ('string' != typeof e) return e;
                     var n = t.$_getRule('trim');
                     return n && n.args.enabled ? e.trim() : e;
                   }),
                   (h.ignore = { active: !1, debug: a, entry: a, filter: a, log: a, resolve: a, value: a });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
-                e.exports = function () {};
+                e.exports = function() {};
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(2),
                   i = n(6),
                   a = n(1),
                   o = { value: Symbol('value') };
-                (e.exports = o.State = (function () {
+                (e.exports = o.State = (function() {
                   function e(t, n, r) {
                     y(this, e),
                       (this.path = t),
@@ -6706,7 +6743,7 @@ and limitations under the License.
                     m(e, [
                       {
                         key: 'localize',
-                        value: function (e) {
+                        value: function(e) {
                           var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null,
                             n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null,
                             r = new o.State(e, t, this);
@@ -6715,27 +6752,27 @@ and limitations under the License.
                       },
                       {
                         key: 'nest',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = new o.State(this.path, this.ancestors, this);
                           return (n.schemas = n.schemas && [o.schemas(e)].concat(v(n.schemas))), (n.debug = t), n;
                         }
                       },
                       {
                         key: 'shadow',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           (this.mainstay.shadow = this.mainstay.shadow || new o.Shadow()),
                             this.mainstay.shadow.set(this.path, e, t);
                         }
                       },
                       {
                         key: 'snapshot',
-                        value: function () {
+                        value: function() {
                           this.mainstay.shadow && (this._snapshot = r(this.mainstay.shadow.node(this.path)));
                         }
                       },
                       {
                         key: 'restore',
-                        value: function () {
+                        value: function() {
                           this.mainstay.shadow &&
                             (this.mainstay.shadow.override(this.path, this._snapshot), (this._snapshot = void 0));
                         }
@@ -6744,10 +6781,10 @@ and limitations under the License.
                     e
                   );
                 })()),
-                  (o.schemas = function (e) {
+                  (o.schemas = function(e) {
                     return a.isSchema(e) ? { schema: e } : e;
                   }),
-                  (o.Shadow = (function () {
+                  (o.Shadow = (function() {
                     function e() {
                       y(this, e), (this._values = null);
                     }
@@ -6755,7 +6792,7 @@ and limitations under the License.
                       m(e, [
                         {
                           key: 'set',
-                          value: function (e, t, n) {
+                          value: function(e, t, n) {
                             if (e.length && ('strip' !== n || 'number' != typeof e[e.length - 1])) {
                               this._values = this._values || new Map();
                               for (var r = this._values, i = 0; i < e.length; ++i) {
@@ -6769,20 +6806,20 @@ and limitations under the License.
                         },
                         {
                           key: 'get',
-                          value: function (e) {
+                          value: function(e) {
                             var t = this.node(e);
                             if (t) return t[o.value];
                           }
                         },
                         {
                           key: 'node',
-                          value: function (e) {
+                          value: function(e) {
                             if (this._values) return i(this._values, e, { iterables: !0 });
                           }
                         },
                         {
                           key: 'override',
-                          value: function (e, t) {
+                          value: function(e, t) {
                             if (this._values) {
                               var n = e.slice(0, -1),
                                 r = e[e.length - 1],
@@ -6796,7 +6833,7 @@ and limitations under the License.
                     );
                   })());
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(10),
@@ -6817,7 +6854,7 @@ and limitations under the License.
                   },
                   coerce: {
                     from: 'object',
-                    method: function (e, t) {
+                    method: function(e, t) {
                       var n = t.schema,
                         r = t.state,
                         i = t.prefs;
@@ -6827,7 +6864,7 @@ and limitations under the License.
                       }
                     }
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       r = t.error;
                     if (!Array.isArray(e)) {
@@ -6841,12 +6878,12 @@ and limitations under the License.
                   },
                   rules: {
                     has: {
-                      method: function (e) {
+                      method: function(e) {
                         e = this.$_compile(e, { appendPath: !0 });
                         var t = this.$_addRule({ name: 'has', args: { schema: e } });
                         return t.$_mutateRegister(e), t;
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         for (
                           var r = t.state,
                             i = t.prefs,
@@ -6866,15 +6903,15 @@ and limitations under the License.
                       multi: !0
                     },
                     items: {
-                      method: function () {
+                      method: function() {
                         for (var e = this, t = arguments.length, n = new Array(t), r = 0; r < t; r++)
                           n[r] = arguments[r];
                         s.verifyFlat(n, 'items');
                         for (
                           var i = this.$_addRule('items'),
-                            a = function (t) {
+                            a = function(t) {
                               var r = s.tryWithPath(
-                                function () {
+                                function() {
                                   return e.$_compile(n[t]);
                                 },
                                 t,
@@ -6889,7 +6926,7 @@ and limitations under the License.
                           a(o);
                         return i.$_mutateRebuild();
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         var n = t.schema,
                           r = t.error,
                           i = t.state,
@@ -7054,10 +7091,10 @@ and limitations under the License.
                       manifest: !1
                     },
                     length: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'length', args: { limit: e }, operator: '=' });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.limit,
                           a = r.name,
                           o = r.operator,
@@ -7067,25 +7104,25 @@ and limitations under the License.
                       args: [{ name: 'limit', ref: !0, assert: s.limit, message: 'must be a positive integer' }]
                     },
                     max: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'max', method: 'length', args: { limit: e }, operator: '<=' });
                       }
                     },
                     min: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'min', method: 'length', args: { limit: e }, operator: '>=' });
                       }
                     },
                     ordered: {
-                      method: function () {
+                      method: function() {
                         for (var e = this, t = arguments.length, n = new Array(t), r = 0; r < t; r++)
                           n[r] = arguments[r];
                         s.verifyFlat(n, 'ordered');
                         for (
                           var i = this.$_addRule('items'),
-                            a = function (t) {
+                            a = function(t) {
                               var r = s.tryWithPath(
-                                function () {
+                                function() {
                                   return e.$_compile(n[t]);
                                 },
                                 t,
@@ -7102,7 +7139,7 @@ and limitations under the License.
                       }
                     },
                     single: {
-                      method: function (e) {
+                      method: function(e) {
                         var t = void 0 === e || !!e;
                         return (
                           r(!t || !this._flags._arrayItems, 'Cannot specify single rule when array has array items'),
@@ -7111,7 +7148,7 @@ and limitations under the License.
                       }
                     },
                     sort: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         s.assertOptions(e, ['by', 'order']);
                         var t = { order: e.order || 'ascending' };
@@ -7120,7 +7157,7 @@ and limitations under the License.
                           this.$_addRule({ name: 'sort', args: { options: t } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = t.error,
                           i = t.state,
                           a = t.prefs,
@@ -7137,7 +7174,7 @@ and limitations under the License.
                       convert: !0
                     },
                     sparse: {
-                      method: function (e) {
+                      method: function(e) {
                         var t = void 0 === e || !!e;
                         return this._flags.sparse === t
                           ? this
@@ -7145,7 +7182,7 @@ and limitations under the License.
                       }
                     },
                     unique: {
-                      method: function (e) {
+                      method: function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                         r(
                           !e || 'function' == typeof e || 'string' == typeof e,
@@ -7160,7 +7197,7 @@ and limitations under the License.
                           } else n.comparator = e;
                         return this.$_addRule(n);
                       },
-                      validate: function (e, t, n, o) {
+                      validate: function(e, t, n, o) {
                         for (
                           var s = t.state,
                             u = t.error,
@@ -7213,12 +7250,12 @@ and limitations under the License.
                   cast: {
                     set: {
                       from: Array.isArray,
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return new Set(e);
                       }
                     }
                   },
-                  rebuild: function (e) {
+                  rebuild: function(e) {
                     (e.$_terms._inclusions = []), (e.$_terms._exclusions = []), (e.$_terms._requireds = []);
                     var t,
                       n = S(e.$_terms.items);
@@ -7251,7 +7288,7 @@ and limitations under the License.
                     }
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       var n, r;
                       return (
                         t.items && (e = (n = e).items.apply(n, v(t.items))),
@@ -7283,7 +7320,7 @@ and limitations under the License.
                     'array.unique': '{{#label}} contains a duplicate value'
                   }
                 })),
-                  (c.fillMissedErrors = function (e, t, n, r, i, a) {
+                  (c.fillMissedErrors = function(e, t, n, r, i, a) {
                     var o,
                       s = [],
                       u = 0,
@@ -7306,7 +7343,7 @@ and limitations under the License.
                         : t.push(e.$_createError('array.includesRequiredKnowns', r, { knownMisses: s }, i, a))
                       : t.push(e.$_createError('array.includesRequiredUnknowns', r, { unknownMisses: u }, i, a));
                   }),
-                  (c.fillOrderedErrors = function (e, t, n, r, i, a) {
+                  (c.fillOrderedErrors = function(e, t, n, r, i, a) {
                     var o,
                       s = [],
                       u = S(n);
@@ -7322,22 +7359,22 @@ and limitations under the License.
                     }
                     s.length && c.fillMissedErrors(e, t, s, r, i, a);
                   }),
-                  (c.fastSplice = function (e, t) {
+                  (c.fastSplice = function(e, t) {
                     for (var n = t; n < e.length; ) e[n++] = e[n];
                     --e.length;
                   }),
-                  (c.validateSingle = function (e, t) {
+                  (c.validateSingle = function(e, t) {
                     ('array' === e.type || e._flags._arrayItems) &&
                       (r(!t._flags.single, 'Cannot specify array item with single rule enabled'),
                       t.$_setFlag('_arrayItems', !0, { clone: !1 }));
                   }),
-                  (c.sort = function (e, t, n, r, i) {
+                  (c.sort = function(e, t, n, r, i) {
                     var a = 'ascending' === n.order ? 1 : -1,
                       o = -1 * a,
                       s = a;
                     try {
                       return {
-                        value: t.slice().sort(function (u, l) {
+                        value: t.slice().sort(function(u, l) {
                           var f = c.compare(u, l, o, s);
                           if (null !== f) return f;
                           if (
@@ -7356,18 +7393,18 @@ and limitations under the License.
                       return { errors: e };
                     }
                   }),
-                  (c.compare = function (e, t, n, r) {
+                  (c.compare = function(e, t, n, r) {
                     return e === t ? 0 : void 0 === e ? 1 : void 0 === t ? -1 : null === e ? r : null === t ? n : null;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
                   a = n(1),
                   o = n(21),
                   s = {
-                    isBool: function (e) {
+                    isBool: function(e) {
                       return 'boolean' == typeof e;
                     }
                   };
@@ -7375,7 +7412,7 @@ and limitations under the License.
                   type: 'boolean',
                   flags: { sensitive: { default: !1 } },
                   terms: { falsy: { init: null, manifest: 'values' }, truthy: { init: null, manifest: 'values' } },
-                  coerce: function (e, t) {
+                  coerce: function(e, t) {
                     var n = t.schema;
                     if ('boolean' != typeof e) {
                       if ('string' == typeof e) {
@@ -7391,13 +7428,13 @@ and limitations under the License.
                       );
                     }
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.error;
                     if ('boolean' != typeof e) return { value: e, errors: n('boolean.base') };
                   },
                   rules: {
                     truthy: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         a.verifyFlat(t, 'truthy');
                         var i = this.clone();
@@ -7410,7 +7447,7 @@ and limitations under the License.
                       }
                     },
                     falsy: {
-                      method: function () {
+                      method: function() {
                         for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                         a.verifyFlat(t, 'falsy');
                         var i = this.clone();
@@ -7423,7 +7460,7 @@ and limitations under the License.
                       }
                     },
                     sensitive: {
-                      method: function () {
+                      method: function() {
                         var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                         return this.$_setFlag('sensitive', e);
                       }
@@ -7432,19 +7469,19 @@ and limitations under the License.
                   cast: {
                     number: {
                       from: s.isBool,
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return e ? 1 : 0;
                       }
                     },
                     string: {
                       from: s.isBool,
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return e ? 'true' : 'false';
                       }
                     }
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       var n, r;
                       return (
                         t.truthy && (e = (n = e).truthy.apply(n, v(t.truthy))),
@@ -7456,14 +7493,14 @@ and limitations under the License.
                   messages: { 'boolean.base': '{{#label}} must be a boolean' }
                 });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
                   a = n(1),
                   o = n(7),
                   s = {
-                    isDate: function (e) {
+                    isDate: function(e) {
                       return e instanceof Date;
                     }
                   };
@@ -7471,12 +7508,12 @@ and limitations under the License.
                   type: 'date',
                   coerce: {
                     from: ['number', 'string'],
-                    method: function (e, t) {
+                    method: function(e, t) {
                       var n = t.schema;
                       return { value: s.parse(e, n._flags.format) || e };
                     }
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       r = t.error,
                       i = t.prefs;
@@ -7490,7 +7527,7 @@ and limitations under the License.
                   rules: {
                     compare: {
                       method: !1,
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.date,
                           o = r.name,
                           s = r.operator,
@@ -7502,10 +7539,10 @@ and limitations under the License.
                         {
                           name: 'date',
                           ref: !0,
-                          normalize: function (e) {
+                          normalize: function(e) {
                             return 'now' === e ? e : s.parse(e);
                           },
-                          assert: function (e) {
+                          assert: function(e) {
                             return null !== e;
                           },
                           message: 'must have a valid date format'
@@ -7513,7 +7550,7 @@ and limitations under the License.
                       ]
                     },
                     format: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(['iso', 'javascript', 'unix'].includes(e), 'Unknown date format', e),
                           this.$_setFlag('format', e)
@@ -7521,32 +7558,32 @@ and limitations under the License.
                       }
                     },
                     greater: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'greater', method: 'compare', args: { date: e }, operator: '>' });
                       }
                     },
                     iso: {
-                      method: function () {
+                      method: function() {
                         return this.format('iso');
                       }
                     },
                     less: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'less', method: 'compare', args: { date: e }, operator: '<' });
                       }
                     },
                     max: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'max', method: 'compare', args: { date: e }, operator: '<=' });
                       }
                     },
                     min: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'min', method: 'compare', args: { date: e }, operator: '>=' });
                       }
                     },
                     timestamp: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 'javascript';
                         return (
                           r(['javascript', 'unix'].includes(e), '"type" must be one of "javascript, unix"'),
@@ -7558,13 +7595,13 @@ and limitations under the License.
                   cast: {
                     number: {
                       from: s.isDate,
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return e.getTime();
                       }
                     },
                     string: {
                       from: s.isDate,
-                      to: function (e, t) {
+                      to: function(e, t) {
                         var n = t.prefs;
                         return o.date(e, n);
                       }
@@ -7582,7 +7619,7 @@ and limitations under the License.
                     'date.format.unix': 'timestamp or number of seconds'
                   }
                 })),
-                  (s.parse = function (e, t) {
+                  (s.parse = function(e, t) {
                     if (e instanceof Date) return e;
                     if ('string' != typeof e && (isNaN(e) || !isFinite(e))) return null;
                     if (/^\s*$/.test(e)) return null;
@@ -7595,12 +7632,12 @@ and limitations under the License.
                     }
                     return s.date(e);
                   }),
-                  (s.date = function (e) {
+                  (s.date = function(e) {
                     var t = new Date(e);
                     return isNaN(t.getTime()) ? null : t;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(22);
@@ -7609,45 +7646,45 @@ and limitations under the License.
                   properties: { typeof: 'function' },
                   rules: {
                     arity: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(Number.isSafeInteger(e) && e >= 0, 'n must be a positive integer'),
                           this.$_addRule({ name: 'arity', args: { n: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.n;
                         return e.length === r ? e : t.error('function.arity', { n: r });
                       }
                     },
                     class: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('class');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return /^\s*class\s/.test(e.toString()) ? e : t.error('function.class', { value: e });
                       }
                     },
                     minArity: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(Number.isSafeInteger(e) && e > 0, 'n must be a strict positive integer'),
                           this.$_addRule({ name: 'minArity', args: { n: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.n;
                         return e.length >= r ? e : t.error('function.minArity', { n: r });
                       }
                     },
                     maxArity: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(Number.isSafeInteger(e) && e >= 0, 'n must be a positive integer'),
                           this.$_addRule({ name: 'maxArity', args: { n: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.n;
                         return e.length <= r ? e : t.error('function.maxArity', { n: r });
                       }
@@ -7661,14 +7698,14 @@ and limitations under the License.
                   }
                 });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(2),
                   a = n(20),
                   o = n(6),
                   s = {};
-                (e.exports = function (e, t) {
+                (e.exports = function(e, t) {
                   var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                   if (
                     (r(e && 'object' == b(e), 'Invalid defaults value: must be an object'),
@@ -7683,7 +7720,7 @@ and limitations under the License.
                   var u = void 0 !== n.nullOverride && n.nullOverride;
                   return a(o, t, { nullOverride: u, mergeArrays: !1 });
                 }),
-                  (s.applyToDefaultsWithShallow = function (e, t, n) {
+                  (s.applyToDefaultsWithShallow = function(e, t, n) {
                     var u = n.shallow;
                     r(Array.isArray(u), 'Invalid keys');
                     var c,
@@ -7718,7 +7755,7 @@ and limitations under the License.
                     }
                     return a(v, t, { mergeArrays: !1, nullOverride: !1 });
                   }),
-                  (s.reachCopy = function (e, t, n) {
+                  (s.reachCopy = function(e, t, n) {
                     var r,
                       i = S(n);
                     try {
@@ -7739,11 +7776,11 @@ and limitations under the License.
                     s[n[n.length - 1]] = o;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = {};
-                (t.Sorter = (function () {
+                (t.Sorter = (function() {
                   function e() {
                     y(this, e), (this._items = []), (this.nodes = []);
                   }
@@ -7751,7 +7788,7 @@ and limitations under the License.
                     m(e, [
                       {
                         key: 'add',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = [].concat((t = t || {}).before || []),
                             i = [].concat(t.after || []),
                             a = t.group || '?',
@@ -7788,7 +7825,7 @@ and limitations under the License.
                       },
                       {
                         key: 'merge',
-                        value: function (e) {
+                        value: function(e) {
                           Array.isArray(e) || (e = [e]);
                           var t,
                             n = S(e);
@@ -7823,7 +7860,7 @@ and limitations under the License.
                       },
                       {
                         key: '_sort',
-                        value: function () {
+                        value: function() {
                           var e,
                             t = {},
                             n = Object.create(null),
@@ -7933,11 +7970,11 @@ and limitations under the License.
                     e
                   );
                 })()),
-                  (i.mergeSort = function (e, t) {
+                  (i.mergeSort = function(e, t) {
                     return e.sort === t.sort ? 0 : e.sort < t.sort ? -1 : 1;
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
@@ -7949,10 +7986,10 @@ and limitations under the License.
                   type: 'link',
                   properties: { schemaChain: !0 },
                   terms: { link: { init: null, manifest: 'single', register: !1 } },
-                  args: function (e, t) {
+                  args: function(e, t) {
                     return e.ref(t);
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       i = t.state,
                       a = t.prefs;
@@ -7961,12 +7998,12 @@ and limitations under the License.
                       s = n.$_terms.link[0].ref;
                     return o.$_validate(e, i.nest(o, 'link:'.concat(s.display, ':').concat(o.type)), a);
                   },
-                  generate: function (e, t, n, r) {
+                  generate: function(e, t, n, r) {
                     return u.generate(e, t, n, r);
                   },
                   rules: {
                     ref: {
-                      method: function (e) {
+                      method: function(e) {
                         r(!this.$_terms.link, 'Cannot reinitialize schema'),
                           (e = o.ref(e)),
                           r('value' === e.type || 'local' === e.type, 'Invalid reference type:', e.type),
@@ -7979,14 +8016,14 @@ and limitations under the License.
                       }
                     },
                     relative: {
-                      method: function () {
+                      method: function() {
                         var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                         return this.$_setFlag('relative', e);
                       }
                     }
                   },
                   overrides: {
-                    concat: function (e) {
+                    concat: function(e) {
                       r(this.$_terms.link, 'Uninitialized link schema'),
                         r(a.isSchema(e), 'Invalid schema object'),
                         r('link' !== e.type, 'Cannot merge type link with another link');
@@ -7999,12 +8036,12 @@ and limitations under the License.
                     }
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       return r(t.link, 'Invalid link description missing link'), e.ref(t.link);
                     }
                   }
                 })),
-                  (u.generate = function (e, t, n, r) {
+                  (u.generate = function(e, t, n, r) {
                     var i = n.mainstay.links.get(e);
                     if (i) return i._generate(t, n, r).schema;
                     var a = e.$_terms.link[0].ref,
@@ -8023,7 +8060,7 @@ and limitations under the License.
                       i._generate(t, n, r).schema
                     );
                   }),
-                  (u.perspective = function (e, t) {
+                  (u.perspective = function(e, t) {
                     if ('local' === e.type) {
                       var n,
                         r = S(t.schemas);
@@ -8059,7 +8096,7 @@ and limitations under the License.
                       ? { perspective: t.schemas[t.schemas.length - 1].schema, path: e.path }
                       : { perspective: t.schemas[e.ancestor] && t.schemas[e.ancestor].schema, path: e.path };
                   }),
-                  (u.assert = function (e, t, n, i, a, o) {
+                  (u.assert = function(e, t, n, i, a, o) {
                     e ||
                       r(
                         !1,
@@ -8070,7 +8107,7 @@ and limitations under the License.
                       );
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
@@ -8084,7 +8121,7 @@ and limitations under the License.
                   flags: { unsafe: { default: !1 } },
                   coerce: {
                     from: 'string',
-                    method: function (e, t) {
+                    method: function(e, t) {
                       var n = t.schema,
                         r = t.error,
                         i = e.match(o.numberRx);
@@ -8107,7 +8144,7 @@ and limitations under the License.
                       }
                     }
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.schema,
                       r = t.error,
                       i = t.prefs;
@@ -8132,7 +8169,7 @@ and limitations under the License.
                   rules: {
                     compare: {
                       method: !1,
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.limit,
                           o = r.name,
                           s = r.operator,
@@ -8142,7 +8179,7 @@ and limitations under the License.
                       args: [{ name: 'limit', ref: !0, assert: a.isNumber, message: 'must be a number' }]
                     },
                     greater: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({
                           name: 'greater',
                           method: 'compare',
@@ -8152,40 +8189,40 @@ and limitations under the License.
                       }
                     },
                     integer: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('integer');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return Math.trunc(e) - e == 0 ? e : t.error('number.integer');
                       }
                     },
                     less: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'less', method: 'compare', args: { limit: e }, operator: '<' });
                       }
                     },
                     max: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'max', method: 'compare', args: { limit: e }, operator: '<=' });
                       }
                     },
                     min: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'min', method: 'compare', args: { limit: e }, operator: '>=' });
                       }
                     },
                     multiple: {
-                      method: function (e) {
+                      method: function(e) {
                         return this.$_addRule({ name: 'multiple', args: { base: e } });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         return e % n.base == 0 ? e : t.error('number.multiple', { multiple: r.args.base, value: e });
                       },
                       args: [
                         {
                           name: 'base',
                           ref: !0,
-                          assert: function (e) {
+                          assert: function(e) {
                             return 'number' == typeof e && isFinite(e) && e > 0;
                           },
                           message: 'must be a positive number'
@@ -8194,31 +8231,31 @@ and limitations under the License.
                       multi: !0
                     },
                     negative: {
-                      method: function () {
+                      method: function() {
                         return this.sign('negative');
                       }
                     },
                     port: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('port');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return Number.isSafeInteger(e) && e >= 0 && e <= 65535 ? e : t.error('number.port');
                       }
                     },
                     positive: {
-                      method: function () {
+                      method: function() {
                         return this.sign('positive');
                       }
                     },
                     precision: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(Number.isSafeInteger(e), 'limit must be an integer'),
                           this.$_addRule({ name: 'precision', args: { limit: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.limit,
                           i = e.toString().match(o.precisionRx);
                         return Math.max((i[1] ? i[1].length : 0) - (i[2] ? parseInt(i[2], 10) : 0), 0) <= r
@@ -8228,13 +8265,13 @@ and limitations under the License.
                       convert: !0
                     },
                     sign: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           r(['negative', 'positive'].includes(e), 'Invalid sign', e),
                           this.$_addRule({ name: 'sign', args: { sign: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.sign;
                         return ('negative' === r && e < 0) || ('positive' === r && e > 0)
                           ? e
@@ -8242,7 +8279,7 @@ and limitations under the License.
                       }
                     },
                     unsafe: {
-                      method: function () {
+                      method: function() {
                         var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                         return r('boolean' == typeof e, 'enabled must be a boolean'), this.$_setFlag('unsafe', e);
                       }
@@ -8250,10 +8287,10 @@ and limitations under the License.
                   },
                   cast: {
                     string: {
-                      from: function (e) {
+                      from: function(e) {
                         return 'number' == typeof e;
                       },
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return e.toString();
                       }
                     }
@@ -8274,7 +8311,7 @@ and limitations under the License.
                     'number.unsafe': '{{#label}} must be a safe number'
                   }
                 })),
-                  (o.normalizeExponent = function (e) {
+                  (o.normalizeExponent = function(e) {
                     return e
                       .replace(/E/, 'e')
                       .replace(/\.(\d*[1-9])?0+e/, '.$1e')
@@ -8283,7 +8320,7 @@ and limitations under the License.
                       .replace(/^\+/, '')
                       .replace(/^(-?)0+([1-9])/, '$1$2');
                   }),
-                  (o.normalizeDecimal = function (e) {
+                  (o.normalizeDecimal = function(e) {
                     return (
                       (e = e
                         .replace(/^\+/, '')
@@ -8296,31 +8333,31 @@ and limitations under the License.
                     );
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(22);
                 e.exports = r.extend({
                   type: 'object',
                   cast: {
                     map: {
-                      from: function (e) {
+                      from: function(e) {
                         return e && 'object' == b(e);
                       },
-                      to: function (e, t) {
+                      to: function(e, t) {
                         return new Map(Object.entries(e));
                       }
                     }
                   }
                 });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 function r(e, t) {
                   var n = Object.keys(e);
                   if (Object.getOwnPropertySymbols) {
                     var r = Object.getOwnPropertySymbols(e);
                     t &&
-                      (r = r.filter(function (t) {
+                      (r = r.filter(function(t) {
                         return Object.getOwnPropertyDescriptor(e, t).enumerable;
                       })),
                       n.push.apply(n, r);
@@ -8331,12 +8368,12 @@ and limitations under the License.
                   for (var t = 1; t < arguments.length; t++) {
                     var n = null != arguments[t] ? arguments[t] : {};
                     t % 2
-                      ? r(Object(n), !0).forEach(function (t) {
+                      ? r(Object(n), !0).forEach(function(t) {
                           a(e, t, n[t]);
                         })
                       : Object.getOwnPropertyDescriptors
                       ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                      : r(Object(n)).forEach(function (t) {
+                      : r(Object(n)).forEach(function(t) {
                           Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                         });
                   }
@@ -8386,7 +8423,7 @@ and limitations under the License.
                   terms: { replacements: { init: null } },
                   coerce: {
                     from: 'string',
-                    method: function (e, t) {
+                    method: function(e, t) {
                       var n = t.schema,
                         r = t.state,
                         i = t.prefs,
@@ -8438,7 +8475,7 @@ and limitations under the License.
                       return { value: e };
                     }
                   },
-                  validate: function (e, t) {
+                  validate: function(e, t) {
                     var n = t.error;
                     return 'string' != typeof e
                       ? { value: e, errors: n('string.base') }
@@ -8448,15 +8485,15 @@ and limitations under the License.
                   },
                   rules: {
                     alphanum: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('alphanum');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return /^[a-zA-Z0-9]+$/.test(e) ? e : t.error('string.alphanum');
                       }
                     },
                     base64: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         return (
                           p.assertOptions(e, ['paddingRequired', 'urlSafe']),
@@ -8466,19 +8503,19 @@ and limitations under the License.
                           this.$_addRule({ name: 'base64', args: { options: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.options;
                         return v.base64Regex[r.paddingRequired][r.urlSafe].test(e) ? e : t.error('string.base64');
                       }
                     },
                     case: {
-                      method: function (e) {
+                      method: function(e) {
                         return (
                           o(['lower', 'upper'].includes(e), 'Invalid case:', e),
                           this.$_addRule({ name: 'case', args: { direction: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.direction;
                         return ('lower' === r && e === e.toLocaleLowerCase()) ||
                           ('upper' === r && e === e.toLocaleUpperCase())
@@ -8488,10 +8525,10 @@ and limitations under the License.
                       convert: !0
                     },
                     creditCard: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('creditCard');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         for (var n = e.length, r = 0, i = 1; n--; ) {
                           var a = e.charAt(n) * i;
                           (r += a - 9 * (a > 9)), (i ^= 3);
@@ -8500,7 +8537,7 @@ and limitations under the License.
                       }
                     },
                     dataUri: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         return (
                           p.assertOptions(e, ['paddingRequired']),
@@ -8509,7 +8546,7 @@ and limitations under the License.
                           this.$_addRule({ name: 'dataUri', args: { options: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.options,
                           i = e.match(v.dataUriRegex);
                         if (i) {
@@ -8521,18 +8558,18 @@ and limitations under the License.
                       }
                     },
                     domain: {
-                      method: function (e) {
+                      method: function(e) {
                         e && p.assertOptions(e, ['allowUnicode', 'minDomainSegments', 'tlds']);
                         var t = v.addressOptions(e);
                         return this.$_addRule({ name: 'domain', args: { options: e }, address: t });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = r.address;
                         return s.isValid(e, i) ? e : t.error('string.domain');
                       }
                     },
                     email: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         p.assertOptions(e, [
                           'allowUnicode',
@@ -8550,7 +8587,7 @@ and limitations under the License.
                           n = new RegExp('\\s*['.concat(e.separator ? l(e.separator) : ',', ']\\s*'));
                         return this.$_addRule({ name: 'email', args: { options: e }, regex: n, address: t });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i,
                           a = n.options,
                           o = r.regex,
@@ -8572,7 +8609,7 @@ and limitations under the License.
                     },
                     guid: {
                       alias: 'uuid',
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         p.assertOptions(e, ['version']);
                         var t = '';
@@ -8600,7 +8637,7 @@ and limitations under the License.
                         );
                         return this.$_addRule({ name: 'guid', args: { options: e }, regex: u });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = r.regex.exec(e);
                         return i
                           ? v.guidBrackets[i[1]] !== i[i.length - 1]
@@ -8610,7 +8647,7 @@ and limitations under the License.
                       }
                     },
                     hex: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         return (
                           p.assertOptions(e, ['byteAligned']),
@@ -8619,7 +8656,7 @@ and limitations under the License.
                           this.$_addRule({ name: 'hex', args: { options: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = n.options;
                         return v.hexRegex.test(e)
                           ? r.byteAligned && e.length % 2 != 0
@@ -8629,22 +8666,22 @@ and limitations under the License.
                       }
                     },
                     hostname: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('hostname');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return s.isValid(e, { minDomainSegments: 1 }) || v.ipRegex.test(e)
                           ? e
                           : t.error('string.hostname');
                       }
                     },
                     insensitive: {
-                      method: function () {
+                      method: function() {
                         return this.$_setFlag('insensitive', !0);
                       }
                     },
                     ip: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         p.assertOptions(e, ['cidr', 'version']);
                         var t = c.regex(e),
@@ -8654,7 +8691,7 @@ and limitations under the License.
                           a = e.version ? r : void 0;
                         return this.$_addRule({ name: 'ip', args: { options: { cidr: n, version: a } }, regex: i });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.options;
                         return r.regex.test(e)
                           ? e
@@ -8664,27 +8701,27 @@ and limitations under the License.
                       }
                     },
                     isoDate: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('isoDate');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         var n = t.error;
                         return v.isoDate(e) ? e : n('string.isoDate');
                       }
                     },
                     isoDuration: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('isoDuration');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return v.isoDurationRegex.test(e) ? e : t.error('string.isoDuration');
                       }
                     },
                     length: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return v.length(this, 'length', e, '=', t);
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.limit,
                           a = n.encoding,
                           o = r.name,
@@ -8701,24 +8738,24 @@ and limitations under the License.
                       ]
                     },
                     lowercase: {
-                      method: function () {
+                      method: function() {
                         return this.case('lower');
                       }
                     },
                     max: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return v.length(this, 'max', e, '<=', t);
                       },
                       args: ['limit', 'encoding']
                     },
                     min: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         return v.length(this, 'min', e, '>=', t);
                       },
                       args: ['limit', 'encoding']
                     },
                     normalize: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 'NFC';
                         return (
                           o(
@@ -8728,7 +8765,7 @@ and limitations under the License.
                           this.$_addRule({ name: 'normalize', args: { form: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         var r = t.error,
                           i = n.form;
                         return e === e.normalize(i) ? e : r('string.normalize', { value: e, form: i });
@@ -8737,7 +8774,7 @@ and limitations under the License.
                     },
                     pattern: {
                       alias: 'regex',
-                      method: function (e) {
+                      method: function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                         o(e instanceof RegExp, 'regex must be a RegExp'),
                           o(
@@ -8749,7 +8786,7 @@ and limitations under the License.
                         var n = ['string.pattern', t.invert ? '.invert' : '', t.name ? '.name' : '.base'].join('');
                         return this.$_addRule({ name: 'pattern', args: { regex: e, options: t }, errorCode: n });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.regex,
                           a = n.options,
                           o = r.errorCode;
@@ -8759,7 +8796,7 @@ and limitations under the License.
                       multi: !0
                     },
                     replace: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         'string' == typeof e && (e = new RegExp(l(e), 'g')),
                           o(e instanceof RegExp, 'pattern must be a RegExp'),
                           o('string' == typeof t, 'replacement must be a String');
@@ -8772,39 +8809,39 @@ and limitations under the License.
                       }
                     },
                     token: {
-                      method: function () {
+                      method: function() {
                         return this.$_addRule('token');
                       },
-                      validate: function (e, t) {
+                      validate: function(e, t) {
                         return /^\w+$/.test(e) ? e : t.error('string.token');
                       }
                     },
                     trim: {
-                      method: function () {
+                      method: function() {
                         var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                         return (
                           o('boolean' == typeof e, 'enabled must be a boolean'),
                           this.$_addRule({ name: 'trim', args: { enabled: e } })
                         );
                       },
-                      validate: function (e, t, n) {
+                      validate: function(e, t, n) {
                         return n.enabled && e !== e.trim() ? t.error('string.trim') : e;
                       },
                       convert: !0
                     },
                     truncate: {
-                      method: function () {
+                      method: function() {
                         var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0];
                         return o('boolean' == typeof e, 'enabled must be a boolean'), this.$_setFlag('truncate', e);
                       }
                     },
                     uppercase: {
-                      method: function () {
+                      method: function() {
                         return this.case('upper');
                       }
                     },
                     uri: {
-                      method: function () {
+                      method: function() {
                         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                         p.assertOptions(e, [
                           'allowRelative',
@@ -8820,7 +8857,7 @@ and limitations under the License.
                           i = e.domain ? v.addressOptions(e.domain) : null;
                         return this.$_addRule({ name: 'uri', args: { options: e }, regex: n, domain: i, scheme: r });
                       },
-                      validate: function (e, t, n, r) {
+                      validate: function(e, t, n, r) {
                         var i = n.options,
                           a = r.regex,
                           o = r.domain,
@@ -8843,7 +8880,7 @@ and limitations under the License.
                     }
                   },
                   manifest: {
-                    build: function (e, t) {
+                    build: function(e, t) {
                       if (t.replacements) {
                         var n,
                           r = S(t.replacements);
@@ -8902,7 +8939,7 @@ and limitations under the License.
                     'string.uppercase': '{{#label}} must only contain uppercase characters'
                   }
                 })),
-                  (v.addressOptions = function (e) {
+                  (v.addressOptions = function(e) {
                     if (!e) return e;
                     if (
                       (o(
@@ -8933,31 +8970,31 @@ and limitations under the License.
                           e)
                       : e;
                   }),
-                  (v.isoDate = function (e) {
+                  (v.isoDate = function(e) {
                     if (!p.isIsoDate(e)) return null;
                     var t = new Date(e);
                     return isNaN(t.getTime()) ? null : t.toISOString();
                   }),
-                  (v.length = function (e, t, n, r, i) {
+                  (v.length = function(e, t, n, r, i) {
                     return (
                       o(!i || !1, 'Invalid encoding:', i),
                       e.$_addRule({ name: t, method: 'length', args: { limit: n, encoding: i }, operator: r })
                     );
                   });
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(24),
                   i = n(23),
                   a = n(25),
                   o = { nonAsciiRx: /[^\x00-\x7f]/, encoder: new (r.TextEncoder || TextEncoder)() };
-                (t.analyze = function (e, t) {
+                (t.analyze = function(e, t) {
                   return o.email(e, t);
                 }),
-                  (t.isValid = function (e, t) {
+                  (t.isValid = function(e, t) {
                     return !o.email(e, t);
                   }),
-                  (o.email = function (e) {
+                  (o.email = function(e) {
                     var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                     if ('string' != typeof e) throw new Error('Invalid input: email must be a string');
                     if (!e) return a.code('EMPTY_STRING');
@@ -8978,7 +9015,7 @@ and limitations under the License.
                     }
                     return o.local(u, n) || i.analyze(c, t);
                   }),
-                  (o.local = function (e, t) {
+                  (o.local = function(e, t) {
                     var n,
                       r = S(e.split('.'));
                     try {
@@ -9011,9 +9048,9 @@ and limitations under the License.
                       r.f();
                     }
                   }),
-                  (o.binary = function (e) {
+                  (o.binary = function(e) {
                     return Array.from(o.encoder.encode(e))
-                      .map(function (e) {
+                      .map(function(e) {
                         return String.fromCharCode(e);
                       })
                       .join('');
@@ -9027,11 +9064,11 @@ and limitations under the License.
                     ].join('|')
                   ));
               },
-              function (e, t, n) {
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(26);
-                t.regex = function () {
+                t.regex = function() {
                   var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                   r(void 0 === e.cidr || 'string' == typeof e.cidr, 'options.cidr must be a string');
                   var t = e.cidr ? e.cidr.toLowerCase() : 'optional';
@@ -9053,7 +9090,7 @@ and limitations under the License.
                         ['ipv4', 'ipv6', 'ipvfuture'].includes(n[a]),
                         'options.version contains unknown version ' + n[a] + ' - must be one of ipv4, ipv6, ipvfuture'
                       );
-                  var o = (n = Array.from(new Set(n))).map(function (e) {
+                  var o = (n = Array.from(new Set(n))).map(function(e) {
                       if ('forbidden' === t) return i.ip[e];
                       var n = '\\/'.concat('ipv4' === e ? i.ip.v4Cidr : i.ip.v6Cidr);
                       return 'required' === t
@@ -9065,13 +9102,13 @@ and limitations under the License.
                   return { cidr: t, versions: n, regex: u, raw: s };
                 };
               },
-              function (e, t) {},
-              function (e, t, n) {
+              function(e, t) {},
+              function(e, t, n) {
                 'use strict';
                 var r = n(0),
                   i = n(3),
                   a = {};
-                (a.Map = (function (e) {
+                (a.Map = (function(e) {
                   f(n, e);
                   var t = E(n);
                   function n() {
@@ -9081,7 +9118,7 @@ and limitations under the License.
                     m(n, [
                       {
                         key: 'slice',
-                        value: function () {
+                        value: function() {
                           return new a.Map(this);
                         }
                       }
@@ -9093,7 +9130,7 @@ and limitations under the License.
                     type: 'symbol',
                     terms: { map: { init: new a.Map() } },
                     coerce: {
-                      method: function (e, t) {
+                      method: function(e, t) {
                         var n = t.schema,
                           r = t.error,
                           i = n.$_terms.map.get(e);
@@ -9105,13 +9142,13 @@ and limitations under the License.
                         );
                       }
                     },
-                    validate: function (e, t) {
+                    validate: function(e, t) {
                       var n = t.error;
                       if ('symbol' != b(e)) return { value: e, errors: n('symbol.base') };
                     },
                     rules: {
                       map: {
-                        method: function (e) {
+                        method: function(e) {
                           e && !e[Symbol.iterator] && 'object' == b(e) && (e = Object.entries(e)),
                             r(e && e[Symbol.iterator], 'Iterable must be an iterable or object');
                           var t,
@@ -9143,7 +9180,7 @@ and limitations under the License.
                       }
                     },
                     manifest: {
-                      build: function (e, t) {
+                      build: function(e, t) {
                         return t.map && (e = e.map(t.map)), e;
                       }
                     },
@@ -9160,9 +9197,9 @@ and limitations under the License.
             : ((i = []), void 0 === (a = 'function' == typeof (r = _) ? r.apply(t, i) : r) || (e.exports = a));
       }.call(this, n(238)(e)));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return l;
       });
       var r = n(4),
@@ -9172,7 +9209,7 @@ and limitations under the License.
         s = n(80),
         u = n(29),
         c = n(56),
-        l = (function (e) {
+        l = (function(e) {
           function t(n, r, i) {
             var o = e.call(this) || this;
             switch (
@@ -9203,35 +9240,35 @@ and limitations under the License.
           }
           return (
             r.a(t, e),
-            (t.prototype[s.a] = function () {
+            (t.prototype[s.a] = function() {
               return this;
             }),
-            (t.create = function (e, n, r) {
+            (t.create = function(e, n, r) {
               var i = new t(e, n, r);
               return (i.syncErrorThrowable = !1), i;
             }),
-            (t.prototype.next = function (e) {
+            (t.prototype.next = function(e) {
               this.isStopped || this._next(e);
             }),
-            (t.prototype.error = function (e) {
+            (t.prototype.error = function(e) {
               this.isStopped || ((this.isStopped = !0), this._error(e));
             }),
-            (t.prototype.complete = function () {
+            (t.prototype.complete = function() {
               this.isStopped || ((this.isStopped = !0), this._complete());
             }),
-            (t.prototype.unsubscribe = function () {
+            (t.prototype.unsubscribe = function() {
               this.closed || ((this.isStopped = !0), e.prototype.unsubscribe.call(this));
             }),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               this.destination.next(e);
             }),
-            (t.prototype._error = function (e) {
+            (t.prototype._error = function(e) {
               this.destination.error(e), this.unsubscribe();
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               this.destination.complete(), this.unsubscribe();
             }),
-            (t.prototype._unsubscribeAndRecycle = function () {
+            (t.prototype._unsubscribeAndRecycle = function() {
               var e = this._parentOrParents;
               return (
                 (this._parentOrParents = null),
@@ -9245,7 +9282,7 @@ and limitations under the License.
             t
           );
         })(o.a),
-        f = (function (e) {
+        f = (function(e) {
           function t(t, n, r, o) {
             var s,
               u = e.call(this) || this;
@@ -9271,7 +9308,7 @@ and limitations under the License.
           }
           return (
             r.a(t, e),
-            (t.prototype.next = function (e) {
+            (t.prototype.next = function(e) {
               if (!this.isStopped && this._next) {
                 var t = this._parentSubscriber;
                 u.a.useDeprecatedSynchronousErrorHandling && t.syncErrorThrowable
@@ -9279,7 +9316,7 @@ and limitations under the License.
                   : this.__tryOrUnsub(this._next, e);
               }
             }),
-            (t.prototype.error = function (e) {
+            (t.prototype.error = function(e) {
               if (!this.isStopped) {
                 var t = this._parentSubscriber,
                   n = u.a.useDeprecatedSynchronousErrorHandling;
@@ -9295,12 +9332,12 @@ and limitations under the License.
                 }
               }
             }),
-            (t.prototype.complete = function () {
+            (t.prototype.complete = function() {
               var e = this;
               if (!this.isStopped) {
                 var t = this._parentSubscriber;
                 if (this._complete) {
-                  var n = function () {
+                  var n = function() {
                     return e._complete.call(e._context);
                   };
                   u.a.useDeprecatedSynchronousErrorHandling && t.syncErrorThrowable
@@ -9309,7 +9346,7 @@ and limitations under the License.
                 } else this.unsubscribe();
               }
             }),
-            (t.prototype.__tryOrUnsub = function (e, t) {
+            (t.prototype.__tryOrUnsub = function(e, t) {
               try {
                 e.call(this._context, t);
               } catch (e) {
@@ -9317,7 +9354,7 @@ and limitations under the License.
                 Object(c.a)(e);
               }
             }),
-            (t.prototype.__tryOrSetError = function (e, t, n) {
+            (t.prototype.__tryOrSetError = function(e, t, n) {
               if (!u.a.useDeprecatedSynchronousErrorHandling) throw new Error('bad call');
               try {
                 t.call(this._context, n);
@@ -9328,7 +9365,7 @@ and limitations under the License.
               }
               return !1;
             }),
-            (t.prototype._unsubscribe = function () {
+            (t.prototype._unsubscribe = function() {
               var e = this._parentSubscriber;
               (this._context = null), (this._parentSubscriber = null), e.unsubscribe();
             }),
@@ -9336,12 +9373,12 @@ and limitations under the License.
           );
         })(l);
     },
-    function (e, t) {
+    function(e, t) {
       function n(t) {
         return (
           (e.exports = n = Object.setPrototypeOf
             ? Object.getPrototypeOf
-            : function (e) {
+            : function(e) {
                 return e.__proto__ || Object.getPrototypeOf(e);
               }),
           n(t)
@@ -9349,9 +9386,9 @@ and limitations under the License.
       }
       e.exports = n;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return l;
       });
       var r = n(8);
@@ -9364,25 +9401,25 @@ and limitations under the License.
           ? s.a
           : 1 === e.length
           ? e[0]
-          : function (t) {
-              return e.reduce(function (e, t) {
+          : function(t) {
+              return e.reduce(function(e, t) {
                 return t(e);
               }, t);
             };
       }
       var c = n(29),
-        l = (function () {
+        l = (function() {
           function e(e) {
             (this._isScalar = !1), e && (this._subscribe = e);
           }
           return (
-            (e.prototype.lift = function (t) {
+            (e.prototype.lift = function(t) {
               var n = new e();
               return (n.source = this), (n.operator = t), n;
             }),
-            (e.prototype.subscribe = function (e, t, n) {
+            (e.prototype.subscribe = function(e, t, n) {
               var o = this.operator,
-                s = (function (e, t, n) {
+                s = (function(e, t, n) {
                   if (e) {
                     if (e instanceof r.a) return e;
                     if (e[i.a]) return e[i.a]();
@@ -9404,12 +9441,12 @@ and limitations under the License.
                 throw s.syncErrorValue;
               return s;
             }),
-            (e.prototype._trySubscribe = function (e) {
+            (e.prototype._trySubscribe = function(e) {
               try {
                 return this._subscribe(e);
               } catch (t) {
                 c.a.useDeprecatedSynchronousErrorHandling && ((e.syncErrorThrown = !0), (e.syncErrorValue = t)),
-                  !(function (e) {
+                  !(function(e) {
                     for (; e; ) {
                       var t = e,
                         n = t.closed,
@@ -9424,12 +9461,12 @@ and limitations under the License.
                     : e.error(t);
               }
             }),
-            (e.prototype.forEach = function (e, t) {
+            (e.prototype.forEach = function(e, t) {
               var n = this;
-              return new (t = f(t))(function (t, r) {
+              return new (t = f(t))(function(t, r) {
                 var i;
                 i = n.subscribe(
-                  function (t) {
+                  function(t) {
                     try {
                       e(t);
                     } catch (e) {
@@ -9441,35 +9478,35 @@ and limitations under the License.
                 );
               });
             }),
-            (e.prototype._subscribe = function (e) {
+            (e.prototype._subscribe = function(e) {
               var t = this.source;
               return t && t.subscribe(e);
             }),
-            (e.prototype[o.a] = function () {
+            (e.prototype[o.a] = function() {
               return this;
             }),
-            (e.prototype.pipe = function () {
+            (e.prototype.pipe = function() {
               for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
               return 0 === e.length ? this : u(e)(this);
             }),
-            (e.prototype.toPromise = function (e) {
+            (e.prototype.toPromise = function(e) {
               var t = this;
-              return new (e = f(e))(function (e, n) {
+              return new (e = f(e))(function(e, n) {
                 var r;
                 t.subscribe(
-                  function (e) {
+                  function(e) {
                     return (r = e);
                   },
-                  function (e) {
+                  function(e) {
                     return n(e);
                   },
-                  function () {
+                  function() {
                     return e(r);
                   }
                 );
               });
             }),
-            (e.create = function (t) {
+            (e.create = function(t) {
               return new e(t);
             }),
             e
@@ -9480,7 +9517,7 @@ and limitations under the License.
         return e;
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(110),
         i = {};
@@ -9489,15 +9526,15 @@ and limitations under the License.
           n(39)(
             Object.prototype,
             'toString',
-            function () {
+            function() {
               return '[object ' + r(this) + ']';
             },
             !0
           );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
       var r = {
@@ -9524,16 +9561,16 @@ and limitations under the License.
         overrideDomain: ''
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return s;
       });
       var r = n(0),
         i = n.n(r),
         a = n(1),
         o = n.n(a),
-        s = (function () {
+        s = (function() {
           function e() {
             i()(this, e);
           }
@@ -9541,7 +9578,7 @@ and limitations under the License.
             o()(e, null, [
               {
                 key: 'translations',
-                get: function () {
+                get: function() {
                   return this._translations;
                 }
               }
@@ -9574,7 +9611,7 @@ and limitations under the License.
         VALIDATION_ERROR_VALUE_TOO_SHORT: 'Value is too short'
       };
     },
-    function (e, t) {
+    function(e, t) {
       var n = (e.exports =
         'undefined' != typeof window && window.Math == Math
           ? window
@@ -9583,20 +9620,20 @@ and limitations under the License.
           : Function('return this')());
       'number' == typeof __g && (__g = n);
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         return 'object' == typeof e ? null !== e : 'function' == typeof e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return s;
       });
       var r = n(95),
         i = n(126),
         a = n(81),
-        o = (function () {
+        o = (function() {
           function e(e) {
             return (
               Error.call(this),
@@ -9604,7 +9641,7 @@ and limitations under the License.
                 ? e.length +
                   ' errors occurred during unsubscription:\n' +
                   e
-                    .map(function (e, t) {
+                    .map(function(e, t) {
                       return t + 1 + ') ' + e.toString();
                     })
                     .join('\n  ')
@@ -9616,7 +9653,7 @@ and limitations under the License.
           }
           return (e.prototype = Object.create(Error.prototype)), e;
         })(),
-        s = (function () {
+        s = (function() {
           function e(e) {
             (this.closed = !1),
               (this._parentOrParents = null),
@@ -9625,7 +9662,7 @@ and limitations under the License.
           }
           var t;
           return (
-            (e.prototype.unsubscribe = function () {
+            (e.prototype.unsubscribe = function() {
               var t;
               if (!this.closed) {
                 var n = this._parentOrParents,
@@ -9658,7 +9695,7 @@ and limitations under the License.
                 if (t) throw new o(t);
               }
             }),
-            (e.prototype.add = function (t) {
+            (e.prototype.add = function(t) {
               var n = t;
               if (!t) return e.EMPTY;
               switch (typeof t) {
@@ -9687,7 +9724,7 @@ and limitations under the License.
               var a = this._subscriptions;
               return null === a ? (this._subscriptions = [n]) : a.push(n), n;
             }),
-            (e.prototype.remove = function (e) {
+            (e.prototype.remove = function(e) {
               var t = this._subscriptions;
               if (t) {
                 var n = t.indexOf(e);
@@ -9699,22 +9736,22 @@ and limitations under the License.
           );
         })();
       function u(e) {
-        return e.reduce(function (e, t) {
+        return e.reduce(function(e, t) {
           return e.concat(t instanceof o ? t.errors : t);
         }, []);
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(120)('wks'),
         i = n(75),
         a = n(14).Symbol,
         o = 'function' == typeof a;
-      (e.exports = function (e) {
+      (e.exports = function(e) {
         return r[e] || (r[e] = (o && a[e]) || (o ? a : i)('Symbol.' + e));
       }).store = r;
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         try {
           return !!e();
         } catch (e) {
@@ -9722,21 +9759,21 @@ and limitations under the License.
         }
       };
     },
-    function (e, t, n) {
-      e.exports = !n(18)(function () {
+    function(e, t, n) {
+      e.exports = !n(18)(function() {
         return (
           7 !=
           Object.defineProperty({}, 'a', {
-            get: function () {
+            get: function() {
               return 7;
             }
           }).a
         );
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return d;
       });
       n(49), n(50), n(141);
@@ -9754,7 +9791,7 @@ and limitations under the License.
           Object(l.Service)()(
             (r =
               Reflect.metadata('design:paramtypes', ['undefined' == typeof Window ? Object : Window])(
-                ((a = i = (function () {
+                ((a = i = (function() {
                   function e(t) {
                     s()(this, e), (this.window = t);
                   }
@@ -9762,19 +9799,19 @@ and limitations under the License.
                     c()(e, [
                       {
                         key: 'getFrameName',
-                        value: function () {
+                        value: function() {
                           return this.window.name;
                         }
                       },
                       {
                         key: 'isParentFrame',
-                        value: function () {
+                        value: function() {
                           return this.window.top === this.window.self || !e.FRAME_NAMES.includes(this.window.name);
                         }
                       },
                       {
                         key: 'isControlFrame',
-                        value: function () {
+                        value: function() {
                           return this.window.name === h.a.CONTROL_FRAME_IFRAME;
                         }
                       }
@@ -9795,14 +9832,14 @@ and limitations under the License.
           ) || r;
       Object(l.Inject)(f.a)(d, void 0, 0);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      e.exports = function (e) {
+      e.exports = function(e) {
         if (!r(e)) throw TypeError(e + ' is not an object!');
         return e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(91),
         i = n(181),
@@ -9811,10 +9848,10 @@ and limitations under the License.
       (e.exports = n(144)(
         Array,
         'Array',
-        function (e, t) {
+        function(e, t) {
           (this._t = o(e)), (this._i = 0), (this._k = t);
         },
-        function () {
+        function() {
           var e = this._t,
             t = this._k,
             n = this._i++;
@@ -9829,14 +9866,14 @@ and limitations under the License.
         r('values'),
         r('entries');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(21),
         i = n(170),
         a = n(107),
         o = Object.defineProperty;
       t.f = n(19)
         ? Object.defineProperty
-        : function (e, t, n) {
+        : function(e, t, n) {
             if ((r(e), (t = a(t, !0)), r(n), i))
               try {
                 return o(e, t, n);
@@ -9845,20 +9882,20 @@ and limitations under the License.
             return 'value' in n && (e[t] = n.value), e;
           };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(59),
         i = Math.min;
-      e.exports = function (e) {
+      e.exports = function(e) {
         return e > 0 ? i(r(e), 9007199254740991) : 0;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(298);
       function i(t, n, a) {
         return (
           'undefined' != typeof Reflect && Reflect.get
             ? (e.exports = i = Reflect.get)
-            : (e.exports = i = function (e, t, n) {
+            : (e.exports = i = function(e, t, n) {
                 var i = r(e, t);
                 if (i) {
                   var a = Object.getOwnPropertyDescriptor(i, t);
@@ -9870,7 +9907,7 @@ and limitations under the License.
       }
       e.exports = i;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       for (
         var r = n(22),
           i = n(77),
@@ -9928,8 +9965,8 @@ and limitations under the License.
         if (b && (b[l] || s(b, l, h), b[f] || s(b, f, m), (u[m] = h), g)) for (y in r) b[y] || a(b, y, r[y], !0);
       }
     },
-    function (e, t) {
-      e.exports = function (e, t, n) {
+    function(e, t) {
+      e.exports = function(e, t, n) {
         return (
           t in e
             ? Object.defineProperty(e, t, { value: n, enumerable: !0, configurable: !0, writable: !0 })
@@ -9938,9 +9975,9 @@ and limitations under the License.
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return b;
       });
       n(35), n(11), n(83);
@@ -9965,7 +10002,7 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
@@ -9978,20 +10015,19 @@ and limitations under the License.
               void 0 === m.a ? Object : m.a,
               void 0 === g.a ? Object : g.a
             ])(
-              (r = (function (e) {
+              (r = (function(e) {
                 c()(r, e);
                 var t,
-                  n =
-                    ((t = r),
-                    function () {
-                      var e,
-                        n = d()(t);
-                      if (_()) {
-                        var r = d()(this).constructor;
-                        e = Reflect.construct(n, arguments, r);
-                      } else e = n.apply(this, arguments);
-                      return f()(this, e);
-                    });
+                  n = ((t = r),
+                  function() {
+                    var e,
+                      n = d()(t);
+                    if (_()) {
+                      var r = d()(this).constructor;
+                      e = Reflect.construct(n, arguments, r);
+                    } else e = n.apply(this, arguments);
+                    return f()(this, e);
+                  });
                 function r(e, t, i) {
                   return a()(this, r), n.call(this, window.localStorage, e, t, i);
                 }
@@ -9999,7 +10035,7 @@ and limitations under the License.
                   s()(r, [
                     {
                       key: 'getSychronizationEventName',
-                      value: function () {
+                      value: function() {
                         return 'ST_SET_LOCAL_STORAGE_ITEM';
                       }
                     }
@@ -10010,9 +10046,9 @@ and limitations under the License.
             ) || r)
         ) || r;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = !1,
@@ -10027,34 +10063,34 @@ and limitations under the License.
           }
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       e.exports = n(105);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(73);
-      e.exports = function (e) {
+      e.exports = function(e) {
         return Object(r(e));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(219);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if ('function' != typeof t && null !== t)
           throw new TypeError('Super expression must either be null or a function');
         (e.prototype = Object.create(t && t.prototype, { constructor: { value: e, writable: !0, configurable: !0 } })),
           t && r(e, t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(202),
         i = n(235);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return !t || ('object' !== r(t) && 'function' != typeof t) ? i(e) : t;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return B;
       });
       n(71), n(11);
@@ -10072,16 +10108,16 @@ and limitations under the License.
         p = n(8),
         v = n(16);
       function y() {
-        return function (e) {
+        return function(e) {
           return e.lift(new m(e));
         };
       }
-      var m = (function () {
+      var m = (function() {
           function e(e) {
             this.connectable = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               var n = this.connectable;
               n._refCount++;
               var r = new g(e, n),
@@ -10091,14 +10127,14 @@ and limitations under the License.
             e
           );
         })(),
-        g = (function (e) {
+        g = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.connectable = n), r;
           }
           return (
             h.a(t, e),
-            (t.prototype._unsubscribe = function () {
+            (t.prototype._unsubscribe = function() {
               var e = this.connectable;
               if (e) {
                 this.connectable = null;
@@ -10115,21 +10151,21 @@ and limitations under the License.
             t
           );
         })(p.a),
-        _ = (function (e) {
+        _ = (function(e) {
           function t(t, n) {
             var r = e.call(this) || this;
             return (r.source = t), (r.subjectFactory = n), (r._refCount = 0), (r._isComplete = !1), r;
           }
           return (
             h.a(t, e),
-            (t.prototype._subscribe = function (e) {
+            (t.prototype._subscribe = function(e) {
               return this.getSubject().subscribe(e);
             }),
-            (t.prototype.getSubject = function () {
+            (t.prototype.getSubject = function() {
               var e = this._subject;
               return (e && !e.isStopped) || (this._subject = this.subjectFactory()), this._subject;
             }),
-            (t.prototype.connect = function () {
+            (t.prototype.connect = function() {
               var e = this._connection;
               return (
                 e ||
@@ -10139,13 +10175,13 @@ and limitations under the License.
                 e
               );
             }),
-            (t.prototype.refCount = function () {
+            (t.prototype.refCount = function() {
               return y()(this);
             }),
             t
           );
         })(d.a),
-        b = (function () {
+        b = (function() {
           var e = _.prototype;
           return {
             operator: { value: null },
@@ -10159,20 +10195,20 @@ and limitations under the License.
             refCount: { value: e.refCount }
           };
         })(),
-        E = (function (e) {
+        E = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.connectable = n), r;
           }
           return (
             h.a(t, e),
-            (t.prototype._error = function (t) {
+            (t.prototype._error = function(t) {
               this._unsubscribe(), e.prototype._error.call(this, t);
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               (this.connectable._isComplete = !0), this._unsubscribe(), e.prototype._complete.call(this);
             }),
-            (t.prototype._unsubscribe = function () {
+            (t.prototype._unsubscribe = function() {
               var e = this.connectable;
               if (e) {
                 this.connectable = null;
@@ -10184,12 +10220,12 @@ and limitations under the License.
           );
         })(u.b);
       p.a;
-      var w = (function () {
+      var w = (function() {
         function e(e, t) {
           (this.subjectFactory = e), (this.selector = t);
         }
         return (
-          (e.prototype.call = function (e, t) {
+          (e.prototype.call = function(e, t) {
             var n = this.selector,
               r = this.subjectFactory(),
               i = n(r).subscribe(e);
@@ -10202,16 +10238,16 @@ and limitations under the License.
         return new u.a();
       }
       function A() {
-        return function (e) {
+        return function(e) {
           return y()(
             ((t = S),
-            function (e) {
+            function(e) {
               var r;
               if (
                 ((r =
                   'function' == typeof t
                     ? t
-                    : function () {
+                    : function() {
                         return t;
                       }),
                 'function' == typeof n)
@@ -10228,43 +10264,42 @@ and limitations under the License.
         R = n(314),
         T = n(313),
         C = n(47),
-        k =
-          (n(291),
-          n(35),
-          n(114),
-          (function () {
-            function e() {
-              i()(this, e);
-            }
-            return (
-              o()(e, null, [
-                {
-                  key: 'uuidv4',
-                  value: function () {
-                    return window.crypto ? e.uuidv4crypto() : e.uuidv4random();
-                  }
-                },
-                {
-                  key: 'uuidv4crypto',
-                  value: function () {
-                    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (e) {
-                      return (e ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (e / 4)))).toString(16);
-                    });
-                  }
-                },
-                {
-                  key: 'uuidv4random',
-                  value: function () {
-                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (e) {
-                      var t = (16 * Math.random()) | 0;
-                      return ('x' === e ? t : (3 & t) | 8).toString(16);
-                    });
-                  }
+        k = (n(291),
+        n(35),
+        n(114),
+        (function() {
+          function e() {
+            i()(this, e);
+          }
+          return (
+            o()(e, null, [
+              {
+                key: 'uuidv4',
+                value: function() {
+                  return window.crypto ? e.uuidv4crypto() : e.uuidv4random();
                 }
-              ]),
-              e
-            );
-          })()),
+              },
+              {
+                key: 'uuidv4crypto',
+                value: function() {
+                  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function(e) {
+                    return (e ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (e / 4)))).toString(16);
+                  });
+                }
+              },
+              {
+                key: 'uuidv4random',
+                value: function() {
+                  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(e) {
+                    var t = (16 * Math.random()) | 0;
+                    return ('x' === e ? t : (3 & t) | 8).toString(16);
+                  });
+                }
+              }
+            ]),
+            e
+          );
+        })()),
         I = function e(t, n) {
           i()(this, e),
             (this.type = e.MESSAGE_TYPE),
@@ -10289,24 +10324,24 @@ and limitations under the License.
           Object(s.Service)()(
             (x =
               Reflect.metadata('design:paramtypes', [void 0 === F.a ? Object : F.a, void 0 === U.a ? Object : U.a])(
-                ((j = P = (function () {
+                ((j = P = (function() {
                   function e(t, n) {
                     i()(this, e),
                       (this.close$ = new u.a()),
                       (this.identifier = t),
                       (this.frameAccessor = n),
                       (this.incomingEvent$ = Object(c.a)(
-                        function (t) {
+                        function(t) {
                           return window.addEventListener(e.MESSAGE_EVENT, t, !0);
                         },
-                        function (t) {
+                        function(t) {
                           return window.removeEventListener(e.MESSAGE_EVENT, t);
                         }
                       ).pipe(
-                        Object(l.a)(function (e) {
+                        Object(l.a)(function(e) {
                           return e.data.type;
                         }),
-                        Object(f.a)(function (e) {
+                        Object(f.a)(function(e) {
                           return e.data;
                         }),
                         A()
@@ -10318,7 +10353,7 @@ and limitations under the License.
                     o()(e, [
                       {
                         key: 'send',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = this.frameAccessor.getParentFrame(),
                             r = this.resolveTargetFrame(t),
                             i = r === n ? this.getParentOrigin() : this.frameOrigin;
@@ -10327,27 +10362,27 @@ and limitations under the License.
                       },
                       {
                         key: 'query',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = this;
-                          return new Promise(function (r, i) {
+                          return new Promise(function(r, i) {
                             var a = n.identifier.getFrameName() || D.a.MERCHANT_PARENT_FRAME,
                               o = new I(e, a);
                             n.incomingEvent$
                               .pipe(
                                 Object(C.a)(N.MESSAGE_TYPE),
-                                Object(l.a)(function (e) {
+                                Object(l.a)(function(e) {
                                   return e.queryId === o.queryId;
                                 }),
-                                Object(f.a)(function (e) {
+                                Object(f.a)(function(e) {
                                   return e.data;
                                 }),
                                 Object(O.a)(1)
                               )
                               .subscribe({
-                                next: function (e) {
+                                next: function(e) {
                                   r(e);
                                 },
-                                error: function (e) {
+                                error: function(e) {
                                   i(e);
                                 }
                               }),
@@ -10357,27 +10392,27 @@ and limitations under the License.
                       },
                       {
                         key: 'whenReceive',
-                        value: function (e) {
+                        value: function(e) {
                           var t = this;
                           return {
-                            thenRespond: function (n) {
+                            thenRespond: function(n) {
                               t.incomingEvent$
                                 .pipe(
                                   Object(C.a)(I.MESSAGE_TYPE),
-                                  Object(l.a)(function (t) {
+                                  Object(l.a)(function(t) {
                                     return t.data.type === e;
                                   }),
-                                  Object(R.a)(function (e) {
+                                  Object(R.a)(function(e) {
                                     return n(e.data).pipe(
                                       Object(O.a)(1),
-                                      Object(f.a)(function (t) {
+                                      Object(f.a)(function(t) {
                                         return new N(t, e.queryId, e.sourceFrame);
                                       })
                                     );
                                   }),
                                   Object(T.a)(t.close$)
                                 )
-                                .subscribe(function (e) {
+                                .subscribe(function(e) {
                                   t.send(e, e.queryFrame);
                                 });
                             }
@@ -10386,13 +10421,13 @@ and limitations under the License.
                       },
                       {
                         key: 'close',
-                        value: function () {
+                        value: function() {
                           this.close$.next(), this.close$.complete();
                         }
                       },
                       {
                         key: 'resolveTargetFrame',
-                        value: function (e) {
+                        value: function(e) {
                           if (e instanceof Window) return e;
                           if (e === D.a.MERCHANT_PARENT_FRAME) return this.frameAccessor.getParentFrame();
                           var t = this.frameAccessor.getFrameCollection();
@@ -10402,7 +10437,7 @@ and limitations under the License.
                       },
                       {
                         key: 'getParentOrigin',
-                        value: function () {
+                        value: function() {
                           return this.parentOrigin
                             ? this.parentOrigin
                             : s.Container.has(M.a)
@@ -10420,31 +10455,31 @@ and limitations under the License.
               ) || x)
           ) || x;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n(234);
       var r = n(21),
         i = n(124),
         a = n(19),
         o = /./.toString,
-        s = function (e) {
+        s = function(e) {
           n(39)(RegExp.prototype, 'toString', e, !0);
         };
-      n(18)(function () {
+      n(18)(function() {
         return '/a/b' != o.call({ source: 'a', flags: 'b' });
       })
-        ? s(function () {
+        ? s(function() {
             var e = r(this);
             return '/'.concat(e.source, '/', 'flags' in e ? e.flags : !a && e instanceof RegExp ? i.call(e) : void 0);
           })
         : 'toString' != o.name &&
-          s(function () {
+          s(function() {
             return o.call(this);
           });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return B;
       });
       var r = n(117),
@@ -10465,18 +10500,18 @@ and limitations under the License.
         g = n(318),
         _ = n(4),
         b = n(8);
-      var E = (function () {
+      var E = (function() {
           function e(e, t, n) {
             void 0 === n && (n = !1), (this.accumulator = e), (this.seed = t), (this.hasSeed = n);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new w(e, this.accumulator, this.seed, this.hasSeed));
             }),
             e
           );
         })(),
-        w = (function (e) {
+        w = (function(e) {
           function t(t, n, r, i) {
             var a = e.call(this, t) || this;
             return (a.accumulator = n), (a._seed = r), (a.hasSeed = i), (a.index = 0), a;
@@ -10484,20 +10519,20 @@ and limitations under the License.
           return (
             _.a(t, e),
             Object.defineProperty(t.prototype, 'seed', {
-              get: function () {
+              get: function() {
                 return this._seed;
               },
-              set: function (e) {
+              set: function(e) {
                 (this.hasSeed = !0), (this._seed = e);
               },
               enumerable: !0,
               configurable: !0
             }),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               if (this.hasSeed) return this._tryNext(e);
               (this.seed = e), this.destination.next(e);
             }),
-            (t.prototype._tryNext = function (e) {
+            (t.prototype._tryNext = function(e) {
               var t,
                 n = this.index++;
               try {
@@ -10511,32 +10546,32 @@ and limitations under the License.
           );
         })(b.a);
       function S(e, t) {
-        return function (n) {
+        return function(n) {
           return n.lift(new A(e, t));
         };
       }
-      var A = (function () {
+      var A = (function() {
           function e(e, t) {
             (this.compare = e), (this.keySelector = t);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new O(e, this.compare, this.keySelector));
             }),
             e
           );
         })(),
-        O = (function (e) {
+        O = (function(e) {
           function t(t, n, r) {
             var i = e.call(this, t) || this;
             return (i.keySelector = r), (i.hasKey = !1), 'function' == typeof n && (i.compare = n), i;
           }
           return (
             _.a(t, e),
-            (t.prototype.compare = function (e, t) {
+            (t.prototype.compare = function(e, t) {
               return e === t;
             }),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               var t;
               try {
                 var n = this.keySelector;
@@ -10559,18 +10594,18 @@ and limitations under the License.
         })(b.a),
         R = n(65),
         T = n(64);
-      var C = (function () {
+      var C = (function() {
           function e(e, t) {
             (this.observables = e), (this.project = t);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new k(e, this.observables, this.project));
             }),
             e
           );
         })(),
-        k = (function (e) {
+        k = (function(e) {
           function t(t, n, r) {
             var i = e.call(this, t) || this;
             (i.observables = n), (i.project = r), (i.toRespond = []);
@@ -10585,7 +10620,7 @@ and limitations under the License.
           }
           return (
             _.a(t, e),
-            (t.prototype.notifyNext = function (e, t, n, r, i) {
+            (t.prototype.notifyNext = function(e, t, n, r, i) {
               this.values[n] = t;
               var a = this.toRespond;
               if (a.length > 0) {
@@ -10593,14 +10628,14 @@ and limitations under the License.
                 -1 !== o && a.splice(o, 1);
               }
             }),
-            (t.prototype.notifyComplete = function () {}),
-            (t.prototype._next = function (e) {
+            (t.prototype.notifyComplete = function() {}),
+            (t.prototype._next = function(e) {
               if (0 === this.toRespond.length) {
                 var t = [e].concat(this.values);
                 this.project ? this._tryProject(t) : this.destination.next(t);
               }
             }),
-            (t.prototype._tryProject = function (e) {
+            (t.prototype._tryProject = function(e) {
               var t;
               try {
                 t = this.project.apply(this, e);
@@ -10616,109 +10651,108 @@ and limitations under the License.
       var N,
         x,
         P,
-        j = (function () {
+        j = (function() {
           function e(e) {
             this.value = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new L(e, this.value));
             }),
             e
           );
         })(),
-        L = (function (e) {
+        L = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.value = n), r;
           }
           return (
             _.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               this.destination.next(this.value);
             }),
             t
           );
         })(b.a),
         D = n(314),
-        M =
-          (n(237),
-          n(26),
-          n(22),
-          n(11),
-          n(70),
-          n(87),
-          (function () {
-            function e() {
-              u()(this, e);
-            }
-            return (
-              l()(e, null, [
-                {
-                  key: 'unique',
-                  value: function (e) {
-                    return Array.from(new Set(e).values());
-                  }
-                },
-                {
-                  key: 'equals',
-                  value: function (e, t) {
-                    return e.length === t.length && JSON.stringify(e) === JSON.stringify(t);
-                  }
+        M = (n(237),
+        n(26),
+        n(22),
+        n(11),
+        n(70),
+        n(87),
+        (function() {
+          function e() {
+            u()(this, e);
+          }
+          return (
+            l()(e, null, [
+              {
+                key: 'unique',
+                value: function(e) {
+                  return Array.from(new Set(e).values());
                 }
-              ]),
-              e
-            );
-          })()),
+              },
+              {
+                key: 'equals',
+                value: function(e, t) {
+                  return e.length === t.length && JSON.stringify(e) === JSON.stringify(t);
+                }
+              }
+            ]),
+            e
+          );
+        })()),
         F = n(5),
         U = n(20),
         B =
           Object(f.Service)()(
             (N =
               Reflect.metadata('design:paramtypes', [void 0 === h.a ? Object : h.a, void 0 === U.a ? Object : U.a])(
-                ((P = x = (function () {
+                ((P = x = (function() {
                   function e(t, n) {
                     var r = this;
                     u()(this, e), (this.communicator = t), (this.identifier = n);
                     var a = this.getInitialFrames(),
                       s = this.communicator.incomingEvent$.pipe(
                         Object(v.a)(e.FRAME_READY_EVENT),
-                        Object(y.a)(function (e) {
+                        Object(y.a)(function(e) {
                           return Boolean(e.data);
                         }),
-                        Object(m.a)(function (e) {
+                        Object(m.a)(function(e) {
                           return e.data;
                         }),
                         Object(g.a)()
                       );
                     (this.activeFrame$ = Object(d.a)(a, s).pipe(
-                      (function (e, t) {
+                      (function(e, t) {
                         var n = !1;
                         return (
                           arguments.length >= 2 && (n = !0),
-                          function (r) {
+                          function(r) {
                             return r.lift(new E(e, t, n));
                           }
                         );
-                      })(function (e, t) {
+                      })(function(e, t) {
                         return [].concat(o()(e), [t]);
                       }, []),
-                      Object(m.a)(function (e) {
+                      Object(m.a)(function(e) {
                         return M.unique(e);
                       }),
-                      S(function (e, t) {
+                      S(function(e, t) {
                         return M.equals(e, t);
                       }),
                       Object(g.a)(1)
                     )),
-                      this.communicator.whenReceive(e.GET_FRAMES_EVENT).thenRespond(function () {
+                      this.communicator.whenReceive(e.GET_FRAMES_EVENT).thenRespond(function() {
                         return r.activeFrame$;
                       }),
                       s
                         .pipe(
-                          (function () {
+                          (function() {
                             for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
-                            return function (t) {
+                            return function(t) {
                               var n;
                               'function' == typeof e[e.length - 1] && (n = e.pop());
                               var r = e;
@@ -10727,7 +10761,7 @@ and limitations under the License.
                           })(this.activeFrame$),
                           Object(I.a)(this.communicator.communicationClosed$)
                         )
-                        .subscribe(function (e) {
+                        .subscribe(function(e) {
                           var t = i()(e, 2),
                             n = t[0],
                             a = t[1];
@@ -10738,9 +10772,9 @@ and limitations under the License.
                     l()(e, [
                       {
                         key: 'isFrameActive',
-                        value: function (e) {
+                        value: function(e) {
                           return this.activeFrame$.pipe(
-                            Object(m.a)(function (t) {
+                            Object(m.a)(function(t) {
                               return -1 !== t.indexOf(e);
                             }),
                             S()
@@ -10749,11 +10783,11 @@ and limitations under the License.
                       },
                       {
                         key: 'waitForFrame',
-                        value: function (e) {
+                        value: function(e) {
                           return this.isFrameActive(e).pipe(
                             Object(y.a)(Boolean),
                             ((t = e),
-                            function (e) {
+                            function(e) {
                               return e.lift(new j(t));
                             })
                           );
@@ -10762,7 +10796,7 @@ and limitations under the License.
                       },
                       {
                         key: 'notifyReadyState',
-                        value: function () {
+                        value: function() {
                           var t = this.identifier.getFrameName();
                           t !== F.a.MERCHANT_PARENT_FRAME &&
                             (t
@@ -10775,19 +10809,19 @@ and limitations under the License.
                       },
                       {
                         key: 'getParentFrame',
-                        value: function () {
+                        value: function() {
                           return this.identifier.isParentFrame() ? window : window.parent;
                         }
                       },
                       {
                         key: 'getInitialFrames',
-                        value: function () {
+                        value: function() {
                           return this.identifier.isParentFrame()
                             ? Object(p.a)([])
                             : Object(p.a)(
                                 this.communicator.query({ type: e.GET_FRAMES_EVENT }, F.a.MERCHANT_PARENT_FRAME)
                               ).pipe(
-                                Object(D.a)(function (e) {
+                                Object(D.a)(function(e) {
                                   return Object(p.a)(e);
                                 })
                               );
@@ -10795,11 +10829,11 @@ and limitations under the License.
                       },
                       {
                         key: 'onFrameReady',
-                        value: function (t, n) {
+                        value: function(t, n) {
                           var r = this;
                           if (this.identifier.isParentFrame()) {
                             var i = { type: e.FRAME_READY_EVENT, data: t };
-                            n.forEach(function (e) {
+                            n.forEach(function(e) {
                               return r.communicator.send(i, e);
                             });
                           }
@@ -10815,9 +10849,9 @@ and limitations under the License.
               ) || N)
           ) || N;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return F;
       });
       n(84), n(53), n(26), n(22), n(43), n(35), n(11), n(83);
@@ -10854,7 +10888,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -10865,12 +10899,12 @@ and limitations under the License.
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? N(Object(n), !0).forEach(function (t) {
+            ? N(Object(n), !0).forEach(function(t) {
                 u()(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : N(Object(n)).forEach(function (t) {
+            : N(Object(n)).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
               });
         }
@@ -10881,7 +10915,7 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
@@ -10890,21 +10924,20 @@ and limitations under the License.
         L = j.VALIDATION_ERROR_FIELD_IS_REQUIRED,
         D = j.VALIDATION_ERROR_PATTERN_MISMATCH,
         M = j.VALIDATION_ERROR,
-        F = (function (e) {
+        F = (function(e) {
           y()(a, e);
           var t,
             n,
-            r =
-              ((t = a),
-              function () {
-                var e,
-                  n = b()(t);
-                if (P()) {
-                  var r = b()(this).constructor;
-                  e = Reflect.construct(n, arguments, r);
-                } else e = n.apply(this, arguments);
-                return g()(this, e);
-              });
+            r = ((t = a),
+            function() {
+              var e,
+                n = b()(t);
+              if (P()) {
+                var r = b()(this).constructor;
+                e = Reflect.construct(n, arguments, r);
+              } else e = n.apply(this, arguments);
+              return g()(this, e);
+            });
           function a() {
             var e;
             return l()(this, a), ((e = r.call(this))._cursorSkip = 0), e.onInit(), e;
@@ -10913,13 +10946,13 @@ and limitations under the License.
             p()(a, null, [
               {
                 key: 'clearNonDigitsChars',
-                value: function (e) {
+                value: function(e) {
                   return e.replace(a.ESCAPE_DIGITS_REGEXP, a.CLEAR_VALUE);
                 }
               },
               {
                 key: 'getValidationMessage',
-                value: function (e) {
+                value: function(e) {
                   var t = e.patternMismatch,
                     n = e.valid,
                     r = e.valueMissing;
@@ -10928,32 +10961,32 @@ and limitations under the License.
               },
               {
                 key: 'isCharNumber',
-                value: function (e) {
+                value: function(e) {
                   var t = e.key;
                   return new RegExp(a.ESCAPE_DIGITS_REGEXP).test(t);
                 }
               },
               {
                 key: 'isEnter',
-                value: function (e) {
+                value: function(e) {
                   return !!e && e.keyCode === a.ENTER_KEY_CODE;
                 }
               },
               {
                 key: 'setCustomValidationError',
-                value: function (e, t) {
+                value: function(e, t) {
                   t.setCustomValidity(e);
                 }
               },
               {
                 key: 'addErrorContainer',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   e.insertAdjacentHTML(t, n);
                 }
               },
               {
                 key: 'resetValidationProperties',
-                value: function (e) {
+                value: function(e) {
                   e.setCustomValidity(a.CLEAR_VALUE),
                     e.classList.remove(a.ERROR_FIELD_CLASS),
                     (e.nextSibling.textContent = a.CLEAR_VALUE);
@@ -10961,7 +10994,7 @@ and limitations under the License.
               },
               {
                 key: 'returnInputAndErrorContainerPair',
-                value: function (e) {
+                value: function(e) {
                   return {
                     inputElement: document.getElementById(e.id),
                     messageElement: document.getElementById(e.id).nextSibling
@@ -10970,7 +11003,7 @@ and limitations under the License.
               },
               {
                 key: '_setValidateEvent',
-                value: function (e, t) {
+                value: function(e, t) {
                   switch (e) {
                     case a.BACKEND_ERROR_FIELDS_NAMES.cardNumber:
                       t.type = T.a.EVENTS.VALIDATE_CARD_NUMBER_FIELD;
@@ -10986,7 +11019,7 @@ and limitations under the License.
               },
               {
                 key: '_isFormValid',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = !t.includes(a.CARD_NUMBER_FIELD_NAME) || e.cardNumber.validity,
                     i = !t.includes(a.EXPIRY_DATE_FIELD_NAME) || e.expirationDate.validity,
                     o = !(t.includes(a.SECURITY_CODE_FIELD_NAME) && !n) || e.securityCode.validity;
@@ -10995,7 +11028,7 @@ and limitations under the License.
               },
               {
                 key: '_toggleErrorClass',
-                value: function (e) {
+                value: function(e) {
                   e.validity.valid ? e.classList.remove(a.ERROR_FIELD_CLASS) : e.classList.add(a.ERROR_FIELD_CLASS);
                 }
               }
@@ -11003,30 +11036,30 @@ and limitations under the License.
             p()(a, [
               {
                 key: 'backendValidation',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = this;
-                  this.messageBus.subscribe(n, function (n) {
+                  this.messageBus.subscribe(n, function(n) {
                     r.setError(e, t, n);
                   });
                 }
               },
               {
                 key: 'blockForm',
-                value: function (e) {
+                value: function(e) {
                   var t = { data: e, type: T.a.EVENTS_PUBLIC.BLOCK_FORM };
                   this.messageBus.publish(t, !0);
                 }
               },
               {
                 key: 'callSubmitEvent',
-                value: function () {
+                value: function() {
                   var e = { type: T.a.EVENTS_PUBLIC.CALL_SUBMIT_EVENT };
                   this.messageBus.publish(e, !0);
                 }
               },
               {
                 key: 'formValidation',
-                value: function (e, t, n, r, i, a) {
+                value: function(e, t, n, r, i, a) {
                   this._setValidationResult(e, n, r, i, a);
                   var o = this._isFormReadyToSubmit(t);
                   return o && this.blockForm(A.a.BLOCKED), { card: this._card, validity: o };
@@ -11034,14 +11067,14 @@ and limitations under the License.
               },
               {
                 key: 'getErrorData',
-                value: function (e) {
+                value: function(e) {
                   var t = S.a.getErrorData(e),
                     n = t.errordata,
                     r = t.errormessage,
                     i = { data: { field: n[0], message: r }, type: a.CLEAR_VALUE };
                   return (
                     this._broadcastFormFieldError(n[0], i),
-                    n.find(function (e) {
+                    n.find(function(e) {
                       return e.includes(a.MERCHANT_EXTRA_FIELDS_PREFIX);
                     }) && ((i.type = T.a.EVENTS.VALIDATE_MERCHANT_FIELD), this.messageBus.publish(i)),
                     { field: n[0], errormessage: r }
@@ -11050,7 +11083,7 @@ and limitations under the License.
               },
               {
                 key: 'keepCursorsPosition',
-                value: function (e) {
+                value: function(e) {
                   var t = this._selectionRangeEnd,
                     n = this._selectionRangeStart,
                     r = n - t,
@@ -11069,7 +11102,7 @@ and limitations under the License.
               },
               {
                 key: 'luhnCheck',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = t.value;
                   Object(w.luhnCheck)(r)
                     ? a.setCustomValidationError(a.CLEAR_VALUE, e)
@@ -11079,19 +11112,19 @@ and limitations under the License.
               },
               {
                 key: 'limitLength',
-                value: function (e, t) {
+                value: function(e, t) {
                   return e ? e.substring(0, t) : a.CLEAR_VALUE;
                 }
               },
               {
                 key: 'removeError',
-                value: function (e, t) {
+                value: function(e, t) {
                   e.classList.remove(a.ERROR_CLASS), (t.textContent = a.CLEAR_VALUE);
                 }
               },
               {
                 key: 'setError',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = n.message;
                   r && t && t.innerText !== R.a.translations.VALIDATION_ERROR_PATTERN_MISMATCH
                     ? ((t.innerText = this._translator.translate(r)),
@@ -11102,7 +11135,7 @@ and limitations under the License.
               },
               {
                 key: 'setOnKeyDownProperties',
-                value: function (e, t) {
+                value: function(e, t) {
                   (this._currentKeyCode = t.keyCode),
                     (this._selectionRangeStart = e.selectionStart),
                     (this._selectionRangeEnd = e.selectionEnd);
@@ -11110,60 +11143,59 @@ and limitations under the License.
               },
               {
                 key: 'setFormValidity',
-                value: function (e) {
+                value: function(e) {
                   var t = { data: x({}, e), type: T.a.EVENTS.VALIDATE_FORM };
                   this.messageBus.publish(t);
                 }
               },
               {
                 key: 'validate',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   a._toggleErrorClass(e), this._setMessage(e, t, n);
                 }
               },
               {
                 key: 'onInit',
-                value:
-                  ((n = o()(
-                    i.a.mark(function e() {
-                      return i.a.wrap(
-                        function (e) {
-                          for (;;)
-                            switch ((e.prev = e.next)) {
-                              case 0:
-                                h()(b()(a.prototype), 'onInit', this).call(this),
-                                  (this._matchDigitsRegexp = new RegExp(a.MATCH_DIGITS)),
-                                  (this._translator = new k.a(this.params.locale));
-                              case 3:
-                              case 'end':
-                                return e.stop();
-                            }
-                        },
-                        e,
-                        this
-                      );
-                    })
-                  )),
-                  function () {
-                    return n.apply(this, arguments);
+                value: ((n = o()(
+                  i.a.mark(function e() {
+                    return i.a.wrap(
+                      function(e) {
+                        for (;;)
+                          switch ((e.prev = e.next)) {
+                            case 0:
+                              h()(b()(a.prototype), 'onInit', this).call(this),
+                                (this._matchDigitsRegexp = new RegExp(a.MATCH_DIGITS)),
+                                (this._translator = new k.a(this.params.locale));
+                            case 3:
+                            case 'end':
+                              return e.stop();
+                          }
+                      },
+                      e,
+                      this
+                    );
                   })
+                )),
+                function() {
+                  return n.apply(this, arguments);
+                })
               },
               {
                 key: 'removeNonDigits',
-                value: function (e) {
+                value: function(e) {
                   if (e) return e.replace(a.MATCH_CHARS, a.CLEAR_VALUE);
                 }
               },
               {
                 key: 'getCardDetails',
-                value: function () {
+                value: function() {
                   var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : a.CLEAR_VALUE;
                   return E.iinLookup.lookup(e);
                 }
               },
               {
                 key: 'cardNumber',
-                value: function (e) {
+                value: function(e) {
                   (this.cardNumberValue = this.removeNonDigits(e)),
                     (this.cardDetails = this.getCardDetails(this.cardNumberValue));
                   var t = this.cardDetails.type
@@ -11174,25 +11206,25 @@ and limitations under the License.
               },
               {
                 key: 'expirationDate',
-                value: function (e) {
+                value: function(e) {
                   this.expirationDateValue = e ? this.removeNonDigits(e) : a.CLEAR_VALUE;
                 }
               },
               {
                 key: 'securityCode',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.securityCodeValue = e ? this.limitLength(this.removeNonDigits(e), t) : a.CLEAR_VALUE;
                 }
               },
               {
                 key: '_broadcastFormFieldError',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.messageBus.publish(a._setValidateEvent(e, t));
                 }
               },
               {
                 key: '_getTranslation',
-                value: function (e, t, n, r, i) {
+                value: function(e, t, n, r, i) {
                   return r && i && !t
                     ? this._translator.translate(i)
                     : r && e.value && t && !e.validity.valid
@@ -11202,25 +11234,25 @@ and limitations under the License.
               },
               {
                 key: '_isFormReadyToSubmit',
-                value: function (e) {
+                value: function(e) {
                   return (this._isPaymentReady && this._formValidity) || (e && this._formValidity);
                 }
               },
               {
                 key: '_isPressedKeyBackspace',
-                value: function () {
+                value: function() {
                   return this._currentKeyCode === a.BACKSPACE_KEY_CODE;
                 }
               },
               {
                 key: '_isPressedKeyDelete',
-                value: function () {
+                value: function() {
                   return this._currentKeyCode === a.DELETE_KEY_CODE;
                 }
               },
               {
                 key: '_setMessage',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = e.getAttribute(a.ID_PARAM_NAME) === C.a.CARD_NUMBER_INPUT,
                     i = a.getValidationMessage(e.validity);
                   t.innerText = this._getTranslation(e, r, i, t, n);
@@ -11228,7 +11260,7 @@ and limitations under the License.
               },
               {
                 key: '_setValidationResult',
-                value: function (e, t, n, r, i) {
+                value: function(e, t, n, r, i) {
                   e
                     ? ((this._formValidity = !0), (this._isPaymentReady = !0))
                     : ((this._formValidity = a._isFormValid(n, t, r)),
@@ -11266,9 +11298,9 @@ and limitations under the License.
           securityCode: F.SECURITY_CODE_FIELD_NAME
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return p;
       });
       n(167), n(53), n(141), n(35);
@@ -11285,7 +11317,7 @@ and limitations under the License.
         if ('undefined' == typeof Symbol || null == e[Symbol.iterator]) {
           if (
             Array.isArray(e) ||
-            (e = (function (e, t) {
+            (e = (function(e, t) {
               if (!e) return;
               if ('string' == typeof e) return d(e, t);
               var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -11295,13 +11327,13 @@ and limitations under the License.
             })(e))
           ) {
             var t = 0,
-              n = function () {};
+              n = function() {};
             return {
               s: n,
-              n: function () {
+              n: function() {
                 return t >= e.length ? { done: !0 } : { done: !1, value: e[t++] };
               },
-              e: function (e) {
+              e: function(e) {
                 throw e;
               },
               f: n
@@ -11316,17 +11348,17 @@ and limitations under the License.
           a = !0,
           o = !1;
         return {
-          s: function () {
+          s: function() {
             r = e[Symbol.iterator]();
           },
-          n: function () {
+          n: function() {
             var e = r.next();
             return (a = e.done), e;
           },
-          e: function (e) {
+          e: function(e) {
             (o = !0), (i = e);
           },
-          f: function () {
+          f: function() {
             try {
               a || null == r.return || r.return();
             } finally {
@@ -11340,7 +11372,7 @@ and limitations under the License.
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
       }
-      var p = (function () {
+      var p = (function() {
         function e() {
           u()(this, e);
         }
@@ -11348,8 +11380,8 @@ and limitations under the License.
           l()(e, null, [
             {
               key: 'addDataToForm',
-              value: function (t, n, r) {
-                Object.entries(n).forEach(function (n) {
+              value: function(t, n, r) {
+                Object.entries(n).forEach(function(n) {
                   var i = o()(n, 2),
                     a = i[0],
                     s = i[1];
@@ -11360,13 +11392,13 @@ and limitations under the License.
             },
             {
               key: 'addListener',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 document.getElementById(e).addEventListener(t, n);
               }
             },
             {
               key: 'appendChildIntoDOM',
-              value: function (t, n) {
+              value: function(t, n) {
                 var r = document.getElementById(t)
                   ? document.getElementById(t)
                   : document.getElementsByTagName(e.BODY_MARKUP)[0];
@@ -11375,7 +11407,7 @@ and limitations under the License.
             },
             {
               key: 'isScriptLoaded',
-              value: function (t) {
+              value: function(t) {
                 var n = t.src,
                   r = t.id,
                   i = document.getElementsByTagName(e.SCRIPT_MARKUP),
@@ -11389,15 +11421,15 @@ and limitations under the License.
             },
             {
               key: 'insertScript',
-              value: function (t, n) {
-                return new Promise(function (r, i) {
+              value: function(t, n) {
+                return new Promise(function(r, i) {
                   var a = e.isScriptLoaded(n);
                   if (a) r(a);
                   else {
                     var o = document.getElementsByTagName(t)[0],
                       s = e.setMarkupAttributes(e.SCRIPT_MARKUP, n);
                     o.appendChild(s),
-                      s.addEventListener('load', function () {
+                      s.addEventListener('load', function() {
                         r(s);
                       });
                   }
@@ -11406,21 +11438,21 @@ and limitations under the License.
             },
             {
               key: 'insertStyle',
-              value: function (t) {
+              value: function(t) {
                 var n = document.getElementById('insertedStyles'),
                   r = document.createElement(e.STYLE_MARKUP);
                 n ||
                   (r.setAttribute('id', 'insertedStyles'),
                   r.setAttribute('type', 'text/css'),
                   document.head.appendChild(r),
-                  t.forEach(function (e) {
+                  t.forEach(function(e) {
                     return r.sheet.insertRule(e, 0);
                   }));
               }
             },
             {
               key: 'parseForm',
-              value: function () {
+              value: function() {
                 var t,
                   n = document.getElementById(f.a.MERCHANT_FORM_SELECTOR),
                   r = {},
@@ -11440,7 +11472,7 @@ and limitations under the License.
             },
             {
               key: 'removeAllChildren',
-              value: function (e) {
+              value: function(e) {
                 var t = document.getElementById(e);
                 if (!t) return t;
                 for (; t.lastChild; ) t.removeChild(t.lastChild);
@@ -11449,10 +11481,10 @@ and limitations under the License.
             },
             {
               key: 'setMarkupAttributes',
-              value: function (e, t) {
+              value: function(e, t) {
                 var n = document.createElement(e);
                 return (
-                  Object.keys(t).forEach(function (e) {
+                  Object.keys(t).forEach(function(e) {
                     n.setAttribute(e, t[e]);
                   }),
                   n
@@ -11471,84 +11503,84 @@ and limitations under the License.
         (p.SRC_ATTRIBUTE = 'src'),
         (p.ST_NAME_ATTRIBUTE = 'data-st-name'),
         (p.STYLE_MARKUP = 'style'),
-        (p.createHtmlElement = function (e, t) {
+        (p.createHtmlElement = function(e, t) {
           var n = document.createElement(t);
           return (
-            Object.keys(e).map(function (t) {
+            Object.keys(e).map(function(t) {
               return n.setAttribute(t, e[t]);
             }),
             n
           );
         }),
-        (p.getAllFormElements = function (e) {
+        (p.getAllFormElements = function(e) {
           return [].concat(
             i()(Array.from(e.querySelectorAll(p.SELECT_MARKUP))),
             i()(Array.from(e.querySelectorAll(p.INPUT_MARKUP)))
           );
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14),
         i = n(40),
         a = n(52),
         o = n(75)('src'),
         s = n(244),
         u = ('' + s).split('toString');
-      (n(51).inspectSource = function (e) {
+      (n(51).inspectSource = function(e) {
         return s.call(e);
       }),
-        (e.exports = function (e, t, n, s) {
+        (e.exports = function(e, t, n, s) {
           var c = 'function' == typeof n;
           c && (a(n, 'name') || i(n, 'name', t)),
             e[t] !== n &&
               (c && (a(n, o) || i(n, o, e[t] ? '' + e[t] : u.join(String(t)))),
               e === r ? (e[t] = n) : s ? (e[t] ? (e[t] = n) : i(e, t, n)) : (delete e[t], i(e, t, n)));
-        })(Function.prototype, 'toString', function () {
+        })(Function.prototype, 'toString', function() {
           return ('function' == typeof this && this[o]) || s.call(this);
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(23),
         i = n(88);
       e.exports = n(19)
-        ? function (e, t, n) {
+        ? function(e, t, n) {
             return r.f(e, t, i(1, n));
           }
-        : function (e, t, n) {
+        : function(e, t, n) {
             return (e[t] = n), e;
           };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(108),
         i = n(73);
-      e.exports = function (e) {
+      e.exports = function(e) {
         return r(i(e));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(18);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return (
           !!e &&
-          r(function () {
-            t ? e.call(null, function () {}, 1) : e.call(null);
+          r(function() {
+            t ? e.call(null, function() {}, 1) : e.call(null);
           })
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(31),
         i = n(77);
-      n(45)('keys', function () {
-        return function (e) {
+      n(45)('keys', function() {
+        return function(e) {
           return i(r(e));
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return de;
       });
       n(26), n(22), n(11), n(43), n(49), n(50);
@@ -11557,10 +11589,10 @@ and limitations under the License.
       function a(e) {
         return (a =
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-            ? function (e) {
+            ? function(e) {
                 return typeof e;
               }
-            : function (e) {
+            : function(e) {
                 return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype
                   ? 'symbol'
                   : typeof e;
@@ -11580,11 +11612,11 @@ and limitations under the License.
             r = Object.keys(n);
           'function' == typeof Object.getOwnPropertySymbols &&
             (r = r.concat(
-              Object.getOwnPropertySymbols(n).filter(function (e) {
+              Object.getOwnPropertySymbols(n).filter(function(e) {
                 return Object.getOwnPropertyDescriptor(n, e).enumerable;
               })
             )),
-            r.forEach(function (t) {
+            r.forEach(function(t) {
               o(e, t, n[t]);
             });
         }
@@ -11615,14 +11647,14 @@ and limitations under the License.
       function d(e) {
         return (d = Object.setPrototypeOf
           ? Object.getPrototypeOf
-          : function (e) {
+          : function(e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             })(e);
       }
       function p(e, t) {
         return (p =
           Object.setPrototypeOf ||
-          function (e, t) {
+          function(e, t) {
             return (e.__proto__ = t), e;
           })(e, t);
       }
@@ -11656,12 +11688,12 @@ and limitations under the License.
       }
       function _(e) {
         return (
-          (function (e) {
+          (function(e) {
             if (Array.isArray(e)) return y(e);
           })(e) ||
           m(e) ||
           g(e) ||
-          (function () {
+          (function() {
             throw new TypeError(
               'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
             );
@@ -11682,7 +11714,7 @@ and limitations under the License.
       function S(e, t) {
         return (
           b(e) ||
-          (function (e, t) {
+          (function(e, t) {
             if ('undefined' != typeof Symbol && Symbol.iterator in Object(e)) {
               var n = [],
                 r = !0,
@@ -11712,21 +11744,21 @@ and limitations under the License.
       }
       var A = {
           type: 'logger',
-          log: function (e) {
+          log: function(e) {
             this.output('log', e);
           },
-          warn: function (e) {
+          warn: function(e) {
             this.output('warn', e);
           },
-          error: function (e) {
+          error: function(e) {
             this.output('error', e);
           },
-          output: function (e, t) {
+          output: function(e, t) {
             var n;
             console && console[e] && (n = console)[e].apply(n, _(t));
           }
         },
-        O = new ((function () {
+        O = new ((function() {
           function e(t) {
             var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             u(this, e), this.init(t, n);
@@ -11735,7 +11767,7 @@ and limitations under the License.
             l(e, [
               {
                 key: 'init',
-                value: function (e) {
+                value: function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                   (this.prefix = t.prefix || 'i18next:'),
                     (this.logger = e || A),
@@ -11745,50 +11777,54 @@ and limitations under the License.
               },
               {
                 key: 'setDebug',
-                value: function (e) {
+                value: function(e) {
                   this.debug = e;
                 }
               },
               {
                 key: 'log',
-                value: function () {
+                value: function() {
                   for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                   return this.forward(t, 'log', '', !0);
                 }
               },
               {
                 key: 'warn',
-                value: function () {
+                value: function() {
                   for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                   return this.forward(t, 'warn', '', !0);
                 }
               },
               {
                 key: 'error',
-                value: function () {
+                value: function() {
                   for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                   return this.forward(t, 'error', '');
                 }
               },
               {
                 key: 'deprecate',
-                value: function () {
+                value: function() {
                   for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n];
                   return this.forward(t, 'warn', 'WARNING DEPRECATED: ', !0);
                 }
               },
               {
                 key: 'forward',
-                value: function (e, t, n, r) {
+                value: function(e, t, n, r) {
                   return r && !this.debug
                     ? null
-                    : ('string' == typeof e[0] && (e[0] = ''.concat(n).concat(this.prefix, ' ').concat(e[0])),
+                    : ('string' == typeof e[0] &&
+                        (e[0] = ''
+                          .concat(n)
+                          .concat(this.prefix, ' ')
+                          .concat(e[0])),
                       this.logger[t](e));
                 }
               },
               {
                 key: 'create',
-                value: function (t) {
+                value: function(t) {
                   return new e(
                     this.logger,
                     s({}, { prefix: ''.concat(this.prefix, ':').concat(t, ':') }, this.options)
@@ -11799,7 +11835,7 @@ and limitations under the License.
             e
           );
         })())(),
-        R = (function () {
+        R = (function() {
           function e() {
             u(this, e), (this.observers = {});
           }
@@ -11807,10 +11843,10 @@ and limitations under the License.
             l(e, [
               {
                 key: 'on',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this;
                   return (
-                    e.split(' ').forEach(function (e) {
+                    e.split(' ').forEach(function(e) {
                       (n.observers[e] = n.observers[e] || []), n.observers[e].push(t);
                     }),
                     this
@@ -11819,10 +11855,10 @@ and limitations under the License.
               },
               {
                 key: 'off',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.observers[e] &&
                     (t
-                      ? (this.observers[e] = this.observers[e].filter(function (e) {
+                      ? (this.observers[e] = this.observers[e].filter(function(e) {
                           return e !== t;
                         }))
                       : delete this.observers[e]);
@@ -11830,18 +11866,18 @@ and limitations under the License.
               },
               {
                 key: 'emit',
-                value: function (e) {
+                value: function(e) {
                   for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
                     n[r - 1] = arguments[r];
                   if (this.observers[e]) {
                     var i = [].concat(this.observers[e]);
-                    i.forEach(function (e) {
+                    i.forEach(function(e) {
                       e.apply(void 0, n);
                     });
                   }
                   if (this.observers['*']) {
                     var a = [].concat(this.observers['*']);
-                    a.forEach(function (t) {
+                    a.forEach(function(t) {
                       t.apply(t, [e].concat(n));
                     });
                   }
@@ -11854,7 +11890,7 @@ and limitations under the License.
       function T() {
         var e,
           t,
-          n = new Promise(function (n, r) {
+          n = new Promise(function(n, r) {
             (e = n), (t = r);
           });
         return (n.resolve = e), (n.reject = t), n;
@@ -11863,7 +11899,7 @@ and limitations under the License.
         return null == e ? '' : '' + e;
       }
       function k(e, t, n) {
-        e.forEach(function (e) {
+        e.forEach(function(e) {
           t[e] && (n[e] = t[e]);
         });
       }
@@ -11910,7 +11946,7 @@ and limitations under the License.
       var D = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '/': '&#x2F;' };
       function M(e) {
         return 'string' == typeof e
-          ? e.replace(/[&<>"'\/]/g, function (e) {
+          ? e.replace(/[&<>"'\/]/g, function(e) {
               return D[e];
             })
           : e;
@@ -11920,7 +11956,7 @@ and limitations under the License.
           window.navigator &&
           window.navigator.userAgent &&
           window.navigator.userAgent.indexOf('MSIE') > -1,
-        U = (function (e) {
+        U = (function(e) {
           function t(e) {
             var n,
               r =
@@ -11942,20 +11978,20 @@ and limitations under the License.
             l(t, [
               {
                 key: 'addNamespaces',
-                value: function (e) {
+                value: function(e) {
                   this.options.ns.indexOf(e) < 0 && this.options.ns.push(e);
                 }
               },
               {
                 key: 'removeNamespaces',
-                value: function (e) {
+                value: function(e) {
                   var t = this.options.ns.indexOf(e);
                   t > -1 && this.options.ns.splice(t, 1);
                 }
               },
               {
                 key: 'getResource',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
                     i = void 0 !== r.keySeparator ? r.keySeparator : this.options.keySeparator,
                     a = [e, t];
@@ -11969,7 +12005,7 @@ and limitations under the License.
               },
               {
                 key: 'addResource',
-                value: function (e, t, n, r) {
+                value: function(e, t, n, r) {
                   var i = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : { silent: !1 },
                     a = this.options.keySeparator;
                   void 0 === a && (a = '.');
@@ -11983,7 +12019,7 @@ and limitations under the License.
               },
               {
                 key: 'addResources',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : { silent: !1 };
                   for (var i in n)
                     ('string' != typeof n[i] && '[object Array]' !== Object.prototype.toString.apply(n[i])) ||
@@ -11993,7 +12029,7 @@ and limitations under the License.
               },
               {
                 key: 'addResourceBundle',
-                value: function (e, t, n, r, i) {
+                value: function(e, t, n, r, i) {
                   var a = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : { silent: !1 },
                     o = [e, t];
                   e.indexOf('.') > -1 && ((r = n), (n = t), (t = (o = e.split('.'))[1])), this.addNamespaces(t);
@@ -12003,7 +12039,7 @@ and limitations under the License.
               },
               {
                 key: 'removeResourceBundle',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.hasResourceBundle(e, t) && delete this.data[e][t],
                     this.removeNamespaces(t),
                     this.emit('removed', e, t);
@@ -12011,13 +12047,13 @@ and limitations under the License.
               },
               {
                 key: 'hasResourceBundle',
-                value: function (e, t) {
+                value: function(e, t) {
                   return void 0 !== this.getResource(e, t);
                 }
               },
               {
                 key: 'getResourceBundle',
-                value: function (e, t) {
+                value: function(e, t) {
                   return (
                     t || (t = this.options.defaultNS),
                     'v1' === this.options.compatibilityAPI ? s({}, {}, this.getResource(e, t)) : this.getResource(e, t)
@@ -12026,13 +12062,13 @@ and limitations under the License.
               },
               {
                 key: 'getDataByLanguage',
-                value: function (e) {
+                value: function(e) {
                   return this.data[e];
                 }
               },
               {
                 key: 'toJSON',
-                value: function () {
+                value: function() {
                   return this.data;
                 }
               }
@@ -12042,13 +12078,13 @@ and limitations under the License.
         })(R),
         B = {
           processors: {},
-          addPostProcessor: function (e) {
+          addPostProcessor: function(e) {
             this.processors[e.name] = e;
           },
-          handle: function (e, t, n, r, i) {
+          handle: function(e, t, n, r, i) {
             var a = this;
             return (
-              e.forEach(function (e) {
+              e.forEach(function(e) {
                 a.processors[e] && (t = a.processors[e].process(t, n, r, i));
               }),
               t
@@ -12056,7 +12092,7 @@ and limitations under the License.
           }
         },
         V = {},
-        $ = (function (e) {
+        $ = (function(e) {
           function t(e) {
             var n,
               r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -12088,13 +12124,13 @@ and limitations under the License.
             l(t, [
               {
                 key: 'changeLanguage',
-                value: function (e) {
+                value: function(e) {
                   e && (this.language = e);
                 }
               },
               {
                 key: 'exists',
-                value: function (e) {
+                value: function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : { interpolation: {} },
                     n = this.resolve(e, t);
                   return n && void 0 !== n.res;
@@ -12102,7 +12138,7 @@ and limitations under the License.
               },
               {
                 key: 'extractFromKey',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = t.nsSeparator || this.options.nsSeparator;
                   void 0 === n && (n = ':');
                   var r = void 0 !== t.keySeparator ? t.keySeparator : this.options.keySeparator,
@@ -12116,7 +12152,7 @@ and limitations under the License.
               },
               {
                 key: 'translate',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this;
                   if (
                     ('object' !== a(t) &&
@@ -12164,7 +12200,10 @@ and limitations under the License.
                         A = w ? y : v;
                       for (var O in p)
                         if (Object.prototype.hasOwnProperty.call(p, O)) {
-                          var R = ''.concat(A).concat(r).concat(O);
+                          var R = ''
+                            .concat(A)
+                            .concat(r)
+                            .concat(O);
                           (S[O] = this.translate(R, s({}, t, { joinArrays: !1, ns: u }))), S[O] === R && (S[O] = p[O]);
                         }
                       p = S;
@@ -12193,7 +12232,7 @@ and limitations under the License.
                         'all' === this.options.saveMissingTo
                           ? (N = this.languageUtils.toResolveHierarchy(t.lng || this.language))
                           : N.push(t.lng || this.language);
-                      var j = function (e, r) {
+                      var j = function(e, r) {
                         n.options.missingKeyHandler
                           ? n.options.missingKeyHandler(e, c, r, I ? t.defaultValue : p, I, t)
                           : n.backendConnector &&
@@ -12204,8 +12243,8 @@ and limitations under the License.
                       if (this.options.saveMissing) {
                         var L = void 0 !== t.count && 'string' != typeof t.count;
                         this.options.saveMissingPlurals && L
-                          ? N.forEach(function (e) {
-                              n.pluralResolver.getPluralFormsOfKey(e, o).forEach(function (t) {
+                          ? N.forEach(function(e) {
+                              n.pluralResolver.getPluralFormsOfKey(e, o).forEach(function(t) {
                                 return j([e], t);
                               });
                             })
@@ -12221,7 +12260,7 @@ and limitations under the License.
               },
               {
                 key: 'extendTranslation',
-                value: function (e, t, n, r) {
+                value: function(e, t, n, r) {
                   var i = this;
                   if (this.i18nFormat && this.i18nFormat.parse)
                     e = this.i18nFormat.parse(e, n, r.usedLng, r.usedNS, r.usedKey, { resolved: r });
@@ -12237,7 +12276,7 @@ and limitations under the License.
                       !1 !== n.nest &&
                         (e = this.interpolator.nest(
                           e,
-                          function () {
+                          function() {
                             return i.translate.apply(i, arguments);
                           },
                           n
@@ -12264,7 +12303,7 @@ and limitations under the License.
               },
               {
                 key: 'resolve',
-                value: function (e) {
+                value: function(e) {
                   var t,
                     n,
                     r,
@@ -12274,7 +12313,7 @@ and limitations under the License.
                     s = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                   return (
                     'string' == typeof e && (e = [e]),
-                    e.forEach(function (e) {
+                    e.forEach(function(e) {
                       if (!o.isValidLookup(t)) {
                         var u = o.extractFromKey(e, s),
                           c = u.key;
@@ -12284,7 +12323,7 @@ and limitations under the License.
                         var f = void 0 !== s.count && 'string' != typeof s.count,
                           h = void 0 !== s.context && 'string' == typeof s.context && '' !== s.context,
                           d = s.lngs ? s.lngs : o.languageUtils.toResolveHierarchy(s.lng || o.language, s.fallbackLng);
-                        l.forEach(function (e) {
+                        l.forEach(function(e) {
                           o.isValidLookup(t) ||
                             ((a = e),
                             !V[''.concat(d[0], '-').concat(e)] &&
@@ -12299,7 +12338,7 @@ and limitations under the License.
                                   .concat(d.join(', '), '" won\'t get resolved as namespace was not yet loaded'),
                                 'This means something IS WRONG in your application setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!'
                               )),
-                            d.forEach(function (n) {
+                            d.forEach(function(n) {
                               if (!o.isValidLookup(t)) {
                                 i = n;
                                 var a,
@@ -12326,7 +12365,7 @@ and limitations under the License.
               },
               {
                 key: 'isValidLookup',
-                value: function (e) {
+                value: function(e) {
                   return !(
                     void 0 === e ||
                     (!this.options.returnNull && null === e) ||
@@ -12336,7 +12375,7 @@ and limitations under the License.
               },
               {
                 key: 'getResource',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
                   return this.i18nFormat && this.i18nFormat.getResource
                     ? this.i18nFormat.getResource(e, t, n, r)
@@ -12350,7 +12389,7 @@ and limitations under the License.
       function q(e) {
         return e.charAt(0).toUpperCase() + e.slice(1);
       }
-      var K = (function () {
+      var K = (function() {
           function e(t) {
             u(this, e),
               (this.options = t),
@@ -12361,7 +12400,7 @@ and limitations under the License.
             l(e, [
               {
                 key: 'getScriptPartFromCode',
-                value: function (e) {
+                value: function(e) {
                   if (!e || e.indexOf('-') < 0) return null;
                   var t = e.split('-');
                   return 2 === t.length ? null : (t.pop(), this.formatLanguageCode(t.join('-')));
@@ -12369,7 +12408,7 @@ and limitations under the License.
               },
               {
                 key: 'getLanguagePartFromCode',
-                value: function (e) {
+                value: function(e) {
                   if (!e || e.indexOf('-') < 0) return e;
                   var t = e.split('-');
                   return this.formatLanguageCode(t[0]);
@@ -12377,13 +12416,13 @@ and limitations under the License.
               },
               {
                 key: 'formatLanguageCode',
-                value: function (e) {
+                value: function(e) {
                   if ('string' == typeof e && e.indexOf('-') > -1) {
                     var t = ['hans', 'hant', 'latn', 'cyrl', 'cans', 'mong', 'arab'],
                       n = e.split('-');
                     return (
                       this.options.lowerCaseLng
-                        ? (n = n.map(function (e) {
+                        ? (n = n.map(function(e) {
                             return e.toLowerCase();
                           }))
                         : 2 === n.length
@@ -12404,7 +12443,7 @@ and limitations under the License.
               },
               {
                 key: 'isWhitelisted',
-                value: function (e) {
+                value: function(e) {
                   return (
                     ('languageOnly' === this.options.load || this.options.nonExplicitWhitelist) &&
                       (e = this.getLanguagePartFromCode(e)),
@@ -12414,7 +12453,7 @@ and limitations under the License.
               },
               {
                 key: 'getFallbackCodes',
-                value: function (e, t) {
+                value: function(e, t) {
                   if (!e) return [];
                   if (('string' == typeof e && (e = [e]), '[object Array]' === Object.prototype.toString.apply(e)))
                     return e;
@@ -12431,11 +12470,11 @@ and limitations under the License.
               },
               {
                 key: 'toResolveHierarchy',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this,
                     r = this.getFallbackCodes(t || this.options.fallbackLng || [], e),
                     i = [],
-                    a = function (e) {
+                    a = function(e) {
                       e &&
                         (n.isWhitelisted(e)
                           ? i.push(e)
@@ -12449,7 +12488,7 @@ and limitations under the License.
                           a(this.getScriptPartFromCode(e)),
                         'currentOnly' !== this.options.load && a(this.getLanguagePartFromCode(e)))
                       : 'string' == typeof e && a(this.formatLanguageCode(e)),
-                    r.forEach(function (e) {
+                    r.forEach(function(e) {
                       i.indexOf(e) < 0 && a(n.formatLanguageCode(e));
                     }),
                     i
@@ -12604,91 +12643,91 @@ and limitations under the License.
           { lngs: ['he'], nr: [1, 2, 20, 21], fc: 22 }
         ],
         Y = {
-          1: function (e) {
+          1: function(e) {
             return Number(e > 1);
           },
-          2: function (e) {
+          2: function(e) {
             return Number(1 != e);
           },
-          3: function (e) {
+          3: function(e) {
             return 0;
           },
-          4: function (e) {
+          4: function(e) {
             return Number(
               e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2
             );
           },
-          5: function (e) {
+          5: function(e) {
             return Number(
               0 === e ? 0 : 1 == e ? 1 : 2 == e ? 2 : e % 100 >= 3 && e % 100 <= 10 ? 3 : e % 100 >= 11 ? 4 : 5
             );
           },
-          6: function (e) {
+          6: function(e) {
             return Number(1 == e ? 0 : e >= 2 && e <= 4 ? 1 : 2);
           },
-          7: function (e) {
+          7: function(e) {
             return Number(1 == e ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2);
           },
-          8: function (e) {
+          8: function(e) {
             return Number(1 == e ? 0 : 2 == e ? 1 : 8 != e && 11 != e ? 2 : 3);
           },
-          9: function (e) {
+          9: function(e) {
             return Number(e >= 2);
           },
-          10: function (e) {
+          10: function(e) {
             return Number(1 == e ? 0 : 2 == e ? 1 : e < 7 ? 2 : e < 11 ? 3 : 4);
           },
-          11: function (e) {
+          11: function(e) {
             return Number(1 == e || 11 == e ? 0 : 2 == e || 12 == e ? 1 : e > 2 && e < 20 ? 2 : 3);
           },
-          12: function (e) {
+          12: function(e) {
             return Number(e % 10 != 1 || e % 100 == 11);
           },
-          13: function (e) {
+          13: function(e) {
             return Number(0 !== e);
           },
-          14: function (e) {
+          14: function(e) {
             return Number(1 == e ? 0 : 2 == e ? 1 : 3 == e ? 2 : 3);
           },
-          15: function (e) {
+          15: function(e) {
             return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2);
           },
-          16: function (e) {
+          16: function(e) {
             return Number(e % 10 == 1 && e % 100 != 11 ? 0 : 0 !== e ? 1 : 2);
           },
-          17: function (e) {
+          17: function(e) {
             return Number(1 == e || e % 10 == 1 ? 0 : 1);
           },
-          18: function (e) {
+          18: function(e) {
             return Number(0 == e ? 0 : 1 == e ? 1 : 2);
           },
-          19: function (e) {
+          19: function(e) {
             return Number(
               1 == e ? 0 : 0 === e || (e % 100 > 1 && e % 100 < 11) ? 1 : e % 100 > 10 && e % 100 < 20 ? 2 : 3
             );
           },
-          20: function (e) {
+          20: function(e) {
             return Number(1 == e ? 0 : 0 === e || (e % 100 > 0 && e % 100 < 20) ? 1 : 2);
           },
-          21: function (e) {
+          21: function(e) {
             return Number(e % 100 == 1 ? 1 : e % 100 == 2 ? 2 : e % 100 == 3 || e % 100 == 4 ? 3 : 0);
           },
-          22: function (e) {
+          22: function(e) {
             return Number(1 === e ? 0 : 2 === e ? 1 : (e < 0 || e > 10) && e % 10 == 0 ? 2 : 3);
           }
         };
       function z() {
         var e = {};
         return (
-          H.forEach(function (t) {
-            t.lngs.forEach(function (n) {
+          H.forEach(function(t) {
+            t.lngs.forEach(function(n) {
               e[n] = { numbers: t.nr, plurals: Y[t.fc] };
             });
           }),
           e
         );
       }
-      var G = (function () {
+      var G = (function() {
           function e(t) {
             var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             u(this, e),
@@ -12701,31 +12740,31 @@ and limitations under the License.
             l(e, [
               {
                 key: 'addRule',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.rules[e] = t;
                 }
               },
               {
                 key: 'getRule',
-                value: function (e) {
+                value: function(e) {
                   return this.rules[e] || this.rules[this.languageUtils.getLanguagePartFromCode(e)];
                 }
               },
               {
                 key: 'needsPlural',
-                value: function (e) {
+                value: function(e) {
                   var t = this.getRule(e);
                   return t && t.numbers.length > 1;
                 }
               },
               {
                 key: 'getPluralFormsOfKey',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this,
                     r = [],
                     i = this.getRule(e);
                   return i
-                    ? (i.numbers.forEach(function (i) {
+                    ? (i.numbers.forEach(function(i) {
                         var a = n.getSuffix(e, i);
                         r.push(''.concat(t).concat(a));
                       }),
@@ -12735,7 +12774,7 @@ and limitations under the License.
               },
               {
                 key: 'getSuffix',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this,
                     r = this.getRule(e);
                   if (r) {
@@ -12745,7 +12784,7 @@ and limitations under the License.
                       2 === r.numbers.length &&
                       1 === r.numbers[0] &&
                       (2 === a ? (a = 'plural') : 1 === a && (a = ''));
-                    var o = function () {
+                    var o = function() {
                       return n.options.prepend && a.toString() ? n.options.prepend + a.toString() : a.toString();
                     };
                     return 'v1' === this.options.compatibilityJSON
@@ -12768,7 +12807,7 @@ and limitations under the License.
             e
           );
         })(),
-        W = (function () {
+        W = (function() {
           function e() {
             var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
             u(this, e),
@@ -12776,7 +12815,7 @@ and limitations under the License.
               (this.options = t),
               (this.format =
                 (t.interpolation && t.interpolation.format) ||
-                function (e) {
+                function(e) {
                   return e;
                 }),
               this.init(t);
@@ -12785,7 +12824,7 @@ and limitations under the License.
             l(e, [
               {
                 key: 'init',
-                value: function () {
+                value: function() {
                   var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
                   e.interpolation || (e.interpolation = { escapeValue: !0 });
                   var t = e.interpolation;
@@ -12809,13 +12848,13 @@ and limitations under the License.
               },
               {
                 key: 'reset',
-                value: function () {
+                value: function() {
                   this.options && this.init(this.options);
                 }
               },
               {
                 key: 'resetRegExp',
-                value: function () {
+                value: function() {
                   var e = ''.concat(this.prefix, '(.+?)').concat(this.suffix);
                   this.regexp = new RegExp(e, 'g');
                   var t = ''
@@ -12830,7 +12869,7 @@ and limitations under the License.
               },
               {
                 key: 'interpolate',
-                value: function (e, t, n, r) {
+                value: function(e, t, n, r) {
                   var i,
                     a,
                     o,
@@ -12840,7 +12879,7 @@ and limitations under the License.
                   function c(e) {
                     return e.replace(/\$/g, '$$$$');
                   }
-                  var l = function (e) {
+                  var l = function(e) {
                     if (e.indexOf(s.formatSeparator) < 0) {
                       var i = P(t, u, e);
                       return s.alwaysFormat ? s.format(i, void 0, n) : i;
@@ -12886,7 +12925,7 @@ and limitations under the License.
               },
               {
                 key: 'nest',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n,
                     r,
                     i = this,
@@ -12903,7 +12942,10 @@ and limitations under the License.
                     } catch (t) {
                       return (
                         this.logger.warn('failed parsing options string in nesting for key '.concat(e), t),
-                        ''.concat(e).concat(n).concat(i)
+                        ''
+                          .concat(e)
+                          .concat(n)
+                          .concat(i)
                       );
                     }
                     return delete o.defaultValue, e;
@@ -12912,7 +12954,7 @@ and limitations under the License.
                     var c = [],
                       l = !1;
                     if (n[0].includes(this.formatSeparator) && !/{.*}/.test(n[1])) {
-                      var f = n[1].split(this.formatSeparator).map(function (e) {
+                      var f = n[1].split(this.formatSeparator).map(function(e) {
                           return e.trim();
                         }),
                         h = w(f);
@@ -12922,7 +12964,7 @@ and limitations under the License.
                     'string' != typeof r && (r = C(r)),
                       r || (this.logger.warn('missed to resolve '.concat(n[1], ' for nesting ').concat(e)), (r = '')),
                       l &&
-                        (r = c.reduce(function (e, t) {
+                        (r = c.reduce(function(e, t) {
                           return i.format(e, t, a.lng, a);
                         }, r.trim())),
                       (e = e.replace(n[0], r)),
@@ -12935,7 +12977,7 @@ and limitations under the License.
             e
           );
         })();
-      var J = (function (e) {
+      var J = (function(e) {
         function t(e, n, r) {
           var i,
             a = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
@@ -12960,16 +13002,16 @@ and limitations under the License.
           l(t, [
             {
               key: 'queueLoad',
-              value: function (e, t, n, r) {
+              value: function(e, t, n, r) {
                 var i = this,
                   a = [],
                   o = [],
                   s = [],
                   u = [];
                 return (
-                  e.forEach(function (e) {
+                  e.forEach(function(e) {
                     var r = !0;
-                    t.forEach(function (t) {
+                    t.forEach(function(t) {
                       var s = ''.concat(e, '|').concat(t);
                       !n.reload && i.store.hasResourceBundle(e, t)
                         ? (i.state[s] = 2)
@@ -12991,7 +13033,7 @@ and limitations under the License.
             },
             {
               key: 'loaded',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 var r = S(e.split('|'), 2),
                   i = r[0],
                   a = r[1];
@@ -12999,7 +13041,7 @@ and limitations under the License.
                   n && this.store.addResourceBundle(i, a, n),
                   (this.state[e] = t ? -1 : 2);
                 var o = {};
-                this.queue.forEach(function (n) {
+                this.queue.forEach(function(n) {
                   var r, s, u, c, l, f;
                   (r = n.loaded),
                     (s = a),
@@ -13009,16 +13051,16 @@ and limitations under the License.
                     (l[f] = l[f] || []),
                     u && (l[f] = l[f].concat(s)),
                     u || l[f].push(s),
-                    (function (e, t) {
+                    (function(e, t) {
                       for (var n = e.indexOf(t); -1 !== n; ) e.splice(n, 1), (n = e.indexOf(t));
                     })(n.pending, e),
                     t && n.errors.push(t),
                     0 !== n.pending.length ||
                       n.done ||
-                      (Object.keys(n.loaded).forEach(function (e) {
+                      (Object.keys(n.loaded).forEach(function(e) {
                         o[e] || (o[e] = []),
                           n.loaded[e].length &&
-                            n.loaded[e].forEach(function (t) {
+                            n.loaded[e].forEach(function(t) {
                               o[e].indexOf(t) < 0 && o[e].push(t);
                             });
                       }),
@@ -13026,22 +13068,22 @@ and limitations under the License.
                       n.errors.length ? n.callback(n.errors) : n.callback());
                 }),
                   this.emit('loaded', o),
-                  (this.queue = this.queue.filter(function (e) {
+                  (this.queue = this.queue.filter(function(e) {
                     return !e.done;
                   }));
               }
             },
             {
               key: 'read',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 var r = this,
                   i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 0,
                   a = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : 350,
                   o = arguments.length > 5 ? arguments[5] : void 0;
                 return e.length
-                  ? this.backend[n](e, t, function (s, u) {
+                  ? this.backend[n](e, t, function(s, u) {
                       s && u && i < 5
-                        ? setTimeout(function () {
+                        ? setTimeout(function() {
                             r.read.call(r, e, t, n, i + 1, 2 * a, o);
                           }, a)
                         : o(s, u);
@@ -13051,7 +13093,7 @@ and limitations under the License.
             },
             {
               key: 'prepareLoading',
-              value: function (e, t) {
+              value: function(e, t) {
                 var n = this,
                   r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
                   i = arguments.length > 3 ? arguments[3] : void 0;
@@ -13061,46 +13103,57 @@ and limitations under the License.
                   'string' == typeof t && (t = [t]);
                 var a = this.queueLoad(e, t, r, i);
                 if (!a.toLoad.length) return a.pending.length || i(), null;
-                a.toLoad.forEach(function (e) {
+                a.toLoad.forEach(function(e) {
                   n.loadOne(e);
                 });
               }
             },
             {
               key: 'load',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 this.prepareLoading(e, t, {}, n);
               }
             },
             {
               key: 'reload',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 this.prepareLoading(e, t, { reload: !0 }, n);
               }
             },
             {
               key: 'loadOne',
-              value: function (e) {
+              value: function(e) {
                 var t = this,
                   n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
                   r = e.split('|'),
                   i = S(r, 2),
                   a = i[0],
                   o = i[1];
-                this.read(a, o, 'read', void 0, void 0, function (r, i) {
+                this.read(a, o, 'read', void 0, void 0, function(r, i) {
                   r &&
                     t.logger.warn(
-                      ''.concat(n, 'loading namespace ').concat(o, ' for language ').concat(a, ' failed'),
+                      ''
+                        .concat(n, 'loading namespace ')
+                        .concat(o, ' for language ')
+                        .concat(a, ' failed'),
                       r
                     ),
-                    !r && i && t.logger.log(''.concat(n, 'loaded namespace ').concat(o, ' for language ').concat(a), i),
+                    !r &&
+                      i &&
+                      t.logger.log(
+                        ''
+                          .concat(n, 'loaded namespace ')
+                          .concat(o, ' for language ')
+                          .concat(a),
+                        i
+                      ),
                     t.loaded(e, r, i);
                 });
               }
             },
             {
               key: 'saveMissing',
-              value: function (e, t, n, r, i) {
+              value: function(e, t, n, r, i) {
                 var a = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : {};
                 this.services.utils &&
                 this.services.utils.hasLoadedNamespace &&
@@ -13157,7 +13210,7 @@ and limitations under the License.
           parseMissingKeyHandler: !1,
           appendNamespaceToMissingKey: !1,
           appendNamespaceToCIMode: !1,
-          overloadTranslationOptionHandler: function (e) {
+          overloadTranslationOptionHandler: function(e) {
             var t = {};
             if (
               ('object' === a(e[1]) && (t = e[1]),
@@ -13166,7 +13219,7 @@ and limitations under the License.
               'object' === a(e[2]) || 'object' === a(e[3]))
             ) {
               var n = e[3] || e[2];
-              Object.keys(n).forEach(function (e) {
+              Object.keys(n).forEach(function(e) {
                 t[e] = n[e];
               });
             }
@@ -13174,7 +13227,7 @@ and limitations under the License.
           },
           interpolation: {
             escapeValue: !0,
-            format: function (e, t, n, r) {
+            format: function(e, t, n, r) {
               return e;
             },
             prefix: '{{',
@@ -13198,7 +13251,7 @@ and limitations under the License.
         );
       }
       function Q() {}
-      var ee = new ((function (e) {
+      var ee = new ((function(e) {
           function t() {
             var e,
               n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
@@ -13214,7 +13267,7 @@ and limitations under the License.
               r && !e.isInitialized && !n.isClone)
             ) {
               if (!e.options.initImmediate) return e.init(n, r), h(e, f(e));
-              setTimeout(function () {
+              setTimeout(function() {
                 e.init(n, r);
               }, 0);
             }
@@ -13225,7 +13278,7 @@ and limitations under the License.
             l(t, [
               {
                 key: 'init',
-                value: function () {
+                value: function() {
                   var e = this,
                     t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = arguments.length > 1 ? arguments[1] : void 0;
@@ -13254,7 +13307,7 @@ and limitations under the License.
                       (a.interpolator = new W(this.options)),
                       (a.utils = { hasLoadedNamespace: this.hasLoadedNamespace.bind(this) }),
                       (a.backendConnector = new J(r(this.modules.backend), a.resourceStore, a, this.options)),
-                      a.backendConnector.on('*', function (t) {
+                      a.backendConnector.on('*', function(t) {
                         for (var n = arguments.length, r = new Array(n > 1 ? n - 1 : 0), i = 1; i < n; i++)
                           r[i - 1] = arguments[i];
                         e.emit.apply(e, [t].concat(r));
@@ -13265,12 +13318,12 @@ and limitations under the License.
                       this.modules.i18nFormat &&
                         ((a.i18nFormat = r(this.modules.i18nFormat)), a.i18nFormat.init && a.i18nFormat.init(this)),
                       (this.translator = new $(this.services, this.options)),
-                      this.translator.on('*', function (t) {
+                      this.translator.on('*', function(t) {
                         for (var n = arguments.length, r = new Array(n > 1 ? n - 1 : 0), i = 1; i < n; i++)
                           r[i - 1] = arguments[i];
                         e.emit.apply(e, [t].concat(r));
                       }),
-                      this.modules.external.forEach(function (t) {
+                      this.modules.external.forEach(function(t) {
                         t.init && t.init(e);
                       });
                   }
@@ -13287,15 +13340,15 @@ and limitations under the License.
                     'getResourceBundle',
                     'getDataByLanguage'
                   ];
-                  o.forEach(function (t) {
-                    e[t] = function () {
+                  o.forEach(function(t) {
+                    e[t] = function() {
                       var n;
                       return (n = e.store)[t].apply(n, arguments);
                     };
                   });
                   var u = T(),
-                    c = function () {
-                      e.changeLanguage(e.options.lng, function (t, r) {
+                    c = function() {
+                      e.changeLanguage(e.options.lng, function(t, r) {
                         (e.isInitialized = !0),
                           e.logger.log('initialized', e.options),
                           e.emit('initialized', e.options),
@@ -13308,7 +13361,7 @@ and limitations under the License.
               },
               {
                 key: 'loadResources',
-                value: function (e) {
+                value: function(e) {
                   var t = this,
                     n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : Q,
                     r = n,
@@ -13318,21 +13371,21 @@ and limitations under the License.
                   ) {
                     if (i && 'cimode' === i.toLowerCase()) return r();
                     var a = [],
-                      o = function (e) {
+                      o = function(e) {
                         e &&
-                          t.services.languageUtils.toResolveHierarchy(e).forEach(function (e) {
+                          t.services.languageUtils.toResolveHierarchy(e).forEach(function(e) {
                             a.indexOf(e) < 0 && a.push(e);
                           });
                       };
                     if (i) o(i);
                     else {
                       var s = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
-                      s.forEach(function (e) {
+                      s.forEach(function(e) {
                         return o(e);
                       });
                     }
                     this.options.preload &&
-                      this.options.preload.forEach(function (e) {
+                      this.options.preload.forEach(function(e) {
                         return o(e);
                       }),
                       this.services.backendConnector.load(a, this.options.ns, r);
@@ -13341,13 +13394,13 @@ and limitations under the License.
               },
               {
                 key: 'reloadResources',
-                value: function (e, t, n) {
+                value: function(e, t, n) {
                   var r = T();
                   return (
                     e || (e = this.languages),
                     t || (t = this.options.ns),
                     n || (n = Q),
-                    this.services.backendConnector.reload(e, t, function (e) {
+                    this.services.backendConnector.reload(e, t, function(e) {
                       r.resolve(), n(e);
                     }),
                     r
@@ -13356,7 +13409,7 @@ and limitations under the License.
               },
               {
                 key: 'use',
-                value: function (e) {
+                value: function(e) {
                   if (!e)
                     throw new Error(
                       'You are passing an undefined module! Please check the object you are passing to i18next.use()'
@@ -13378,18 +13431,18 @@ and limitations under the License.
               },
               {
                 key: 'changeLanguage',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this;
                   this.isLanguageChangingTo = e;
                   var r = T();
                   this.emit('languageChanging', e);
-                  var i = function (e) {
+                  var i = function(e) {
                     e &&
                       (n.language || ((n.language = e), (n.languages = n.services.languageUtils.toResolveHierarchy(e))),
                       n.translator.language || n.translator.changeLanguage(e),
                       n.services.languageDetector && n.services.languageDetector.cacheUserLanguage(e)),
-                      n.loadResources(e, function (i) {
-                        !(function (e, i) {
+                      n.loadResources(e, function(i) {
+                        !(function(e, i) {
                           i
                             ? ((n.language = i),
                               (n.languages = n.services.languageUtils.toResolveHierarchy(i)),
@@ -13398,11 +13451,11 @@ and limitations under the License.
                               n.emit('languageChanged', i),
                               n.logger.log('languageChanged', i))
                             : (n.isLanguageChangingTo = void 0),
-                            r.resolve(function () {
+                            r.resolve(function() {
                               return n.t.apply(n, arguments);
                             }),
                             t &&
-                              t(e, function () {
+                              t(e, function() {
                                 return n.t.apply(n, arguments);
                               });
                         })(i, e);
@@ -13420,7 +13473,7 @@ and limitations under the License.
               },
               {
                 key: 'getFixedT',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this,
                     r = function e(t, r) {
                       var i;
@@ -13436,27 +13489,27 @@ and limitations under the License.
               },
               {
                 key: 't',
-                value: function () {
+                value: function() {
                   var e;
                   return this.translator && (e = this.translator).translate.apply(e, arguments);
                 }
               },
               {
                 key: 'exists',
-                value: function () {
+                value: function() {
                   var e;
                   return this.translator && (e = this.translator).exists.apply(e, arguments);
                 }
               },
               {
                 key: 'setDefaultNamespace',
-                value: function (e) {
+                value: function(e) {
                   this.options.defaultNS = e;
                 }
               },
               {
                 key: 'hasLoadedNamespace',
-                value: function (e) {
+                value: function(e) {
                   var t = this;
                   if (!this.isInitialized)
                     return this.logger.warn('hasLoadedNamespace: i18next was not initialized', this.languages), !1;
@@ -13468,7 +13521,7 @@ and limitations under the License.
                     r = !!this.options && this.options.fallbackLng,
                     i = this.languages[this.languages.length - 1];
                   if ('cimode' === n.toLowerCase()) return !0;
-                  var a = function (e, n) {
+                  var a = function(e, n) {
                     var r = t.services.backendConnector.state[''.concat(e, '|').concat(n)];
                     return -1 === r || 2 === r;
                   };
@@ -13481,15 +13534,15 @@ and limitations under the License.
               },
               {
                 key: 'loadNamespaces',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this,
                     r = T();
                   return this.options.ns
                     ? ('string' == typeof e && (e = [e]),
-                      e.forEach(function (e) {
+                      e.forEach(function(e) {
                         n.options.ns.indexOf(e) < 0 && n.options.ns.push(e);
                       }),
-                      this.loadResources(function (e) {
+                      this.loadResources(function(e) {
                         r.resolve(), t && t(e);
                       }),
                       r)
@@ -13498,16 +13551,16 @@ and limitations under the License.
               },
               {
                 key: 'loadLanguages',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = T();
                   'string' == typeof e && (e = [e]);
                   var r = this.options.preload || [],
-                    i = e.filter(function (e) {
+                    i = e.filter(function(e) {
                       return r.indexOf(e) < 0;
                     });
                   return i.length
                     ? ((this.options.preload = r.concat(i)),
-                      this.loadResources(function (e) {
+                      this.loadResources(function(e) {
                         n.resolve(), t && t(e);
                       }),
                       n)
@@ -13516,7 +13569,7 @@ and limitations under the License.
               },
               {
                 key: 'dir',
-                value: function (e) {
+                value: function(e) {
                   if ((e || (e = this.languages && this.languages.length > 0 ? this.languages[0] : this.language), !e))
                     return 'rtl';
                   return [
@@ -13587,7 +13640,7 @@ and limitations under the License.
               },
               {
                 key: 'createInstance',
-                value: function () {
+                value: function() {
                   var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = arguments.length > 1 ? arguments[1] : void 0;
                   return new t(e, n);
@@ -13595,7 +13648,7 @@ and limitations under the License.
               },
               {
                 key: 'cloneInstance',
-                value: function () {
+                value: function() {
                   var e = this,
                     n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : Q,
@@ -13603,13 +13656,13 @@ and limitations under the License.
                     a = new t(i),
                     o = ['store', 'services', 'language'];
                   return (
-                    o.forEach(function (t) {
+                    o.forEach(function(t) {
                       a[t] = e[t];
                     }),
                     (a.services = s({}, this.services)),
                     (a.services.utils = { hasLoadedNamespace: a.hasLoadedNamespace.bind(a) }),
                     (a.translator = new $(a.services, a.options)),
-                    a.translator.on('*', function (e) {
+                    a.translator.on('*', function(e) {
                       for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
                         n[r - 1] = arguments[r];
                       a.emit.apply(a, [e].concat(n));
@@ -13643,7 +13696,7 @@ and limitations under the License.
           var n = this;
           i()(this, e),
             (this._storage = he.Container.get(te.a)),
-            (this.translate = function (e) {
+            (this.translate = function(e) {
               var t;
               try {
                 var r = n._storage.getItem('merchantTranslations');
@@ -13672,18 +13725,18 @@ and limitations under the License.
             });
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(51),
         a = n(18);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n = (i.Object || {})[e] || Object[e],
           o = {};
         (o[e] = t(n)),
           r(
             r.S +
               r.F *
-                a(function () {
+                a(function() {
                   n(1);
                 }),
             'Object',
@@ -13691,73 +13744,73 @@ and limitations under the License.
           );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = (function () {
+      var r = (function() {
         return ('function' == typeof Symbol && Symbol.observable) || '@@observable';
       })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(161);
       function i(e) {
-        return function (t) {
+        return function(t) {
           return t.pipe(
-            Object(r.a)(function (t) {
+            Object(r.a)(function(t) {
               return t.type === e;
             })
           );
         };
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r;
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       }),
-        (function (e) {
+        (function(e) {
           (e.BLOCKED = 'BLOCKED'), (e.AVAILABLE = 'AVAILABLE'), (e.COMPLETE = 'COMPLETE');
         })(r || (r = {}));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(121)(!0);
       r(r.P, 'Array', {
-        includes: function (e) {
+        includes: function(e) {
           return i(this, e, arguments.length > 1 ? arguments[1] : void 0);
         }
       }),
         n(91)('includes');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(216);
       r(r.P + r.F * n(217)('includes'), 'String', {
-        includes: function (e) {
+        includes: function(e) {
           return !!~i(this, e, 'includes').indexOf(e, arguments.length > 1 ? arguments[1] : void 0);
         }
       });
     },
-    function (e, t) {
+    function(e, t) {
       var n = (e.exports = { version: '2.6.11' });
       'number' == typeof __e && (__e = n);
     },
-    function (e, t) {
+    function(e, t) {
       var n = {}.hasOwnProperty;
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return n.call(e, t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(14),
         i = n(52),
@@ -13804,36 +13857,36 @@ and limitations under the License.
         H = !K || !K.prototype || !K.prototype.findChild,
         Y =
           a &&
-          c(function () {
+          c(function() {
             return (
               7 !=
               A(
                 N({}, 'a', {
-                  get: function () {
+                  get: function() {
                     return N(this, 'a', { value: 7 }).a;
                   }
                 })
               ).a
             );
           })
-            ? function (e, t, n) {
+            ? function(e, t, n) {
                 var r = I($, t);
                 r && delete $[t], N(e, t, n), r && e !== $ && N($, t, r);
               }
             : N,
-        z = function (e) {
+        z = function(e) {
           var t = (B[e] = A(P.prototype));
           return (t._k = e), t;
         },
         G =
           q && 'symbol' == typeof P.iterator
-            ? function (e) {
+            ? function(e) {
                 return 'symbol' == typeof e;
               }
-            : function (e) {
+            : function(e) {
                 return e instanceof P;
               },
-        W = function (e, t, n) {
+        W = function(e, t, n) {
           return (
             e === $ && W(V, t, n),
             g(e),
@@ -13847,44 +13900,44 @@ and limitations under the License.
               : N(e, t, n)
           );
         },
-        J = function (e, t) {
+        J = function(e, t) {
           g(e);
           for (var n, r = y((t = E(t))), i = 0, a = r.length; a > i; ) W(e, (n = r[i++]), t[n]);
           return e;
         },
-        Z = function (e) {
+        Z = function(e) {
           var t = F.call(this, (e = w(e, !0)));
           return (
             !(this === $ && i(B, e) && !i(V, e)) && (!(t || !i(this, e) || !i(B, e) || (i(this, D) && this[D][e])) || t)
           );
         },
-        X = function (e, t) {
+        X = function(e, t) {
           if (((e = E(e)), (t = w(t, !0)), e !== $ || !i(B, t) || i(V, t))) {
             var n = I(e, t);
             return !n || !i(B, t) || (i(e, D) && e[D][t]) || (n.enumerable = !0), n;
           }
         },
-        Q = function (e) {
+        Q = function(e) {
           for (var t, n = x(E(e)), r = [], a = 0; n.length > a; ) i(B, (t = n[a++])) || t == D || t == u || r.push(t);
           return r;
         },
-        ee = function (e) {
+        ee = function(e) {
           for (var t, n = e === $, r = x(n ? V : E(e)), a = [], o = 0; r.length > o; )
             !i(B, (t = r[o++])) || (n && !i($, t)) || a.push(B[t]);
           return a;
         };
       q ||
         (s(
-          (P = function () {
+          (P = function() {
             if (this instanceof P) throw TypeError('Symbol is not a constructor!');
             var e = h(arguments.length > 0 ? arguments[0] : void 0),
-              t = function (n) {
+              t = function(n) {
                 this === $ && t.call(V, n), i(this, D) && i(this[D], e) && (this[D][e] = !1), Y(this, e, S(1, n));
               };
             return a && H && Y($, e, { configurable: !0, set: t }), z(e);
           }).prototype,
           'toString',
-          function () {
+          function() {
             return this._k;
           }
         ),
@@ -13894,7 +13947,7 @@ and limitations under the License.
         (n(112).f = Z),
         (T.f = ee),
         a && !n(74) && s($, 'propertyIsEnumerable', Z, !0),
-        (p.f = function (e) {
+        (p.f = function(e) {
           return z(d(e));
         })),
         o(o.G + o.W + o.F * !q, { Symbol: P });
@@ -13909,22 +13962,22 @@ and limitations under the License.
         d(te[ne++]);
       for (var re = k(d.store), ie = 0; re.length > ie; ) v(re[ie++]);
       o(o.S + o.F * !q, 'Symbol', {
-        for: function (e) {
+        for: function(e) {
           return i(U, (e += '')) ? U[e] : (U[e] = P(e));
         },
-        keyFor: function (e) {
+        keyFor: function(e) {
           if (!G(e)) throw TypeError(e + ' is not a symbol!');
           for (var t in U) if (U[t] === e) return t;
         },
-        useSetter: function () {
+        useSetter: function() {
           H = !0;
         },
-        useSimple: function () {
+        useSimple: function() {
           H = !1;
         }
       }),
         o(o.S + o.F * !q, 'Object', {
-          create: function (e, t) {
+          create: function(e, t) {
             return void 0 === t ? A(e) : J(A(e), t);
           },
           defineProperty: W,
@@ -13933,11 +13986,11 @@ and limitations under the License.
           getOwnPropertyNames: Q,
           getOwnPropertySymbols: ee
         });
-      var ae = c(function () {
+      var ae = c(function() {
         T.f(1);
       });
       o(o.S + o.F * ae, 'Object', {
-        getOwnPropertySymbols: function (e) {
+        getOwnPropertySymbols: function(e) {
           return T.f(b(e));
         }
       }),
@@ -13946,18 +13999,18 @@ and limitations under the License.
             o.S +
               o.F *
                 (!q ||
-                  c(function () {
+                  c(function() {
                     var e = P();
                     return '[null]' != L([e]) || '{}' != L({ a: e }) || '{}' != L(Object(e));
                   })),
             'JSON',
             {
-              stringify: function (e) {
+              stringify: function(e) {
                 for (var t, n, r = [e], i = 1; arguments.length > i; ) r.push(arguments[i++]);
                 if (((n = t = r[1]), (_(t) || void 0 !== e) && !G(e)))
                   return (
                     m(t) ||
-                      (t = function (e, t) {
+                      (t = function(e, t) {
                         if (('function' == typeof n && (t = n.call(this, e, t)), !G(t))) return t;
                       }),
                     (r[1] = t),
@@ -13971,30 +14024,30 @@ and limitations under the License.
         f(Math, 'Math', !0),
         f(r.JSON, 'JSON', !0);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(61);
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         if ((r(e), void 0 === t)) return e;
         switch (n) {
           case 1:
-            return function (n) {
+            return function(n) {
               return e.call(t, n);
             };
           case 2:
-            return function (n, r) {
+            return function(n, r) {
               return e.call(t, n, r);
             };
           case 3:
-            return function (n, r, i) {
+            return function(n, r, i) {
               return e.call(t, n, r, i);
             };
         }
-        return function () {
+        return function() {
           return e.apply(t, arguments);
         };
       };
     },
-    function (e, t) {
+    function(e, t) {
       function n(e, t, n, r, i, a, o) {
         try {
           var s = e[a](o),
@@ -14004,11 +14057,11 @@ and limitations under the License.
         }
         s.done ? t(u) : Promise.resolve(u).then(r, i);
       }
-      e.exports = function (e) {
-        return function () {
+      e.exports = function(e) {
+        return function() {
           var t = this,
             r = arguments;
-          return new Promise(function (i, a) {
+          return new Promise(function(i, a) {
             var o = e.apply(t, r);
             function s(e) {
               n(o, i, a, s, u, 'next', e);
@@ -14021,20 +14074,20 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
-        setTimeout(function () {
+        setTimeout(function() {
           throw e;
         }, 0);
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return E;
       });
       var r = n(0),
@@ -14045,7 +14098,7 @@ and limitations under the License.
         u = n(3),
         c = n(10),
         l = n(136),
-        f = new (n(135).a)(l.a),
+        f = new (n(135)).a(l.a),
         h = n(95);
       function d(e, t) {
         var n;
@@ -14055,7 +14108,7 @@ and limitations under the License.
           (n = e),
           (Object(h.a)(n) || !(n - parseFloat(n) + 1 >= 0) || e < 0) && (e = 0),
           (t && 'function' == typeof t.schedule) || (t = f),
-          new c.a(function (n) {
+          new c.a(function(n) {
             return n.add(t.schedule(p, e, { subscriber: n, counter: 0, period: e })), n;
           })
         );
@@ -14076,7 +14129,7 @@ and limitations under the License.
           Object(u.Service)()(
             (v =
               Reflect.metadata('design:paramtypes', [void 0 === s.a ? Object : s.a])(
-                ((m = y = (function () {
+                ((m = y = (function() {
                   function e(t) {
                     i()(this, e), (this.storage = t);
                   }
@@ -14084,16 +14137,16 @@ and limitations under the License.
                     o()(e, [
                       {
                         key: 'getConfig',
-                        value: function () {
+                        value: function() {
                           return JSON.parse(this.storage.getItem(e.STORAGE_KEY));
                         }
                       },
                       {
                         key: 'getConfig$',
-                        value: function () {
+                        value: function() {
                           var e = this;
                           return d().pipe(
-                            Object(g.a)(function () {
+                            Object(g.a)(function() {
                               return e.getConfig();
                             }),
                             Object(_.a)(Boolean),
@@ -14110,13 +14163,13 @@ and limitations under the License.
               ) || v)
           ) || v;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(54),
         i = n(108),
         a = n(31),
         o = n(24),
         s = n(251);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n = 1 == e,
           u = 2 == e,
           c = 3 == e,
@@ -14124,7 +14177,7 @@ and limitations under the License.
           f = 6 == e,
           h = 5 == e || f,
           d = t || s;
-        return function (t, s, p) {
+        return function(t, s, p) {
           for (
             var v,
               y,
@@ -14155,14 +14208,14 @@ and limitations under the License.
         };
       };
     },
-    function (e, t) {
+    function(e, t) {
       var n = Math.ceil,
         r = Math.floor;
-      e.exports = function (e) {
+      e.exports = function(e) {
         return isNaN((e = +e)) ? 0 : (e > 0 ? r : n)(e);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(295);
       function i(e) {
@@ -14170,7 +14223,7 @@ and limitations under the License.
       }
       (i.prototype = new Error()),
         (i.prototype.name = 'InvalidTokenError'),
-        (e.exports = function (e, t) {
+        (e.exports = function(e, t) {
           if ('string' != typeof e) throw new i('Invalid token specified');
           var n = !0 === (t = t || {}).header ? 0 : 1;
           try {
@@ -14181,31 +14234,31 @@ and limitations under the License.
         }),
         (e.exports.InvalidTokenError = i);
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         if ('function' != typeof e) throw TypeError(e + ' is not a function!');
         return e;
       };
     },
-    function (e, t) {
+    function(e, t) {
       var n = {}.toString;
-      e.exports = function (e) {
+      e.exports = function(e) {
         return n.call(e).slice(8, -1);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r() {
         return 'function' == typeof Symbol && Symbol.iterator ? Symbol.iterator : '@@iterator';
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var i = r();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(98),
@@ -14216,63 +14269,63 @@ and limitations under the License.
           return t instanceof a.a ? t.subscribe(s) : Object(i.a)(t)(s);
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(4),
-        i = (function (e) {
+        i = (function(e) {
           function t() {
             return (null !== e && e.apply(this, arguments)) || this;
           }
           return (
             r.a(t, e),
-            (t.prototype.notifyNext = function (e, t, n, r, i) {
+            (t.prototype.notifyNext = function(e, t, n, r, i) {
               this.destination.next(t);
             }),
-            (t.prototype.notifyError = function (e, t) {
+            (t.prototype.notifyError = function(e, t) {
               this.destination.error(e);
             }),
-            (t.prototype.notifyComplete = function (e) {
+            (t.prototype.notifyComplete = function(e) {
               this.destination.complete();
             }),
             t
           );
         })(n(8).a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(4),
         i = n(8);
       function a(e, t) {
-        return function (n) {
+        return function(n) {
           if ('function' != typeof e) throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
           return n.lift(new o(e, t));
         };
       }
-      var o = (function () {
+      var o = (function() {
           function e(e, t) {
             (this.project = e), (this.thisArg = t);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new s(e, this.project, this.thisArg));
             }),
             e
           );
         })(),
-        s = (function (e) {
+        s = (function(e) {
           function t(t, n, r) {
             var i = e.call(this, t) || this;
             return (i.project = n), (i.count = 0), (i.thisArg = r || i), i;
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               var t;
               try {
                 t = this.project.call(this.thisArg, e, this.count++);
@@ -14285,12 +14338,12 @@ and limitations under the License.
           );
         })(i.a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = (function () {
+      var r = (function() {
         function e() {
           return (
             Error.call(this), (this.message = 'object unsubscribed'), (this.name = 'ObjectUnsubscribedError'), this
@@ -14299,9 +14352,9 @@ and limitations under the License.
         return (e.prototype = Object.create(Error.prototype)), e;
       })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return l;
       });
       n(35), n(11);
@@ -14312,7 +14365,7 @@ and limitations under the License.
         s = n(60),
         u = n.n(s),
         c = n(162),
-        l = (function () {
+        l = (function() {
           function e(t) {
             i()(this, e), (this._decodedJwt = u()(t)), (this.payload = this._decodedJwt.payload);
           }
@@ -14320,31 +14373,31 @@ and limitations under the License.
             o()(e, [
               {
                 key: 'sitereference',
-                get: function () {
+                get: function() {
                   return this.payload.sitereference;
                 }
               },
               {
                 key: 'currencyiso3a',
-                get: function () {
+                get: function() {
                   return this.payload.currencyiso3a;
                 }
               },
               {
                 key: 'currency',
-                get: function () {
+                get: function() {
                   return c.Currencies[this.payload.currencyiso3a];
                 }
               },
               {
                 key: 'locale',
-                get: function () {
+                get: function() {
                   return this.payload.locale || 'en_GB';
                 }
               },
               {
                 key: 'mainamount',
-                get: function () {
+                get: function() {
                   var e = this.payload.mainamount;
                   return (
                     void 0 === e &&
@@ -14361,9 +14414,9 @@ and limitations under the License.
           );
         })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return R;
       });
       n(84), n(53);
@@ -14393,7 +14446,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -14404,18 +14457,18 @@ and limitations under the License.
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? A(Object(n), !0).forEach(function (t) {
+            ? A(Object(n), !0).forEach(function(t) {
                 u()(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : A(Object(n)).forEach(function (t) {
+            : A(Object(n)).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
               });
         }
         return e;
       }
-      var R = (function () {
+      var R = (function() {
         function e(t) {
           l()(this, e),
             (this._requestId = e._createRequestId()),
@@ -14429,14 +14482,19 @@ and limitations under the License.
           h()(e, null, [
             {
               key: '_createRequestId',
-              value: function () {
+              value: function() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 10;
-                return 'J-' + Math.random().toString(36).substring(2, e);
+                return (
+                  'J-' +
+                  Math.random()
+                    .toString(36)
+                    .substring(2, e)
+                );
               }
             },
             {
               key: 'getErrorData',
-              value: function (e) {
+              value: function(e) {
                 return {
                   errordata: e.errordata,
                   errormessage: e.errormessage,
@@ -14446,7 +14504,7 @@ and limitations under the License.
             },
             {
               key: 'verifyResponseObject',
-              value: function (t, n) {
+              value: function(t, n) {
                 if (e._isInvalidResponse(t)) throw e._handleInvalidResponse();
                 var r = e._determineResponse(t);
                 return e._handleValidGatewayResponse(r, n), r;
@@ -14454,7 +14512,7 @@ and limitations under the License.
             },
             {
               key: 'publishResponse',
-              value: function (t, n, r) {
+              value: function(t, n, r) {
                 var i = new _.a(e._locale);
                 t.errormessage = i.translate(t.errormessage);
                 var a = O({}, t);
@@ -14465,7 +14523,7 @@ and limitations under the License.
             },
             {
               key: 'updateJWTValue',
-              value: function (t) {
+              value: function(t) {
                 (e.jwt = t || e.jwt), (e.originalJwt = t || e.originalJwt);
                 var n = { data: { newJwt: e.jwt }, type: m.a.EVENTS_PUBLIC.UPDATE_JWT };
                 e.getMessageBus().publish(n, !0);
@@ -14473,25 +14531,25 @@ and limitations under the License.
             },
             {
               key: 'getMessageBus',
-              value: function () {
+              value: function() {
                 return e._messageBus || (e._messageBus = w.Container.get(m.a));
               }
             },
             {
               key: 'getNotification',
-              value: function () {
+              value: function() {
                 return e._notification || (e._notification = w.Container.get(S.a));
               }
             },
             {
               key: '_createCommunicationError',
-              value: function () {
+              value: function() {
                 return { errorcode: '50003', errormessage: y.a.translations.COMMUNICATION_ERROR_INVALID_RESPONSE };
               }
             },
             {
               key: '_handleInvalidResponse',
-              value: function () {
+              value: function() {
                 var t = new b.a();
                 return (
                   e.publishResponse(e._createCommunicationError()),
@@ -14504,16 +14562,16 @@ and limitations under the License.
             },
             {
               key: '_isInvalidResponse',
-              value: function (t) {
+              value: function(t) {
                 return !(t && t.version === e.VERSION && t.response && t.response.length > 0);
               }
             },
             {
               key: '_determineResponse',
-              value: function (e) {
+              value: function(e) {
                 var t;
                 return (
-                  e.response.forEach(function (e) {
+                  e.response.forEach(function(e) {
                     e.customeroutput && (t = e);
                   }),
                   t || (t = e.response[e.response.length - 1]),
@@ -14523,7 +14581,7 @@ and limitations under the License.
             },
             {
               key: '_handleValidGatewayResponse',
-              value: function (t, n) {
+              value: function(t, n) {
                 var r = new _.a(e._locale),
                   i = new b.a(),
                   a = t.errorcode,
@@ -14538,14 +14596,12 @@ and limitations under the License.
                         e.getMessageBus().publish({ type: m.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
                         void e.publishResponse(t, n)
                       );
-                    throw (
-                      (a === e.STATUS_CODES.invalidfield && i.getErrorData(e.getErrorData(t)),
-                      i.blockForm(v.a.AVAILABLE),
-                      e.getNotification().error(u),
-                      e.getMessageBus().publish({ type: m.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
-                      e.publishResponse(t, n),
-                      new Error(o))
-                    );
+                    throw (a === e.STATUS_CODES.invalidfield && i.getErrorData(e.getErrorData(t)),
+                    i.blockForm(v.a.AVAILABLE),
+                    e.getNotification().error(u),
+                    e.getMessageBus().publish({ type: m.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
+                    e.publishResponse(t, n),
+                    new Error(o));
                   }
                   e.publishResponse(t, n);
                 }
@@ -14553,7 +14609,7 @@ and limitations under the License.
             },
             {
               key: '_decodeResponseJwt',
-              value: function (t, n) {
+              value: function(t, n) {
                 var r;
                 try {
                   r = p()(t);
@@ -14567,7 +14623,7 @@ and limitations under the License.
           h()(e, [
             {
               key: 'buildRequestObject',
-              value: function (t) {
+              value: function(t) {
                 return {
                   acceptcustomeroutput: '1.00',
                   jwt: e.jwt,
@@ -14579,56 +14635,53 @@ and limitations under the License.
             },
             {
               key: 'encode',
-              value: function (t) {
+              value: function(t) {
                 if (
                   Object.keys(t).length < e.MINIMUM_REQUEST_FIELDS ||
-                  !t.requesttypedescriptions.every(function (t) {
+                  !t.requesttypedescriptions.every(function(t) {
                     return e.SUPPORTED_REQUEST_TYPES.includes(t);
                   })
                 )
-                  throw (
-                    (e.getMessageBus().publish({ type: m.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
-                    e.getNotification().error(y.a.translations.COMMUNICATION_ERROR_INVALID_REQUEST),
-                    new Error(y.a.translations.COMMUNICATION_ERROR_INVALID_REQUEST))
-                  );
+                  throw (e.getMessageBus().publish({ type: m.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
+                  e.getNotification().error(y.a.translations.COMMUNICATION_ERROR_INVALID_REQUEST),
+                  new Error(y.a.translations.COMMUNICATION_ERROR_INVALID_REQUEST));
                 return JSON.stringify(this.buildRequestObject(t));
               }
             },
             {
               key: 'decode',
-              value:
-                ((t = o()(
-                  i.a.mark(function t(n) {
-                    var r, a;
-                    return i.a.wrap(function (t) {
-                      for (;;)
-                        switch ((t.prev = t.next)) {
-                          case 0:
-                            return (
-                              (t.next = 2),
-                              new Promise(function (t, i) {
-                                'json' in n
-                                  ? n.json().then(function (n) {
-                                      (r = e._decodeResponseJwt(n.jwt, i)) && '0' === r.payload.response[0].errorcode
-                                        ? (e.jwt = r.payload.jwt)
-                                        : (e.jwt = e.originalJwt),
-                                        t({ jwt: n.jwt, response: e.verifyResponseObject(r.payload, n.jwt) });
-                                    })
-                                  : ((e.jwt = e.originalJwt), i(e._handleInvalidResponse()));
-                              })
-                            );
-                          case 2:
-                            return (a = t.sent), t.abrupt('return', a);
-                          case 4:
-                          case 'end':
-                            return t.stop();
-                        }
-                    }, t);
-                  })
-                )),
-                function (e) {
-                  return t.apply(this, arguments);
+              value: ((t = o()(
+                i.a.mark(function t(n) {
+                  var r, a;
+                  return i.a.wrap(function(t) {
+                    for (;;)
+                      switch ((t.prev = t.next)) {
+                        case 0:
+                          return (
+                            (t.next = 2),
+                            new Promise(function(t, i) {
+                              'json' in n
+                                ? n.json().then(function(n) {
+                                    (r = e._decodeResponseJwt(n.jwt, i)) && '0' === r.payload.response[0].errorcode
+                                      ? (e.jwt = r.payload.jwt)
+                                      : (e.jwt = e.originalJwt),
+                                      t({ jwt: n.jwt, response: e.verifyResponseObject(r.payload, n.jwt) });
+                                  })
+                                : ((e.jwt = e.originalJwt), i(e._handleInvalidResponse()));
+                            })
+                          );
+                        case 2:
+                          return (a = t.sent), t.abrupt('return', a);
+                        case 4:
+                        case 'end':
+                          return t.stop();
+                      }
+                  }, t);
                 })
+              )),
+              function(e) {
+                return t.apply(this, arguments);
+              })
             }
           ]),
           e
@@ -14661,16 +14714,16 @@ and limitations under the License.
         ]),
         (R.STATUS_CODES = { invalidfield: '30000', ok: '0', declined: '70000' });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(169)(!0);
       n(144)(
         String,
         'String',
-        function (e) {
+        function(e) {
           (this._t = String(e)), (this._i = 0);
         },
-        function () {
+        function() {
           var e,
             t = this._t,
             n = this._i;
@@ -14680,7 +14733,7 @@ and limitations under the License.
         }
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i,
@@ -14708,12 +14761,12 @@ and limitations under the License.
         R = (O && O.v8) || '',
         T = u.Promise,
         C = 'process' == l(A),
-        k = function () {},
+        k = function() {},
         I = (i = _.f),
-        N = !!(function () {
+        N = !!(function() {
           try {
             var e = T.resolve(1),
-              t = ((e.constructor = {})[n(17)('species')] = function (e) {
+              t = ((e.constructor = {})[n(17)('species')] = function(e) {
                 e(k, k);
               });
             return (
@@ -14724,20 +14777,20 @@ and limitations under the License.
             );
           } catch (e) {}
         })(),
-        x = function (e) {
+        x = function(e) {
           var t;
           return !(!h(e) || 'function' != typeof (t = e.then)) && t;
         },
-        P = function (e, t) {
+        P = function(e, t) {
           if (!e._n) {
             e._n = !0;
             var n = e._c;
-            g(function () {
+            g(function() {
               for (
                 var r = e._v,
                   i = 1 == e._s,
                   a = 0,
-                  o = function (t) {
+                  o = function(t) {
                     var n,
                       a,
                       o,
@@ -14763,8 +14816,8 @@ and limitations under the License.
             });
           }
         },
-        j = function (e) {
-          m.call(u, function () {
+        j = function(e) {
+          m.call(u, function() {
             var t,
               n,
               r,
@@ -14772,7 +14825,7 @@ and limitations under the License.
               a = L(e);
             if (
               (a &&
-                ((t = b(function () {
+                ((t = b(function() {
                   C
                     ? A.emit('unhandledRejection', i, e)
                     : (n = u.onunhandledrejection)
@@ -14786,20 +14839,20 @@ and limitations under the License.
               throw t.v;
           });
         },
-        L = function (e) {
+        L = function(e) {
           return 1 !== e._h && 0 === (e._a || e._c).length;
         },
-        D = function (e) {
-          m.call(u, function () {
+        D = function(e) {
+          m.call(u, function() {
             var t;
             C ? A.emit('rejectionHandled', e) : (t = u.onrejectionhandled) && t({ promise: e, reason: e._v });
           });
         },
-        M = function (e) {
+        M = function(e) {
           var t = this;
           t._d || ((t._d = !0), ((t = t._w || t)._v = e), (t._s = 2), t._a || (t._a = t._c.slice()), P(t, !0));
         },
-        F = function (e) {
+        F = function(e) {
           var t,
             n = this;
           if (!n._d) {
@@ -14807,7 +14860,7 @@ and limitations under the License.
             try {
               if (n === e) throw S("Promise can't be resolved itself");
               (t = x(e))
-                ? g(function () {
+                ? g(function() {
                     var r = { _w: n, _d: !1 };
                     try {
                       t.call(e, c(F, r, 1), c(M, r, 1));
@@ -14822,7 +14875,7 @@ and limitations under the License.
           }
         };
       N ||
-        ((T = function (e) {
+        ((T = function(e) {
           p(this, T, 'Promise', '_h'), d(e), r.call(this);
           try {
             e(c(F, this, 1), c(M, this, 1));
@@ -14830,7 +14883,7 @@ and limitations under the License.
             M.call(this, e);
           }
         }),
-        ((r = function (e) {
+        ((r = function(e) {
           (this._c = []),
             (this._a = void 0),
             (this._s = 0),
@@ -14839,7 +14892,7 @@ and limitations under the License.
             (this._h = 0),
             (this._n = !1);
         }).prototype = n(104)(T.prototype, {
-          then: function (e, t) {
+          then: function(e, t) {
             var n = I(y(this, T));
             return (
               (n.ok = 'function' != typeof e || e),
@@ -14851,15 +14904,15 @@ and limitations under the License.
               n.promise
             );
           },
-          catch: function (e) {
+          catch: function(e) {
             return this.then(void 0, e);
           }
         })),
-        (a = function () {
+        (a = function() {
           var e = new r();
           (this.promise = e), (this.resolve = c(F, e, 1)), (this.reject = c(M, e, 1));
         }),
-        (_.f = I = function (e) {
+        (_.f = I = function(e) {
           return e === T || e === o ? new a(e) : i(e);
         })),
         f(f.G + f.W + f.F * !N, { Promise: T }),
@@ -14867,13 +14920,13 @@ and limitations under the License.
         n(111)('Promise'),
         (o = n(51).Promise),
         f(f.S + f.F * !N, 'Promise', {
-          reject: function (e) {
+          reject: function(e) {
             var t = I(this);
             return (0, t.reject)(e), t.promise;
           }
         }),
         f(f.S + f.F * (s || !N), 'Promise', {
-          resolve: function (e) {
+          resolve: function(e) {
             return w(s && this === o ? T : this, e);
           }
         }),
@@ -14882,27 +14935,27 @@ and limitations under the License.
             f.F *
               !(
                 N &&
-                n(122)(function (e) {
+                n(122)(function(e) {
                   T.all(e).catch(k);
                 })
               ),
           'Promise',
           {
-            all: function (e) {
+            all: function(e) {
               var t = this,
                 n = I(t),
                 r = n.resolve,
                 i = n.reject,
-                a = b(function () {
+                a = b(function() {
                   var n = [],
                     a = 0,
                     o = 1;
-                  v(e, !1, function (e) {
+                  v(e, !1, function(e) {
                     var s = a++,
                       u = !1;
                     n.push(void 0),
                       o++,
-                      t.resolve(e).then(function (e) {
+                      t.resolve(e).then(function(e) {
                         u || ((u = !0), (n[s] = e), --o || r(n));
                       }, i);
                   }),
@@ -14910,12 +14963,12 @@ and limitations under the License.
                 });
               return a.e && i(a.v), n.promise;
             },
-            race: function (e) {
+            race: function(e) {
               var t = this,
                 n = I(t),
                 r = n.reject,
-                i = b(function () {
-                  v(e, !1, function (e) {
+                i = b(function() {
+                  v(e, !1, function(e) {
                     t.resolve(e).then(n.resolve, r);
                   });
                 });
@@ -14924,9 +14977,9 @@ and limitations under the License.
           }
         );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return h;
       });
       var r,
@@ -14936,7 +14989,7 @@ and limitations under the License.
         s = n.n(o),
         u = n(2),
         c = n(3);
-      !(function (e) {
+      !(function(e) {
         (e.Error = 'ERROR'), (e.Info = 'INFO'), (e.Success = 'SUCCESS'), (e.Warning = 'WARNING');
       })(r || (r = {}));
       var l,
@@ -14945,7 +14998,7 @@ and limitations under the License.
           Object(c.Service)()(
             (l =
               Reflect.metadata('design:paramtypes', [void 0 === u.a ? Object : u.a, void 0 === f.a ? Object : f.a])(
-                (l = (function () {
+                (l = (function() {
                   function e(t, n) {
                     a()(this, e), (this._messageBus = t), (this._configProvider = n);
                   }
@@ -14953,50 +15006,50 @@ and limitations under the License.
                     s()(e, [
                       {
                         key: 'error',
-                        value: function (e) {
+                        value: function(e) {
                           this.disableNotification || this.submitOnError || this._setNotification(r.Error, e);
                         }
                       },
                       {
                         key: 'info',
-                        value: function (e) {
+                        value: function(e) {
                           this._setNotification(r.Info, e);
                         }
                       },
                       {
                         key: 'success',
-                        value: function (e) {
+                        value: function(e) {
                           this.disableNotification || this.submitOnSuccess || this._setNotification(r.Success, e);
                         }
                       },
                       {
                         key: 'warning',
-                        value: function (e) {
+                        value: function(e) {
                           this._setNotification(r.Warning, e);
                         }
                       },
                       {
                         key: '_setNotification',
-                        value: function (e, t) {
+                        value: function(e, t) {
                           var n = { data: { content: t, type: e }, type: u.a.EVENTS_PUBLIC.NOTIFICATION };
                           this._messageBus.publish(n, !0);
                         }
                       },
                       {
                         key: 'disableNotification',
-                        get: function () {
+                        get: function() {
                           return this._configProvider.getConfig().disableNotification;
                         }
                       },
                       {
                         key: 'submitOnError',
-                        get: function () {
+                        get: function() {
                           return this._configProvider.getConfig().submitOnError;
                         }
                       },
                       {
                         key: 'submitOnSuccess',
-                        get: function () {
+                        get: function() {
                           return this._configProvider.getConfig().submitOnSuccess;
                         }
                       }
@@ -15007,29 +15060,29 @@ and limitations under the License.
               ) || l)
           ) || l;
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         if (null == e) throw TypeError("Can't call method on  " + e);
         return e;
       };
     },
-    function (e, t) {
+    function(e, t) {
       e.exports = !1;
     },
-    function (e, t) {
+    function(e, t) {
       var n = 0,
         r = Math.random();
-      e.exports = function (e) {
+      e.exports = function(e) {
         return 'Symbol('.concat(void 0 === e ? '' : e, ')_', (++n + r).toString(36));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(21),
         i = n(171),
         a = n(147),
         o = n(146)('IE_PROTO'),
-        s = function () {},
-        u = function () {
+        s = function() {},
+        u = function() {
           var e,
             t = n(145)('iframe'),
             r = a.length;
@@ -15049,7 +15102,7 @@ and limitations under the License.
         };
       e.exports =
         Object.create ||
-        function (e, t) {
+        function(e, t) {
           var n;
           return (
             null !== e ? ((s.prototype = r(e)), (n = new s()), (s.prototype = null), (n[o] = e)) : (n = u()),
@@ -15057,51 +15110,51 @@ and limitations under the License.
           );
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(172),
         i = n(147);
       e.exports =
         Object.keys ||
-        function (e) {
+        function(e) {
           return r(e, i);
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(172),
         i = n(147).concat('length', 'prototype');
       t.f =
         Object.getOwnPropertyNames ||
-        function (e) {
+        function(e) {
           return r(e, i);
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(3),
         i = new r.Token();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = (function () {
+      var r = (function() {
         return 'function' == typeof Symbol ? Symbol('rxSubscriber') : '@@rxSubscriber_' + Math.random();
       })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         return 'function' == typeof e;
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(75)('meta'),
         i = n(15),
         a = n(52),
@@ -15109,19 +15162,19 @@ and limitations under the License.
         s = 0,
         u =
           Object.isExtensible ||
-          function () {
+          function() {
             return !0;
           },
-        c = !n(18)(function () {
+        c = !n(18)(function() {
           return u(Object.preventExtensions({}));
         }),
-        l = function (e) {
+        l = function(e) {
           o(e, r, { value: { i: 'O' + ++s, w: {} } });
         },
         f = (e.exports = {
           KEY: r,
           NEED: !1,
-          fastKey: function (e, t) {
+          fastKey: function(e, t) {
             if (!i(e)) return 'symbol' == typeof e ? e : ('string' == typeof e ? 'S' : 'P') + e;
             if (!a(e, r)) {
               if (!u(e)) return 'F';
@@ -15130,7 +15183,7 @@ and limitations under the License.
             }
             return e[r].i;
           },
-          getWeak: function (e, t) {
+          getWeak: function(e, t) {
             if (!a(e, r)) {
               if (!u(e)) return !0;
               if (!t) return !1;
@@ -15138,12 +15191,12 @@ and limitations under the License.
             }
             return e[r].w;
           },
-          onFreeze: function (e) {
+          onFreeze: function(e) {
             return c && f.NEED && u(e) && !a(e, r) && l(e), e;
           }
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(76),
         a = n(61),
@@ -15152,15 +15205,15 @@ and limitations under the License.
         u = n(18),
         c = n(290),
         l = (n(14).Reflect || {}).construct,
-        f = u(function () {
+        f = u(function() {
           function e() {}
-          return !(l(function () {}, [], e) instanceof e);
+          return !(l(function() {}, [], e) instanceof e);
         }),
-        h = !u(function () {
-          l(function () {});
+        h = !u(function() {
+          l(function() {});
         });
       r(r.S + r.F * (f || h), 'Reflect', {
-        construct: function (e, t) {
+        construct: function(e, t) {
           a(e), o(t);
           var n = arguments.length < 3 ? e : a(arguments[2]);
           if (h && !f) return l(e, t, n);
@@ -15187,23 +15240,23 @@ and limitations under the License.
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(236),
         a = n(41),
         o = n(92),
         s = n(152);
       r(r.S, 'Object', {
-        getOwnPropertyDescriptors: function (e) {
+        getOwnPropertyDescriptors: function(e) {
           for (var t, n, r = a(e), u = o.f, c = i(r), l = {}, f = 0; c.length > f; )
             void 0 !== (n = u(r, (t = c[f++]))) && s(l, t, n);
           return l;
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return s;
       });
       n(114), n(26), n(22), n(71), n(11), n(70), n(87);
@@ -15211,7 +15264,7 @@ and limitations under the License.
         i = n.n(r),
         a = n(1),
         o = n.n(a),
-        s = (function () {
+        s = (function() {
           function e() {
             i()(this, e);
           }
@@ -15219,13 +15272,13 @@ and limitations under the License.
             o()(e, null, [
               {
                 key: 'inArray',
-                value: function (e, t) {
+                value: function(e, t) {
                   return Array.from(e).indexOf(t) >= 0;
                 }
               },
               {
                 key: 'forEachBreak',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = null;
                   for (var r in e) if ((n = t(e[r]))) break;
                   return n || null;
@@ -15233,10 +15286,10 @@ and limitations under the License.
               },
               {
                 key: 'timeoutPromise',
-                value: function (e) {
+                value: function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : new Error();
-                  return new Promise(function (n, r) {
-                    return setTimeout(function () {
+                  return new Promise(function(n, r) {
+                    return setTimeout(function() {
                       return r(t);
                     }, e);
                   });
@@ -15244,7 +15297,7 @@ and limitations under the License.
               },
               {
                 key: 'promiseWithTimeout',
-                value: function (t) {
+                value: function(t) {
                   var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 10,
                     r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : new Error();
                   return Promise.race([t(), e.timeoutPromise(n, r)]);
@@ -15252,21 +15305,21 @@ and limitations under the License.
               },
               {
                 key: 'retryPromise',
-                value: function (e) {
+                value: function(e) {
                   var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
                     n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 5,
                     r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 100;
-                  return new Promise(function (i, a) {
+                  return new Promise(function(i, a) {
                     var o,
                       s = Date.now() + r;
                     !(function r() {
                       n > 0 && Date.now() < s
                         ? e()
                             .then(i)
-                            .catch(function (e) {
+                            .catch(function(e) {
                               n--,
                                 (o = e),
-                                setTimeout(function () {
+                                setTimeout(function() {
                                   return r();
                                 }, t);
                             })
@@ -15277,13 +15330,13 @@ and limitations under the License.
               },
               {
                 key: 'stripChars',
-                value: function (e, t) {
+                value: function(e, t) {
                   return (void 0 !== t && Boolean(t)) || (t = /[\D+]/g), e.replace(t, '');
                 }
               },
               {
                 key: 'setElementAttributes',
-                value: function (t, n) {
+                value: function(t, n) {
                   for (var r in t) {
                     var i = t[r];
                     e.inArray(['value'], r) ? (n[r] = i) : !1 === i ? n.removeAttribute(r) : n.setAttribute(r, i);
@@ -15294,11 +15347,11 @@ and limitations under the License.
             e
           );
         })();
-      s.getLastElementOfArray = function (e) {
+      s.getLastElementOfArray = function(e) {
         return e && e.slice(-1).pop();
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(198);
       n(113),
@@ -15318,7 +15371,7 @@ and limitations under the License.
         o = r(n(27)),
         s = n(299),
         u = r(n(300)),
-        c = (function () {
+        c = (function() {
           function e(t) {
             if (
               ((0, i.default)(this, e),
@@ -15341,7 +15394,7 @@ and limitations under the License.
             (0, a.default)(e, [
               {
                 key: 'lookup',
-                value: function (e) {
+                value: function(e) {
                   var t = { type: null };
                   if (e.length >= this.minMatch) {
                     var n = s.brandMapping[this._lookup(e, s.cardTree)];
@@ -15352,18 +15405,18 @@ and limitations under the License.
               },
               {
                 key: 'forEachBreakBrands',
-                value: function (e) {
+                value: function(e) {
                   var t = this;
-                  return u.default.forEachBreak(Object.values(s.brandMapping), function (n) {
+                  return u.default.forEachBreak(Object.values(s.brandMapping), function(n) {
                     if (t.isSupported(n)) return e(n);
                   });
                 }
               },
               {
                 key: 'getAllBrands',
-                value: function () {
+                value: function() {
                   return Object.values(s.brandMapping)
-                    .map(function (e) {
+                    .map(function(e) {
                       return e.type;
                     })
                     .sort();
@@ -15371,21 +15424,21 @@ and limitations under the License.
               },
               {
                 key: 'isSupported',
-                value: function (e) {
+                value: function(e) {
                   return e instanceof Object && (e = e.type), u.default.inArray(this.supported, e);
                 }
               },
               {
                 key: 'getCard',
-                value: function (e) {
-                  return this.forEachBreakBrands(function (t) {
+                value: function(e) {
+                  return this.forEachBreakBrands(function(t) {
                     if (t.type === e) return t;
                   });
                 }
               },
               {
                 key: 'matchKey',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = e.substring(0, t.length) === t;
                   if (!n && u.default.inArray(t, '-')) {
                     var r = t.split('-'),
@@ -15397,18 +15450,18 @@ and limitations under the License.
               },
               {
                 key: '_lookup',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = this;
                   if (!(t instanceof Object)) return t;
                   var r = Object.keys(t)
-                    .filter(function (t) {
+                    .filter(function(t) {
                       return n.matchKey(e, t);
                     })
-                    .sort(function (e, t) {
+                    .sort(function(e, t) {
                       return e.length - t.length;
                     });
                   return (
-                    u.default.forEachBreak(r, function (r) {
+                    u.default.forEachBreak(r, function(r) {
                       return n._lookup(e, t[r]);
                     }) ||
                     t.D ||
@@ -15424,7 +15477,7 @@ and limitations under the License.
       var l = new c();
       t.iinLookup = l;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(54),
         i = n(6),
@@ -15437,12 +15490,12 @@ and limitations under the License.
       i(
         i.S +
           i.F *
-            !n(122)(function (e) {
+            !n(122)(function(e) {
               Array.from(e);
             }),
         'Array',
         {
-          from: function (e) {
+          from: function(e) {
             var t,
               n,
               i,
@@ -15464,31 +15517,31 @@ and limitations under the License.
         }
       );
     },
-    function (e, t) {
-      e.exports = function (e, t) {
+    function(e, t) {
+      e.exports = function(e, t) {
         return { enumerable: !(1 & e), configurable: !(2 & e), writable: !(4 & e), value: t };
       };
     },
-    function (e, t) {
+    function(e, t) {
       e.exports = {};
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(23).f,
         i = n(52),
         a = n(17)('toStringTag');
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         e && !i((e = n ? e : e.prototype), a) && r(e, a, { configurable: !0, value: t });
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(17)('unscopables'),
         i = Array.prototype;
       null == i[r] && n(40)(i, r, {}),
-        (e.exports = function (e) {
+        (e.exports = function(e) {
           i[r][e] = !0;
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(112),
         i = n(88),
         a = n(41),
@@ -15498,7 +15551,7 @@ and limitations under the License.
         c = Object.getOwnPropertyDescriptor;
       t.f = n(19)
         ? c
-        : function (e, t) {
+        : function(e, t) {
             if (((e = a(e)), (t = o(t, !0)), u))
               try {
                 return c(e, t);
@@ -15506,53 +15559,53 @@ and limitations under the License.
             if (s(e, t)) return i(!r.f.call(e, t), e[t]);
           };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var r = n(187),
-        i = (function () {
+        i = (function() {
           function e() {}
           return (
-            (e.of = function (e) {
+            (e.of = function(e) {
               if (void 0 === e) return this.globalInstance;
-              var t = this.instances.find(function (t) {
+              var t = this.instances.find(function(t) {
                 return t.id === e;
               });
               return t || ((t = new r.ContainerInstance(e)), this.instances.push(t)), t;
             }),
-            (e.has = function (e) {
+            (e.has = function(e) {
               return this.globalInstance.has(e);
             }),
-            (e.get = function (e) {
+            (e.get = function(e) {
               return this.globalInstance.get(e);
             }),
-            (e.getMany = function (e) {
+            (e.getMany = function(e) {
               return this.globalInstance.getMany(e);
             }),
-            (e.set = function (e, t) {
+            (e.set = function(e, t) {
               return this.globalInstance.set(e, t), this;
             }),
-            (e.remove = function () {
+            (e.remove = function() {
               for (var e, t = [], n = 0; n < arguments.length; n++) t[n] = arguments[n];
               return (e = this.globalInstance).remove.apply(e, t), this;
             }),
-            (e.reset = function (e) {
+            (e.reset = function(e) {
               if (e) {
-                var t = this.instances.find(function (t) {
+                var t = this.instances.find(function(t) {
                   return t.id === e;
                 });
                 t && (t.reset(), this.instances.splice(this.instances.indexOf(t), 1));
               } else
                 this.globalInstance.reset(),
-                  this.instances.forEach(function (e) {
+                  this.instances.forEach(function(e) {
                     return e.reset();
                   });
               return this;
             }),
-            (e.registerHandler = function (e) {
+            (e.registerHandler = function(e) {
               return this.handlers.push(e), this;
             }),
-            (e.import = function (e) {
+            (e.import = function(e) {
               return this;
             }),
             (e.globalInstance = new r.ContainerInstance(void 0)),
@@ -15563,51 +15616,51 @@ and limitations under the License.
         })();
       t.Container = i;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var r = function (e) {
+      var r = function(e) {
         this.name = e;
       };
       t.Token = r;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = (function () {
+      var r = (function() {
         return (
           Array.isArray ||
-          function (e) {
+          function(e) {
             return e && 'number' == typeof e.length;
           }
         );
       })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         return e;
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(10),
         i = n(16);
       function a(e, t) {
-        return new r.a(function (n) {
+        return new r.a(function(n) {
           var r = new i.a(),
             a = 0;
           return (
             r.add(
-              t.schedule(function () {
+              t.schedule(function() {
                 a !== e.length ? (n.next(e[a++]), n.closed || r.add(this.schedule())) : n.complete();
               })
             ),
@@ -15616,38 +15669,38 @@ and limitations under the License.
         });
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(4),
-        i = (function (e) {
+        i = (function(e) {
           function t(t, n, r) {
             var i = e.call(this) || this;
             return (i.parent = t), (i.outerValue = n), (i.outerIndex = r), (i.index = 0), i;
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               this.parent.notifyNext(this.outerValue, e, this.outerIndex, this.index++, this);
             }),
-            (t.prototype._error = function (e) {
+            (t.prototype._error = function(e) {
               this.parent.notifyError(e, this), this.unsubscribe();
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               this.parent.notifyComplete(this), this.unsubscribe();
             }),
             t
           );
         })(n(8).a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'b', function () {
+      n.d(t, 'b', function() {
         return l;
       }),
-        n.d(t, 'a', function () {
+        n.d(t, 'a', function() {
           return f;
         });
       var r = n(4),
@@ -15657,14 +15710,14 @@ and limitations under the License.
         s = n(67),
         u = n(131),
         c = n(80),
-        l = (function (e) {
+        l = (function(e) {
           function t(t) {
             var n = e.call(this, t) || this;
             return (n.destination = t), n;
           }
           return r.a(t, e), t;
         })(a.a),
-        f = (function (e) {
+        f = (function(e) {
           function t() {
             var t = e.call(this) || this;
             return (
@@ -15673,38 +15726,38 @@ and limitations under the License.
           }
           return (
             r.a(t, e),
-            (t.prototype[c.a] = function () {
+            (t.prototype[c.a] = function() {
               return new l(this);
             }),
-            (t.prototype.lift = function (e) {
+            (t.prototype.lift = function(e) {
               var t = new h(this, this);
               return (t.operator = e), t;
             }),
-            (t.prototype.next = function (e) {
+            (t.prototype.next = function(e) {
               if (this.closed) throw new s.a();
               if (!this.isStopped)
                 for (var t = this.observers, n = t.length, r = t.slice(), i = 0; i < n; i++) r[i].next(e);
             }),
-            (t.prototype.error = function (e) {
+            (t.prototype.error = function(e) {
               if (this.closed) throw new s.a();
               (this.hasError = !0), (this.thrownError = e), (this.isStopped = !0);
               for (var t = this.observers, n = t.length, r = t.slice(), i = 0; i < n; i++) r[i].error(e);
               this.observers.length = 0;
             }),
-            (t.prototype.complete = function () {
+            (t.prototype.complete = function() {
               if (this.closed) throw new s.a();
               this.isStopped = !0;
               for (var e = this.observers, t = e.length, n = e.slice(), r = 0; r < t; r++) n[r].complete();
               this.observers.length = 0;
             }),
-            (t.prototype.unsubscribe = function () {
+            (t.prototype.unsubscribe = function() {
               (this.isStopped = !0), (this.closed = !0), (this.observers = null);
             }),
-            (t.prototype._trySubscribe = function (t) {
+            (t.prototype._trySubscribe = function(t) {
               if (this.closed) throw new s.a();
               return e.prototype._trySubscribe.call(this, t);
             }),
-            (t.prototype._subscribe = function (e) {
+            (t.prototype._subscribe = function(e) {
               if (this.closed) throw new s.a();
               return this.hasError
                 ? (e.error(this.thrownError), o.a.EMPTY)
@@ -15712,62 +15765,62 @@ and limitations under the License.
                 ? (e.complete(), o.a.EMPTY)
                 : (this.observers.push(e), new u.a(this, e));
             }),
-            (t.prototype.asObservable = function () {
+            (t.prototype.asObservable = function() {
               var e = new i.a();
               return (e.source = this), e;
             }),
-            (t.create = function (e, t) {
+            (t.create = function(e, t) {
               return new h(e, t);
             }),
             t
           );
         })(i.a),
-        h = (function (e) {
+        h = (function(e) {
           function t(t, n) {
             var r = e.call(this) || this;
             return (r.destination = t), (r.source = n), r;
           }
           return (
             r.a(t, e),
-            (t.prototype.next = function (e) {
+            (t.prototype.next = function(e) {
               var t = this.destination;
               t && t.next && t.next(e);
             }),
-            (t.prototype.error = function (e) {
+            (t.prototype.error = function(e) {
               var t = this.destination;
               t && t.error && this.destination.error(e);
             }),
-            (t.prototype.complete = function () {
+            (t.prototype.complete = function() {
               var e = this.destination;
               e && e.complete && this.destination.complete();
             }),
-            (t.prototype._subscribe = function (e) {
+            (t.prototype._subscribe = function(e) {
               return this.source ? this.source.subscribe(e) : o.a.EMPTY;
             }),
             t
           );
         })(f);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(29),
         i = n(56),
         a = {
           closed: !0,
-          next: function (e) {},
-          error: function (e) {
+          next: function(e) {},
+          error: function(e) {
             if (r.a.useDeprecatedSynchronousErrorHandling) throw e;
             Object(i.a)(e);
           },
-          complete: function () {}
+          complete: function() {}
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return f;
       });
       var r,
@@ -15785,7 +15838,7 @@ and limitations under the License.
                 void 0 === c.a ? Object : c.a,
                 'undefined' == typeof Window ? Object : Window
               ])(
-                (r = (function () {
+                (r = (function() {
                   function e(t, n) {
                     a()(this, e), (this.identifier = t), (this.window = n);
                   }
@@ -15793,13 +15846,13 @@ and limitations under the License.
                     s()(e, [
                       {
                         key: 'getParentFrame',
-                        value: function () {
+                        value: function() {
                           return this.identifier.isParentFrame() ? this.window : this.window.parent;
                         }
                       },
                       {
                         key: 'getFrameCollection',
-                        value: function () {
+                        value: function() {
                           return this.getParentFrame().frames;
                         }
                       }
@@ -15812,21 +15865,21 @@ and limitations under the License.
       Object(u.Inject)(l.a)(f, void 0, 1);
     },
     ,
-    function (e, t) {
-      e.exports = function (e, t, n, r) {
+    function(e, t) {
+      e.exports = function(e, t, n, r) {
         if (!(e instanceof t) || (void 0 !== r && r in e)) throw TypeError(n + ': incorrect invocation!');
         return e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(39);
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         for (var i in t) r(e, i, t[i], n);
         return e;
       };
     },
-    function (e, t, n) {
-      var r = (function (e) {
+    function(e, t, n) {
+      var r = (function(e) {
         'use strict';
         var t = Object.prototype,
           n = t.hasOwnProperty,
@@ -15839,9 +15892,9 @@ and limitations under the License.
             a = Object.create(i.prototype),
             o = new w(r || []);
           return (
-            (a._invoke = (function (e, t, n) {
+            (a._invoke = (function(e, t, n) {
               var r = 'suspendedStart';
-              return function (i, a) {
+              return function(i, a) {
                 if ('executing' === r) throw new Error('Generator is already running');
                 if ('completed' === r) {
                   if ('throw' === i) throw a;
@@ -15887,7 +15940,7 @@ and limitations under the License.
         function f() {}
         function h() {}
         var d = {};
-        d[i] = function () {
+        d[i] = function() {
           return this;
         };
         var p = Object.getPrototypeOf,
@@ -15895,17 +15948,17 @@ and limitations under the License.
         v && v !== t && n.call(v, i) && (d = v);
         var y = (h.prototype = l.prototype = Object.create(d));
         function m(e) {
-          ['next', 'throw', 'return'].forEach(function (t) {
-            e[t] = function (e) {
+          ['next', 'throw', 'return'].forEach(function(t) {
+            e[t] = function(e) {
               return this._invoke(t, e);
             };
           });
         }
         function g(e, t) {
           var r;
-          this._invoke = function (i, a) {
+          this._invoke = function(i, a) {
             function o() {
-              return new t(function (r, o) {
+              return new t(function(r, o) {
                 !(function r(i, a, o, s) {
                   var c = u(e[i], e, a);
                   if ('throw' !== c.type) {
@@ -15913,18 +15966,18 @@ and limitations under the License.
                       f = l.value;
                     return f && 'object' == typeof f && n.call(f, '__await')
                       ? t.resolve(f.__await).then(
-                          function (e) {
+                          function(e) {
                             r('next', e, o, s);
                           },
-                          function (e) {
+                          function(e) {
                             r('throw', e, o, s);
                           }
                         )
                       : t.resolve(f).then(
-                          function (e) {
+                          function(e) {
                             (l.value = e), o(l);
                           },
-                          function (e) {
+                          function(e) {
                             return r('throw', e, o, s);
                           }
                         );
@@ -15998,11 +16051,11 @@ and limitations under the License.
           (f.prototype = y.constructor = h),
           (h.constructor = f),
           (h[o] = f.displayName = 'GeneratorFunction'),
-          (e.isGeneratorFunction = function (e) {
+          (e.isGeneratorFunction = function(e) {
             var t = 'function' == typeof e && e.constructor;
             return !!t && (t === f || 'GeneratorFunction' === (t.displayName || t.name));
           }),
-          (e.mark = function (e) {
+          (e.mark = function(e) {
             return (
               Object.setPrototypeOf
                 ? Object.setPrototypeOf(e, h)
@@ -16011,32 +16064,32 @@ and limitations under the License.
               e
             );
           }),
-          (e.awrap = function (e) {
+          (e.awrap = function(e) {
             return { __await: e };
           }),
           m(g.prototype),
-          (g.prototype[a] = function () {
+          (g.prototype[a] = function() {
             return this;
           }),
           (e.AsyncIterator = g),
-          (e.async = function (t, n, r, i, a) {
+          (e.async = function(t, n, r, i, a) {
             void 0 === a && (a = Promise);
             var o = new g(s(t, n, r, i), a);
             return e.isGeneratorFunction(n)
               ? o
-              : o.next().then(function (e) {
+              : o.next().then(function(e) {
                   return e.done ? e.value : o.next();
                 });
           }),
           m(y),
           (y[o] = 'Generator'),
-          (y[i] = function () {
+          (y[i] = function() {
             return this;
           }),
-          (y.toString = function () {
+          (y.toString = function() {
             return '[object Generator]';
           }),
-          (e.keys = function (e) {
+          (e.keys = function(e) {
             var t = [];
             for (var n in e) t.push(n);
             return (
@@ -16053,7 +16106,7 @@ and limitations under the License.
           (e.values = S),
           (w.prototype = {
             constructor: w,
-            reset: function (e) {
+            reset: function(e) {
               if (
                 ((this.prev = 0),
                 (this.next = 0),
@@ -16067,13 +16120,13 @@ and limitations under the License.
               )
                 for (var t in this) 't' === t.charAt(0) && n.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0);
             },
-            stop: function () {
+            stop: function() {
               this.done = !0;
               var e = this.tryEntries[0].completion;
               if ('throw' === e.type) throw e.arg;
               return this.rval;
             },
-            dispatchException: function (e) {
+            dispatchException: function(e) {
               if (this.done) throw e;
               var t = this;
               function r(n, r) {
@@ -16098,7 +16151,7 @@ and limitations under the License.
                 }
               }
             },
-            abrupt: function (e, t) {
+            abrupt: function(e, t) {
               for (var r = this.tryEntries.length - 1; r >= 0; --r) {
                 var i = this.tryEntries[r];
                 if (i.tryLoc <= this.prev && n.call(i, 'finallyLoc') && this.prev < i.finallyLoc) {
@@ -16114,7 +16167,7 @@ and limitations under the License.
                 a ? ((this.method = 'next'), (this.next = a.finallyLoc), c) : this.complete(o)
               );
             },
-            complete: function (e, t) {
+            complete: function(e, t) {
               if ('throw' === e.type) throw e.arg;
               return (
                 'break' === e.type || 'continue' === e.type
@@ -16125,13 +16178,13 @@ and limitations under the License.
                 c
               );
             },
-            finish: function (e) {
+            finish: function(e) {
               for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                 var n = this.tryEntries[t];
                 if (n.finallyLoc === e) return this.complete(n.completion, n.afterLoc), E(n), c;
               }
             },
-            catch: function (e) {
+            catch: function(e) {
               for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                 var n = this.tryEntries[t];
                 if (n.tryLoc === e) {
@@ -16145,7 +16198,7 @@ and limitations under the License.
               }
               throw new Error('illegal catch attempt');
             },
-            delegateYield: function (e, t, n) {
+            delegateYield: function(e, t, n) {
               return (
                 (this.delegate = { iterator: S(e), resultName: t, nextLoc: n }),
                 'next' === this.method && (this.arg = void 0),
@@ -16162,18 +16215,18 @@ and limitations under the License.
         Function('r', 'regeneratorRuntime = r')(r);
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(284),
         i = n(285),
         a = n(193),
         o = n(286);
-      e.exports = function (e) {
+      e.exports = function(e) {
         return r(e) || i(e) || a(e) || o();
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if (!r(e)) return e;
         var n, i;
         if (t && 'function' == typeof (n = e.toString) && !r((i = n.call(e)))) return i;
@@ -16182,40 +16235,40 @@ and limitations under the License.
         throw TypeError("Can't convert object to primitive value");
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(62);
       e.exports = Object('z').propertyIsEnumerable(0)
         ? Object
-        : function (e) {
+        : function(e) {
             return 'String' == r(e) ? e.split('') : Object(e);
           };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(59),
         i = Math.max,
         a = Math.min;
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return (e = r(e)) < 0 ? i(e + t, 0) : a(e, t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(62),
         i = n(17)('toStringTag'),
         a =
           'Arguments' ==
           r(
-            (function () {
+            (function() {
               return arguments;
             })()
           );
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t, n, o;
         return void 0 === e
           ? 'Undefined'
           : null === e
           ? 'Null'
           : 'string' ==
-            typeof (n = (function (e, t) {
+            typeof (n = (function(e, t) {
               try {
                 return e[t];
               } catch (e) {}
@@ -16228,33 +16281,33 @@ and limitations under the License.
           : o;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(14),
         i = n(23),
         a = n(19),
         o = n(17)('species');
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = r[e];
         a &&
           t &&
           !t[o] &&
           i.f(t, o, {
             configurable: !0,
-            get: function () {
+            get: function() {
               return this;
             }
           });
       };
     },
-    function (e, t) {
+    function(e, t) {
       t.f = {}.propertyIsEnumerable;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S + r.F * !n(19), 'Object', { defineProperty: n(23).f });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(21),
         i = n(31),
@@ -16267,14 +16320,14 @@ and limitations under the License.
         f = Math.floor,
         h = /\$([$&`']|\d\d?|<[^>]*>)/g,
         d = /\$([$&`']|\d\d?)/g;
-      n(158)('replace', 2, function (e, t, n, p) {
+      n(158)('replace', 2, function(e, t, n, p) {
         return [
-          function (r, i) {
+          function(r, i) {
             var a = e(this),
               o = null == r ? void 0 : r[t];
             return void 0 !== o ? o.call(r, a, i) : n.call(String(a), r, i);
           },
-          function (e, t) {
+          function(e, t) {
             var i = p(n, e, this, t);
             if (i.done) return i.value;
             var f = r(e),
@@ -16313,7 +16366,7 @@ and limitations under the License.
             l = d;
           return (
             void 0 !== o && ((o = i(o)), (l = h)),
-            n.call(s, l, function (n, i) {
+            n.call(s, l, function(n, i) {
               var s;
               switch (i.charAt(0)) {
                 case '$':
@@ -16342,9 +16395,9 @@ and limitations under the License.
         }
       });
     },
-    function (e, t) {
+    function(e, t) {
       var n;
-      n = (function () {
+      n = (function() {
         return this;
       })();
       try {
@@ -16354,27 +16407,27 @@ and limitations under the License.
       }
       e.exports = n;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         return e && 'function' == typeof e.schedule;
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(287),
         i = n(288),
         a = n(193),
         o = n(289);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return r(e) || i(e, t) || a(e, t) || o();
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return y;
       });
       n(71), n(11);
@@ -16395,7 +16448,7 @@ and limitations under the License.
           Object(h.Service)()(
             (r =
               Reflect.metadata('design:paramtypes', [void 0 === p.a ? Object : p.a])(
-                ((a = i = (function () {
+                ((a = i = (function() {
                   function e(t) {
                     s()(this, e),
                       (this.tid = Promise.resolve(void 0)),
@@ -16406,7 +16459,7 @@ and limitations under the License.
                     c()(e, null, [
                       {
                         key: 'getBasename',
-                        value: function () {
+                        value: function() {
                           var t = document.createElement('a');
                           return (t.href = e.SDK_ADDRESS), 'https://' + t.hostname;
                         }
@@ -16415,16 +16468,16 @@ and limitations under the License.
                     c()(e, [
                       {
                         key: '_insertCybertonicaLibrary',
-                        value: function () {
+                        value: function() {
                           return l.a.insertScript(e.SCRIPT_TARGET, { src: e.SDK_ADDRESS });
                         }
                       },
                       {
                         key: 'init',
-                        value: function (t) {
+                        value: function(t) {
                           var n = this;
                           return (
-                            (this.tid = this._insertCybertonicaLibrary().then(function () {
+                            (this.tid = this._insertCybertonicaLibrary().then(function() {
                               return AFCYBERTONICA.init(t, void 0, e.getBasename()) || n.initFailed();
                             })),
                             this.tid
@@ -16433,13 +16486,13 @@ and limitations under the License.
                       },
                       {
                         key: 'getTransactionId',
-                        value: function () {
+                        value: function() {
                           return this.tid;
                         }
                       },
                       {
                         key: 'initFailed',
-                        value: function () {
+                        value: function() {
                           throw new Error(this.translator.translate(v.a.translations.PAYMENT_ERROR));
                         }
                       }
@@ -16454,20 +16507,20 @@ and limitations under the License.
               ) || r)
           ) || r;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(3),
         i = new r.Token();
       new r.Token();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(51),
         i = n(14),
         a = i['__core-js_shared__'] || (i['__core-js_shared__'] = {});
-      (e.exports = function (e, t) {
+      (e.exports = function(e, t) {
         return a[e] || (a[e] = void 0 !== t ? t : {});
       })('versions', []).push({
         version: r.version,
@@ -16475,12 +16528,12 @@ and limitations under the License.
         copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(41),
         i = n(24),
         a = n(109);
-      e.exports = function (e) {
-        return function (t, n, o) {
+      e.exports = function(e) {
+        return function(t, n, o) {
           var s,
             u = r(t),
             c = i(u.length),
@@ -16492,28 +16545,28 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(17)('iterator'),
         i = !1;
       try {
         var a = [7][r]();
-        (a.return = function () {
+        (a.return = function() {
           i = !0;
         }),
-          Array.from(a, function () {
+          Array.from(a, function() {
             throw 2;
           });
       } catch (e) {}
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if (!t && !i) return !1;
         var n = !1;
         try {
           var a = [7],
             o = a[r]();
-          (o.next = function () {
+          (o.next = function() {
             return { done: (n = !0) };
           }),
-            (a[r] = function () {
+            (a[r] = function() {
               return o;
             }),
             e(a);
@@ -16521,13 +16574,13 @@ and limitations under the License.
         return n;
       };
     },
-    function (e, t) {
+    function(e, t) {
       t.f = Object.getOwnPropertySymbols;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(21);
-      e.exports = function () {
+      e.exports = function() {
         var e = r(this),
           t = '';
         return (
@@ -16540,55 +16593,55 @@ and limitations under the License.
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if (!r(e) || e._t !== t) throw TypeError('Incompatible receiver, ' + t + ' required!');
         return e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         return null !== e && 'object' == typeof e;
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = function (e) {
+      var r = function(e) {
         return e && 'number' == typeof e.length && 'function' != typeof e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
-      var r = function (e) {
-        return function (t) {
+      var r = function(e) {
+        return function(t) {
           for (var n = 0, r = e.length; n < r && !t.closed; n++) t.next(e[n]);
           t.complete();
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       function r(e) {
         return !!e && 'function' != typeof e.subscribe && 'function' == typeof e.then;
       }
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return r;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(116),
@@ -16600,20 +16653,20 @@ and limitations under the License.
         return Object(r.a)(n) ? (e.pop(), Object(a.a)(e, n)) : Object(i.a)(e);
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(4),
-        i = (function (e) {
+        i = (function(e) {
           function t(t, n) {
             var r = e.call(this) || this;
             return (r.subject = t), (r.subscriber = n), (r.closed = !1), r;
           }
           return (
             r.a(t, e),
-            (t.prototype.unsubscribe = function () {
+            (t.prototype.unsubscribe = function() {
               if (!this.closed) {
                 this.closed = !0;
                 var e = this.subject,
@@ -16628,20 +16681,20 @@ and limitations under the License.
           );
         })(n(16).a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(10),
-        i = new r.a(function (e) {
+        i = new r.a(function(e) {
           return e.complete();
         });
       function a(e) {
         return e
-          ? (function (e) {
-              return new r.a(function (t) {
-                return e.schedule(function () {
+          ? (function(e) {
+              return new r.a(function(t) {
+                return e.schedule(function() {
                   return t.complete();
                 });
               });
@@ -16649,9 +16702,9 @@ and limitations under the License.
           : i;
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return h;
       });
       var r = n(10),
@@ -16665,36 +16718,36 @@ and limitations under the License.
       function f(e, t) {
         if (null != e) {
           if (
-            (function (e) {
+            (function(e) {
               return e && 'function' == typeof e[o.a];
             })(e)
           )
-            return (function (e, t) {
-              return new r.a(function (n) {
+            return (function(e, t) {
+              return new r.a(function(n) {
                 var r = new a.a();
                 return (
                   r.add(
-                    t.schedule(function () {
+                    t.schedule(function() {
                       var i = e[o.a]();
                       r.add(
                         i.subscribe({
-                          next: function (e) {
+                          next: function(e) {
                             r.add(
-                              t.schedule(function () {
+                              t.schedule(function() {
                                 return n.next(e);
                               })
                             );
                           },
-                          error: function (e) {
+                          error: function(e) {
                             r.add(
-                              t.schedule(function () {
+                              t.schedule(function() {
                                 return n.error(e);
                               })
                             );
                           },
-                          complete: function () {
+                          complete: function() {
                             r.add(
-                              t.schedule(function () {
+                              t.schedule(function() {
                                 return n.complete();
                               })
                             );
@@ -16708,28 +16761,28 @@ and limitations under the License.
               });
             })(e, t);
           if (Object(c.a)(e))
-            return (function (e, t) {
-              return new r.a(function (n) {
+            return (function(e, t) {
+              return new r.a(function(n) {
                 var r = new a.a();
                 return (
                   r.add(
-                    t.schedule(function () {
+                    t.schedule(function() {
                       return e.then(
-                        function (e) {
+                        function(e) {
                           r.add(
-                            t.schedule(function () {
+                            t.schedule(function() {
                               n.next(e),
                                 r.add(
-                                  t.schedule(function () {
+                                  t.schedule(function() {
                                     return n.complete();
                                   })
                                 );
                             })
                           );
                         },
-                        function (e) {
+                        function(e) {
                           r.add(
-                            t.schedule(function () {
+                            t.schedule(function() {
                               return n.error(e);
                             })
                           );
@@ -16743,25 +16796,25 @@ and limitations under the License.
             })(e, t);
           if (Object(l.a)(e)) return Object(s.a)(e, t);
           if (
-            (function (e) {
+            (function(e) {
               return e && 'function' == typeof e[u.a];
             })(e) ||
             'string' == typeof e
           )
-            return (function (e, t) {
+            return (function(e, t) {
               if (!e) throw new Error('Iterable cannot be null');
-              return new r.a(function (n) {
+              return new r.a(function(n) {
                 var r,
                   i = new a.a();
                 return (
-                  i.add(function () {
+                  i.add(function() {
                     r && 'function' == typeof r.return && r.return();
                   }),
                   i.add(
-                    t.schedule(function () {
+                    t.schedule(function() {
                       (r = e[u.a]()),
                         i.add(
-                          t.schedule(function () {
+                          t.schedule(function() {
                             if (!n.closed) {
                               var e, t;
                               try {
@@ -16787,9 +16840,9 @@ and limitations under the License.
         return t ? f(e, t) : e instanceof r.a ? e : new r.a(Object(i.a)(e));
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return l;
       });
       var r = n(128),
@@ -16799,11 +16852,11 @@ and limitations under the License.
         s = n(127),
         u = n(129),
         c = n(126),
-        l = function (e) {
+        l = function(e) {
           if (e && 'function' == typeof e[o.a])
             return (
               (l = e),
-              function (e) {
+              function(e) {
                 var t = l[o.a]();
                 if ('function' != typeof t.subscribe)
                   throw new TypeError('Provided object does not correctly implement Symbol.observable');
@@ -16814,14 +16867,14 @@ and limitations under the License.
           if (Object(u.a)(e))
             return (
               (n = e),
-              function (e) {
+              function(e) {
                 return (
                   n
                     .then(
-                      function (t) {
+                      function(t) {
                         e.closed || (e.next(t), e.complete());
                       },
-                      function (t) {
+                      function(t) {
                         return e.error(t);
                       }
                     )
@@ -16833,7 +16886,7 @@ and limitations under the License.
           if (e && 'function' == typeof e[a.a])
             return (
               (t = e),
-              function (e) {
+              function(e) {
                 for (var n = t[a.a](); ; ) {
                   var r = n.next();
                   if (r.done) {
@@ -16844,7 +16897,7 @@ and limitations under the License.
                 }
                 return (
                   'function' == typeof n.return &&
-                    e.add(function () {
+                    e.add(function() {
                       n.return && n.return();
                     }),
                   e
@@ -16862,38 +16915,38 @@ and limitations under the License.
           );
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(4),
-        i = (function () {
+        i = (function() {
           function e(t, n) {
             void 0 === n && (n = e.now), (this.SchedulerAction = t), (this.now = n);
           }
           return (
-            (e.prototype.schedule = function (e, t, n) {
+            (e.prototype.schedule = function(e, t, n) {
               return void 0 === t && (t = 0), new this.SchedulerAction(this, e).schedule(n, t);
             }),
-            (e.now = function () {
+            (e.now = function() {
               return Date.now();
             }),
             e
           );
         })(),
-        a = (function (e) {
+        a = (function(e) {
           function t(n, r) {
             void 0 === r && (r = i.now);
             var a =
-              e.call(this, n, function () {
+              e.call(this, n, function() {
                 return t.delegate && t.delegate !== a ? t.delegate.now() : r();
               }) || this;
             return (a.actions = []), (a.active = !1), (a.scheduled = void 0), a;
           }
           return (
             r.a(t, e),
-            (t.prototype.schedule = function (n, r, i) {
+            (t.prototype.schedule = function(n, r, i) {
               return (
                 void 0 === r && (r = 0),
                 t.delegate && t.delegate !== this
@@ -16901,7 +16954,7 @@ and limitations under the License.
                   : e.prototype.schedule.call(this, n, r, i)
               );
             }),
-            (t.prototype.flush = function (e) {
+            (t.prototype.flush = function(e) {
               var t = this.actions;
               if (this.active) t.push(e);
               else {
@@ -16920,20 +16973,20 @@ and limitations under the License.
           );
         })(i);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return i;
       });
       var r = n(4),
-        i = (function (e) {
+        i = (function(e) {
           function t(t, n) {
             var r = e.call(this, t, n) || this;
             return (r.scheduler = t), (r.work = n), (r.pending = !1), r;
           }
           return (
             r.a(t, e),
-            (t.prototype.schedule = function (e, t) {
+            (t.prototype.schedule = function(e, t) {
               if ((void 0 === t && (t = 0), this.closed)) return this;
               this.state = e;
               var n = this.id,
@@ -16946,21 +16999,21 @@ and limitations under the License.
                 this
               );
             }),
-            (t.prototype.requestAsyncId = function (e, t, n) {
+            (t.prototype.requestAsyncId = function(e, t, n) {
               return void 0 === n && (n = 0), setInterval(e.flush.bind(e, this), n);
             }),
-            (t.prototype.recycleAsyncId = function (e, t, n) {
+            (t.prototype.recycleAsyncId = function(e, t, n) {
               if ((void 0 === n && (n = 0), null !== n && this.delay === n && !1 === this.pending)) return t;
               clearInterval(t);
             }),
-            (t.prototype.execute = function (e, t) {
+            (t.prototype.execute = function(e, t) {
               if (this.closed) return new Error('executing a cancelled action');
               this.pending = !1;
               var n = this._execute(e, t);
               if (n) return n;
               !1 === this.pending && null != this.id && (this.id = this.recycleAsyncId(this.scheduler, this.id, null));
             }),
-            (t.prototype._execute = function (e, t) {
+            (t.prototype._execute = function(e, t) {
               var n = !1,
                 r = void 0;
               try {
@@ -16970,7 +17023,7 @@ and limitations under the License.
               }
               if (n) return this.unsubscribe(), r;
             }),
-            (t.prototype._unsubscribe = function () {
+            (t.prototype._unsubscribe = function() {
               var e = this.id,
                 t = this.scheduler,
                 n = t.actions,
@@ -16986,13 +17039,13 @@ and limitations under the License.
             t
           );
         })(
-          (function (e) {
+          (function(e) {
             function t(t, n) {
               return e.call(this) || this;
             }
             return (
               r.a(t, e),
-              (t.prototype.schedule = function (e, t) {
+              (t.prototype.schedule = function(e, t) {
                 return void 0 === t && (t = 0), this;
               }),
               t
@@ -17000,12 +17053,12 @@ and limitations under the License.
           })(n(16).a)
         );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S + r.F, 'Object', { assign: n(230) });
     },
     ,
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(54),
         i = n(173),
         a = n(151),
@@ -17014,13 +17067,13 @@ and limitations under the License.
         u = n(153),
         c = {},
         l = {};
-      ((t = e.exports = function (e, t, n, f, h) {
+      ((t = e.exports = function(e, t, n, f, h) {
         var d,
           p,
           v,
           y,
           m = h
-            ? function () {
+            ? function() {
                 return e;
               }
             : u(e),
@@ -17034,17 +17087,17 @@ and limitations under the License.
       }).BREAK = c),
         (t.RETURN = l);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(21),
         i = n(61),
         a = n(17)('species');
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n,
           o = r(e).constructor;
         return void 0 === o || null == (n = r(o)[a]) ? t : i(n);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(23).f,
         i = Function.prototype,
         a = /^\s*function ([^ (]*)/;
@@ -17052,7 +17105,7 @@ and limitations under the License.
         (n(19) &&
           r(i, 'name', {
             configurable: !0,
-            get: function () {
+            get: function() {
               try {
                 return ('' + this).match(a)[1];
               } catch (e) {
@@ -17061,9 +17114,9 @@ and limitations under the License.
             }
           }));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return f;
       });
       n(49), n(50);
@@ -17075,69 +17128,68 @@ and limitations under the License.
         u = n(165),
         c = n(3),
         l = n(36),
-        f =
-          (n(239),
-          (function () {
-            function e() {
-              i()(this, e), (this.messageBus = c.Container.get(s.a));
-            }
-            return (
-              o()(e, [
-                {
-                  key: 'parseUrl',
-                  value: function () {
-                    var e = new URL(window.location.href),
-                      t = {},
-                      n = {},
-                      r = this.getAllowedParams();
-                    return (
-                      e.searchParams.forEach(function (e, i) {
-                        r.includes(i) ? (n[i] = e) : (t[i] = e);
-                      }),
-                      (n.styles = t),
-                      n
-                    );
-                  }
-                },
-                {
-                  key: 'applyStyles',
-                  value: function () {
-                    new u.a(this.getAllowedStyles()).inject(this.params.styles);
-                  }
-                },
-                {
-                  key: 'onInit',
-                  value: function () {
-                    (this.params = this.parseUrl()), this.applyStyles(), c.Container.get(l.a).notifyReadyState();
-                  }
-                },
-                {
-                  key: 'getAllowedParams',
-                  value: function () {
-                    return ['locale', 'origin'];
-                  }
-                },
-                {
-                  key: 'getAllowedStyles',
-                  value: function () {
-                    return {
-                      'background-color-body': { property: 'background-color', selector: 'body' },
-                      'color-body': { property: 'color', selector: 'body' },
-                      'font-size-body': { property: 'font-size', selector: 'body' },
-                      'line-height-body': { property: 'line-height', selector: 'body' },
-                      'space-inset-body': { property: 'padding', selector: 'body' },
-                      'space-outset-body': { property: 'margin', selector: 'body' }
-                    };
-                  }
+        f = (n(239),
+        (function() {
+          function e() {
+            i()(this, e), (this.messageBus = c.Container.get(s.a));
+          }
+          return (
+            o()(e, [
+              {
+                key: 'parseUrl',
+                value: function() {
+                  var e = new URL(window.location.href),
+                    t = {},
+                    n = {},
+                    r = this.getAllowedParams();
+                  return (
+                    e.searchParams.forEach(function(e, i) {
+                      r.includes(i) ? (n[i] = e) : (t[i] = e);
+                    }),
+                    (n.styles = t),
+                    n
+                  );
                 }
-              ]),
-              e
-            );
-          })());
+              },
+              {
+                key: 'applyStyles',
+                value: function() {
+                  new u.a(this.getAllowedStyles()).inject(this.params.styles);
+                }
+              },
+              {
+                key: 'onInit',
+                value: function() {
+                  (this.params = this.parseUrl()), this.applyStyles(), c.Container.get(l.a).notifyReadyState();
+                }
+              },
+              {
+                key: 'getAllowedParams',
+                value: function() {
+                  return ['locale', 'origin'];
+                }
+              },
+              {
+                key: 'getAllowedStyles',
+                value: function() {
+                  return {
+                    'background-color-body': { property: 'background-color', selector: 'body' },
+                    'color-body': { property: 'color', selector: 'body' },
+                    'font-size-body': { property: 'font-size', selector: 'body' },
+                    'line-height-body': { property: 'line-height', selector: 'body' },
+                    'space-inset-body': { property: 'padding', selector: 'body' },
+                    'space-outset-body': { property: 'margin', selector: 'body' }
+                  };
+                }
+              }
+            ]),
+            e
+          );
+        })());
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return _;
       });
       n(84), n(53), n(26), n(22), n(11), n(43);
@@ -17160,7 +17212,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -17171,18 +17223,18 @@ and limitations under the License.
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? m(Object(n), !0).forEach(function (t) {
+            ? m(Object(n), !0).forEach(function(t) {
                 i()(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : m(Object(n)).forEach(function (t) {
+            : m(Object(n)).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
               });
         }
         return e;
       }
-      var _ = (function () {
+      var _ = (function() {
         function e(t, n, r, i) {
           var a = this;
           o()(this, e),
@@ -17191,26 +17243,26 @@ and limitations under the License.
             (this.framesHub = r),
             (this.identifier = i),
             (this.observable$ = Object(c.a)(
-              function (t) {
+              function(t) {
                 return window.addEventListener(e.STORAGE_EVENT, t, !0);
               },
-              function (t) {
+              function(t) {
                 return window.removeEventListener(e.STORAGE_EVENT, t);
               }
             ).pipe(
-              (function () {
+              (function() {
                 for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
                 var n = e[e.length - 1];
                 return Object(f.a)(n)
                   ? (e.pop(),
-                    function (t) {
+                    function(t) {
                       return Object(l.a)(e, t, n);
                     })
-                  : function (t) {
+                  : function(t) {
                       return Object(l.a)(e, t);
                     };
               })(g({}, this.nativeStorage)),
-              Object(h.a)(function () {
+              Object(h.a)(function() {
                 return g({}, a.nativeStorage);
               }),
               Object(d.a)(1)
@@ -17218,8 +17270,11 @@ and limitations under the License.
             (this.pipe = this.observable$.pipe.bind(this.observable$)),
             (this.subscribe = this.observable$.subscribe.bind(this.observable$)),
             this.communicator.incomingEvent$
-              .pipe(Object(v.a)(this.getSychronizationEventName()), Object(p.a)(this.communicator.communicationClosed$))
-              .subscribe(function (e) {
+              .pipe(
+                Object(v.a)(this.getSychronizationEventName()),
+                Object(p.a)(this.communicator.communicationClosed$)
+              )
+              .subscribe(function(e) {
                 var t = e.data,
                   n = t.key,
                   r = t.value;
@@ -17230,21 +17285,21 @@ and limitations under the License.
           u()(e, [
             {
               key: 'getItem',
-              value: function (e) {
+              value: function(e) {
                 return this.nativeStorage.getItem(e);
               }
             },
             {
               key: 'setItem',
-              value: function (e, t) {
+              value: function(e, t) {
                 this.nativeStorage.setItem(e, t), this.emitStorageEvent(), this.synchronizeStorage(e, t);
               }
             },
             {
               key: 'select',
-              value: function (e) {
+              value: function(e) {
                 return this.observable$.pipe(
-                  Object(h.a)(function (t) {
+                  Object(h.a)(function(t) {
                     return e(t);
                   })
                 );
@@ -17252,7 +17307,7 @@ and limitations under the License.
             },
             {
               key: 'emitStorageEvent',
-              value: function () {
+              value: function() {
                 var t;
                 try {
                   t = document.createEvent('StorageEvent');
@@ -17264,11 +17319,11 @@ and limitations under the License.
             },
             {
               key: 'synchronizeStorage',
-              value: function (e, t) {
+              value: function(e, t) {
                 var n = this,
                   r = { type: this.getSychronizationEventName(), data: { key: e, value: t } };
                 if (!this.identifier.isParentFrame()) return this.communicator.send(r, y.a.MERCHANT_PARENT_FRAME);
-                this.framesHub.waitForFrame(y.a.CONTROL_FRAME_IFRAME).subscribe(function (e) {
+                this.framesHub.waitForFrame(y.a.CONTROL_FRAME_IFRAME).subscribe(function(e) {
                   return n.communicator.send(r, e);
                 });
               }
@@ -17279,7 +17334,7 @@ and limitations under the License.
       })();
       _.STORAGE_EVENT = 'storage';
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(74),
         i = n(6),
@@ -17291,24 +17346,24 @@ and limitations under the License.
         l = n(149),
         f = n(17)('iterator'),
         h = !([].keys && 'next' in [].keys()),
-        d = function () {
+        d = function() {
           return this;
         };
-      e.exports = function (e, t, n, p, v, y, m) {
+      e.exports = function(e, t, n, p, v, y, m) {
         u(n, t, p);
         var g,
           _,
           b,
-          E = function (e) {
+          E = function(e) {
             if (!h && e in O) return O[e];
             switch (e) {
               case 'keys':
               case 'values':
-                return function () {
+                return function() {
                   return new n(this, e);
                 };
             }
-            return function () {
+            return function() {
               return new n(this, e);
             };
           },
@@ -17329,7 +17384,7 @@ and limitations under the License.
             R &&
             'values' !== R.name &&
             ((A = !0),
-            (T = function () {
+            (T = function() {
               return R.call(this);
             })),
           (r && !m) || (!h && !A && O[f]) || o(O, f, T),
@@ -17343,38 +17398,38 @@ and limitations under the License.
         return g;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(14).document,
         a = r(i) && r(i.createElement);
-      e.exports = function (e) {
+      e.exports = function(e) {
         return a ? i.createElement(e) : {};
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(120)('keys'),
         i = n(75);
-      e.exports = function (e) {
+      e.exports = function(e) {
         return r[e] || (r[e] = i(e));
       };
     },
-    function (e, t) {
+    function(e, t) {
       e.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(
         ','
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14).document;
       e.exports = r && r.documentElement;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(52),
         i = n(31),
         a = n(146)('IE_PROTO'),
         o = Object.prototype;
       e.exports =
         Object.getPrototypeOf ||
-        function (e) {
+        function(e) {
           return (
             (e = i(e)),
             r(e, a)
@@ -17387,44 +17442,44 @@ and limitations under the License.
           );
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(62);
       e.exports =
         Array.isArray ||
-        function (e) {
+        function(e) {
           return 'Array' == r(e);
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(89),
         i = n(17)('iterator'),
         a = Array.prototype;
-      e.exports = function (e) {
+      e.exports = function(e) {
         return void 0 !== e && (r.Array === e || a[i] === e);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(23),
         i = n(88);
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         t in e ? r.f(e, t, i(0, n)) : (e[t] = n);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(110),
         i = n(17)('iterator'),
         a = n(89);
-      e.exports = n(51).getIteratorMethod = function (e) {
+      e.exports = n(51).getIteratorMethod = function(e) {
         if (null != e) return e[i] || e['@@iterator'] || a[r(e)];
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(31),
         i = n(109),
         a = n(24);
-      e.exports = function (e) {
+      e.exports = function(e) {
         for (
           var t = r(this),
             n = a(t.length),
@@ -17439,27 +17494,27 @@ and limitations under the License.
         return t;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(62),
         a = n(17)('match');
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t;
         return r(e) && (void 0 !== (t = e[a]) ? !!t : 'RegExp' == i(e));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(169)(!0);
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         return t + (n ? r(e, t).length : 1);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(110),
         i = RegExp.prototype.exec;
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n = e.exec;
         if ('function' == typeof n) {
           var a = n.call(e, t);
@@ -17471,7 +17526,7 @@ and limitations under the License.
         return i.call(e, t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n(294);
       var r = n(39),
@@ -17481,47 +17536,47 @@ and limitations under the License.
         s = n(17),
         u = n(159),
         c = s('species'),
-        l = !a(function () {
+        l = !a(function() {
           var e = /./;
           return (
-            (e.exec = function () {
+            (e.exec = function() {
               var e = [];
               return (e.groups = { a: '7' }), e;
             }),
             '7' !== ''.replace(e, '$<a>')
           );
         }),
-        f = (function () {
+        f = (function() {
           var e = /(?:)/,
             t = e.exec;
-          e.exec = function () {
+          e.exec = function() {
             return t.apply(this, arguments);
           };
           var n = 'ab'.split(e);
           return 2 === n.length && 'a' === n[0] && 'b' === n[1];
         })();
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         var h = s(e),
-          d = !a(function () {
+          d = !a(function() {
             var t = {};
             return (
-              (t[h] = function () {
+              (t[h] = function() {
                 return 7;
               }),
               7 != ''[e](t)
             );
           }),
           p = d
-            ? !a(function () {
+            ? !a(function() {
                 var t = !1,
                   n = /a/;
                 return (
-                  (n.exec = function () {
+                  (n.exec = function() {
                     return (t = !0), null;
                   }),
                   'split' === e &&
                     ((n.constructor = {}),
-                    (n.constructor[c] = function () {
+                    (n.constructor[c] = function() {
                       return n;
                     })),
                   n[h](''),
@@ -17531,7 +17586,7 @@ and limitations under the License.
             : void 0;
         if (!d || !p || ('replace' === e && !l) || ('split' === e && !f)) {
           var v = /./[h],
-            y = n(o, h, ''[e], function (e, t, n, r, i) {
+            y = n(o, h, ''[e], function(e, t, n, r, i) {
               return t.exec === u
                 ? d && !i
                   ? { done: !0, value: v.call(t, n, r) }
@@ -17545,17 +17600,17 @@ and limitations under the License.
               RegExp.prototype,
               h,
               2 == t
-                ? function (e, t) {
+                ? function(e, t) {
                     return g.call(e, this, t);
                   }
-                : function (e) {
+                : function(e) {
                     return g.call(e, this);
                   }
             );
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i,
@@ -17566,7 +17621,7 @@ and limitations under the License.
         c = ((r = /a/), (i = /b*/g), o.call(r, 'a'), o.call(i, 'a'), 0 !== r.lastIndex || 0 !== i.lastIndex),
         l = void 0 !== /()??/.exec('')[1];
       (c || l) &&
-        (u = function (e) {
+        (u = function(e) {
           var t,
             n,
             r,
@@ -17580,7 +17635,7 @@ and limitations under the License.
             l &&
               r &&
               r.length > 1 &&
-              s.call(r[0], n, function () {
+              s.call(r[0], n, function() {
                 for (i = 1; i < arguments.length - 2; i++) void 0 === arguments[i] && (r[i] = void 0);
               }),
             r
@@ -17588,46 +17643,46 @@ and limitations under the License.
         }),
         (e.exports = u);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(186).set;
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         var a,
           o = t.constructor;
         return o !== n && 'function' == typeof o && (a = o.prototype) !== n.prototype && r(a) && i && i(e, a), e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return a;
       });
       var r = n(4),
         i = n(8);
       function a(e, t) {
-        return function (n) {
+        return function(n) {
           return n.lift(new o(e, t));
         };
       }
-      var o = (function () {
+      var o = (function() {
           function e(e, t) {
             (this.predicate = e), (this.thisArg = t);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new s(e, this.predicate, this.thisArg));
             }),
             e
           );
         })(),
-        s = (function (e) {
+        s = (function(e) {
           function t(t, n, r) {
             var i = e.call(this, t) || this;
             return (i.predicate = n), (i.thisArg = r), (i.count = 0), i;
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               var t;
               try {
                 t = this.predicate.call(this.thisArg, e, this.count++);
@@ -17640,7 +17695,7 @@ and limitations under the License.
           );
         })(i.a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n(137), n(35), n(11), n(185);
       var r = n(0),
@@ -17649,24 +17704,24 @@ and limitations under the License.
       var a = n(225),
         o = n(303);
       t.Currencies = o.Currencies;
-      var s = function (e) {
+      var s = function(e) {
           return Number(e) === e && e % 1 == 0;
         },
-        u = function (e, t) {
+        u = function(e, t) {
           if (e.currency !== t.currency) throw new Error('Different currencies');
         },
-        c = function (e) {
+        c = function(e) {
           if (!(e instanceof h)) throw new TypeError('Instance of Money required');
         },
-        l = function (e) {
+        l = function(e) {
           if (a.isNaN(parseFloat(e)) && !isFinite(e)) throw new TypeError('Operand must be a number');
         },
-        f = function (e) {
+        f = function(e) {
           var t = o.Currencies[e];
           if (t) return t;
           for (var n in o.Currencies) if (n.toUpperCase() === e.toUpperCase()) return o.Currencies[n];
         },
-        h = (function () {
+        h = (function() {
           function e(t, n) {
             if ((r(this, e), a.isString(n) && (n = f(n)), !a.isPlainObject(n))) throw new TypeError('Invalid currency');
             if (!s(t)) throw new TypeError('Amount must be an integer');
@@ -17678,45 +17733,45 @@ and limitations under the License.
               [
                 {
                   key: 'equals',
-                  value: function (e) {
+                  value: function(e) {
                     return c(e), this.amount === e.amount && this.currency === e.currency;
                   }
                 },
                 {
                   key: 'add',
-                  value: function (t) {
+                  value: function(t) {
                     return c(t), u(this, t), new e(this.amount + t.amount, this.currency);
                   }
                 },
                 {
                   key: 'subtract',
-                  value: function (t) {
+                  value: function(t) {
                     return c(t), u(this, t), new e(this.amount - t.amount, this.currency);
                   }
                 },
                 {
                   key: 'multiply',
-                  value: function (t, n) {
+                  value: function(t, n) {
                     return a.isFunction(n) || (n = Math.round), l(t), new e(n(this.amount * t), this.currency);
                   }
                 },
                 {
                   key: 'divide',
-                  value: function (t, n) {
+                  value: function(t, n) {
                     return a.isFunction(n) || (n = Math.round), l(t), new e(n(this.amount / t), this.currency);
                   }
                 },
                 {
                   key: 'allocate',
-                  value: function (t) {
+                  value: function(t) {
                     var n = this,
                       r = n.amount,
                       i = [],
                       a = 0;
-                    t.forEach(function (e) {
+                    t.forEach(function(e) {
                       a += e;
                     }),
-                      t.forEach(function (t) {
+                      t.forEach(function(t) {
                         var o = Math.floor((n.amount * t) / a);
                         i.push(new e(o, n.currency)), (r -= o);
                       });
@@ -17726,86 +17781,86 @@ and limitations under the License.
                 },
                 {
                   key: 'compare',
-                  value: function (e) {
+                  value: function(e) {
                     return c(e), u(this, e), this.amount === e.amount ? 0 : this.amount > e.amount ? 1 : -1;
                   }
                 },
                 {
                   key: 'greaterThan',
-                  value: function (e) {
+                  value: function(e) {
                     return 1 === this.compare(e);
                   }
                 },
                 {
                   key: 'greaterThanOrEqual',
-                  value: function (e) {
+                  value: function(e) {
                     return 0 <= this.compare(e);
                   }
                 },
                 {
                   key: 'lessThan',
-                  value: function (e) {
+                  value: function(e) {
                     return -1 === this.compare(e);
                   }
                 },
                 {
                   key: 'lessThanOrEqual',
-                  value: function (e) {
+                  value: function(e) {
                     return 0 >= this.compare(e);
                   }
                 },
                 {
                   key: 'isZero',
-                  value: function () {
+                  value: function() {
                     return 0 === this.amount;
                   }
                 },
                 {
                   key: 'isPositive',
-                  value: function () {
+                  value: function() {
                     return this.amount > 0;
                   }
                 },
                 {
                   key: 'isNegative',
-                  value: function () {
+                  value: function() {
                     return this.amount < 0;
                   }
                 },
                 {
                   key: 'toDecimal',
-                  value: function () {
+                  value: function() {
                     return Number(this.toString());
                   }
                 },
                 {
                   key: 'toString',
-                  value: function () {
+                  value: function() {
                     var e = f(this.currency);
                     return (this.amount / Math.pow(10, e.decimal_digits)).toFixed(e.decimal_digits);
                   }
                 },
                 {
                   key: 'toJSON',
-                  value: function () {
+                  value: function() {
                     return { amount: this.amount, currency: this.currency };
                   }
                 },
                 {
                   key: 'getAmount',
-                  value: function () {
+                  value: function() {
                     return this.amount;
                   }
                 },
                 {
                   key: 'getCurrency',
-                  value: function () {
+                  value: function() {
                     return this.currency;
                   }
                 },
                 {
                   key: 'getCurrencyInfo',
-                  value: function () {
+                  value: function() {
                     return f(this.currency);
                   }
                 }
@@ -17813,7 +17868,7 @@ and limitations under the License.
               [
                 {
                   key: 'fromInteger',
-                  value: function (t, n) {
+                  value: function(t, n) {
                     if (a.isObject(t)) {
                       if (void 0 === t.amount || void 0 === t.currency)
                         throw new TypeError('Missing required parameters amount,currency');
@@ -17825,7 +17880,7 @@ and limitations under the License.
                 },
                 {
                   key: 'fromDecimal',
-                  value: function (t, n, r) {
+                  value: function(t, n, r) {
                     if (a.isObject(t)) {
                       if (void 0 === t.amount || void 0 === t.currency)
                         throw new TypeError('Missing required parameters amount,currency');
@@ -17860,9 +17915,9 @@ and limitations under the License.
         })();
       (t.Money = h), Object.assign(h, o.Currencies);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(130),
@@ -17875,9 +17930,9 @@ and limitations under the License.
         return a()(r.a.apply(void 0, e));
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(10),
@@ -17887,9 +17942,9 @@ and limitations under the License.
         return t ? Object(a.a)(e, t) : new r.a(Object(i.a)(e));
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return u;
       });
       var r = n(0),
@@ -17897,7 +17952,7 @@ and limitations under the License.
         a = n(1),
         o = n.n(a),
         s = n(38),
-        u = (function () {
+        u = (function() {
           function e(t) {
             i()(this, e), (this._allowed = t);
           }
@@ -17905,7 +17960,7 @@ and limitations under the License.
             o()(e, null, [
               {
                 key: '_getTagStyles',
-                value: function (e) {
+                value: function(e) {
                   var t = [];
                   for (var n in e) t.push(''.concat(n, ': ').concat(e[n], ';'));
                   return t.join(' ');
@@ -17915,13 +17970,13 @@ and limitations under the License.
             o()(e, [
               {
                 key: 'inject',
-                value: function (e) {
+                value: function(e) {
                   s.a.insertStyle(this._getStyleString(e));
                 }
               },
               {
                 key: '_filter',
-                value: function (e) {
+                value: function(e) {
                   var t = {};
                   for (var n in e) this._allowed.hasOwnProperty(n) && (t[n] = e[n]);
                   return t;
@@ -17929,7 +17984,7 @@ and limitations under the License.
               },
               {
                 key: '_sanitize',
-                value: function (e) {
+                value: function(e) {
                   var t = {};
                   for (var n in e) /^[A-Za-z0-9 _%#]*[A-Za-z0-9][A-Za-z0-9 _%#]*$/i.test(e[n]) && (t[n] = e[n]);
                   return t;
@@ -17937,7 +17992,7 @@ and limitations under the License.
               },
               {
                 key: '_group',
-                value: function (e) {
+                value: function(e) {
                   var t = {};
                   for (var n in e) {
                     var r = this._allowed[n];
@@ -17948,7 +18003,7 @@ and limitations under the License.
               },
               {
                 key: '_getStyleString',
-                value: function (t) {
+                value: function(t) {
                   var n,
                     r,
                     i,
@@ -17965,9 +18020,9 @@ and limitations under the License.
           );
         })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return h;
       });
       var r = n(4),
@@ -17976,18 +18031,18 @@ and limitations under the License.
         o = n(98),
         s = n(66),
         u = n(133);
-      var c = (function () {
+      var c = (function() {
           function e(e, t) {
             void 0 === t && (t = Number.POSITIVE_INFINITY), (this.project = e), (this.concurrent = t);
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new l(e, this.project, this.concurrent));
             }),
             e
           );
         })(),
-        l = (function (e) {
+        l = (function(e) {
           function t(t, n, r) {
             void 0 === r && (r = Number.POSITIVE_INFINITY);
             var i = e.call(this, t) || this;
@@ -18003,10 +18058,10 @@ and limitations under the License.
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               this.active < this.concurrent ? this._tryNext(e) : this.buffer.push(e);
             }),
-            (t.prototype._tryNext = function (e) {
+            (t.prototype._tryNext = function(e) {
               var t,
                 n = this.index++;
               try {
@@ -18016,22 +18071,22 @@ and limitations under the License.
               }
               this.active++, this._innerSub(t, e, n);
             }),
-            (t.prototype._innerSub = function (e, t, n) {
+            (t.prototype._innerSub = function(e, t, n) {
               var r = new o.a(this, t, n),
                 a = this.destination;
               a.add(r);
               var s = Object(i.a)(this, e, void 0, void 0, r);
               s !== r && a.add(s);
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               (this.hasCompleted = !0),
                 0 === this.active && 0 === this.buffer.length && this.destination.complete(),
                 this.unsubscribe();
             }),
-            (t.prototype.notifyNext = function (e, t, n, r, i) {
+            (t.prototype.notifyNext = function(e, t, n, r, i) {
               this.destination.next(t);
             }),
-            (t.prototype.notifyComplete = function (e) {
+            (t.prototype.notifyComplete = function(e) {
               var t = this.buffer;
               this.remove(e),
                 this.active--,
@@ -18050,11 +18105,11 @@ and limitations under the License.
             return (
               void 0 === r && (r = Number.POSITIVE_INFINITY),
               'function' == typeof n
-                ? function (i) {
+                ? function(i) {
                     return i.pipe(
-                      e(function (e, r) {
+                      e(function(e, r) {
                         return Object(u.a)(t(e, r)).pipe(
-                          Object(s.a)(function (t, i) {
+                          Object(s.a)(function(t, i) {
                             return n(e, t, r, i);
                           })
                         );
@@ -18062,7 +18117,7 @@ and limitations under the License.
                     );
                   }
                 : ('number' == typeof n && (r = n),
-                  function (e) {
+                  function(e) {
                     return e.lift(new c(t, r));
                   })
             );
@@ -18070,10 +18125,10 @@ and limitations under the License.
         );
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(183)('asyncIterator');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(14),
         i = n(6),
@@ -18087,30 +18142,30 @@ and limitations under the License.
         h = n(122),
         d = n(90),
         p = n(160);
-      e.exports = function (e, t, n, v, y, m) {
+      e.exports = function(e, t, n, v, y, m) {
         var g = r[e],
           _ = g,
           b = y ? 'set' : 'add',
           E = _ && _.prototype,
           w = {},
-          S = function (e) {
+          S = function(e) {
             var t = E[e];
             a(
               E,
               e,
               'delete' == e || 'has' == e
-                ? function (e) {
+                ? function(e) {
                     return !(m && !l(e)) && t.call(this, 0 === e ? 0 : e);
                   }
                 : 'get' == e
-                ? function (e) {
+                ? function(e) {
                     return m && !l(e) ? void 0 : t.call(this, 0 === e ? 0 : e);
                   }
                 : 'add' == e
-                ? function (e) {
+                ? function(e) {
                     return t.call(this, 0 === e ? 0 : e), this;
                   }
-                : function (e, n) {
+                : function(e, n) {
                     return t.call(this, 0 === e ? 0 : e, n), this;
                   }
             );
@@ -18119,26 +18174,26 @@ and limitations under the License.
           'function' == typeof _ &&
           (m ||
             (E.forEach &&
-              !f(function () {
+              !f(function() {
                 new _().entries().next();
               })))
         ) {
           var A = new _(),
             O = A[b](m ? {} : -0, 1) != A,
-            R = f(function () {
+            R = f(function() {
               A.has(1);
             }),
-            T = h(function (e) {
+            T = h(function(e) {
               new _(e);
             }),
             C =
               !m &&
-              f(function () {
+              f(function() {
                 for (var e = new _(), t = 5; t--; ) e[b](t, t);
                 return !e.has(-0);
               });
           T ||
-            (((_ = t(function (t, n) {
+            (((_ = t(function(t, n) {
               c(t, _, e);
               var r = p(new g(), t, _);
               return null != n && u(n, y, r[b], r), r;
@@ -18151,11 +18206,11 @@ and limitations under the License.
         return d(_, e), (w[e] = _), i(i.G + i.W + i.F * (_ != g), w), m || v.setStrong(_, e, y), _;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(59),
         i = n(73);
-      e.exports = function (e) {
-        return function (t, n) {
+      e.exports = function(e) {
+        return function(t, n) {
           var a,
             o,
             s = String(i(t)),
@@ -18179,38 +18234,38 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       e.exports =
         !n(19) &&
-        !n(18)(function () {
+        !n(18)(function() {
           return (
             7 !=
             Object.defineProperty(n(145)('div'), 'a', {
-              get: function () {
+              get: function() {
                 return 7;
               }
             }).a
           );
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(23),
         i = n(21),
         a = n(77);
       e.exports = n(19)
         ? Object.defineProperties
-        : function (e, t) {
+        : function(e, t) {
             i(e);
             for (var n, o = a(t), s = o.length, u = 0; s > u; ) r.f(e, (n = o[u++]), t[n]);
             return e;
           };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(52),
         i = n(41),
         a = n(121)(!1),
         o = n(146)('IE_PROTO');
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n,
           s = i(e),
           u = 0,
@@ -18220,9 +18275,9 @@ and limitations under the License.
         return c;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(21);
-      e.exports = function (e, t, n, i) {
+      e.exports = function(e, t, n, i) {
         try {
           return i ? t(r(n)[0], n[1]) : t(n);
         } catch (t) {
@@ -18231,7 +18286,7 @@ and limitations under the License.
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(61),
@@ -18242,47 +18297,47 @@ and limitations under the License.
       r(
         r.P +
           r.F *
-            (o(function () {
+            (o(function() {
               u.sort(void 0);
             }) ||
-              !o(function () {
+              !o(function() {
                 u.sort(null);
               }) ||
               !n(42)(s)),
         'Array',
         {
-          sort: function (e) {
+          sort: function(e) {
             return void 0 === e ? s.call(a(this)) : s.call(a(this), i(e));
           }
         }
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(1);
       r(r.P + r.F * !n(42)([].map, !0), 'Array', {
-        map: function (e) {
+        map: function(e) {
           return i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(2);
       r(r.P + r.F * !n(42)([].filter, !0), 'Array', {
-        filter: function (e) {
+        filter: function(e) {
           return i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(61),
         i = n(31),
         a = n(108),
         o = n(24);
-      e.exports = function (e, t, n, s, u) {
+      e.exports = function(e, t, n, s, u) {
         r(t);
         var c = i(e),
           l = a(c),
@@ -18301,26 +18356,26 @@ and limitations under the License.
         return s;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(121)(!1),
         a = [].indexOf,
         o = !!a && 1 / [1].indexOf(1, -0) < 0;
       r(r.P + r.F * (o || !n(42)(a)), 'Array', {
-        indexOf: function (e) {
+        indexOf: function(e) {
           return o ? a.apply(this, arguments) || 0 : i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(31),
         i = n(109),
         a = n(24);
       e.exports =
         [].copyWithin ||
-        function (e, t) {
+        function(e, t) {
           var n = r(this),
             o = a(n.length),
             s = i(e, o),
@@ -18333,49 +18388,49 @@ and limitations under the License.
           return n;
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(5),
         a = !0;
       'find' in [] &&
-        Array(1).find(function () {
+        Array(1).find(function() {
           a = !1;
         }),
         r(r.P + r.F * a, 'Array', {
-          find: function (e) {
+          find: function(e) {
             return i(this, e, arguments.length > 1 ? arguments[1] : void 0);
           }
         }),
         n(91)('find');
     },
-    function (e, t) {
-      e.exports = function (e, t) {
+    function(e, t) {
+      e.exports = function(e, t) {
         return { value: t, done: !!e };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       t.f = n(17);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14),
         i = n(51),
         a = n(74),
         o = n(182),
         s = n(23).f;
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = i.Symbol || (i.Symbol = a ? {} : r.Symbol || {});
         '_' == e.charAt(0) || e in t || s(t, e, { value: o.f(e) });
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(41),
         i = n(78).f,
         a = {}.toString,
         o = 'object' == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
-      e.exports.f = function (e) {
+      e.exports.f = function(e) {
         return o && '[object Window]' == a.call(e)
-          ? (function (e) {
+          ? (function(e) {
               try {
                 return i(e);
               } catch (e) {
@@ -18385,33 +18440,33 @@ and limitations under the License.
           : i(r(e));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(82).onFreeze;
-      n(45)('freeze', function (e) {
-        return function (t) {
+      n(45)('freeze', function(e) {
+        return function(t) {
           return e && r(t) ? e(i(t)) : t;
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(21),
-        a = function (e, t) {
+        a = function(e, t) {
           if ((i(e), !r(t) && null !== t)) throw TypeError(t + ": can't set as prototype!");
         };
       e.exports = {
         set:
           Object.setPrototypeOf ||
           ('__proto__' in {}
-            ? (function (e, t, r) {
+            ? (function(e, t, r) {
                 try {
                   (r = n(54)(Function.call, n(92).f(Object.prototype, '__proto__').set, 2))(e, []),
                     (t = !(e instanceof Array));
                 } catch (e) {
                   t = !0;
                 }
-                return function (e, n) {
+                return function(e, n) {
                   return a(e, n), t ? (e.__proto__ = n) : r(e, n), e;
                 };
               })({}, !1)
@@ -18419,22 +18474,22 @@ and limitations under the License.
         check: a
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var r = n(93),
         i = n(277),
         a = n(278),
         o = n(94),
-        s = (function () {
+        s = (function() {
           function e(e) {
             (this.services = []), (this.id = e);
           }
           return (
-            (e.prototype.has = function (e) {
+            (e.prototype.has = function(e) {
               return !!this.findService(e);
             }),
-            (e.prototype.get = function (e) {
+            (e.prototype.get = function(e) {
               var t = r.Container.of(void 0),
                 n = t.findService(e),
                 i = this.findService(e);
@@ -18448,17 +18503,17 @@ and limitations under the License.
               }
               return this.getServiceValue(e, n);
             }),
-            (e.prototype.getMany = function (e) {
+            (e.prototype.getMany = function(e) {
               var t = this;
-              return this.filterServices(e).map(function (n) {
+              return this.filterServices(e).map(function(n) {
                 return t.getServiceValue(e, n);
               });
             }),
-            (e.prototype.set = function (e, t) {
+            (e.prototype.set = function(e, t) {
               var n = this;
               if (e instanceof Array)
                 return (
-                  e.forEach(function (e) {
+                  e.forEach(function(e) {
                     return n.set(e);
                   }),
                   this
@@ -18470,29 +18525,29 @@ and limitations under the License.
                 i = this.findService(r.id);
               return i && !0 !== i.multiple ? Object.assign(i, r) : this.services.push(r), this;
             }),
-            (e.prototype.remove = function () {
+            (e.prototype.remove = function() {
               for (var e = this, t = [], n = 0; n < arguments.length; n++) t[n] = arguments[n];
               return (
-                t.forEach(function (t) {
-                  e.filterServices(t).forEach(function (t) {
+                t.forEach(function(t) {
+                  e.filterServices(t).forEach(function(t) {
                     e.services.splice(e.services.indexOf(t), 1);
                   });
                 }),
                 this
               );
             }),
-            (e.prototype.reset = function () {
+            (e.prototype.reset = function() {
               return (this.services = []), this;
             }),
-            (e.prototype.filterServices = function (e) {
-              return this.services.filter(function (t) {
+            (e.prototype.filterServices = function(e) {
+              return this.services.filter(function(t) {
                 return t.id
                   ? t.id === e
                   : !!(t.type && e instanceof Function) && (t.type === e || e.prototype instanceof t.type);
               });
             }),
-            (e.prototype.findService = function (e) {
-              return this.services.find(function (t) {
+            (e.prototype.findService = function(e) {
+              return this.services.find(function(t) {
                 return t.id
                   ? e instanceof Object && t.id instanceof o.Token && e.service instanceof o.Token
                     ? t.id === e.service
@@ -18500,7 +18555,7 @@ and limitations under the License.
                   : !!(t.type && e instanceof Function) && t.type === e;
               });
             }),
-            (e.prototype.getServiceValue = function (e, t) {
+            (e.prototype.getServiceValue = function(e, t) {
               var n;
               if (t && void 0 !== t.value) return t.value;
               if (!((t && t.type) || (t && t.factory) || !('string' == typeof e || e instanceof o.Token)))
@@ -18521,7 +18576,7 @@ and limitations under the License.
                 u = r && Reflect && Reflect.getMetadata ? Reflect.getMetadata('design:paramtypes', r) : void 0,
                 c = u ? this.initializeParams(r, u) : [];
               if (t.factory)
-                (c = c.filter(function (e) {
+                (c = c.filter(function(e) {
                   return void 0 !== e;
                 })),
                   (s =
@@ -18534,21 +18589,21 @@ and limitations under the License.
               }
               return t && !t.transient && s && (t.value = s), r && this.applyPropertyHandlers(r, s), s;
             }),
-            (e.prototype.initializeParams = function (e, t) {
+            (e.prototype.initializeParams = function(e, t) {
               var n = this;
-              return t.map(function (t, i) {
-                var a = r.Container.handlers.find(function (t) {
+              return t.map(function(t, i) {
+                var a = r.Container.handlers.find(function(t) {
                   return t.object === e && t.index === i;
                 });
                 return a ? a.value(n) : t && t.name && !n.isTypePrimitive(t.name) ? n.get(t) : void 0;
               });
             }),
-            (e.prototype.isTypePrimitive = function (e) {
+            (e.prototype.isTypePrimitive = function(e) {
               return -1 !== ['string', 'boolean', 'number', 'object'].indexOf(e.toLowerCase());
             }),
-            (e.prototype.applyPropertyHandlers = function (e, t) {
+            (e.prototype.applyPropertyHandlers = function(e, t) {
               var n = this;
-              r.Container.handlers.forEach(function (r) {
+              r.Container.handlers.forEach(function(r) {
                 'number' != typeof r.index &&
                   (r.object.constructor === e || e.prototype instanceof r.object.constructor) &&
                   (t[r.propertyName] = r.value(n));
@@ -18559,7 +18614,7 @@ and limitations under the License.
         })();
       t.ContainerInstance = s;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i =
@@ -18567,20 +18622,20 @@ and limitations under the License.
           ((r =
             Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array &&
-              function (e, t) {
+              function(e, t) {
                 e.__proto__ = t;
               }) ||
-            function (e, t) {
+            function(e, t) {
               for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
             }),
-          function (e, t) {
+          function(e, t) {
             function n() {
               this.constructor = e;
             }
             r(e, t), (e.prototype = null === t ? Object.create(t) : ((n.prototype = t.prototype), new n()));
           });
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = (function (e) {
+      var a = (function(e) {
         function t(n, r) {
           var i =
             e.call(
@@ -18597,7 +18652,7 @@ and limitations under the License.
       })(Error);
       t.CannotInjectError = a;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r,
         i,
         a,
@@ -18613,59 +18668,59 @@ and limitations under the License.
         v = l.Dispatch,
         y = 0,
         m = {},
-        g = function () {
+        g = function() {
           var e = +this;
           if (m.hasOwnProperty(e)) {
             var t = m[e];
             delete m[e], t();
           }
         },
-        _ = function (e) {
+        _ = function(e) {
           g.call(e.data);
         };
       (h && d) ||
-        ((h = function (e) {
+        ((h = function(e) {
           for (var t = [], n = 1; arguments.length > n; ) t.push(arguments[n++]);
           return (
-            (m[++y] = function () {
+            (m[++y] = function() {
               s('function' == typeof e ? e : Function(e), t);
             }),
             r(y),
             y
           );
         }),
-        (d = function (e) {
+        (d = function(e) {
           delete m[e];
         }),
         'process' == n(62)(f)
-          ? (r = function (e) {
+          ? (r = function(e) {
               f.nextTick(o(g, e, 1));
             })
           : v && v.now
-          ? (r = function (e) {
+          ? (r = function(e) {
               v.now(o(g, e, 1));
             })
           : p
           ? ((a = (i = new p()).port2), (i.port1.onmessage = _), (r = o(a.postMessage, a, 1)))
           : l.addEventListener && 'function' == typeof postMessage && !l.importScripts
-          ? ((r = function (e) {
+          ? ((r = function(e) {
               l.postMessage(e + '', '*');
             }),
             l.addEventListener('message', _, !1))
           : (r =
               'onreadystatechange' in c('script')
-                ? function (e) {
-                    u.appendChild(c('script')).onreadystatechange = function () {
+                ? function(e) {
+                    u.appendChild(c('script')).onreadystatechange = function() {
                       u.removeChild(this), g.call(e);
                     };
                   }
-                : function (e) {
+                : function(e) {
                     setTimeout(o(g, e, 1), 0);
                   })),
         (e.exports = { set: h, clear: d });
     },
-    function (e, t) {
-      e.exports = function (e, t, n) {
+    function(e, t) {
+      e.exports = function(e, t, n) {
         var r = void 0 === n;
         switch (t.length) {
           case 0:
@@ -18682,32 +18737,32 @@ and limitations under the License.
         return e.apply(n, t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(61);
       function i(e) {
         var t, n;
-        (this.promise = new e(function (e, r) {
+        (this.promise = new e(function(e, r) {
           if (void 0 !== t || void 0 !== n) throw TypeError('Bad Promise constructor');
           (t = e), (n = r);
         })),
           (this.resolve = r(t)),
           (this.reject = r(n));
       }
-      e.exports.f = function (e) {
+      e.exports.f = function(e) {
         return new i(e);
       };
     },
-    function (e, t) {
-      e.exports = function (e, t) {
+    function(e, t) {
+      e.exports = function(e, t) {
         (null == t || t > e.length) && (t = e.length);
         for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
         return r;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(192);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if (e) {
           if ('string' == typeof e) return r(e, t);
           var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -18722,20 +18777,20 @@ and limitations under the License.
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(19),
         i = n(77),
         a = n(41),
         o = n(112).f;
-      e.exports = function (e) {
-        return function (t) {
+      e.exports = function(e) {
+        return function(t) {
           for (var n, s = a(t), u = i(s), c = u.length, l = 0, f = []; c > l; )
             (n = u[l++]), (r && !o.call(s, n)) || f.push(e ? [n, s[n]] : s[n]);
           return f;
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       for (
         var r,
           i = n(14),
@@ -18755,10 +18810,10 @@ and limitations under the License.
         (r = i[h[f++]]) ? (a(r.prototype, s, !0), a(r.prototype, u, !0)) : (l = !1);
       e.exports = { ABV: c, CONSTR: l, TYPED: s, VIEW: u };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(59),
         i = n(24);
-      e.exports = function (e) {
+      e.exports = function(e) {
         if (void 0 === e) return 0;
         var t = r(e),
           n = i(t);
@@ -18766,21 +18821,21 @@ and limitations under the License.
         return n;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(194)(!1);
       r(r.S, 'Object', {
-        values: function (e) {
+        values: function(e) {
           return i(e);
         }
       });
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         return e && e.__esModule ? e : { default: e };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(155),
         i = n(21),
@@ -18793,10 +18848,10 @@ and limitations under the License.
         f = Math.min,
         h = [].push,
         d = 'length',
-        p = !l(function () {
+        p = !l(function() {
           RegExp(4294967295, 'y');
         });
-      n(158)('split', 2, function (e, t, n, l) {
+      n(158)('split', 2, function(e, t, n, l) {
         var v;
         return (
           (v =
@@ -18806,7 +18861,7 @@ and limitations under the License.
             4 != '.'.split(/(.?)(.?)/)[d] ||
             '.'.split(/()()/)[d] > 1 ||
             ''.split(/.?/)[d]
-              ? function (e, t) {
+              ? function(e, t) {
                   var i = String(this);
                   if (void 0 === e && 0 === t) return [];
                   if (!r(e)) return n.call(i, e, t);
@@ -18840,17 +18895,17 @@ and limitations under the License.
                   );
                 }
               : '0'.split(void 0, 0)[d]
-              ? function (e, t) {
+              ? function(e, t) {
                   return void 0 === e && 0 === t ? [] : n.call(this, e, t);
                 }
               : n),
           [
-            function (n, r) {
+            function(n, r) {
               var i = e(this),
                 a = null == n ? void 0 : n[t];
               return void 0 !== a ? a.call(n, i, r) : v.call(String(i), n, r);
             },
-            function (e, t) {
+            function(e, t) {
               var r = l(v, e, this, t, v !== n);
               if (r.done) return r.value;
               var c = i(e),
@@ -18879,21 +18934,21 @@ and limitations under the License.
         );
       });
     },
-    function (e, t) {},
-    function (e, t, n) {
+    function(e, t) {},
+    function(e, t, n) {
       'use strict';
       var r = n(21),
         i = n(24),
         a = n(156),
         o = n(157);
-      n(158)('match', 1, function (e, t, n, s) {
+      n(158)('match', 1, function(e, t, n, s) {
         return [
-          function (n) {
+          function(n) {
             var r = e(this),
               i = null == n ? void 0 : n[t];
             return void 0 !== i ? i.call(n, r) : new RegExp(n)[t](String(r));
           },
-          function (e) {
+          function(e) {
             var t = s(n, e, this);
             if (t.done) return t.value;
             var u = r(e),
@@ -18910,14 +18965,14 @@ and limitations under the License.
         ];
       });
     },
-    function (e, t) {
+    function(e, t) {
       function n(t) {
         return (
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
-            ? (e.exports = n = function (e) {
+            ? (e.exports = n = function(e) {
                 return typeof e;
               })
-            : (e.exports = n = function (e) {
+            : (e.exports = n = function(e) {
                 return e && 'function' == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype
                   ? 'symbol'
                   : typeof e;
@@ -18927,61 +18982,61 @@ and limitations under the License.
       }
       e.exports = n;
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Terfyn amser","Field is required":"Mae\'r maes yn ofynnol","An error occurred":"Digwyddodd gwall","Merchant validation failure":"Methiant i ddilysu masnachwr","Payment has been cancelled":"Mae\'r taliad wedi ei ganslo","Value mismatch pattern":"Patrwm camgymhariad gwerth","Invalid response":"Ymateb annilys","Invalid request":"Cais annilys","Value is too short":"Mae\'r gwerth yn rhy fyr","Payment has been authorized":"Mae\'r taliad wedi ei awdurdodi","Amount and currency are not set":"Nid yw\'r swm a\'r arian wedi ei osod","Payment has been successfully processed":"Mae\'r taliad wedi ei brosesu\'n llwyddiannus","Card number":"Rhif y cerdyn","Expiration date":"Dyddiad dod i ben","Security code":"Cod diogelwch","Ok":"Mae\'r taliad wedi ei brosesu\'n llwyddiannus","Method not implemented":"Nid yw\'r dull wedi ei weithredu","Form is not valid":"Nid yw\'r ffurflen yn ddilys","Pay":"Talu","Processing":"Wrthi\'n prosesu","Invalid field":"Maes annilys","Card number is invalid":"Mae rhif y cerdyn yn annilys","You are not logged to Apple account":"Nid ydych wedi mewngofnodi i gyfrif Apple","A target element for the input field with id could not be found. Please check your configuration":"Ni ellid dod o hyd i elfen darged ar gyfer y maes mewnbwn ag id. Gwiriwch eich cyfluniad"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Timeout","Field is required":"Feltet skal udfyldes","An error occurred":"Der er opstået en fejl","Merchant validation failure":"Fejl ved forhandlervalidering","Payment has been cancelled":"Betaling er annulleret","Value mismatch pattern":"Uventede værdier","Invalid response":"Ugyldigt svar","Invalid request":"Ugyldig anmodning","Value is too short":"Værdi er for kort","Payment has been authorized":"Betaling er godkendt","Amount and currency are not set":"Beløb og valuta er ikke indstillet","Payment has been successfully processed":"Betaling er gennemført","Card number":"Kortnummer","Expiration date":"Udløbsdato","Security code":"Sikkerhedskode","Ok":"Betaling er gennemført","Method not implemented":"Metode ikke implementeret","Form is not valid":"Formular er ikke gyldig","Pay":"Betal","Processing":"Behandler","Invalid field":"Ugyldigt felt","Card number is invalid":"Kortnummer er ugyldigt","You are not logged to Apple account":"Du er ikke logget på Apple-konto","A target element for the input field with id could not be found. Please check your configuration":"Et målelement for inputfeltet med id kunne ikke findes. Kontroller din konfiguration"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Zeitüberschreitung","Field is required":"Feld ist erforderlich","An error occurred":"Ein Fehler ist aufgetreten","Merchant validation failure":"Fehler bei der Händlerprüfung","Payment has been cancelled":"Zahlung wurde storniert","Value mismatch pattern":"Diskrepanzmuster der Werte","Invalid response":"Ungültige Antwort","Value is too short":"Wert ist zu kurz","Invalid request":"Ungültige Anfrage","Payment has been authorized":"Zahlung wurde genehmigt","Amount and currency are not set":"Betrag und Währung sind nicht festgelegt","Payment has been successfully processed":"Zahlung wurde erfolgreich verarbeitet","Card number":"Kartennummer","Expiration date":"Ablaufdatum","Security code":"Sicherheitscode","Ok":"Zahlung wurde erfolgreich verarbeitet","Method not implemented":"Methode nicht implementiert","Form is not valid":"Formular ist ungültig","Pay":"Zahlen","Processing":"Wird bearbeitet","Invalid field":"Ungültiges Feld","Card number is invalid":"Kartennummer ist ungültig","You are not logged to Apple account":"Sie sind nicht bei Apple angemeldet","A target element for the input field with id could not be found. Please check your configuration":"Ein Zielelement für das Eingabefeld mit der ID konnte nicht gefunden werden. Bitte überprüfen Sie Ihre Konfiguration"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Timeout","Field is required":"Field is required","An error occurred":"An error occurred","Merchant validation failure":"Merchant validation failure","Payment has been cancelled":"Payment has been cancelled","Value mismatch pattern":"Value mismatch pattern","Invalid response":"Invalid response","Invalid request":"Invalid request","Value is too short":"Value is too short","Payment has been authorized":"Payment has been authorized","Amount and currency are not set":"Amount and currency are not set","Payment has been successfully processed":"Payment has been successfully processed","Card number":"Card number","Expiration date":"Expiration date","Security code":"Security code","Ok":"Payment has been successfully processed","Method not implemented":"Method not implemented","Form is not valid":"Form is not valid","Pay":"Pay","Processing":"Processing","Invalid field":"Invalid field","Card number is invalid":"Card number is invalid","You are not logged to Apple account":"You are not logged to Apple account","A target element for the input field with id could not be found. Please check your configuration":"A target element for the input field with id could not be found. Please check your configuration","Jwt has not been specified":"Jwt has not been specified"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Timeout","Field is required":"Field is required","An error occurred":"An error occurred","Merchant validation failure":"Merchant validation failure","Payment has been cancelled":"Payment has been cancelled","Value mismatch pattern":"Value mismatch pattern","Invalid response":"Invalid response","Invalid request":"Invalid request","Value is too short":"Value is too short","Payment has been authorized":"Payment has been authorized","Amount and currency are not set":"Amount and currency are not set","Payment has been successfully processed":"Payment has been successfully processed","Card number":"Card number","Expiration date":"Expiration date","Security code":"Security code","Ok":"Payment has been successfully processed","Method not implemented":"Method not implemented","Form is not valid":"Form is not valid","Pay":"Pay","Processing":"Processing","Invalid field":"Invalid field","Card number is invalid":"Card number is invalid","You are not logged to Apple account":"You are not logged to Apple account","A target element for the input field with id could not be found. Please check your configuration":"A target element for the input field with id could not be found. Please check your configuration"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Tiempo de espera agotado","Field is required":"Campo obligatorio","An error occurred":"Se ha producido un error","Merchant validation failure":"Fallo de validación del vendedor","Payment has been cancelled":"El pago se ha anulado","Value mismatch pattern":"El valor no coincide con el patrón","Invalid response":"Respuesta no válida","Invalid request":"Solicitud no válida","Value is too short":"El valor es demasiado corto","Payment has been authorized":"Se ha autorizado el pago","Amount and currency are not set":"No se han indicado el importe ni la divisa","Payment has been successfully processed":"El pago se ha procesado correctamente","Card number":"Número de tarjeta","Expiration date":"Fecha de vencimiento","Security code":"Código de seguridad","Ok":"El pago se ha procesado correctamente","Method not implemented":"Método no implementado","Form is not valid":"El formulario no es válido","Pay":"Pagar","Processing":"Procesando","Invalid field":"Campo no válido","Card number is invalid":"El número de tarjeta no es válido","You are not logged to Apple account":"No has iniciado sesión en la cuenta de Apple","A target element for the input field with id could not be found. Please check your configuration":"No se pudo encontrar un elemento de destino para el campo de entrada con id. Por favor verifique su configuración"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Délai d\'attente","Field is required":"Champ requis","An error occurred":"Une erreur est survenue","Merchant validation failure":"Échec de validation du commerçant","Payment has been cancelled":"Le paiement a été annulé","Value mismatch pattern":"Non-concordance des valeurs","Invalid response":"Réponse incorrecte","Invalid request":"Requête incorrecte","Value is too short":"La valeur est trop courte","Payment has been authorized":"Le paiement a été autorisé","Amount and currency are not set":"Le montant et la devise ne sont pas définis","Payment has been successfully processed":"Le paiement a été traité avec succès","Card number":"Numéro de carte","Expiration date":"Date d\'expiration","Security code":"Code de sécurité","Ok":"Le paiement a été traité avec succès","Method not implemented":"Méthode non implémentée","Form is not valid":"Le formulaire n\'est pas valide","Pay":"Payer","Processing":"Traitement en cours","Invalid field":"Champ incorrect","Card number is invalid":"Le numéro de carte est incorrect","You are not logged to Apple account":"Vous n\'êtes pas connecté à un compte Apple","A target element for the input field with id could not be found. Please check your configuration":"Un élément cible pour le champ de saisie avec id est introuvable. Veuillez vérifier votre configuration"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Timeout","Field is required":"Dit is een verplicht veld","An error occurred":"Er is iets misgegaan","Merchant validation failure":"Validatie verkoper is mislukt","Payment has been cancelled":"De betaling is geannuleerd","Value mismatch pattern":"Invoer voldoet niet aan patroon","Invalid response":"Ongeldig antwoord","Invalid request":"Ongeldig verzoek","Value is too short":"Invoer is te kort","Payment has been authorized":"De betaling is geautoriseerd","Amount and currency are not set":"Bedrag en valuta zijn niet ingesteld","Payment has been successfully processed":"De betaling is verwerkt","Card number":"Kaartnummer","Expiration date":"Vervaldatum","Security code":"Beveiligingscode","Ok":"De betaling is verwerkt","Method not implemented":"De methode is niet geïmplementeerd","Form is not valid":"Het formulier is ongeldig","Pay":"Betalen","Processing":"Bezig met verwerken","Invalid field":"Ongeldig veld","Card number is invalid":"Het kaartnummer is ongeldig","You are not logged to Apple account":"U bent niet aangemeld bij een Apple-account","A target element for the input field with id could not be found. Please check your configuration":"Een doelelement voor het invoerveld met id kon niet worden gevonden. Controleer uw configuratie"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Tidsavbrutt","Field is required":"Feltet er obligatorisk","An error occurred":"Det inntraff en feil","Merchant validation failure":"Kjøpsautorisasjonen var mislykket","Payment has been cancelled":"Betalingen er annullert","Value mismatch pattern":"Verdiene stemmer ikke overens","Invalid response":"Ugyldig svar","Invalid request":"Ugyldig forespørsel","Value is too short":"Verdien er for kort","Payment has been authorized":"Betalingen er autorisert","Amount and currency are not set":"Beløp og valuta er ikke fastsatt","Payment has been successfully processed":"Betalingen er fullført","Card number":"Kortnummer","Expiration date":"Utløpsdato","Security code":"Sikkerhetskode","Ok":"Ok","Method not implemented":"Metoden er ikke implementert","Form is not valid":"Blanketten er ikke gyldig","Pay":"Betal","Processing":"Behandler","Invalid field":"Ugyldig felt","Card number is invalid":"Kortnummeret er ugyldig","You are not logged to Apple account":"Du er ikke logget på Apple-konto","A target element for the input field with id could not be found. Please check your configuration":"Et målelement for inndatafeltet med ID ble ikke funnet. Vennligst sjekk konfigurasjonen din"}'
       );
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse(
         '{"Timeout":"Timeout","Field is required":"Obligatoriskt fält","An error occurred":"Ett fel inträffade","Merchant validation failure":"Verifiering av säljare misslyckades","Payment has been cancelled":"Betalningen har avbrutits","Value mismatch pattern":"Matchningsfel för värde","Invalid response":"Ogiltigt svar","Invalid request":"Ogiltig begäran","Value is too short":"Värdet är för kort","Payment has been authorized":"Betalningen har godkänts","Amount and currency are not set":"Summa och valuta har inte angetts","Payment has been successfully processed":"Betalningen lyckades","Card number":"Kortnummer","Expiration date":"Sista giltighetsdatum","Security code":"Säkerhetskod","Ok":"Betalningen lyckades","Method not implemented":"Metoden har inte implementerats","Form is not valid":"Ogiltigt formulär","Pay":"Betala","Processing":"Bearbetar","Invalid field":"Ogiltigt fält","Card number is invalid":"Ogiltigt kortnummer","You are not logged to Apple account":"Du är inte inloggad på Apple-konto","A target element for the input field with id could not be found. Please check your configuration":"Ett målelement för inmatningsfältet med id kunde inte hittas. Kontrollera din konfiguration"}'
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n(113),
         Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.luhnCheck = function (e) {
+        (t.luhnCheck = function(e) {
           var t = e.replace(/\s/g, ''),
             n = 1,
             r = t.length,
@@ -18994,17 +19049,17 @@ and limitations under the License.
         }),
         n(114);
     },
-    function (e) {
+    function(e) {
       e.exports = JSON.parse('{"a":"2.1.0"}');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return s;
       });
       var r = n(4),
         i = n(8),
-        a = (function () {
+        a = (function() {
           function e() {
             return (
               Error.call(this), (this.message = 'argument out of range'), (this.name = 'ArgumentOutOfRangeError'), this
@@ -19014,29 +19069,29 @@ and limitations under the License.
         })(),
         o = n(132);
       function s(e) {
-        return function (t) {
+        return function(t) {
           return 0 === e ? Object(o.a)() : t.lift(new u(e));
         };
       }
-      var u = (function () {
+      var u = (function() {
           function e(e) {
             if (((this.total = e), this.total < 0)) throw new a();
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new c(e, this.total));
             }),
             e
           );
         })(),
-        c = (function (e) {
+        c = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.total = n), (r.count = 0), r;
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               var t = this.total,
                 n = ++this.count;
               n <= t && (this.destination.next(e), n === t && (this.destination.complete(), this.unsubscribe()));
@@ -19045,17 +19100,17 @@ and limitations under the License.
           );
         })(i.a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(155),
         i = n(73);
-      e.exports = function (e, t, n) {
+      e.exports = function(e, t, n) {
         if (r(t)) throw TypeError('String#' + n + " doesn't accept regex!");
         return String(i(e));
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(17)('match');
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = /./;
         try {
           '/./'[e](t);
@@ -19067,21 +19122,21 @@ and limitations under the License.
         return !0;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(194)(!0);
       r(r.S, 'Object', {
-        entries: function (e) {
+        entries: function(e) {
           return i(e);
         }
       });
     },
-    function (e, t) {
+    function(e, t) {
       function n(t, r) {
         return (
           (e.exports = n =
             Object.setPrototypeOf ||
-            function (e, t) {
+            function(e, t) {
               return (e.__proto__ = t), e;
             }),
           n(t, r)
@@ -19089,7 +19144,7 @@ and limitations under the License.
       }
       e.exports = n;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(23).f,
         i = n(76),
@@ -19104,15 +19159,15 @@ and limitations under the License.
         d = n(82).fastKey,
         p = n(125),
         v = h ? '_s' : 'size',
-        y = function (e, t) {
+        y = function(e, t) {
           var n,
             r = d(t);
           if ('F' !== r) return e._i[r];
           for (n = e._f; n; n = n.n) if (n.k == t) return n;
         };
       e.exports = {
-        getConstructor: function (e, t, n, c) {
-          var l = e(function (e, r) {
+        getConstructor: function(e, t, n, c) {
+          var l = e(function(e, r) {
             s(e, l, t, '_i'),
               (e._t = t),
               (e._i = i(null)),
@@ -19123,12 +19178,12 @@ and limitations under the License.
           });
           return (
             a(l.prototype, {
-              clear: function () {
+              clear: function() {
                 for (var e = p(this, t), n = e._i, r = e._f; r; r = r.n)
                   (r.r = !0), r.p && (r.p = r.p.n = void 0), delete n[r.i];
                 (e._f = e._l = void 0), (e[v] = 0);
               },
-              delete: function (e) {
+              delete: function(e) {
                 var n = p(this, t),
                   r = y(n, e);
                 if (r) {
@@ -19144,25 +19199,25 @@ and limitations under the License.
                 }
                 return !!r;
               },
-              forEach: function (e) {
+              forEach: function(e) {
                 p(this, t);
                 for (var n, r = o(e, arguments.length > 1 ? arguments[1] : void 0, 3); (n = n ? n.n : this._f); )
                   for (r(n.v, n.k, this); n && n.r; ) n = n.p;
               },
-              has: function (e) {
+              has: function(e) {
                 return !!y(p(this, t), e);
               }
             }),
             h &&
               r(l.prototype, 'size', {
-                get: function () {
+                get: function() {
                   return p(this, t)[v];
                 }
               }),
             l
           );
         },
-        def: function (e, t, n) {
+        def: function(e, t, n) {
           var r,
             i,
             a = y(e, t);
@@ -19178,14 +19233,14 @@ and limitations under the License.
           );
         },
         getEntry: y,
-        setStrong: function (e, t, n) {
+        setStrong: function(e, t, n) {
           c(
             e,
             t,
-            function (e, n) {
+            function(e, n) {
               (this._t = p(e, t)), (this._k = n), (this._l = void 0);
             },
-            function () {
+            function() {
               for (var e = this._k, t = this._l; t && t.r; ) t = t.p;
               return this._t && (this._l = t = t ? t.n : this._t._f)
                 ? l(0, 'keys' == e ? t.k : 'values' == e ? t.v : [t.k, t.v])
@@ -19199,8 +19254,8 @@ and limitations under the License.
         }
       };
     },
-    function (e, t) {
-      (function () {
+    function(e, t) {
+      (function() {
         'use strict';
         var e, t;
         if (!(e = window.location).origin) {
@@ -19213,38 +19268,38 @@ and limitations under the License.
         }
       }.call(this));
     },
-    function (e, t, n) {
-      (function (e) {
-        !(function (e) {
-          var t = (function () {
+    function(e, t, n) {
+      (function(e) {
+        !(function(e) {
+          var t = (function() {
               try {
                 return !!Symbol.iterator;
               } catch (e) {
                 return !1;
               }
             })(),
-            n = function (e) {
+            n = function(e) {
               var n = {
-                next: function () {
+                next: function() {
                   var t = e.shift();
                   return { done: void 0 === t, value: t };
                 }
               };
               return (
                 t &&
-                  (n[Symbol.iterator] = function () {
+                  (n[Symbol.iterator] = function() {
                     return n;
                   }),
                 n
               );
             },
-            r = function (e) {
+            r = function(e) {
               return encodeURIComponent(e).replace(/%20/g, '+');
             },
-            i = function (e) {
+            i = function(e) {
               return decodeURIComponent(String(e).replace(/\+/g, ' '));
             };
-          (function () {
+          (function() {
             try {
               var t = e.URLSearchParams;
               return 'a=1' === new t('?a=1').toString() && 'function' == typeof t.prototype.set;
@@ -19252,15 +19307,15 @@ and limitations under the License.
               return !1;
             }
           })() ||
-            (function () {
-              var i = function (e) {
+            (function() {
+              var i = function(e) {
                   Object.defineProperty(this, '_entries', { writable: !0, value: {} });
                   var t = typeof e;
                   if ('undefined' === t);
                   else if ('string' === t) '' !== e && this._fromString(e);
                   else if (e instanceof i) {
                     var n = this;
-                    e.forEach(function (e, t) {
+                    e.forEach(function(e, t) {
                       n.append(t, e);
                     });
                   } else {
@@ -19279,25 +19334,25 @@ and limitations under the License.
                   }
                 },
                 a = i.prototype;
-              (a.append = function (e, t) {
+              (a.append = function(e, t) {
                 e in this._entries ? this._entries[e].push(String(t)) : (this._entries[e] = [String(t)]);
               }),
-                (a.delete = function (e) {
+                (a.delete = function(e) {
                   delete this._entries[e];
                 }),
-                (a.get = function (e) {
+                (a.get = function(e) {
                   return e in this._entries ? this._entries[e][0] : null;
                 }),
-                (a.getAll = function (e) {
+                (a.getAll = function(e) {
                   return e in this._entries ? this._entries[e].slice(0) : [];
                 }),
-                (a.has = function (e) {
+                (a.has = function(e) {
                   return e in this._entries;
                 }),
-                (a.set = function (e, t) {
+                (a.set = function(e, t) {
                   this._entries[e] = [String(t)];
                 }),
-                (a.forEach = function (e, t) {
+                (a.forEach = function(e, t) {
                   var n;
                   for (var r in this._entries)
                     if (this._entries.hasOwnProperty(r)) {
@@ -19305,38 +19360,38 @@ and limitations under the License.
                       for (var i = 0; i < n.length; i++) e.call(t, n[i], r, this);
                     }
                 }),
-                (a.keys = function () {
+                (a.keys = function() {
                   var e = [];
                   return (
-                    this.forEach(function (t, n) {
+                    this.forEach(function(t, n) {
                       e.push(n);
                     }),
                     n(e)
                   );
                 }),
-                (a.values = function () {
+                (a.values = function() {
                   var e = [];
                   return (
-                    this.forEach(function (t) {
+                    this.forEach(function(t) {
                       e.push(t);
                     }),
                     n(e)
                   );
                 }),
-                (a.entries = function () {
+                (a.entries = function() {
                   var e = [];
                   return (
-                    this.forEach(function (t, n) {
+                    this.forEach(function(t, n) {
                       e.push([n, t]);
                     }),
                     n(e)
                   );
                 }),
                 t && (a[Symbol.iterator] = a.entries),
-                (a.toString = function () {
+                (a.toString = function() {
                   var e = [];
                   return (
-                    this.forEach(function (t, n) {
+                    this.forEach(function(t, n) {
                       e.push(r(n) + '=' + r(t));
                     }),
                     e.join('&')
@@ -19346,13 +19401,13 @@ and limitations under the License.
             })();
           var a = e.URLSearchParams.prototype;
           'function' != typeof a.sort &&
-            (a.sort = function () {
+            (a.sort = function() {
               var e = this,
                 t = [];
-              this.forEach(function (n, r) {
+              this.forEach(function(n, r) {
                 t.push([r, n]), e._entries || e.delete(r);
               }),
-                t.sort(function (e, t) {
+                t.sort(function(e, t) {
                   return e[0] < t[0] ? -1 : e[0] > t[0] ? 1 : 0;
                 }),
                 e._entries && (e._entries = {});
@@ -19363,11 +19418,11 @@ and limitations under the License.
                 enumerable: !1,
                 configurable: !1,
                 writable: !1,
-                value: function (e) {
+                value: function(e) {
                   if (this._entries) this._entries = {};
                   else {
                     var t = [];
-                    this.forEach(function (e, n) {
+                    this.forEach(function(e, n) {
                       t.push(n);
                     });
                     for (var n = 0; n < t.length; n++) this.delete(t[n]);
@@ -19379,9 +19434,9 @@ and limitations under the License.
                 }
               });
         })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this),
-          (function (e) {
+          (function(e) {
             if (
-              ((function () {
+              ((function() {
                 try {
                   var t = new e.URL('b', 'http://a');
                   return (t.pathname = 'c d'), 'http://a/c%20d' === t.href && t.searchParams;
@@ -19389,9 +19444,9 @@ and limitations under the License.
                   return !1;
                 }
               })() ||
-                (function () {
+                (function() {
                   var t = e.URL,
-                    n = function (t, n) {
+                    n = function(t, n) {
                       'string' != typeof t && (t = String(t));
                       var r,
                         i = document;
@@ -19416,9 +19471,9 @@ and limitations under the License.
                         s = !0,
                         u = !0,
                         c = this;
-                      ['append', 'delete', 'set'].forEach(function (e) {
+                      ['append', 'delete', 'set'].forEach(function(e) {
                         var t = o[e];
-                        o[e] = function () {
+                        o[e] = function() {
                           t.apply(o, arguments), s && ((u = !1), (c.search = o.toString()), (u = !0));
                         };
                       }),
@@ -19428,20 +19483,20 @@ and limitations under the License.
                         enumerable: !1,
                         configurable: !1,
                         writable: !1,
-                        value: function () {
+                        value: function() {
                           this.search !== l &&
                             ((l = this.search), u && ((s = !1), this.searchParams._fromString(this.search), (s = !0)));
                         }
                       });
                     },
                     r = n.prototype;
-                  ['hash', 'host', 'hostname', 'port', 'protocol'].forEach(function (e) {
-                    !(function (e) {
+                  ['hash', 'host', 'hostname', 'port', 'protocol'].forEach(function(e) {
+                    !(function(e) {
                       Object.defineProperty(r, e, {
-                        get: function () {
+                        get: function() {
                           return this._anchorElement[e];
                         },
-                        set: function (t) {
+                        set: function(t) {
                           this._anchorElement[e] = t;
                         },
                         enumerable: !0
@@ -19449,43 +19504,43 @@ and limitations under the License.
                     })(e);
                   }),
                     Object.defineProperty(r, 'search', {
-                      get: function () {
+                      get: function() {
                         return this._anchorElement.search;
                       },
-                      set: function (e) {
+                      set: function(e) {
                         (this._anchorElement.search = e), this._updateSearchParams();
                       },
                       enumerable: !0
                     }),
                     Object.defineProperties(r, {
                       toString: {
-                        get: function () {
+                        get: function() {
                           var e = this;
-                          return function () {
+                          return function() {
                             return e.href;
                           };
                         }
                       },
                       href: {
-                        get: function () {
+                        get: function() {
                           return this._anchorElement.href.replace(/\?$/, '');
                         },
-                        set: function (e) {
+                        set: function(e) {
                           (this._anchorElement.href = e), this._updateSearchParams();
                         },
                         enumerable: !0
                       },
                       pathname: {
-                        get: function () {
+                        get: function() {
                           return this._anchorElement.pathname.replace(/(^\/?)/, '/');
                         },
-                        set: function (e) {
+                        set: function(e) {
                           this._anchorElement.pathname = e;
                         },
                         enumerable: !0
                       },
                       origin: {
-                        get: function () {
+                        get: function() {
                           var e = { 'http:': 80, 'https:': 443, 'ftp:': 21 }[this._anchorElement.protocol],
                             t = this._anchorElement.port != e && '' !== this._anchorElement.port;
                           return (
@@ -19498,31 +19553,31 @@ and limitations under the License.
                         enumerable: !0
                       },
                       password: {
-                        get: function () {
+                        get: function() {
                           return '';
                         },
-                        set: function (e) {},
+                        set: function(e) {},
                         enumerable: !0
                       },
                       username: {
-                        get: function () {
+                        get: function() {
                           return '';
                         },
-                        set: function (e) {},
+                        set: function(e) {},
                         enumerable: !0
                       }
                     }),
-                    (n.createObjectURL = function (e) {
+                    (n.createObjectURL = function(e) {
                       return t.createObjectURL.apply(t, arguments);
                     }),
-                    (n.revokeObjectURL = function (e) {
+                    (n.revokeObjectURL = function(e) {
                       return t.revokeObjectURL.apply(t, arguments);
                     }),
                     (e.URL = n);
                 })(),
               void 0 !== e.location && !('origin' in e.location))
             ) {
-              var t = function () {
+              var t = function() {
                 return (
                   e.location.protocol + '//' + e.location.hostname + (e.location.port ? ':' + e.location.port : '')
                 );
@@ -19530,7 +19585,7 @@ and limitations under the License.
               try {
                 Object.defineProperty(e.location, 'origin', { get: t, enumerable: !0 });
               } catch (n) {
-                setInterval(function () {
+                setInterval(function() {
                   e.location.origin = t();
                 }, 100);
               }
@@ -19538,7 +19593,7 @@ and limitations under the License.
           })(void 0 !== e ? e : 'undefined' != typeof window ? window : 'undefined' != typeof self ? self : this);
       }.call(this, n(115)));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14),
         i = n(160),
         a = n(23).f,
@@ -19554,11 +19609,11 @@ and limitations under the License.
       if (
         n(19) &&
         (!p ||
-          n(18)(function () {
+          n(18)(function() {
             return (d[n(17)('match')] = !1), c(h) != h || c(d) == d || '/a/i' != c(h, 'i');
           }))
       ) {
-        c = function (e, t) {
+        c = function(e, t) {
           var n = this instanceof c,
             r = s(e),
             a = void 0 === t;
@@ -19571,14 +19626,14 @@ and limitations under the License.
               );
         };
         for (
-          var v = function (e) {
+          var v = function(e) {
               (e in c) ||
                 a(c, e, {
                   configurable: !0,
-                  get: function () {
+                  get: function() {
                     return l[e];
                   },
-                  set: function (t) {
+                  set: function(t) {
                     l[e] = t;
                   }
                 });
@@ -19593,7 +19648,7 @@ and limitations under the License.
       }
       n(111)('RegExp');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(14),
         i = n(52),
@@ -19610,7 +19665,7 @@ and limitations under the License.
         v = d.prototype,
         y = 'Number' == a(n(76)(v)),
         m = 'trim' in String.prototype,
-        g = function (e) {
+        g = function(e) {
           var t = s(e, !1);
           if ('string' == typeof t && t.length > 2) {
             var n,
@@ -19640,12 +19695,12 @@ and limitations under the License.
           return +t;
         };
       if (!d(' 0o1') || !d('0b1') || d('+0x1')) {
-        d = function (e) {
+        d = function(e) {
           var t = arguments.length < 1 ? 0 : e,
             n = this;
           return n instanceof d &&
             (y
-              ? u(function () {
+              ? u(function() {
                   v.valueOf.call(n);
                 })
               : 'Number' != a(n))
@@ -19667,8 +19722,8 @@ and limitations under the License.
         (d.prototype = v), (v.constructor = d), n(39)(r, 'Number', d);
       }
     },
-    function (e, t, n) {
-      (function (e, r) {
+    function(e, t, n) {
+      (function(e, r) {
         var i;
         /**
          * @license
@@ -19677,7 +19732,7 @@ and limitations under the License.
          * Released under MIT license <https://lodash.com/license>
          * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
          * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-         */ (function () {
+         */ (function() {
           var a = 'Expected a function',
             o = '__lodash_placeholder__',
             s = [
@@ -19842,7 +19897,7 @@ and limitations under the License.
             We = Ge && 'object' == typeof r && r && !r.nodeType && r,
             Je = We && We.exports === Ge,
             Ze = Je && He.process,
-            Xe = (function () {
+            Xe = (function() {
               try {
                 var e = We && We.require && We.require('util').types;
                 return e || (Ze && Ze.binding && Ze.binding('util'));
@@ -19927,7 +19982,7 @@ and limitations under the License.
           function _t(e, t, n) {
             var r;
             return (
-              n(e, function (e, n, i) {
+              n(e, function(e, n, i) {
                 if (t(e, n, i)) return (r = n), !1;
               }),
               r
@@ -19939,7 +19994,7 @@ and limitations under the License.
           }
           function Et(e, t, n) {
             return t == t
-              ? (function (e, t, n) {
+              ? (function(e, t, n) {
                   var r = n - 1,
                     i = e.length;
                   for (; ++r < i; ) if (e[r] === t) return r;
@@ -19959,18 +20014,18 @@ and limitations under the License.
             return n ? Ct(e, t) / n : NaN;
           }
           function Ot(e) {
-            return function (t) {
+            return function(t) {
               return null == t ? void 0 : t[e];
             };
           }
           function Rt(e) {
-            return function (t) {
+            return function(t) {
               return null == e ? void 0 : e[t];
             };
           }
           function Tt(e, t, n, r, i) {
             return (
-              i(e, function (e, i, a) {
+              i(e, function(e, i, a) {
                 n = r ? ((r = !1), e) : t(n, e, i, a);
               }),
               n
@@ -19988,12 +20043,12 @@ and limitations under the License.
             return r;
           }
           function It(e) {
-            return function (t) {
+            return function(t) {
               return e(t);
             };
           }
           function Nt(e, t) {
-            return dt(t, function (t) {
+            return dt(t, function(t) {
               return e[t];
             });
           }
@@ -20215,14 +20270,14 @@ and limitations under the License.
             var t = -1,
               n = Array(e.size);
             return (
-              e.forEach(function (e, r) {
+              e.forEach(function(e, r) {
                 n[++t] = [r, e];
               }),
               n
             );
           }
           function Vt(e, t) {
-            return function (n) {
+            return function(n) {
               return e(t(n));
             };
           }
@@ -20237,7 +20292,7 @@ and limitations under the License.
             var t = -1,
               n = Array(e.size);
             return (
-              e.forEach(function (e) {
+              e.forEach(function(e) {
                 n[++t] = e;
               }),
               n
@@ -20247,7 +20302,7 @@ and limitations under the License.
             var t = -1,
               n = Array(e.size);
             return (
-              e.forEach(function (e) {
+              e.forEach(function(e) {
                 n[++t] = [e, e];
               }),
               n
@@ -20255,7 +20310,7 @@ and limitations under the License.
           }
           function Ht(e) {
             return Ut(e)
-              ? (function (e) {
+              ? (function(e) {
                   var t = (je.lastIndex = 0);
                   for (; je.test(e); ) ++t;
                   return t;
@@ -20264,10 +20319,10 @@ and limitations under the License.
           }
           function Yt(e) {
             return Ut(e)
-              ? (function (e) {
+              ? (function(e) {
                   return e.match(je) || [];
                 })(e)
-              : (function (e) {
+              : (function(e) {
                   return e.split('');
                 })(e);
           }
@@ -20312,7 +20367,7 @@ and limitations under the License.
               Ze = je ? je.isConcatSpreadable : void 0,
               Xe = je ? je.iterator : void 0,
               gt = je ? je.toStringTag : void 0,
-              Rt = (function () {
+              Rt = (function() {
                 try {
                   var e = Qi(ve, 'defineProperty');
                   return e({}, '', {}), e;
@@ -20357,9 +20412,9 @@ and limitations under the License.
               }
               return new Nn(e);
             }
-            var kn = (function () {
+            var kn = (function() {
               function e() {}
-              return function (t) {
+              return function(t) {
                 if (!qo(t)) return {};
                 if (Ye) return Ye(t);
                 e.prototype = t;
@@ -20458,7 +20513,7 @@ and limitations under the License.
             }
             function Hn(e, t, n, r) {
               return (
-                er(e, function (e, i, a) {
+                er(e, function(e, i, a) {
                   t(r, e, n(e), a);
                 }),
                 r
@@ -20489,7 +20544,7 @@ and limitations under the License.
               var w = Po(e);
               if (w) {
                 if (
-                  ((o = (function (e) {
+                  ((o = (function(e) {
                     var t = e.length,
                       n = new e.constructor(t);
                     t && 'string' == typeof e[0] && Ae.call(e, 'index') && ((n.index = e.index), (n.input = e.input));
@@ -20505,20 +20560,20 @@ and limitations under the License.
                 if (P == m || P == u || (j && !i)) {
                   if (((o = c || j ? {} : ia(e)), !s))
                     return c
-                      ? (function (e, t) {
+                      ? (function(e, t) {
                           return gi(e, ta(e), t);
                         })(
                           e,
-                          (function (e, t) {
+                          (function(e, t) {
                             return e && gi(t, Es(t), e);
                           })(o, e)
                         )
-                      : (function (e, t) {
+                      : (function(e, t) {
                           return gi(e, ea(e), t);
                         })(e, Yn(o, e));
                 } else {
                   if (!Ve[P]) return i ? e : {};
-                  o = (function (e, t, n) {
+                  o = (function(e, t, n) {
                     var r = e.constructor;
                     switch (t) {
                       case S:
@@ -20527,7 +20582,7 @@ and limitations under the License.
                       case f:
                         return new r(+e);
                       case A:
-                        return (function (e, t) {
+                        return (function(e, t) {
                           var n = t ? hi(e.buffer) : e.buffer;
                           return new e.constructor(n, e.byteOffset, e.byteLength);
                         })(e, n);
@@ -20547,7 +20602,7 @@ and limitations under the License.
                       case b:
                         return new r(e);
                       case g:
-                        return (function (e) {
+                        return (function(e) {
                           var t = new e.constructor(e.source, re.exec(e));
                           return (t.lastIndex = e.lastIndex), t;
                         })(e);
@@ -20565,16 +20620,16 @@ and limitations under the License.
               if (L) return L;
               a.set(e, o),
                 Wo(e)
-                  ? e.forEach(function (r) {
+                  ? e.forEach(function(r) {
                       o.add(Jn(r, t, n, r, e, a));
                     })
                   : Ho(e) &&
-                    e.forEach(function (r, i) {
+                    e.forEach(function(r, i) {
                       o.set(i, Jn(r, t, n, i, e, a));
                     });
               var D = w ? void 0 : (h ? (c ? Yi : Hi) : c ? Es : bs)(e);
               return (
-                st(D || e, function (r, i) {
+                st(D || e, function(r, i) {
                   D && (r = e[(i = r)]), qn(o, i, Jn(r, t, n, i, e, a));
                 }),
                 o
@@ -20593,7 +20648,7 @@ and limitations under the License.
             }
             function Xn(e, t, n) {
               if ('function' != typeof e) throw new ge(a);
-              return _a(function () {
+              return _a(function() {
                 e.apply(void 0, n);
               }, t);
             }
@@ -20624,14 +20679,14 @@ and limitations under the License.
               (Nn.prototype.constructor = Nn),
               (xn.prototype = kn(In.prototype)),
               (xn.prototype.constructor = xn),
-              (Pn.prototype.clear = function () {
+              (Pn.prototype.clear = function() {
                 (this.__data__ = mn ? mn(null) : {}), (this.size = 0);
               }),
-              (Pn.prototype.delete = function (e) {
+              (Pn.prototype.delete = function(e) {
                 var t = this.has(e) && delete this.__data__[e];
                 return (this.size -= t ? 1 : 0), t;
               }),
-              (Pn.prototype.get = function (e) {
+              (Pn.prototype.get = function(e) {
                 var t = this.__data__;
                 if (mn) {
                   var n = t[e];
@@ -20639,11 +20694,11 @@ and limitations under the License.
                 }
                 return Ae.call(t, e) ? t[e] : void 0;
               }),
-              (Pn.prototype.has = function (e) {
+              (Pn.prototype.has = function(e) {
                 var t = this.__data__;
                 return mn ? void 0 !== t[e] : Ae.call(t, e);
               }),
-              (Pn.prototype.set = function (e, t) {
+              (Pn.prototype.set = function(e, t) {
                 var n = this.__data__;
                 return (
                   (this.size += this.has(e) ? 0 : 1),
@@ -20651,66 +20706,66 @@ and limitations under the License.
                   this
                 );
               }),
-              (jn.prototype.clear = function () {
+              (jn.prototype.clear = function() {
                 (this.__data__ = []), (this.size = 0);
               }),
-              (jn.prototype.delete = function (e) {
+              (jn.prototype.delete = function(e) {
                 var t = this.__data__,
                   n = Kn(t, e);
                 return !(n < 0) && (n == t.length - 1 ? t.pop() : We.call(t, n, 1), --this.size, !0);
               }),
-              (jn.prototype.get = function (e) {
+              (jn.prototype.get = function(e) {
                 var t = this.__data__,
                   n = Kn(t, e);
                 return n < 0 ? void 0 : t[n][1];
               }),
-              (jn.prototype.has = function (e) {
+              (jn.prototype.has = function(e) {
                 return Kn(this.__data__, e) > -1;
               }),
-              (jn.prototype.set = function (e, t) {
+              (jn.prototype.set = function(e, t) {
                 var n = this.__data__,
                   r = Kn(n, e);
                 return r < 0 ? (++this.size, n.push([e, t])) : (n[r][1] = t), this;
               }),
-              (Ln.prototype.clear = function () {
+              (Ln.prototype.clear = function() {
                 (this.size = 0), (this.__data__ = { hash: new Pn(), map: new (dn || jn)(), string: new Pn() });
               }),
-              (Ln.prototype.delete = function (e) {
+              (Ln.prototype.delete = function(e) {
                 var t = Zi(this, e).delete(e);
                 return (this.size -= t ? 1 : 0), t;
               }),
-              (Ln.prototype.get = function (e) {
+              (Ln.prototype.get = function(e) {
                 return Zi(this, e).get(e);
               }),
-              (Ln.prototype.has = function (e) {
+              (Ln.prototype.has = function(e) {
                 return Zi(this, e).has(e);
               }),
-              (Ln.prototype.set = function (e, t) {
+              (Ln.prototype.set = function(e, t) {
                 var n = Zi(this, e),
                   r = n.size;
                 return n.set(e, t), (this.size += n.size == r ? 0 : 1), this;
               }),
-              (Dn.prototype.add = Dn.prototype.push = function (e) {
+              (Dn.prototype.add = Dn.prototype.push = function(e) {
                 return this.__data__.set(e, '__lodash_hash_undefined__'), this;
               }),
-              (Dn.prototype.has = function (e) {
+              (Dn.prototype.has = function(e) {
                 return this.__data__.has(e);
               }),
-              (Mn.prototype.clear = function () {
+              (Mn.prototype.clear = function() {
                 (this.__data__ = new jn()), (this.size = 0);
               }),
-              (Mn.prototype.delete = function (e) {
+              (Mn.prototype.delete = function(e) {
                 var t = this.__data__,
                   n = t.delete(e);
                 return (this.size = t.size), n;
               }),
-              (Mn.prototype.get = function (e) {
+              (Mn.prototype.get = function(e) {
                 return this.__data__.get(e);
               }),
-              (Mn.prototype.has = function (e) {
+              (Mn.prototype.has = function(e) {
                 return this.__data__.has(e);
               }),
-              (Mn.prototype.set = function (e, t) {
+              (Mn.prototype.set = function(e, t) {
                 var n = this.__data__;
                 if (n instanceof jn) {
                   var r = n.__data__;
@@ -20724,7 +20779,7 @@ and limitations under the License.
             function nr(e, t) {
               var n = !0;
               return (
-                er(e, function (e, r, i) {
+                er(e, function(e, r, i) {
                   return (n = !!t(e, r, i));
                 }),
                 n
@@ -20743,7 +20798,7 @@ and limitations under the License.
             function ir(e, t) {
               var n = [];
               return (
-                er(e, function (e, r, i) {
+                er(e, function(e, r, i) {
                   t(e, r, i) && n.push(e);
                 }),
                 n
@@ -20767,7 +20822,7 @@ and limitations under the License.
               return e && sr(e, t, bs);
             }
             function lr(e, t) {
-              return lt(t, function (t) {
+              return lt(t, function(t) {
                 return Bo(e[t]);
               });
             }
@@ -20785,7 +20840,7 @@ and limitations under the License.
                   ? '[object Undefined]'
                   : '[object Null]'
                 : gt && gt in ve(e)
-                ? (function (e) {
+                ? (function(e) {
                     var t = Ae.call(e, gt),
                       n = e[gt];
                     try {
@@ -20796,7 +20851,7 @@ and limitations under the License.
                     r && (t ? (e[gt] = n) : delete e[gt]);
                     return i;
                   })(e)
-                : (function (e) {
+                : (function(e) {
                     return Te.call(e);
                   })(e);
             }
@@ -20844,7 +20899,7 @@ and limitations under the License.
                 e === t ||
                 (null == e || null == t || (!Ko(e) && !Ko(t))
                   ? e != e && t != t
-                  : (function (e, t, n, r, i, a) {
+                  : (function(e, t, n, r, i, a) {
                       var o = Po(e),
                         s = Po(t),
                         d = o ? c : na(e),
@@ -20861,7 +20916,7 @@ and limitations under the License.
                           a || (a = new Mn()),
                           o || Xo(e)
                             ? qi(e, t, n, r, i, a)
-                            : (function (e, t, n, r, i, a, o) {
+                            : (function(e, t, n, r, i, a, o) {
                                 switch (n) {
                                   case A:
                                     if (e.byteLength != t.byteLength || e.byteOffset != t.byteOffset) return !1;
@@ -20905,7 +20960,7 @@ and limitations under the License.
                       if (!R) return !1;
                       return (
                         a || (a = new Mn()),
-                        (function (e, t, n, r, i, a) {
+                        (function(e, t, n, r, i, a) {
                           var o = 1 & n,
                             s = Hi(e),
                             u = s.length,
@@ -20993,7 +21048,7 @@ and limitations under the License.
             }
             function Or(e) {
               if (!qo(e))
-                return (function (e) {
+                return (function(e) {
                   var t = [];
                   if (null != e) for (var n in ve(e)) t.push(n);
                   return t;
@@ -21010,7 +21065,7 @@ and limitations under the License.
               var n = -1,
                 i = Lo(e) ? r(e.length) : [];
               return (
-                er(e, function (e, r, a) {
+                er(e, function(e, r, a) {
                   i[++n] = t(e, r, a);
                 }),
                 i
@@ -21020,14 +21075,14 @@ and limitations under the License.
               var t = Xi(e);
               return 1 == t.length && t[0][2]
                 ? da(t[0][0], t[0][1])
-                : function (n) {
+                : function(n) {
                     return n === e || Er(n, e, t);
                   };
             }
             function kr(e, t) {
               return ua(e) && ha(t)
                 ? da(Oa(e), t)
-                : function (n) {
+                : function(n) {
                     var r = vs(n, e);
                     return void 0 === r && r === t ? ys(n, e) : br(t, r, 3);
                   };
@@ -21036,9 +21091,9 @@ and limitations under the License.
               e !== t &&
                 or(
                   t,
-                  function (a, o) {
+                  function(a, o) {
                     if ((i || (i = new Mn()), qo(a)))
-                      !(function (e, t, n, r, i, a, o) {
+                      !(function(e, t, n, r, i, a, o) {
                         var s = ma(e, n),
                           u = ma(t, n),
                           c = o.get(u);
@@ -21083,22 +21138,22 @@ and limitations under the License.
               var r = -1;
               return (
                 (t = dt(t.length ? t : [Ys], It(Ji()))),
-                (function (e, t) {
+                (function(e, t) {
                   var n = e.length;
                   for (e.sort(t); n--; ) e[n] = e[n].value;
                   return e;
                 })(
-                  Tr(e, function (e, n, i) {
+                  Tr(e, function(e, n, i) {
                     return {
-                      criteria: dt(t, function (t) {
+                      criteria: dt(t, function(t) {
                         return t(e);
                       }),
                       index: ++r,
                       value: e
                     };
                   }),
-                  function (e, t) {
-                    return (function (e, t, n) {
+                  function(e, t) {
+                    return (function(e, t, n) {
                       var r = -1,
                         i = e.criteria,
                         a = t.criteria,
@@ -21181,12 +21236,12 @@ and limitations under the License.
               return e;
             }
             var $r = gn
-                ? function (e, t) {
+                ? function(e, t) {
                     return gn.set(e, t), e;
                   }
                 : Ys,
               qr = Rt
-                ? function (e, t) {
+                ? function(e, t) {
                     return Rt(e, 'toString', { configurable: !0, enumerable: !1, value: qs(t), writable: !0 });
                   }
                 : Ys;
@@ -21206,7 +21261,7 @@ and limitations under the License.
             function Yr(e, t) {
               var n;
               return (
-                er(e, function (e, r, i) {
+                er(e, function(e, r, i) {
                   return !(n = t(e, r, i));
                 }),
                 !!n
@@ -21311,7 +21366,7 @@ and limitations under the License.
                 n instanceof xn && (n = n.value()),
                 vt(
                   t,
-                  function (e, t) {
+                  function(e, t) {
                     return t.func.apply(t.thisArg, pt([e], t.args));
                   },
                   n
@@ -21348,7 +21403,7 @@ and limitations under the License.
             }
             var li =
               Wt ||
-              function (e) {
+              function(e) {
                 return ze.clearTimeout(e);
               };
             function fi(e, t) {
@@ -21429,14 +21484,14 @@ and limitations under the License.
               return n;
             }
             function _i(e, t) {
-              return function (n, r) {
+              return function(n, r) {
                 var i = Po(n) ? ot : Hn,
                   a = t ? t() : {};
                 return i(n, e, Ji(r, 2), a);
               };
             }
             function bi(e) {
-              return Fr(function (t, n) {
+              return Fr(function(t, n) {
                 var r = -1,
                   i = n.length,
                   a = i > 1 ? n[i - 1] : void 0,
@@ -21455,7 +21510,7 @@ and limitations under the License.
               });
             }
             function Ei(e, t) {
-              return function (n, r) {
+              return function(n, r) {
                 if (null == n) return n;
                 if (!Lo(n)) return e(n, r);
                 for (var i = n.length, a = t ? i : -1, o = ve(n); (t ? a-- : ++a < i) && !1 !== r(o[a], a, o); );
@@ -21463,7 +21518,7 @@ and limitations under the License.
               };
             }
             function wi(e) {
-              return function (t, n, r) {
+              return function(t, n, r) {
                 for (var i = -1, a = ve(t), o = r(t), s = o.length; s--; ) {
                   var u = o[e ? s : ++i];
                   if (!1 === n(a[u], u, a)) break;
@@ -21472,7 +21527,7 @@ and limitations under the License.
               };
             }
             function Si(e) {
-              return function (t) {
+              return function(t) {
                 var n = Ut((t = ss(t))) ? Yt(t) : void 0,
                   r = n ? n[0] : t.charAt(0),
                   i = n ? ci(n, 1).join('') : t.slice(1);
@@ -21480,12 +21535,12 @@ and limitations under the License.
               };
             }
             function Ai(e) {
-              return function (t) {
+              return function(t) {
                 return vt(Bs(xs(t).replace(xe, '')), e, '');
               };
             }
             function Oi(e) {
-              return function () {
+              return function() {
                 var t = arguments;
                 switch (t.length) {
                   case 0:
@@ -21511,12 +21566,12 @@ and limitations under the License.
               };
             }
             function Ri(e) {
-              return function (t, n, r) {
+              return function(t, n, r) {
                 var i = ve(t);
                 if (!Lo(t)) {
                   var a = Ji(n, 3);
                   (t = bs(t)),
-                    (n = function (e) {
+                    (n = function(e) {
                       return a(i[e], e, i);
                     });
                 }
@@ -21525,7 +21580,7 @@ and limitations under the License.
               };
             }
             function Ti(e) {
-              return Ki(function (t) {
+              return Ki(function(t) {
                 var n = t.length,
                   r = n,
                   i = Nn.prototype.thru;
@@ -21544,7 +21599,7 @@ and limitations under the License.
                       ? s[u]()
                       : s.thru(o);
                 }
-                return function () {
+                return function() {
                   var e = arguments,
                     r = e[0];
                   if (s && 1 == e.length && Po(r)) return s.plant(r).value();
@@ -21581,10 +21636,10 @@ and limitations under the License.
               };
             }
             function ki(e, t) {
-              return function (n, r) {
-                return (function (e, t, n, r) {
+              return function(n, r) {
+                return (function(e, t, n, r) {
                   return (
-                    ur(e, function (e, i, a) {
+                    ur(e, function(e, i, a) {
                       t(r, n(e), i, a);
                     }),
                     r
@@ -21593,7 +21648,7 @@ and limitations under the License.
               };
             }
             function Ii(e, t) {
-              return function (n, r) {
+              return function(n, r) {
                 var i;
                 if (void 0 === n && void 0 === r) return t;
                 if ((void 0 !== n && (i = n), void 0 !== r)) {
@@ -21607,12 +21662,12 @@ and limitations under the License.
               };
             }
             function Ni(e) {
-              return Ki(function (t) {
+              return Ki(function(t) {
                 return (
                   (t = dt(t, It(Ji()))),
-                  Fr(function (n) {
+                  Fr(function(n) {
                     var r = this;
-                    return e(t, function (e) {
+                    return e(t, function(e) {
                       return at(e, r, n);
                     });
                   })
@@ -21626,12 +21681,12 @@ and limitations under the License.
               return Ut(t) ? ci(Yt(r), 0, e).join('') : r.slice(0, e);
             }
             function Pi(e) {
-              return function (t, n, i) {
+              return function(t, n, i) {
                 return (
                   i && 'number' != typeof i && sa(t, n, i) && (n = i = void 0),
                   (t = ns(t)),
                   void 0 === n ? ((n = t), (t = 0)) : (n = ns(n)),
-                  (function (e, t, n, i) {
+                  (function(e, t, n, i) {
                     for (var a = -1, o = on(Xt((t - e) / (n || 1)), 0), s = r(o); o--; ) (s[i ? o : ++a] = e), (e += n);
                     return s;
                   })(t, n, (i = void 0 === i ? (t < n ? 1 : -1) : ns(i)), e)
@@ -21639,7 +21694,7 @@ and limitations under the License.
               };
             }
             function ji(e) {
-              return function (t, n) {
+              return function(t, n) {
                 return ('string' == typeof t && 'string' == typeof n) || ((t = as(t)), (n = as(n))), e(t, n);
               };
             }
@@ -21652,7 +21707,7 @@ and limitations under the License.
             }
             function Di(e) {
               var t = pe[e];
-              return function (e, n) {
+              return function(e, n) {
                 if (((e = as(e)), (n = null == n ? 0 : sn(rs(n), 292)) && nn(e))) {
                   var r = (ss(e) + 'e').split('e');
                   return +((r = (ss(t(r[0] + 'e' + (+r[1] + n))) + 'e').split('e'))[0] + 'e' + (+r[1] - n));
@@ -21662,19 +21717,19 @@ and limitations under the License.
             }
             var Mi =
               vn && 1 / qt(new vn([, -0]))[1] == 1 / 0
-                ? function (e) {
+                ? function(e) {
                     return new vn(e);
                   }
                 : Zs;
             function Fi(e) {
-              return function (t) {
+              return function(t) {
                 var n = na(t);
                 return n == v
                   ? Bt(t)
                   : n == _
                   ? Kt(t)
-                  : (function (e, t) {
-                      return dt(t, function (t) {
+                  : (function(e, t) {
+                      return dt(t, function(t) {
                         return [t, e[t]];
                       });
                     })(t, e(t));
@@ -21699,7 +21754,7 @@ and limitations under the License.
                 y = [e, t, n, i, s, d, p, u, c, l];
               if (
                 (v &&
-                  (function (e, t) {
+                  (function(e, t) {
                     var n = e[1],
                       r = t[1],
                       i = n | r,
@@ -21731,7 +21786,7 @@ and limitations under the License.
               )
                 m =
                   8 == t || 16 == t
-                    ? (function (e, t, n) {
+                    ? (function(e, t, n) {
                         var i = Oi(e);
                         return function a() {
                           for (var o = arguments.length, s = r(o), u = o, c = Wi(a); u--; ) s[u] = arguments[u];
@@ -21744,7 +21799,7 @@ and limitations under the License.
                       })(e, t, l)
                     : (32 != t && 33 != t) || s.length
                     ? Ci.apply(void 0, y)
-                    : (function (e, t, n, i) {
+                    : (function(e, t, n, i) {
                         var a = 1 & t,
                           o = Oi(e);
                         return function t() {
@@ -21764,7 +21819,7 @@ and limitations under the License.
                         };
                       })(e, t, n, i);
               else
-                var m = (function (e, t, n) {
+                var m = (function(e, t, n) {
                   var r = 1 & t,
                     i = Oi(e);
                   return function t() {
@@ -21804,7 +21859,7 @@ and limitations under the License.
                 }
                 if (h) {
                   if (
-                    !mt(t, function (e, t) {
+                    !mt(t, function(e, t) {
                       if (!xt(h, t) && (d === e || i(d, e, n, r, a))) return h.push(t);
                     })
                   ) {
@@ -21828,7 +21883,7 @@ and limitations under the License.
               return hr(e, Es, ta);
             }
             var zi = gn
-              ? function (e) {
+              ? function(e) {
                   return gn.get(e);
                 }
               : Zs;
@@ -21851,11 +21906,9 @@ and limitations under the License.
               var n,
                 r,
                 i = e.__data__;
-              return (
-                'string' == (r = typeof (n = t)) || 'number' == r || 'symbol' == r || 'boolean' == r
-                  ? '__proto__' !== n
-                  : null === n
-              )
+              return ('string' == (r = typeof (n = t)) || 'number' == r || 'symbol' == r || 'boolean' == r
+              ? '__proto__' !== n
+              : null === n)
                 ? i['string' == typeof t ? 'string' : 'hash']
                 : i.map;
             }
@@ -21868,23 +21921,23 @@ and limitations under the License.
               return t;
             }
             function Qi(e, t) {
-              var n = (function (e, t) {
+              var n = (function(e, t) {
                 return null == e ? void 0 : e[t];
               })(e, t);
               return wr(n) ? n : void 0;
             }
             var ea = en
-                ? function (e) {
+                ? function(e) {
                     return null == e
                       ? []
                       : ((e = ve(e)),
-                        lt(en(e), function (t) {
+                        lt(en(e), function(t) {
                           return Ge.call(e, t);
                         }));
                   }
                 : iu,
               ta = en
-                ? function (e) {
+                ? function(e) {
                     for (var t = []; e; ) pt(t, ea(e)), (e = He(e));
                     return t;
                   }
@@ -21942,7 +21995,7 @@ and limitations under the License.
               (pn && '[object Promise]' != na(pn.resolve())) ||
               (vn && na(new vn()) != _) ||
               (yn && na(new yn()) != w)) &&
-              (na = function (e) {
+              (na = function(e) {
                 var t = dr(e),
                   n = t == m ? e.constructor : void 0,
                   r = n ? Ra(n) : '';
@@ -21970,14 +22023,14 @@ and limitations under the License.
               return e == e && !qo(e);
             }
             function da(e, t) {
-              return function (n) {
+              return function(n) {
                 return null != n && n[e] === t && (void 0 !== t || e in ve(n));
               };
             }
             function pa(e, t, n) {
               return (
                 (t = on(void 0 === t ? e.length - 1 : t, 0)),
-                function () {
+                function() {
                   for (var i = arguments, a = -1, o = on(i.length - t, 0), s = r(o); ++a < o; ) s[a] = i[t + a];
                   a = -1;
                   for (var u = r(t + 1); ++a < t; ) u[a] = i[a];
@@ -22001,7 +22054,7 @@ and limitations under the License.
             var ga = wa($r),
               _a =
                 Zt ||
-                function (e, t) {
+                function(e, t) {
                   return ze.setTimeout(e, t);
                 },
               ba = wa(qr);
@@ -22009,7 +22062,7 @@ and limitations under the License.
               var r = t + '';
               return ba(
                 e,
-                (function (e, t) {
+                (function(e, t) {
                   var n = t.length;
                   if (!n) return e;
                   var r = n - 1;
@@ -22020,16 +22073,16 @@ and limitations under the License.
                   );
                 })(
                   r,
-                  (function (e, t) {
+                  (function(e, t) {
                     return (
-                      st(s, function (n) {
+                      st(s, function(n) {
                         var r = '_.' + n[0];
                         t & n[1] && !ft(e, r) && e.push(r);
                       }),
                       e.sort()
                     );
                   })(
-                    (function (e) {
+                    (function(e) {
                       var t = e.match(X);
                       return t ? t[1].split(Q) : [];
                     })(r),
@@ -22041,7 +22094,7 @@ and limitations under the License.
             function wa(e) {
               var t = 0,
                 n = 0;
-              return function () {
+              return function() {
                 var r = un(),
                   i = 16 - (r - n);
                 if (((n = r), i > 0)) {
@@ -22061,17 +22114,17 @@ and limitations under the License.
               }
               return (e.length = t), e;
             }
-            var Aa = (function (e) {
-              var t = So(e, function (e) {
+            var Aa = (function(e) {
+              var t = So(e, function(e) {
                   return 500 === n.size && n.clear(), e;
                 }),
                 n = t.cache;
               return t;
-            })(function (e) {
+            })(function(e) {
               var t = [];
               return (
                 46 === e.charCodeAt(0) && t.push(''),
-                e.replace(H, function (e, n, r, i) {
+                e.replace(H, function(e, n, r, i) {
                   t.push(r ? i.replace(te, '$1') : n || e);
                 }),
                 t
@@ -22098,14 +22151,14 @@ and limitations under the License.
               var t = new Nn(e.__wrapped__, e.__chain__);
               return (t.__actions__ = mi(e.__actions__)), (t.__index__ = e.__index__), (t.__values__ = e.__values__), t;
             }
-            var Ca = Fr(function (e, t) {
+            var Ca = Fr(function(e, t) {
                 return Do(e) ? Qn(e, ar(t, 1, Do, !0)) : [];
               }),
-              ka = Fr(function (e, t) {
+              ka = Fr(function(e, t) {
                 var n = Fa(t);
                 return Do(n) && (n = void 0), Do(e) ? Qn(e, ar(t, 1, Do, !0), Ji(n, 2)) : [];
               }),
-              Ia = Fr(function (e, t) {
+              Ia = Fr(function(e, t) {
                 var n = Fa(t);
                 return Do(n) && (n = void 0), Do(e) ? Qn(e, ar(t, 1, Do, !0), void 0, n) : [];
               });
@@ -22127,16 +22180,16 @@ and limitations under the License.
             function ja(e) {
               return e && e.length ? e[0] : void 0;
             }
-            var La = Fr(function (e) {
+            var La = Fr(function(e) {
                 var t = dt(e, ai);
                 return t.length && t[0] === e[0] ? mr(t) : [];
               }),
-              Da = Fr(function (e) {
+              Da = Fr(function(e) {
                 var t = Fa(e),
                   n = dt(e, ai);
                 return t === Fa(n) ? (t = void 0) : n.pop(), n.length && n[0] === e[0] ? mr(n, Ji(t, 2)) : [];
               }),
-              Ma = Fr(function (e) {
+              Ma = Fr(function(e) {
                 var t = Fa(e),
                   n = dt(e, ai);
                 return (
@@ -22152,13 +22205,13 @@ and limitations under the License.
             function Ba(e, t) {
               return e && e.length && t && t.length ? jr(e, t) : e;
             }
-            var Va = Ki(function (e, t) {
+            var Va = Ki(function(e, t) {
               var n = null == e ? 0 : e.length,
                 r = Gn(e, t);
               return (
                 Lr(
                   e,
-                  dt(t, function (e) {
+                  dt(t, function(e) {
                     return oa(e, n) ? +e : e;
                   }).sort(pi)
                 ),
@@ -22168,14 +22221,14 @@ and limitations under the License.
             function $a(e) {
               return null == e ? e : fn.call(e);
             }
-            var qa = Fr(function (e) {
+            var qa = Fr(function(e) {
                 return Xr(ar(e, 1, Do, !0));
               }),
-              Ka = Fr(function (e) {
+              Ka = Fr(function(e) {
                 var t = Fa(e);
                 return Do(t) && (t = void 0), Xr(ar(e, 1, Do, !0), Ji(t, 2));
               }),
-              Ha = Fr(function (e) {
+              Ha = Fr(function(e) {
                 var t = Fa(e);
                 return (t = 'function' == typeof t ? t : void 0), Xr(ar(e, 1, Do, !0), void 0, t);
               });
@@ -22183,10 +22236,10 @@ and limitations under the License.
               if (!e || !e.length) return [];
               var t = 0;
               return (
-                (e = lt(e, function (e) {
+                (e = lt(e, function(e) {
                   if (Do(e)) return (t = on(e.length, t)), !0;
                 })),
-                kt(t, function (t) {
+                kt(t, function(t) {
                   return dt(e, Ot(t));
                 })
               );
@@ -22196,26 +22249,26 @@ and limitations under the License.
               var n = Ya(e);
               return null == t
                 ? n
-                : dt(n, function (e) {
+                : dt(n, function(e) {
                     return at(t, void 0, e);
                   });
             }
-            var Ga = Fr(function (e, t) {
+            var Ga = Fr(function(e, t) {
                 return Do(e) ? Qn(e, t) : [];
               }),
-              Wa = Fr(function (e) {
+              Wa = Fr(function(e) {
                 return ri(lt(e, Do));
               }),
-              Ja = Fr(function (e) {
+              Ja = Fr(function(e) {
                 var t = Fa(e);
                 return Do(t) && (t = void 0), ri(lt(e, Do), Ji(t, 2));
               }),
-              Za = Fr(function (e) {
+              Za = Fr(function(e) {
                 var t = Fa(e);
                 return (t = 'function' == typeof t ? t : void 0), ri(lt(e, Do), void 0, t);
               }),
               Xa = Fr(Ya);
-            var Qa = Fr(function (e) {
+            var Qa = Fr(function(e) {
               var t = e.length,
                 n = t > 1 ? e[t - 1] : void 0;
               return (n = 'function' == typeof n ? (e.pop(), n) : void 0), za(e, n);
@@ -22227,21 +22280,21 @@ and limitations under the License.
             function to(e, t) {
               return t(e);
             }
-            var no = Ki(function (e) {
+            var no = Ki(function(e) {
               var t = e.length,
                 n = t ? e[0] : 0,
                 r = this.__wrapped__,
-                i = function (t) {
+                i = function(t) {
                   return Gn(t, e);
                 };
               return !(t > 1 || this.__actions__.length) && r instanceof xn && oa(n)
                 ? ((r = r.slice(n, +n + (t ? 1 : 0))).__actions__.push({ func: to, args: [i], thisArg: void 0 }),
-                  new Nn(r, this.__chain__).thru(function (e) {
+                  new Nn(r, this.__chain__).thru(function(e) {
                     return t && !e.length && e.push(void 0), e;
                   }))
                 : this.thru(i);
             });
-            var ro = _i(function (e, t, n) {
+            var ro = _i(function(e, t, n) {
               Ae.call(e, n) ? ++e[n] : zn(e, n, 1);
             });
             var io = Ri(Na),
@@ -22252,35 +22305,35 @@ and limitations under the License.
             function so(e, t) {
               return (Po(e) ? ut : tr)(e, Ji(t, 3));
             }
-            var uo = _i(function (e, t, n) {
+            var uo = _i(function(e, t, n) {
               Ae.call(e, n) ? e[n].push(t) : zn(e, n, [t]);
             });
-            var co = Fr(function (e, t, n) {
+            var co = Fr(function(e, t, n) {
                 var i = -1,
                   a = 'function' == typeof t,
                   o = Lo(e) ? r(e.length) : [];
                 return (
-                  er(e, function (e) {
+                  er(e, function(e) {
                     o[++i] = a ? at(t, e, n) : gr(e, t, n);
                   }),
                   o
                 );
               }),
-              lo = _i(function (e, t, n) {
+              lo = _i(function(e, t, n) {
                 zn(e, n, t);
               });
             function fo(e, t) {
               return (Po(e) ? dt : Tr)(e, Ji(t, 3));
             }
             var ho = _i(
-              function (e, t, n) {
+              function(e, t, n) {
                 e[n ? 0 : 1].push(t);
               },
-              function () {
+              function() {
                 return [[], []];
               }
             );
-            var po = Fr(function (e, t) {
+            var po = Fr(function(e, t) {
                 if (null == e) return [];
                 var n = t.length;
                 return (
@@ -22290,7 +22343,7 @@ and limitations under the License.
               }),
               vo =
                 Jt ||
-                function () {
+                function() {
                   return ze.Date.now();
                 };
             function yo(e, t, n) {
@@ -22303,12 +22356,12 @@ and limitations under the License.
               if ('function' != typeof t) throw new ge(a);
               return (
                 (e = rs(e)),
-                function () {
+                function() {
                   return --e > 0 && (n = t.apply(this, arguments)), e <= 1 && (t = void 0), n;
                 }
               );
             }
-            var go = Fr(function (e, t, n) {
+            var go = Fr(function(e, t, n) {
                 var r = 1;
                 if (n.length) {
                   var i = $t(n, Wi(go));
@@ -22316,7 +22369,7 @@ and limitations under the License.
                 }
                 return Ui(e, r, t, n, i);
               }),
-              _o = Fr(function (e, t, n) {
+              _o = Fr(function(e, t, n) {
                 var r = 3;
                 if (n.length) {
                   var i = $t(n, Wi(_o));
@@ -22353,7 +22406,7 @@ and limitations under the License.
                 if (y(e)) return g(e);
                 u = _a(
                   m,
-                  (function (e) {
+                  (function(e) {
                     var n = t - (e - c);
                     return h ? sn(n, o - (e - l)) : n;
                   })(e)
@@ -22377,24 +22430,24 @@ and limitations under the License.
                   ((f = !!n.leading),
                   (o = (h = 'maxWait' in n) ? on(as(n.maxWait) || 0, t) : o),
                   (d = 'trailing' in n ? !!n.trailing : d)),
-                (_.cancel = function () {
+                (_.cancel = function() {
                   void 0 !== u && li(u), (l = 0), (r = c = i = u = void 0);
                 }),
-                (_.flush = function () {
+                (_.flush = function() {
                   return void 0 === u ? s : g(vo());
                 }),
                 _
               );
             }
-            var Eo = Fr(function (e, t) {
+            var Eo = Fr(function(e, t) {
                 return Xn(e, 1, t);
               }),
-              wo = Fr(function (e, t, n) {
+              wo = Fr(function(e, t, n) {
                 return Xn(e, as(t) || 0, n);
               });
             function So(e, t) {
               if ('function' != typeof e || (null != t && 'function' != typeof t)) throw new ge(a);
-              var n = function () {
+              var n = function() {
                 var r = arguments,
                   i = t ? t.apply(this, r) : r[0],
                   a = n.cache;
@@ -22406,7 +22459,7 @@ and limitations under the License.
             }
             function Ao(e) {
               if ('function' != typeof e) throw new ge(a);
-              return function () {
+              return function() {
                 var t = arguments;
                 switch (t.length) {
                   case 0:
@@ -22422,42 +22475,42 @@ and limitations under the License.
               };
             }
             So.Cache = Ln;
-            var Oo = ui(function (e, t) {
+            var Oo = ui(function(e, t) {
                 var n = (t = 1 == t.length && Po(t[0]) ? dt(t[0], It(Ji())) : dt(ar(t, 1), It(Ji()))).length;
-                return Fr(function (r) {
+                return Fr(function(r) {
                   for (var i = -1, a = sn(r.length, n); ++i < a; ) r[i] = t[i].call(this, r[i]);
                   return at(e, this, r);
                 });
               }),
-              Ro = Fr(function (e, t) {
+              Ro = Fr(function(e, t) {
                 return Ui(e, 32, void 0, t, $t(t, Wi(Ro)));
               }),
-              To = Fr(function (e, t) {
+              To = Fr(function(e, t) {
                 return Ui(e, 64, void 0, t, $t(t, Wi(To)));
               }),
-              Co = Ki(function (e, t) {
+              Co = Ki(function(e, t) {
                 return Ui(e, 256, void 0, void 0, void 0, t);
               });
             function ko(e, t) {
               return e === t || (e != e && t != t);
             }
             var Io = ji(pr),
-              No = ji(function (e, t) {
+              No = ji(function(e, t) {
                 return e >= t;
               }),
               xo = _r(
-                (function () {
+                (function() {
                   return arguments;
                 })()
               )
                 ? _r
-                : function (e) {
+                : function(e) {
                     return Ko(e) && Ae.call(e, 'callee') && !Ge.call(e, 'callee');
                   },
               Po = r.isArray,
               jo = Qe
                 ? It(Qe)
-                : function (e) {
+                : function(e) {
                     return Ko(e) && dr(e) == S;
                   };
             function Lo(e) {
@@ -22469,7 +22522,7 @@ and limitations under the License.
             var Mo = tn || au,
               Fo = et
                 ? It(et)
-                : function (e) {
+                : function(e) {
                     return Ko(e) && dr(e) == f;
                   };
             function Uo(e) {
@@ -22501,7 +22554,7 @@ and limitations under the License.
             }
             var Ho = tt
               ? It(tt)
-              : function (e) {
+              : function(e) {
                   return Ko(e) && na(e) == v;
                 };
             function Yo(e) {
@@ -22516,12 +22569,12 @@ and limitations under the License.
             }
             var Go = nt
               ? It(nt)
-              : function (e) {
+              : function(e) {
                   return Ko(e) && dr(e) == g;
                 };
             var Wo = rt
               ? It(rt)
-              : function (e) {
+              : function(e) {
                   return Ko(e) && na(e) == _;
                 };
             function Jo(e) {
@@ -22532,18 +22585,18 @@ and limitations under the License.
             }
             var Xo = it
               ? It(it)
-              : function (e) {
+              : function(e) {
                   return Ko(e) && $o(e.length) && !!Be[dr(e)];
                 };
             var Qo = ji(Rr),
-              es = ji(function (e, t) {
+              es = ji(function(e, t) {
                 return e <= t;
               });
             function ts(e) {
               if (!e) return [];
               if (Lo(e)) return Jo(e) ? Yt(e) : mi(e);
               if (Xe && e[Xe])
-                return (function (e) {
+                return (function(e) {
                   for (var t, n = []; !(t = e.next()).done; ) n.push(t.value);
                   return n;
                 })(e[Xe]());
@@ -22587,21 +22640,21 @@ and limitations under the License.
             function ss(e) {
               return null == e ? '' : Zr(e);
             }
-            var us = bi(function (e, t) {
+            var us = bi(function(e, t) {
                 if (fa(t) || Lo(t)) gi(t, bs(t), e);
                 else for (var n in t) Ae.call(t, n) && qn(e, n, t[n]);
               }),
-              cs = bi(function (e, t) {
+              cs = bi(function(e, t) {
                 gi(t, Es(t), e);
               }),
-              ls = bi(function (e, t, n, r) {
+              ls = bi(function(e, t, n, r) {
                 gi(t, Es(t), e, r);
               }),
-              fs = bi(function (e, t, n, r) {
+              fs = bi(function(e, t, n, r) {
                 gi(t, bs(t), e, r);
               }),
               hs = Ki(Gn);
-            var ds = Fr(function (e, t) {
+            var ds = Fr(function(e, t) {
                 e = ve(e);
                 var n = -1,
                   r = t.length,
@@ -22614,7 +22667,7 @@ and limitations under the License.
                   }
                 return e;
               }),
-              ps = Fr(function (e) {
+              ps = Fr(function(e) {
                 return e.push(void 0, Vi), at(Ss, void 0, e);
               });
             function vs(e, t, n) {
@@ -22624,10 +22677,10 @@ and limitations under the License.
             function ys(e, t) {
               return null != e && ra(e, t, yr);
             }
-            var ms = ki(function (e, t, n) {
+            var ms = ki(function(e, t, n) {
                 null != t && 'function' != typeof t.toString && (t = Te.call(t)), (e[t] = n);
               }, qs(Ys)),
-              gs = ki(function (e, t, n) {
+              gs = ki(function(e, t, n) {
                 null != t && 'function' != typeof t.toString && (t = Te.call(t)),
                   Ae.call(e, t) ? e[t].push(n) : (e[t] = [n]);
               }, Ji),
@@ -22638,17 +22691,17 @@ and limitations under the License.
             function Es(e) {
               return Lo(e) ? Fn(e, !0) : Or(e);
             }
-            var ws = bi(function (e, t, n) {
+            var ws = bi(function(e, t, n) {
                 Ir(e, t, n);
               }),
-              Ss = bi(function (e, t, n, r) {
+              Ss = bi(function(e, t, n, r) {
                 Ir(e, t, n, r);
               }),
-              As = Ki(function (e, t) {
+              As = Ki(function(e, t) {
                 var n = {};
                 if (null == e) return n;
                 var r = !1;
-                (t = dt(t, function (t) {
+                (t = dt(t, function(t) {
                   return (t = si(t, e)), r || (r = t.length > 1), t;
                 })),
                   gi(e, Yi(e), n),
@@ -22656,23 +22709,23 @@ and limitations under the License.
                 for (var i = t.length; i--; ) Qr(n, t[i]);
                 return n;
               });
-            var Os = Ki(function (e, t) {
+            var Os = Ki(function(e, t) {
               return null == e
                 ? {}
-                : (function (e, t) {
-                    return Pr(e, t, function (t, n) {
+                : (function(e, t) {
+                    return Pr(e, t, function(t, n) {
                       return ys(e, n);
                     });
                   })(e, t);
             });
             function Rs(e, t) {
               if (null == e) return {};
-              var n = dt(Yi(e), function (e) {
+              var n = dt(Yi(e), function(e) {
                 return [e];
               });
               return (
                 (t = Ji(t)),
-                Pr(e, n, function (e, n) {
+                Pr(e, n, function(e, n) {
                   return t(e, n[0]);
                 })
               );
@@ -22682,7 +22735,7 @@ and limitations under the License.
             function ks(e) {
               return null == e ? [] : Nt(e, bs(e));
             }
-            var Is = Ai(function (e, t, n) {
+            var Is = Ai(function(e, t, n) {
               return (t = t.toLowerCase()), e + (n ? Ns(t) : t);
             });
             function Ns(e) {
@@ -22691,20 +22744,20 @@ and limitations under the License.
             function xs(e) {
               return (e = ss(e)) && e.replace(ce, Dt).replace(Pe, '');
             }
-            var Ps = Ai(function (e, t, n) {
+            var Ps = Ai(function(e, t, n) {
                 return e + (n ? '-' : '') + t.toLowerCase();
               }),
-              js = Ai(function (e, t, n) {
+              js = Ai(function(e, t, n) {
                 return e + (n ? ' ' : '') + t.toLowerCase();
               }),
               Ls = Si('toLowerCase');
-            var Ds = Ai(function (e, t, n) {
+            var Ds = Ai(function(e, t, n) {
               return e + (n ? '_' : '') + t.toLowerCase();
             });
-            var Ms = Ai(function (e, t, n) {
+            var Ms = Ai(function(e, t, n) {
               return e + (n ? ' ' : '') + Us(t);
             });
-            var Fs = Ai(function (e, t, n) {
+            var Fs = Ai(function(e, t, n) {
                 return e + (n ? ' ' : '') + t.toUpperCase();
               }),
               Us = Si('toUpperCase');
@@ -22712,35 +22765,35 @@ and limitations under the License.
               return (
                 (e = ss(e)),
                 void 0 === (t = n ? void 0 : t)
-                  ? (function (e) {
+                  ? (function(e) {
                       return Me.test(e);
                     })(e)
-                    ? (function (e) {
+                    ? (function(e) {
                         return e.match(Le) || [];
                       })(e)
-                    : (function (e) {
+                    : (function(e) {
                         return e.match(ee) || [];
                       })(e)
                   : e.match(t) || []
               );
             }
-            var Vs = Fr(function (e, t) {
+            var Vs = Fr(function(e, t) {
                 try {
                   return at(e, void 0, t);
                 } catch (e) {
                   return Uo(e) ? e : new he(e);
                 }
               }),
-              $s = Ki(function (e, t) {
+              $s = Ki(function(e, t) {
                 return (
-                  st(t, function (t) {
+                  st(t, function(t) {
                     (t = Oa(t)), zn(e, t, go(e[t], e));
                   }),
                   e
                 );
               });
             function qs(e) {
-              return function () {
+              return function() {
                 return e;
               };
             }
@@ -22752,13 +22805,13 @@ and limitations under the License.
             function zs(e) {
               return Sr('function' == typeof e ? e : Jn(e, 1));
             }
-            var Gs = Fr(function (e, t) {
-                return function (n) {
+            var Gs = Fr(function(e, t) {
+                return function(n) {
                   return gr(n, e, t);
                 };
               }),
-              Ws = Fr(function (e, t) {
-                return function (n) {
+              Ws = Fr(function(e, t) {
+                return function(n) {
                   return gr(e, n, t);
                 };
               });
@@ -22769,11 +22822,11 @@ and limitations under the License.
               var a = !(qo(n) && 'chain' in n && !n.chain),
                 o = Bo(e);
               return (
-                st(i, function (n) {
+                st(i, function(n) {
                   var r = t[n];
                   (e[n] = r),
                     o &&
-                      (e.prototype[n] = function () {
+                      (e.prototype[n] = function() {
                         var t = this.__chain__;
                         if (a || t) {
                           var n = e(this.__wrapped__),
@@ -22793,8 +22846,8 @@ and limitations under the License.
             function tu(e) {
               return ua(e)
                 ? Ot(Oa(e))
-                : (function (e) {
-                    return function (t) {
+                : (function(e) {
+                    return function(t) {
                       return fr(t, e);
                     };
                   })(e);
@@ -22807,28 +22860,28 @@ and limitations under the License.
             function au() {
               return !1;
             }
-            var ou = Ii(function (e, t) {
+            var ou = Ii(function(e, t) {
                 return e + t;
               }, 0),
               su = Di('ceil'),
-              uu = Ii(function (e, t) {
+              uu = Ii(function(e, t) {
                 return e / t;
               }, 1),
               cu = Di('floor');
             var lu,
-              fu = Ii(function (e, t) {
+              fu = Ii(function(e, t) {
                 return e * t;
               }, 1),
               hu = Di('round'),
-              du = Ii(function (e, t) {
+              du = Ii(function(e, t) {
                 return e - t;
               }, 0);
             return (
-              (Cn.after = function (e, t) {
+              (Cn.after = function(e, t) {
                 if ('function' != typeof t) throw new ge(a);
                 return (
                   (e = rs(e)),
-                  function () {
+                  function() {
                     if (--e < 1) return t.apply(this, arguments);
                   }
                 );
@@ -22843,43 +22896,43 @@ and limitations under the License.
               (Cn.bind = go),
               (Cn.bindAll = $s),
               (Cn.bindKey = _o),
-              (Cn.castArray = function () {
+              (Cn.castArray = function() {
                 if (!arguments.length) return [];
                 var e = arguments[0];
                 return Po(e) ? e : [e];
               }),
               (Cn.chain = eo),
-              (Cn.chunk = function (e, t, n) {
+              (Cn.chunk = function(e, t, n) {
                 t = (n ? sa(e, t, n) : void 0 === t) ? 1 : on(rs(t), 0);
                 var i = null == e ? 0 : e.length;
                 if (!i || t < 1) return [];
                 for (var a = 0, o = 0, s = r(Xt(i / t)); a < i; ) s[o++] = Hr(e, a, (a += t));
                 return s;
               }),
-              (Cn.compact = function (e) {
+              (Cn.compact = function(e) {
                 for (var t = -1, n = null == e ? 0 : e.length, r = 0, i = []; ++t < n; ) {
                   var a = e[t];
                   a && (i[r++] = a);
                 }
                 return i;
               }),
-              (Cn.concat = function () {
+              (Cn.concat = function() {
                 var e = arguments.length;
                 if (!e) return [];
                 for (var t = r(e - 1), n = arguments[0], i = e; i--; ) t[i - 1] = arguments[i];
                 return pt(Po(n) ? mi(n) : [n], ar(t, 1));
               }),
-              (Cn.cond = function (e) {
+              (Cn.cond = function(e) {
                 var t = null == e ? 0 : e.length,
                   n = Ji();
                 return (
                   (e = t
-                    ? dt(e, function (e) {
+                    ? dt(e, function(e) {
                         if ('function' != typeof e[1]) throw new ge(a);
                         return [n(e[0]), e[1]];
                       })
                     : []),
-                  Fr(function (n) {
+                  Fr(function(n) {
                     for (var r = -1; ++r < t; ) {
                       var i = e[r];
                       if (at(i[0], this, n)) return at(i[1], this, n);
@@ -22887,17 +22940,17 @@ and limitations under the License.
                   })
                 );
               }),
-              (Cn.conforms = function (e) {
-                return (function (e) {
+              (Cn.conforms = function(e) {
+                return (function(e) {
                   var t = bs(e);
-                  return function (n) {
+                  return function(n) {
                     return Zn(n, e, t);
                   };
                 })(Jn(e, 1));
               }),
               (Cn.constant = qs),
               (Cn.countBy = ro),
-              (Cn.create = function (e, t) {
+              (Cn.create = function(e, t) {
                 var n = kn(e);
                 return null == t ? n : Yn(n, t);
               }),
@@ -22917,25 +22970,25 @@ and limitations under the License.
               (Cn.difference = Ca),
               (Cn.differenceBy = ka),
               (Cn.differenceWith = Ia),
-              (Cn.drop = function (e, t, n) {
+              (Cn.drop = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 return r ? Hr(e, (t = n || void 0 === t ? 1 : rs(t)) < 0 ? 0 : t, r) : [];
               }),
-              (Cn.dropRight = function (e, t, n) {
+              (Cn.dropRight = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 return r ? Hr(e, 0, (t = r - (t = n || void 0 === t ? 1 : rs(t))) < 0 ? 0 : t) : [];
               }),
-              (Cn.dropRightWhile = function (e, t) {
+              (Cn.dropRightWhile = function(e, t) {
                 return e && e.length ? ti(e, Ji(t, 3), !0, !0) : [];
               }),
-              (Cn.dropWhile = function (e, t) {
+              (Cn.dropWhile = function(e, t) {
                 return e && e.length ? ti(e, Ji(t, 3), !0) : [];
               }),
-              (Cn.fill = function (e, t, n, r) {
+              (Cn.fill = function(e, t, n, r) {
                 var i = null == e ? 0 : e.length;
                 return i
                   ? (n && 'number' != typeof n && sa(e, t, n) && ((n = 0), (r = i)),
-                    (function (e, t, n, r) {
+                    (function(e, t, n, r) {
                       var i = e.length;
                       for (
                         (n = rs(n)) < 0 && (n = -n > i ? 0 : i + n),
@@ -22949,45 +23002,45 @@ and limitations under the License.
                     })(e, t, n, r))
                   : [];
               }),
-              (Cn.filter = function (e, t) {
+              (Cn.filter = function(e, t) {
                 return (Po(e) ? lt : ir)(e, Ji(t, 3));
               }),
-              (Cn.flatMap = function (e, t) {
+              (Cn.flatMap = function(e, t) {
                 return ar(fo(e, t), 1);
               }),
-              (Cn.flatMapDeep = function (e, t) {
+              (Cn.flatMapDeep = function(e, t) {
                 return ar(fo(e, t), 1 / 0);
               }),
-              (Cn.flatMapDepth = function (e, t, n) {
+              (Cn.flatMapDepth = function(e, t, n) {
                 return (n = void 0 === n ? 1 : rs(n)), ar(fo(e, t), n);
               }),
               (Cn.flatten = Pa),
-              (Cn.flattenDeep = function (e) {
+              (Cn.flattenDeep = function(e) {
                 return (null == e ? 0 : e.length) ? ar(e, 1 / 0) : [];
               }),
-              (Cn.flattenDepth = function (e, t) {
+              (Cn.flattenDepth = function(e, t) {
                 return (null == e ? 0 : e.length) ? ar(e, (t = void 0 === t ? 1 : rs(t))) : [];
               }),
-              (Cn.flip = function (e) {
+              (Cn.flip = function(e) {
                 return Ui(e, 512);
               }),
               (Cn.flow = Ks),
               (Cn.flowRight = Hs),
-              (Cn.fromPairs = function (e) {
+              (Cn.fromPairs = function(e) {
                 for (var t = -1, n = null == e ? 0 : e.length, r = {}; ++t < n; ) {
                   var i = e[t];
                   r[i[0]] = i[1];
                 }
                 return r;
               }),
-              (Cn.functions = function (e) {
+              (Cn.functions = function(e) {
                 return null == e ? [] : lr(e, bs(e));
               }),
-              (Cn.functionsIn = function (e) {
+              (Cn.functionsIn = function(e) {
                 return null == e ? [] : lr(e, Es(e));
               }),
               (Cn.groupBy = uo),
-              (Cn.initial = function (e) {
+              (Cn.initial = function(e) {
                 return (null == e ? 0 : e.length) ? Hr(e, 0, -1) : [];
               }),
               (Cn.intersection = La),
@@ -23001,30 +23054,30 @@ and limitations under the License.
               (Cn.keys = bs),
               (Cn.keysIn = Es),
               (Cn.map = fo),
-              (Cn.mapKeys = function (e, t) {
+              (Cn.mapKeys = function(e, t) {
                 var n = {};
                 return (
                   (t = Ji(t, 3)),
-                  ur(e, function (e, r, i) {
+                  ur(e, function(e, r, i) {
                     zn(n, t(e, r, i), e);
                   }),
                   n
                 );
               }),
-              (Cn.mapValues = function (e, t) {
+              (Cn.mapValues = function(e, t) {
                 var n = {};
                 return (
                   (t = Ji(t, 3)),
-                  ur(e, function (e, r, i) {
+                  ur(e, function(e, r, i) {
                     zn(n, r, t(e, r, i));
                   }),
                   n
                 );
               }),
-              (Cn.matches = function (e) {
+              (Cn.matches = function(e) {
                 return Cr(Jn(e, 1));
               }),
-              (Cn.matchesProperty = function (e, t) {
+              (Cn.matchesProperty = function(e, t) {
                 return kr(e, Jn(t, 1));
               }),
               (Cn.memoize = So),
@@ -23034,22 +23087,22 @@ and limitations under the License.
               (Cn.methodOf = Ws),
               (Cn.mixin = Js),
               (Cn.negate = Ao),
-              (Cn.nthArg = function (e) {
+              (Cn.nthArg = function(e) {
                 return (
                   (e = rs(e)),
-                  Fr(function (t) {
+                  Fr(function(t) {
                     return Nr(t, e);
                   })
                 );
               }),
               (Cn.omit = As),
-              (Cn.omitBy = function (e, t) {
+              (Cn.omitBy = function(e, t) {
                 return Rs(e, Ao(Ji(t)));
               }),
-              (Cn.once = function (e) {
+              (Cn.once = function(e) {
                 return mo(2, e);
               }),
-              (Cn.orderBy = function (e, t, n, r) {
+              (Cn.orderBy = function(e, t, n, r) {
                 return null == e
                   ? []
                   : (Po(t) || (t = null == t ? [] : [t]),
@@ -23066,27 +23119,27 @@ and limitations under the License.
               (Cn.pick = Os),
               (Cn.pickBy = Rs),
               (Cn.property = tu),
-              (Cn.propertyOf = function (e) {
-                return function (t) {
+              (Cn.propertyOf = function(e) {
+                return function(t) {
                   return null == e ? void 0 : fr(e, t);
                 };
               }),
               (Cn.pull = Ua),
               (Cn.pullAll = Ba),
-              (Cn.pullAllBy = function (e, t, n) {
+              (Cn.pullAllBy = function(e, t, n) {
                 return e && e.length && t && t.length ? jr(e, t, Ji(n, 2)) : e;
               }),
-              (Cn.pullAllWith = function (e, t, n) {
+              (Cn.pullAllWith = function(e, t, n) {
                 return e && e.length && t && t.length ? jr(e, t, void 0, n) : e;
               }),
               (Cn.pullAt = Va),
               (Cn.range = nu),
               (Cn.rangeRight = ru),
               (Cn.rearg = Co),
-              (Cn.reject = function (e, t) {
+              (Cn.reject = function(e, t) {
                 return (Po(e) ? lt : ir)(e, Ao(Ji(t, 3)));
               }),
-              (Cn.remove = function (e, t) {
+              (Cn.remove = function(e, t) {
                 var n = [];
                 if (!e || !e.length) return n;
                 var r = -1,
@@ -23098,24 +23151,24 @@ and limitations under the License.
                 }
                 return Lr(e, i), n;
               }),
-              (Cn.rest = function (e, t) {
+              (Cn.rest = function(e, t) {
                 if ('function' != typeof e) throw new ge(a);
                 return Fr(e, (t = void 0 === t ? t : rs(t)));
               }),
               (Cn.reverse = $a),
-              (Cn.sampleSize = function (e, t, n) {
+              (Cn.sampleSize = function(e, t, n) {
                 return (t = (n ? sa(e, t, n) : void 0 === t) ? 1 : rs(t)), (Po(e) ? Bn : Br)(e, t);
               }),
-              (Cn.set = function (e, t, n) {
+              (Cn.set = function(e, t, n) {
                 return null == e ? e : Vr(e, t, n);
               }),
-              (Cn.setWith = function (e, t, n, r) {
+              (Cn.setWith = function(e, t, n, r) {
                 return (r = 'function' == typeof r ? r : void 0), null == e ? e : Vr(e, t, n, r);
               }),
-              (Cn.shuffle = function (e) {
+              (Cn.shuffle = function(e) {
                 return (Po(e) ? Vn : Kr)(e);
               }),
-              (Cn.slice = function (e, t, n) {
+              (Cn.slice = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 return r
                   ? (n && 'number' != typeof n && sa(e, t, n)
@@ -23125,13 +23178,13 @@ and limitations under the License.
                   : [];
               }),
               (Cn.sortBy = po),
-              (Cn.sortedUniq = function (e) {
+              (Cn.sortedUniq = function(e) {
                 return e && e.length ? Wr(e) : [];
               }),
-              (Cn.sortedUniqBy = function (e, t) {
+              (Cn.sortedUniqBy = function(e, t) {
                 return e && e.length ? Wr(e, Ji(t, 2)) : [];
               }),
-              (Cn.split = function (e, t, n) {
+              (Cn.split = function(e, t, n) {
                 return (
                   n && 'number' != typeof n && sa(e, t, n) && (t = n = void 0),
                   (n = void 0 === n ? 4294967295 : n >>> 0)
@@ -23141,38 +23194,38 @@ and limitations under the License.
                     : []
                 );
               }),
-              (Cn.spread = function (e, t) {
+              (Cn.spread = function(e, t) {
                 if ('function' != typeof e) throw new ge(a);
                 return (
                   (t = null == t ? 0 : on(rs(t), 0)),
-                  Fr(function (n) {
+                  Fr(function(n) {
                     var r = n[t],
                       i = ci(n, 0, t);
                     return r && pt(i, r), at(e, this, i);
                   })
                 );
               }),
-              (Cn.tail = function (e) {
+              (Cn.tail = function(e) {
                 var t = null == e ? 0 : e.length;
                 return t ? Hr(e, 1, t) : [];
               }),
-              (Cn.take = function (e, t, n) {
+              (Cn.take = function(e, t, n) {
                 return e && e.length ? Hr(e, 0, (t = n || void 0 === t ? 1 : rs(t)) < 0 ? 0 : t) : [];
               }),
-              (Cn.takeRight = function (e, t, n) {
+              (Cn.takeRight = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 return r ? Hr(e, (t = r - (t = n || void 0 === t ? 1 : rs(t))) < 0 ? 0 : t, r) : [];
               }),
-              (Cn.takeRightWhile = function (e, t) {
+              (Cn.takeRightWhile = function(e, t) {
                 return e && e.length ? ti(e, Ji(t, 3), !1, !0) : [];
               }),
-              (Cn.takeWhile = function (e, t) {
+              (Cn.takeWhile = function(e, t) {
                 return e && e.length ? ti(e, Ji(t, 3)) : [];
               }),
-              (Cn.tap = function (e, t) {
+              (Cn.tap = function(e, t) {
                 return t(e), e;
               }),
-              (Cn.throttle = function (e, t, n) {
+              (Cn.throttle = function(e, t, n) {
                 var r = !0,
                   i = !0;
                 if ('function' != typeof e) throw new ge(a);
@@ -23185,11 +23238,11 @@ and limitations under the License.
               (Cn.toArray = ts),
               (Cn.toPairs = Ts),
               (Cn.toPairsIn = Cs),
-              (Cn.toPath = function (e) {
+              (Cn.toPath = function(e) {
                 return Po(e) ? dt(e, Oa) : Zo(e) ? [e] : mi(Aa(ss(e)));
               }),
               (Cn.toPlainObject = os),
-              (Cn.transform = function (e, t, n) {
+              (Cn.transform = function(e, t, n) {
                 var r = Po(e),
                   i = r || Mo(e) || Xo(e);
                 if (((t = Ji(t, 4)), null == n)) {
@@ -23197,55 +23250,55 @@ and limitations under the License.
                   n = i ? (r ? new a() : []) : qo(e) && Bo(a) ? kn(He(e)) : {};
                 }
                 return (
-                  (i ? st : ur)(e, function (e, r, i) {
+                  (i ? st : ur)(e, function(e, r, i) {
                     return t(n, e, r, i);
                   }),
                   n
                 );
               }),
-              (Cn.unary = function (e) {
+              (Cn.unary = function(e) {
                 return yo(e, 1);
               }),
               (Cn.union = qa),
               (Cn.unionBy = Ka),
               (Cn.unionWith = Ha),
-              (Cn.uniq = function (e) {
+              (Cn.uniq = function(e) {
                 return e && e.length ? Xr(e) : [];
               }),
-              (Cn.uniqBy = function (e, t) {
+              (Cn.uniqBy = function(e, t) {
                 return e && e.length ? Xr(e, Ji(t, 2)) : [];
               }),
-              (Cn.uniqWith = function (e, t) {
+              (Cn.uniqWith = function(e, t) {
                 return (t = 'function' == typeof t ? t : void 0), e && e.length ? Xr(e, void 0, t) : [];
               }),
-              (Cn.unset = function (e, t) {
+              (Cn.unset = function(e, t) {
                 return null == e || Qr(e, t);
               }),
               (Cn.unzip = Ya),
               (Cn.unzipWith = za),
-              (Cn.update = function (e, t, n) {
+              (Cn.update = function(e, t, n) {
                 return null == e ? e : ei(e, t, oi(n));
               }),
-              (Cn.updateWith = function (e, t, n, r) {
+              (Cn.updateWith = function(e, t, n, r) {
                 return (r = 'function' == typeof r ? r : void 0), null == e ? e : ei(e, t, oi(n), r);
               }),
               (Cn.values = ks),
-              (Cn.valuesIn = function (e) {
+              (Cn.valuesIn = function(e) {
                 return null == e ? [] : Nt(e, Es(e));
               }),
               (Cn.without = Ga),
               (Cn.words = Bs),
-              (Cn.wrap = function (e, t) {
+              (Cn.wrap = function(e, t) {
                 return Ro(oi(t), e);
               }),
               (Cn.xor = Wa),
               (Cn.xorBy = Ja),
               (Cn.xorWith = Za),
               (Cn.zip = Xa),
-              (Cn.zipObject = function (e, t) {
+              (Cn.zipObject = function(e, t) {
                 return ii(e || [], t || [], qn);
               }),
-              (Cn.zipObjectDeep = function (e, t) {
+              (Cn.zipObjectDeep = function(e, t) {
                 return ii(e || [], t || [], Vr);
               }),
               (Cn.zipWith = Qa),
@@ -23259,7 +23312,7 @@ and limitations under the License.
               (Cn.camelCase = Is),
               (Cn.capitalize = Ns),
               (Cn.ceil = su),
-              (Cn.clamp = function (e, t, n) {
+              (Cn.clamp = function(e, t, n) {
                 return (
                   void 0 === n && ((n = t), (t = void 0)),
                   void 0 !== n && (n = (n = as(n)) == n ? n : 0),
@@ -23267,93 +23320,93 @@ and limitations under the License.
                   Wn(as(e), t, n)
                 );
               }),
-              (Cn.clone = function (e) {
+              (Cn.clone = function(e) {
                 return Jn(e, 4);
               }),
-              (Cn.cloneDeep = function (e) {
+              (Cn.cloneDeep = function(e) {
                 return Jn(e, 5);
               }),
-              (Cn.cloneDeepWith = function (e, t) {
+              (Cn.cloneDeepWith = function(e, t) {
                 return Jn(e, 5, (t = 'function' == typeof t ? t : void 0));
               }),
-              (Cn.cloneWith = function (e, t) {
+              (Cn.cloneWith = function(e, t) {
                 return Jn(e, 4, (t = 'function' == typeof t ? t : void 0));
               }),
-              (Cn.conformsTo = function (e, t) {
+              (Cn.conformsTo = function(e, t) {
                 return null == t || Zn(e, t, bs(t));
               }),
               (Cn.deburr = xs),
-              (Cn.defaultTo = function (e, t) {
+              (Cn.defaultTo = function(e, t) {
                 return null == e || e != e ? t : e;
               }),
               (Cn.divide = uu),
-              (Cn.endsWith = function (e, t, n) {
+              (Cn.endsWith = function(e, t, n) {
                 (e = ss(e)), (t = Zr(t));
                 var r = e.length,
                   i = (n = void 0 === n ? r : Wn(rs(n), 0, r));
                 return (n -= t.length) >= 0 && e.slice(n, i) == t;
               }),
               (Cn.eq = ko),
-              (Cn.escape = function (e) {
+              (Cn.escape = function(e) {
                 return (e = ss(e)) && U.test(e) ? e.replace(M, Mt) : e;
               }),
-              (Cn.escapeRegExp = function (e) {
+              (Cn.escapeRegExp = function(e) {
                 return (e = ss(e)) && z.test(e) ? e.replace(Y, '\\$&') : e;
               }),
-              (Cn.every = function (e, t, n) {
+              (Cn.every = function(e, t, n) {
                 var r = Po(e) ? ct : nr;
                 return n && sa(e, t, n) && (t = void 0), r(e, Ji(t, 3));
               }),
               (Cn.find = io),
               (Cn.findIndex = Na),
-              (Cn.findKey = function (e, t) {
+              (Cn.findKey = function(e, t) {
                 return _t(e, Ji(t, 3), ur);
               }),
               (Cn.findLast = ao),
               (Cn.findLastIndex = xa),
-              (Cn.findLastKey = function (e, t) {
+              (Cn.findLastKey = function(e, t) {
                 return _t(e, Ji(t, 3), cr);
               }),
               (Cn.floor = cu),
               (Cn.forEach = oo),
               (Cn.forEachRight = so),
-              (Cn.forIn = function (e, t) {
+              (Cn.forIn = function(e, t) {
                 return null == e ? e : or(e, Ji(t, 3), Es);
               }),
-              (Cn.forInRight = function (e, t) {
+              (Cn.forInRight = function(e, t) {
                 return null == e ? e : sr(e, Ji(t, 3), Es);
               }),
-              (Cn.forOwn = function (e, t) {
+              (Cn.forOwn = function(e, t) {
                 return e && ur(e, Ji(t, 3));
               }),
-              (Cn.forOwnRight = function (e, t) {
+              (Cn.forOwnRight = function(e, t) {
                 return e && cr(e, Ji(t, 3));
               }),
               (Cn.get = vs),
               (Cn.gt = Io),
               (Cn.gte = No),
-              (Cn.has = function (e, t) {
+              (Cn.has = function(e, t) {
                 return null != e && ra(e, t, vr);
               }),
               (Cn.hasIn = ys),
               (Cn.head = ja),
               (Cn.identity = Ys),
-              (Cn.includes = function (e, t, n, r) {
+              (Cn.includes = function(e, t, n, r) {
                 (e = Lo(e) ? e : ks(e)), (n = n && !r ? rs(n) : 0);
                 var i = e.length;
                 return n < 0 && (n = on(i + n, 0)), Jo(e) ? n <= i && e.indexOf(t, n) > -1 : !!i && Et(e, t, n) > -1;
               }),
-              (Cn.indexOf = function (e, t, n) {
+              (Cn.indexOf = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 if (!r) return -1;
                 var i = null == n ? 0 : rs(n);
                 return i < 0 && (i = on(r + i, 0)), Et(e, t, i);
               }),
-              (Cn.inRange = function (e, t, n) {
+              (Cn.inRange = function(e, t, n) {
                 return (
                   (t = ns(t)),
                   void 0 === n ? ((n = t), (t = 0)) : (n = ns(n)),
-                  (function (e, t, n) {
+                  (function(e, t, n) {
                     return e >= sn(t, n) && e < on(t, n);
                   })((e = as(e)), t, n)
                 );
@@ -23364,15 +23417,15 @@ and limitations under the License.
               (Cn.isArrayBuffer = jo),
               (Cn.isArrayLike = Lo),
               (Cn.isArrayLikeObject = Do),
-              (Cn.isBoolean = function (e) {
+              (Cn.isBoolean = function(e) {
                 return !0 === e || !1 === e || (Ko(e) && dr(e) == l);
               }),
               (Cn.isBuffer = Mo),
               (Cn.isDate = Fo),
-              (Cn.isElement = function (e) {
+              (Cn.isElement = function(e) {
                 return Ko(e) && 1 === e.nodeType && !zo(e);
               }),
-              (Cn.isEmpty = function (e) {
+              (Cn.isEmpty = function(e) {
                 if (null == e) return !0;
                 if (
                   Lo(e) &&
@@ -23385,38 +23438,38 @@ and limitations under the License.
                 for (var n in e) if (Ae.call(e, n)) return !1;
                 return !0;
               }),
-              (Cn.isEqual = function (e, t) {
+              (Cn.isEqual = function(e, t) {
                 return br(e, t);
               }),
-              (Cn.isEqualWith = function (e, t, n) {
+              (Cn.isEqualWith = function(e, t, n) {
                 var r = (n = 'function' == typeof n ? n : void 0) ? n(e, t) : void 0;
                 return void 0 === r ? br(e, t, void 0, n) : !!r;
               }),
               (Cn.isError = Uo),
-              (Cn.isFinite = function (e) {
+              (Cn.isFinite = function(e) {
                 return 'number' == typeof e && nn(e);
               }),
               (Cn.isFunction = Bo),
               (Cn.isInteger = Vo),
               (Cn.isLength = $o),
               (Cn.isMap = Ho),
-              (Cn.isMatch = function (e, t) {
+              (Cn.isMatch = function(e, t) {
                 return e === t || Er(e, t, Xi(t));
               }),
-              (Cn.isMatchWith = function (e, t, n) {
+              (Cn.isMatchWith = function(e, t, n) {
                 return (n = 'function' == typeof n ? n : void 0), Er(e, t, Xi(t), n);
               }),
-              (Cn.isNaN = function (e) {
+              (Cn.isNaN = function(e) {
                 return Yo(e) && e != +e;
               }),
-              (Cn.isNative = function (e) {
+              (Cn.isNative = function(e) {
                 if (la(e)) throw new he('Unsupported core-js use. Try https://npms.io/search?q=ponyfill.');
                 return wr(e);
               }),
-              (Cn.isNil = function (e) {
+              (Cn.isNil = function(e) {
                 return null == e;
               }),
-              (Cn.isNull = function (e) {
+              (Cn.isNull = function(e) {
                 return null === e;
               }),
               (Cn.isNumber = Yo),
@@ -23424,35 +23477,35 @@ and limitations under the License.
               (Cn.isObjectLike = Ko),
               (Cn.isPlainObject = zo),
               (Cn.isRegExp = Go),
-              (Cn.isSafeInteger = function (e) {
+              (Cn.isSafeInteger = function(e) {
                 return Vo(e) && e >= -9007199254740991 && e <= 9007199254740991;
               }),
               (Cn.isSet = Wo),
               (Cn.isString = Jo),
               (Cn.isSymbol = Zo),
               (Cn.isTypedArray = Xo),
-              (Cn.isUndefined = function (e) {
+              (Cn.isUndefined = function(e) {
                 return void 0 === e;
               }),
-              (Cn.isWeakMap = function (e) {
+              (Cn.isWeakMap = function(e) {
                 return Ko(e) && na(e) == w;
               }),
-              (Cn.isWeakSet = function (e) {
+              (Cn.isWeakSet = function(e) {
                 return Ko(e) && '[object WeakSet]' == dr(e);
               }),
-              (Cn.join = function (e, t) {
+              (Cn.join = function(e, t) {
                 return null == e ? '' : rn.call(e, t);
               }),
               (Cn.kebabCase = Ps),
               (Cn.last = Fa),
-              (Cn.lastIndexOf = function (e, t, n) {
+              (Cn.lastIndexOf = function(e, t, n) {
                 var r = null == e ? 0 : e.length;
                 if (!r) return -1;
                 var i = r;
                 return (
                   void 0 !== n && (i = (i = rs(n)) < 0 ? on(r + i, 0) : sn(i, r - 1)),
                   t == t
-                    ? (function (e, t, n) {
+                    ? (function(e, t, n) {
                         for (var r = n + 1; r--; ) if (e[r] === t) return r;
                         return r;
                       })(e, t, i)
@@ -23463,65 +23516,65 @@ and limitations under the License.
               (Cn.lowerFirst = Ls),
               (Cn.lt = Qo),
               (Cn.lte = es),
-              (Cn.max = function (e) {
+              (Cn.max = function(e) {
                 return e && e.length ? rr(e, Ys, pr) : void 0;
               }),
-              (Cn.maxBy = function (e, t) {
+              (Cn.maxBy = function(e, t) {
                 return e && e.length ? rr(e, Ji(t, 2), pr) : void 0;
               }),
-              (Cn.mean = function (e) {
+              (Cn.mean = function(e) {
                 return At(e, Ys);
               }),
-              (Cn.meanBy = function (e, t) {
+              (Cn.meanBy = function(e, t) {
                 return At(e, Ji(t, 2));
               }),
-              (Cn.min = function (e) {
+              (Cn.min = function(e) {
                 return e && e.length ? rr(e, Ys, Rr) : void 0;
               }),
-              (Cn.minBy = function (e, t) {
+              (Cn.minBy = function(e, t) {
                 return e && e.length ? rr(e, Ji(t, 2), Rr) : void 0;
               }),
               (Cn.stubArray = iu),
               (Cn.stubFalse = au),
-              (Cn.stubObject = function () {
+              (Cn.stubObject = function() {
                 return {};
               }),
-              (Cn.stubString = function () {
+              (Cn.stubString = function() {
                 return '';
               }),
-              (Cn.stubTrue = function () {
+              (Cn.stubTrue = function() {
                 return !0;
               }),
               (Cn.multiply = fu),
-              (Cn.nth = function (e, t) {
+              (Cn.nth = function(e, t) {
                 return e && e.length ? Nr(e, rs(t)) : void 0;
               }),
-              (Cn.noConflict = function () {
+              (Cn.noConflict = function() {
                 return ze._ === this && (ze._ = ke), this;
               }),
               (Cn.noop = Zs),
               (Cn.now = vo),
-              (Cn.pad = function (e, t, n) {
+              (Cn.pad = function(e, t, n) {
                 e = ss(e);
                 var r = (t = rs(t)) ? Ht(e) : 0;
                 if (!t || r >= t) return e;
                 var i = (t - r) / 2;
                 return xi(Qt(i), n) + e + xi(Xt(i), n);
               }),
-              (Cn.padEnd = function (e, t, n) {
+              (Cn.padEnd = function(e, t, n) {
                 e = ss(e);
                 var r = (t = rs(t)) ? Ht(e) : 0;
                 return t && r < t ? e + xi(t - r, n) : e;
               }),
-              (Cn.padStart = function (e, t, n) {
+              (Cn.padStart = function(e, t, n) {
                 e = ss(e);
                 var r = (t = rs(t)) ? Ht(e) : 0;
                 return t && r < t ? xi(t - r, n) + e : e;
               }),
-              (Cn.parseInt = function (e, t, n) {
+              (Cn.parseInt = function(e, t, n) {
                 return n || null == t ? (t = 0) : t && (t = +t), cn(ss(e).replace(W, ''), t || 0);
               }),
-              (Cn.random = function (e, t, n) {
+              (Cn.random = function(e, t, n) {
                 if (
                   (n && 'boolean' != typeof n && sa(e, t, n) && (t = n = void 0),
                   void 0 === n &&
@@ -23542,25 +23595,25 @@ and limitations under the License.
                 }
                 return Dr(e, t);
               }),
-              (Cn.reduce = function (e, t, n) {
+              (Cn.reduce = function(e, t, n) {
                 var r = Po(e) ? vt : Tt,
                   i = arguments.length < 3;
                 return r(e, Ji(t, 4), n, i, er);
               }),
-              (Cn.reduceRight = function (e, t, n) {
+              (Cn.reduceRight = function(e, t, n) {
                 var r = Po(e) ? yt : Tt,
                   i = arguments.length < 3;
                 return r(e, Ji(t, 4), n, i, tr);
               }),
-              (Cn.repeat = function (e, t, n) {
+              (Cn.repeat = function(e, t, n) {
                 return (t = (n ? sa(e, t, n) : void 0 === t) ? 1 : rs(t)), Mr(ss(e), t);
               }),
-              (Cn.replace = function () {
+              (Cn.replace = function() {
                 var e = arguments,
                   t = ss(e[0]);
                 return e.length < 3 ? t : t.replace(e[1], e[2]);
               }),
-              (Cn.result = function (e, t, n) {
+              (Cn.result = function(e, t, n) {
                 var r = -1,
                   i = (t = si(t, e)).length;
                 for (i || ((i = 1), (e = void 0)); ++r < i; ) {
@@ -23571,27 +23624,27 @@ and limitations under the License.
               }),
               (Cn.round = hu),
               (Cn.runInContext = e),
-              (Cn.sample = function (e) {
+              (Cn.sample = function(e) {
                 return (Po(e) ? Un : Ur)(e);
               }),
-              (Cn.size = function (e) {
+              (Cn.size = function(e) {
                 if (null == e) return 0;
                 if (Lo(e)) return Jo(e) ? Ht(e) : e.length;
                 var t = na(e);
                 return t == v || t == _ ? e.size : Ar(e).length;
               }),
               (Cn.snakeCase = Ds),
-              (Cn.some = function (e, t, n) {
+              (Cn.some = function(e, t, n) {
                 var r = Po(e) ? mt : Yr;
                 return n && sa(e, t, n) && (t = void 0), r(e, Ji(t, 3));
               }),
-              (Cn.sortedIndex = function (e, t) {
+              (Cn.sortedIndex = function(e, t) {
                 return zr(e, t);
               }),
-              (Cn.sortedIndexBy = function (e, t, n) {
+              (Cn.sortedIndexBy = function(e, t, n) {
                 return Gr(e, t, Ji(n, 2));
               }),
-              (Cn.sortedIndexOf = function (e, t) {
+              (Cn.sortedIndexOf = function(e, t) {
                 var n = null == e ? 0 : e.length;
                 if (n) {
                   var r = zr(e, t);
@@ -23599,13 +23652,13 @@ and limitations under the License.
                 }
                 return -1;
               }),
-              (Cn.sortedLastIndex = function (e, t) {
+              (Cn.sortedLastIndex = function(e, t) {
                 return zr(e, t, !0);
               }),
-              (Cn.sortedLastIndexBy = function (e, t, n) {
+              (Cn.sortedLastIndexBy = function(e, t, n) {
                 return Gr(e, t, Ji(n, 2), !0);
               }),
-              (Cn.sortedLastIndexOf = function (e, t) {
+              (Cn.sortedLastIndexOf = function(e, t) {
                 if (null == e ? 0 : e.length) {
                   var n = zr(e, t, !0) - 1;
                   if (ko(e[n], t)) return n;
@@ -23613,19 +23666,19 @@ and limitations under the License.
                 return -1;
               }),
               (Cn.startCase = Ms),
-              (Cn.startsWith = function (e, t, n) {
+              (Cn.startsWith = function(e, t, n) {
                 return (
                   (e = ss(e)), (n = null == n ? 0 : Wn(rs(n), 0, e.length)), (t = Zr(t)), e.slice(n, n + t.length) == t
                 );
               }),
               (Cn.subtract = du),
-              (Cn.sum = function (e) {
+              (Cn.sum = function(e) {
                 return e && e.length ? Ct(e, Ys) : 0;
               }),
-              (Cn.sumBy = function (e, t) {
+              (Cn.sumBy = function(e, t) {
                 return e && e.length ? Ct(e, Ji(t, 2)) : 0;
               }),
-              (Cn.template = function (e, t, n) {
+              (Cn.template = function(e, t, n) {
                 var r = Cn.templateSettings;
                 n && sa(e, t, n) && (t = void 0), (e = ss(e)), (t = ls({}, t, r, Bi));
                 var i,
@@ -23653,7 +23706,7 @@ and limitations under the License.
                       ? (t.sourceURL + '').replace(/[\r\n]/g, ' ')
                       : 'lodash.templateSources[' + ++Ue + ']') +
                     '\n';
-                e.replace(h, function (t, n, r, o, s, u) {
+                e.replace(h, function(t, n, r, o, s, u) {
                   return (
                     r || (r = o),
                     (f += e.slice(c, u).replace(fe, Ft)),
@@ -23680,13 +23733,13 @@ and limitations under the License.
                       : ';\n') +
                     f +
                     'return __p\n}');
-                var v = Vs(function () {
+                var v = Vs(function() {
                   return de(s, d + 'return ' + f).apply(void 0, u);
                 });
                 if (((v.source = f), Uo(v))) throw v;
                 return v;
               }),
-              (Cn.times = function (e, t) {
+              (Cn.times = function(e, t) {
                 if ((e = rs(e)) < 1 || e > 9007199254740991) return [];
                 var n = 4294967295,
                   r = sn(e, 4294967295);
@@ -23697,37 +23750,37 @@ and limitations under the License.
               (Cn.toFinite = ns),
               (Cn.toInteger = rs),
               (Cn.toLength = is),
-              (Cn.toLower = function (e) {
+              (Cn.toLower = function(e) {
                 return ss(e).toLowerCase();
               }),
               (Cn.toNumber = as),
-              (Cn.toSafeInteger = function (e) {
+              (Cn.toSafeInteger = function(e) {
                 return e ? Wn(rs(e), -9007199254740991, 9007199254740991) : 0 === e ? e : 0;
               }),
               (Cn.toString = ss),
-              (Cn.toUpper = function (e) {
+              (Cn.toUpper = function(e) {
                 return ss(e).toUpperCase();
               }),
-              (Cn.trim = function (e, t, n) {
+              (Cn.trim = function(e, t, n) {
                 if ((e = ss(e)) && (n || void 0 === t)) return e.replace(G, '');
                 if (!e || !(t = Zr(t))) return e;
                 var r = Yt(e),
                   i = Yt(t);
                 return ci(r, Pt(r, i), jt(r, i) + 1).join('');
               }),
-              (Cn.trimEnd = function (e, t, n) {
+              (Cn.trimEnd = function(e, t, n) {
                 if ((e = ss(e)) && (n || void 0 === t)) return e.replace(J, '');
                 if (!e || !(t = Zr(t))) return e;
                 var r = Yt(e);
                 return ci(r, 0, jt(r, Yt(t)) + 1).join('');
               }),
-              (Cn.trimStart = function (e, t, n) {
+              (Cn.trimStart = function(e, t, n) {
                 if ((e = ss(e)) && (n || void 0 === t)) return e.replace(W, '');
                 if (!e || !(t = Zr(t))) return e;
                 var r = Yt(e);
                 return ci(r, Pt(r, Yt(t))).join('');
               }),
-              (Cn.truncate = function (e, t) {
+              (Cn.truncate = function(e, t) {
                 var n = 30,
                   r = '...';
                 if (qo(t)) {
@@ -23758,10 +23811,10 @@ and limitations under the License.
                 }
                 return u + r;
               }),
-              (Cn.unescape = function (e) {
+              (Cn.unescape = function(e) {
                 return (e = ss(e)) && F.test(e) ? e.replace(D, zt) : e;
               }),
-              (Cn.uniqueId = function (e) {
+              (Cn.uniqueId = function(e) {
                 var t = ++Oe;
                 return ss(e) + t;
               }),
@@ -23773,18 +23826,18 @@ and limitations under the License.
               Js(
                 Cn,
                 ((lu = {}),
-                ur(Cn, function (e, t) {
+                ur(Cn, function(e, t) {
                   Ae.call(Cn.prototype, t) || (lu[t] = e);
                 }),
                 lu),
                 { chain: !1 }
               ),
               (Cn.VERSION = '4.17.15'),
-              st(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function (e) {
+              st(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(e) {
                 Cn[e].placeholder = Cn;
               }),
-              st(['drop', 'take'], function (e, t) {
-                (xn.prototype[e] = function (n) {
+              st(['drop', 'take'], function(e, t) {
+                (xn.prototype[e] = function(n) {
                   n = void 0 === n ? 1 : on(rs(n), 0);
                   var r = this.__filtered__ && !t ? new xn(this) : this.clone();
                   return (
@@ -23794,52 +23847,54 @@ and limitations under the License.
                     r
                   );
                 }),
-                  (xn.prototype[e + 'Right'] = function (t) {
-                    return this.reverse()[e](t).reverse();
+                  (xn.prototype[e + 'Right'] = function(t) {
+                    return this.reverse()
+                      [e](t)
+                      .reverse();
                   });
               }),
-              st(['filter', 'map', 'takeWhile'], function (e, t) {
+              st(['filter', 'map', 'takeWhile'], function(e, t) {
                 var n = t + 1,
                   r = 1 == n || 3 == n;
-                xn.prototype[e] = function (e) {
+                xn.prototype[e] = function(e) {
                   var t = this.clone();
                   return (
                     t.__iteratees__.push({ iteratee: Ji(e, 3), type: n }), (t.__filtered__ = t.__filtered__ || r), t
                   );
                 };
               }),
-              st(['head', 'last'], function (e, t) {
+              st(['head', 'last'], function(e, t) {
                 var n = 'take' + (t ? 'Right' : '');
-                xn.prototype[e] = function () {
+                xn.prototype[e] = function() {
                   return this[n](1).value()[0];
                 };
               }),
-              st(['initial', 'tail'], function (e, t) {
+              st(['initial', 'tail'], function(e, t) {
                 var n = 'drop' + (t ? '' : 'Right');
-                xn.prototype[e] = function () {
+                xn.prototype[e] = function() {
                   return this.__filtered__ ? new xn(this) : this[n](1);
                 };
               }),
-              (xn.prototype.compact = function () {
+              (xn.prototype.compact = function() {
                 return this.filter(Ys);
               }),
-              (xn.prototype.find = function (e) {
+              (xn.prototype.find = function(e) {
                 return this.filter(e).head();
               }),
-              (xn.prototype.findLast = function (e) {
+              (xn.prototype.findLast = function(e) {
                 return this.reverse().find(e);
               }),
-              (xn.prototype.invokeMap = Fr(function (e, t) {
+              (xn.prototype.invokeMap = Fr(function(e, t) {
                 return 'function' == typeof e
                   ? new xn(this)
-                  : this.map(function (n) {
+                  : this.map(function(n) {
                       return gr(n, e, t);
                     });
               })),
-              (xn.prototype.reject = function (e) {
+              (xn.prototype.reject = function(e) {
                 return this.filter(Ao(Ji(e)));
               }),
-              (xn.prototype.slice = function (e, t) {
+              (xn.prototype.slice = function(e, t) {
                 e = rs(e);
                 var n = this;
                 return n.__filtered__ && (e > 0 || t < 0)
@@ -23848,25 +23903,27 @@ and limitations under the License.
                     void 0 !== t && (n = (t = rs(t)) < 0 ? n.dropRight(-t) : n.take(t - e)),
                     n);
               }),
-              (xn.prototype.takeRightWhile = function (e) {
-                return this.reverse().takeWhile(e).reverse();
+              (xn.prototype.takeRightWhile = function(e) {
+                return this.reverse()
+                  .takeWhile(e)
+                  .reverse();
               }),
-              (xn.prototype.toArray = function () {
+              (xn.prototype.toArray = function() {
                 return this.take(4294967295);
               }),
-              ur(xn.prototype, function (e, t) {
+              ur(xn.prototype, function(e, t) {
                 var n = /^(?:filter|find|map|reject)|While$/.test(t),
                   r = /^(?:head|last)$/.test(t),
                   i = Cn[r ? 'take' + ('last' == t ? 'Right' : '') : t],
                   a = r || /^find/.test(t);
                 i &&
-                  (Cn.prototype[t] = function () {
+                  (Cn.prototype[t] = function() {
                     var t = this.__wrapped__,
                       o = r ? [1] : arguments,
                       s = t instanceof xn,
                       u = o[0],
                       c = s || Po(t),
-                      l = function (e) {
+                      l = function(e) {
                         var t = i.apply(Cn, pt([e], o));
                         return r && f ? t[0] : t;
                       };
@@ -23883,22 +23940,22 @@ and limitations under the License.
                     return d && p ? e.apply(this, o) : ((v = this.thru(l)), d ? (r ? v.value()[0] : v.value()) : v);
                   });
               }),
-              st(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function (e) {
+              st(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(e) {
                 var t = _e[e],
                   n = /^(?:push|sort|unshift)$/.test(e) ? 'tap' : 'thru',
                   r = /^(?:pop|shift)$/.test(e);
-                Cn.prototype[e] = function () {
+                Cn.prototype[e] = function() {
                   var e = arguments;
                   if (r && !this.__chain__) {
                     var i = this.value();
                     return t.apply(Po(i) ? i : [], e);
                   }
-                  return this[n](function (n) {
+                  return this[n](function(n) {
                     return t.apply(Po(n) ? n : [], e);
                   });
                 };
               }),
-              ur(xn.prototype, function (e, t) {
+              ur(xn.prototype, function(e, t) {
                 var n = Cn[t];
                 if (n) {
                   var r = n.name + '';
@@ -23906,7 +23963,7 @@ and limitations under the License.
                 }
               }),
               (_n[Ci(void 0, 2).name] = [{ name: 'wrapper', func: void 0 }]),
-              (xn.prototype.clone = function () {
+              (xn.prototype.clone = function() {
                 var e = new xn(this.__wrapped__);
                 return (
                   (e.__actions__ = mi(this.__actions__)),
@@ -23918,20 +23975,20 @@ and limitations under the License.
                   e
                 );
               }),
-              (xn.prototype.reverse = function () {
+              (xn.prototype.reverse = function() {
                 if (this.__filtered__) {
                   var e = new xn(this);
                   (e.__dir__ = -1), (e.__filtered__ = !0);
                 } else (e = this.clone()).__dir__ *= -1;
                 return e;
               }),
-              (xn.prototype.value = function () {
+              (xn.prototype.value = function() {
                 var e = this.__wrapped__.value(),
                   t = this.__dir__,
                   n = Po(e),
                   r = t < 0,
                   i = n ? e.length : 0,
-                  a = (function (e, t, n) {
+                  a = (function(e, t, n) {
                     var r = -1,
                       i = n.length;
                     for (; ++r < i; ) {
@@ -23980,18 +24037,18 @@ and limitations under the License.
                 return p;
               }),
               (Cn.prototype.at = no),
-              (Cn.prototype.chain = function () {
+              (Cn.prototype.chain = function() {
                 return eo(this);
               }),
-              (Cn.prototype.commit = function () {
+              (Cn.prototype.commit = function() {
                 return new Nn(this.value(), this.__chain__);
               }),
-              (Cn.prototype.next = function () {
+              (Cn.prototype.next = function() {
                 void 0 === this.__values__ && (this.__values__ = ts(this.value()));
                 var e = this.__index__ >= this.__values__.length;
                 return { done: e, value: e ? void 0 : this.__values__[this.__index__++] };
               }),
-              (Cn.prototype.plant = function (e) {
+              (Cn.prototype.plant = function(e) {
                 for (var t, n = this; n instanceof In; ) {
                   var r = Ta(n);
                   (r.__index__ = 0), (r.__values__ = void 0), t ? (i.__wrapped__ = r) : (t = r);
@@ -24000,7 +24057,7 @@ and limitations under the License.
                 }
                 return (i.__wrapped__ = e), t;
               }),
-              (Cn.prototype.reverse = function () {
+              (Cn.prototype.reverse = function() {
                 var e = this.__wrapped__;
                 if (e instanceof xn) {
                   var t = e;
@@ -24012,12 +24069,12 @@ and limitations under the License.
                 }
                 return this.thru($a);
               }),
-              (Cn.prototype.toJSON = Cn.prototype.valueOf = Cn.prototype.value = function () {
+              (Cn.prototype.toJSON = Cn.prototype.valueOf = Cn.prototype.value = function() {
                 return ni(this.__wrapped__, this.__actions__);
               }),
               (Cn.prototype.first = Cn.prototype.head),
               Xe &&
-                (Cn.prototype[Xe] = function () {
+                (Cn.prototype[Xe] = function() {
                   return this;
                 }),
               Cn
@@ -24025,15 +24082,15 @@ and limitations under the License.
           })();
           (ze._ = Gt),
             void 0 ===
-              (i = function () {
+              (i = function() {
                 return Gt;
               }.call(t, n, t, r)) || (r.exports = i);
         }.call(this));
       }.call(this, n(115), n(238)(e)));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return y;
       });
       n(84), n(53), n(43);
@@ -24054,14 +24111,14 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
         }
         return n;
       }
-      var y = (function () {
+      var y = (function() {
         function e(t) {
           l()(this, e),
             (this._throttlingRequests = new Map()),
@@ -24073,7 +24130,7 @@ and limitations under the License.
           h()(e, [
             {
               key: 'codec',
-              get: function () {
+              get: function() {
                 return this._codec;
               }
             }
@@ -24081,55 +24138,54 @@ and limitations under the License.
           h()(e, [
             {
               key: 'sendRequest',
-              value:
-                ((t = u()(
-                  o.a.mark(function t(n) {
-                    var r,
-                      i = this;
-                    return o.a.wrap(
-                      function (t) {
-                        for (;;)
-                          switch ((t.prev = t.next)) {
-                            case 0:
-                              return (
-                                (r = this._codec.encode(n)),
-                                this._throttlingRequests.has(r) ||
-                                  (this._throttlingRequests.set(r, this.sendRequestInternal(r)),
-                                  setTimeout(function () {
-                                    return i._throttlingRequests.delete(r);
-                                  }, e.THROTTLE_TIME)),
-                                t.abrupt('return', this._throttlingRequests.get(r))
-                              );
-                            case 3:
-                            case 'end':
-                              return t.stop();
-                          }
-                      },
-                      t,
-                      this
-                    );
-                  })
-                )),
-                function (e) {
-                  return t.apply(this, arguments);
+              value: ((t = u()(
+                o.a.mark(function t(n) {
+                  var r,
+                    i = this;
+                  return o.a.wrap(
+                    function(t) {
+                      for (;;)
+                        switch ((t.prev = t.next)) {
+                          case 0:
+                            return (
+                              (r = this._codec.encode(n)),
+                              this._throttlingRequests.has(r) ||
+                                (this._throttlingRequests.set(r, this.sendRequestInternal(r)),
+                                setTimeout(function() {
+                                  return i._throttlingRequests.delete(r);
+                                }, e.THROTTLE_TIME)),
+                              t.abrupt('return', this._throttlingRequests.get(r))
+                            );
+                          case 3:
+                          case 'end':
+                            return t.stop();
+                        }
+                    },
+                    t,
+                    this
+                  );
                 })
+              )),
+              function(e) {
+                return t.apply(this, arguments);
+              })
             },
             {
               key: 'sendRequestInternal',
-              value: function (t) {
+              value: function(t) {
                 var n = this;
                 return this._fetchRetry(
                   this._gatewayUrl,
-                  (function (e) {
+                  (function(e) {
                     for (var t = 1; t < arguments.length; t++) {
                       var n = null != arguments[t] ? arguments[t] : {};
                       t % 2
-                        ? v(Object(n), !0).forEach(function (t) {
+                        ? v(Object(n), !0).forEach(function(t) {
                             i()(e, t, n[t]);
                           })
                         : Object.getOwnPropertyDescriptors
                         ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                        : v(Object(n)).forEach(function (t) {
+                        : v(Object(n)).forEach(function(t) {
                             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                           });
                     }
@@ -24137,21 +24193,21 @@ and limitations under the License.
                   })({}, e.DEFAULT_FETCH_OPTIONS, { body: t })
                 )
                   .then(this._codec.decode)
-                  .catch(function () {
+                  .catch(function() {
                     return n._codec.decode({});
                   });
               }
             },
             {
               key: '_fetchRetry',
-              value: function (t, n) {
+              value: function(t, n) {
                 var r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : e.TIMEOUT,
                   i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : e.DELAY,
                   a = arguments.length > 4 && void 0 !== arguments[4] ? arguments[4] : e.RETRY_LIMIT,
                   o = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : e.RETRY_TIMEOUT;
                 return d.a.retryPromise(
-                  function () {
-                    return d.a.promiseWithTimeout(function () {
+                  function() {
+                    return d.a.promiseWithTimeout(function() {
                       return fetch(t, n);
                     }, r);
                   },
@@ -24175,9 +24231,9 @@ and limitations under the License.
         (y.RETRY_TIMEOUT = 1e4),
         (y.TIMEOUT = 1e4);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return E;
       });
       n(84), n(53), n(26), n(22), n(11), n(43), n(137);
@@ -24202,7 +24258,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -24213,18 +24269,18 @@ and limitations under the License.
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? _(Object(n), !0).forEach(function (t) {
+            ? _(Object(n), !0).forEach(function(t) {
                 o()(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : _(Object(n)).forEach(function (t) {
+            : _(Object(n)).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
               });
         }
         return e;
       }
-      var E = (function () {
+      var E = (function() {
         function e(t, n) {
           l()(this, e),
             (this._notification = y.Container.get(m.a)),
@@ -24239,50 +24295,49 @@ and limitations under the License.
           h()(e, [
             {
               key: 'bypassInitRequest',
-              value: function (e) {
+              value: function(e) {
                 this._cardinalCommerceCacheToken = e;
               }
             },
             {
               key: 'processPayment',
-              value:
-                ((n = u()(
-                  i.a.mark(function e(t, n, r, a) {
-                    var o, s;
-                    return i.a.wrap(
-                      function (e) {
-                        for (;;)
-                          switch ((e.prev = e.next)) {
-                            case 0:
-                              return (
-                                (o = b({ requesttypedescriptions: t }, a, {}, r, {}, n)),
-                                (e.next = 3),
-                                this._cybertonica.getTransactionId()
-                              );
-                            case 3:
-                              return (
-                                (s = e.sent) && (o.fraudcontroltransactionid = s),
-                                e.abrupt('return', this._stTransport.sendRequest(o))
-                              );
-                            case 6:
-                            case 'end':
-                              return e.stop();
-                          }
-                      },
-                      e,
-                      this
-                    );
-                  })
-                )),
-                function (e, t, r, i) {
-                  return n.apply(this, arguments);
+              value: ((n = u()(
+                i.a.mark(function e(t, n, r, a) {
+                  var o, s;
+                  return i.a.wrap(
+                    function(e) {
+                      for (;;)
+                        switch ((e.prev = e.next)) {
+                          case 0:
+                            return (
+                              (o = b({ requesttypedescriptions: t }, a, {}, r, {}, n)),
+                              (e.next = 3),
+                              this._cybertonica.getTransactionId()
+                            );
+                          case 3:
+                            return (
+                              (s = e.sent) && (o.fraudcontroltransactionid = s),
+                              e.abrupt('return', this._stTransport.sendRequest(o))
+                            );
+                          case 6:
+                          case 'end':
+                            return e.stop();
+                        }
+                    },
+                    e,
+                    this
+                  );
                 })
+              )),
+              function(e, t, r, i) {
+                return n.apply(this, arguments);
+              })
             },
             {
               key: 'threeDInitRequest',
-              value: function () {
+              value: function() {
                 var e = this;
-                return this._stTransport.sendRequest(this._threeDInitRequestBody).then(function (t) {
+                return this._stTransport.sendRequest(this._threeDInitRequestBody).then(function(t) {
                   var n = new p.a(t.jwt).payload,
                     r = { jwt: n.jwt, response: n.response[0] };
                   return (e._cardinalCommerceCacheToken = t.response.cachetoken), r;
@@ -24291,51 +24346,50 @@ and limitations under the License.
             },
             {
               key: 'threeDQueryRequest',
-              value:
-                ((t = u()(
-                  i.a.mark(function e(t, n, r) {
-                    var a, o;
-                    return i.a.wrap(
-                      function (e) {
-                        for (;;)
-                          switch ((e.prev = e.next)) {
-                            case 0:
-                              return (
-                                (a = b(
-                                  {
-                                    cachetoken: this._cardinalCommerceCacheToken,
-                                    requesttypedescriptions: t,
-                                    termurl: 'https://termurl.com'
-                                  },
-                                  r,
-                                  {},
-                                  n
-                                )),
-                                (e.next = 3),
-                                this._cybertonica.getTransactionId()
-                              );
-                            case 3:
-                              return (
-                                (o = e.sent) && (a.fraudcontroltransactionid = o),
-                                e.abrupt('return', this._stTransport.sendRequest(a))
-                              );
-                            case 6:
-                            case 'end':
-                              return e.stop();
-                          }
-                      },
-                      e,
-                      this
-                    );
-                  })
-                )),
-                function (e, n, r) {
-                  return t.apply(this, arguments);
+              value: ((t = u()(
+                i.a.mark(function e(t, n, r) {
+                  var a, o;
+                  return i.a.wrap(
+                    function(e) {
+                      for (;;)
+                        switch ((e.prev = e.next)) {
+                          case 0:
+                            return (
+                              (a = b(
+                                {
+                                  cachetoken: this._cardinalCommerceCacheToken,
+                                  requesttypedescriptions: t,
+                                  termurl: 'https://termurl.com'
+                                },
+                                r,
+                                {},
+                                n
+                              )),
+                              (e.next = 3),
+                              this._cybertonica.getTransactionId()
+                            );
+                          case 3:
+                            return (
+                              (o = e.sent) && (a.fraudcontroltransactionid = o),
+                              e.abrupt('return', this._stTransport.sendRequest(a))
+                            );
+                          case 6:
+                          case 'end':
+                            return e.stop();
+                        }
+                    },
+                    e,
+                    this
+                  );
                 })
+              )),
+              function(e, n, r) {
+                return t.apply(this, arguments);
+              })
             },
             {
               key: 'walletVerify',
-              value: function (e) {
+              value: function(e) {
                 return (
                   Object.assign(this._walletVerifyRequest, e), this._stTransport.sendRequest(this._walletVerifyRequest)
                 );
@@ -24346,9 +24400,9 @@ and limitations under the License.
         );
       })();
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return b;
       });
       n(35), n(11), n(83);
@@ -24373,7 +24427,7 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
@@ -24386,20 +24440,19 @@ and limitations under the License.
               void 0 === m.a ? Object : m.a,
               void 0 === g.a ? Object : g.a
             ])(
-              (r = (function (e) {
+              (r = (function(e) {
                 c()(r, e);
                 var t,
-                  n =
-                    ((t = r),
-                    function () {
-                      var e,
-                        n = d()(t);
-                      if (_()) {
-                        var r = d()(this).constructor;
-                        e = Reflect.construct(n, arguments, r);
-                      } else e = n.apply(this, arguments);
-                      return f()(this, e);
-                    });
+                  n = ((t = r),
+                  function() {
+                    var e,
+                      n = d()(t);
+                    if (_()) {
+                      var r = d()(this).constructor;
+                      e = Reflect.construct(n, arguments, r);
+                    } else e = n.apply(this, arguments);
+                    return f()(this, e);
+                  });
                 function r(e, t, i) {
                   return a()(this, r), n.call(this, window.sessionStorage, e, t, i);
                 }
@@ -24407,7 +24460,7 @@ and limitations under the License.
                   s()(r, [
                     {
                       key: 'getSychronizationEventName',
-                      value: function () {
+                      value: function() {
                         return 'ST_SET_SESSION_STORAGE_ITEM';
                       }
                     }
@@ -24418,11 +24471,11 @@ and limitations under the License.
             ) || r)
         ) || r;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.P, 'Array', { fill: n(154) }), n(91)('fill');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(19),
         i = n(77),
@@ -24433,20 +24486,20 @@ and limitations under the License.
         c = Object.assign;
       e.exports =
         !c ||
-        n(18)(function () {
+        n(18)(function() {
           var e = {},
             t = {},
             n = Symbol(),
             r = 'abcdefghijklmnopqrst';
           return (
             (e[n] = 7),
-            r.split('').forEach(function (e) {
+            r.split('').forEach(function(e) {
               t[e] = e;
             }),
             7 != c({}, e)[n] || Object.keys(c({}, t)).join('') != r
           );
         })
-          ? function (e, t) {
+          ? function(e, t) {
               for (var n = s(e), c = arguments.length, l = 1, f = a.f, h = o.f; c > l; )
                 for (var d, p = u(arguments[l++]), v = f ? i(p).concat(f(p)) : i(p), y = v.length, m = 0; y > m; )
                   (d = v[m++]), (r && !h.call(p, d)) || (n[d] = p[d]);
@@ -24454,81 +24507,81 @@ and limitations under the License.
             }
           : c;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Object', { setPrototypeOf: n(186).set });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14).navigator;
       e.exports = (r && r.userAgent) || '';
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(21),
         i = n(15),
         a = n(191);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         if ((r(e), i(t) && t.constructor === e)) return t;
         var n = a.f(e);
         return (0, n.resolve)(t), n.promise;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(19) && 'g' != /./g.flags && n(23).f(RegExp.prototype, 'flags', { configurable: !0, get: n(124) });
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
         return e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(78),
         i = n(123),
         a = n(21),
         o = n(14).Reflect;
       e.exports =
         (o && o.ownKeys) ||
-        function (e) {
+        function(e) {
           var t = r.f(a(e)),
             n = i.f;
           return n ? t.concat(n(e)) : t;
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(220),
         i = n(125);
       e.exports = n(168)(
         'Set',
-        function (e) {
-          return function () {
+        function(e) {
+          return function() {
             return e(this, arguments.length > 0 ? arguments[0] : void 0);
           };
         },
         {
-          add: function (e) {
+          add: function(e) {
             return r.def(i(this, 'Set'), (e = 0 === e ? 0 : e), e);
           }
         },
         r
       );
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         return (
           e.webpackPolyfill ||
-            ((e.deprecate = function () {}),
+            ((e.deprecate = function() {}),
             (e.paths = []),
             e.children || (e.children = []),
             Object.defineProperty(e, 'loaded', {
               enumerable: !0,
-              get: function () {
+              get: function() {
                 return e.l;
               }
             }),
             Object.defineProperty(e, 'id', {
               enumerable: !0,
-              get: function () {
+              get: function() {
                 return e.i;
               }
             }),
@@ -24537,18 +24590,18 @@ and limitations under the License.
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(12);
       r.a.overrideDomain && (document.domain = r.a.overrideDomain);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n.r(t);
       n(241), n(243), n(261), n(275), n(276);
     },
-    function (e, t, n) {
-      (function (e, t) {
+    function(e, t, n) {
+      (function(e, t) {
         /*! *****************************************************************************
 Copyright (C) Microsoft. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -24564,8 +24617,8 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
         var n;
-        !(function (n) {
-          !(function (r) {
+        !(function(n) {
+          !(function(r) {
             var i =
                 'object' == typeof t
                   ? t
@@ -24576,13 +24629,13 @@ and limitations under the License.
                   : Function('return this;')(),
               a = o(n);
             function o(e, t) {
-              return function (n, r) {
+              return function(n, r) {
                 'function' != typeof e[n] && Object.defineProperty(e, n, { configurable: !0, writable: !0, value: r }),
                   t && t(n, r);
               };
             }
             void 0 === i.Reflect ? (i.Reflect = n) : (a = o(i.Reflect, a)),
-              (function (t) {
+              (function(t) {
                 var n = Object.prototype.hasOwnProperty,
                   r = 'function' == typeof Symbol,
                   i = r && void 0 !== Symbol.toPrimitive ? Symbol.toPrimitive : '@@toPrimitive',
@@ -24592,28 +24645,28 @@ and limitations under the License.
                   u = !o && !s,
                   c = {
                     create: o
-                      ? function () {
+                      ? function() {
                           return P(Object.create(null));
                         }
                       : s
-                      ? function () {
+                      ? function() {
                           return P({ __proto__: null });
                         }
-                      : function () {
+                      : function() {
                           return P({});
                         },
                     has: u
-                      ? function (e, t) {
+                      ? function(e, t) {
                           return n.call(e, t);
                         }
-                      : function (e, t) {
+                      : function(e, t) {
                           return t in e;
                         },
                     get: u
-                      ? function (e, t) {
+                      ? function(e, t) {
                           return n.call(e, t) ? e[t] : void 0;
                         }
-                      : function (e, t) {
+                      : function(e, t) {
                           return e[t];
                         }
                   },
@@ -24621,21 +24674,21 @@ and limitations under the License.
                   f = 'object' == typeof e && e.env && 'true' === e.env.REFLECT_METADATA_USE_MAP_POLYFILL,
                   h =
                     f || 'function' != typeof Map || 'function' != typeof Map.prototype.entries
-                      ? (function () {
+                      ? (function() {
                           var e = {},
                             t = [],
-                            n = (function () {
+                            n = (function() {
                               function e(e, t, n) {
                                 (this._index = 0), (this._keys = e), (this._values = t), (this._selector = n);
                               }
                               return (
-                                (e.prototype['@@iterator'] = function () {
+                                (e.prototype['@@iterator'] = function() {
                                   return this;
                                 }),
-                                (e.prototype[a] = function () {
+                                (e.prototype[a] = function() {
                                   return this;
                                 }),
-                                (e.prototype.next = function () {
+                                (e.prototype.next = function() {
                                   var e = this._index;
                                   if (e >= 0 && e < this._keys.length) {
                                     var n = this._selector(this._keys[e], this._values[e]);
@@ -24648,12 +24701,11 @@ and limitations under the License.
                                   }
                                   return { value: void 0, done: !0 };
                                 }),
-                                (e.prototype.throw = function (e) {
-                                  throw (
-                                    (this._index >= 0 && ((this._index = -1), (this._keys = t), (this._values = t)), e)
-                                  );
+                                (e.prototype.throw = function(e) {
+                                  throw (this._index >= 0 && ((this._index = -1), (this._keys = t), (this._values = t)),
+                                  e);
                                 }),
-                                (e.prototype.return = function (e) {
+                                (e.prototype.return = function(e) {
                                   return (
                                     this._index >= 0 && ((this._index = -1), (this._keys = t), (this._values = t)),
                                     { value: e, done: !0 }
@@ -24662,30 +24714,30 @@ and limitations under the License.
                                 e
                               );
                             })();
-                          return (function () {
+                          return (function() {
                             function t() {
                               (this._keys = []), (this._values = []), (this._cacheKey = e), (this._cacheIndex = -2);
                             }
                             return (
                               Object.defineProperty(t.prototype, 'size', {
-                                get: function () {
+                                get: function() {
                                   return this._keys.length;
                                 },
                                 enumerable: !0,
                                 configurable: !0
                               }),
-                              (t.prototype.has = function (e) {
+                              (t.prototype.has = function(e) {
                                 return this._find(e, !1) >= 0;
                               }),
-                              (t.prototype.get = function (e) {
+                              (t.prototype.get = function(e) {
                                 var t = this._find(e, !1);
                                 return t >= 0 ? this._values[t] : void 0;
                               }),
-                              (t.prototype.set = function (e, t) {
+                              (t.prototype.set = function(e, t) {
                                 var n = this._find(e, !0);
                                 return (this._values[n] = t), this;
                               }),
-                              (t.prototype.delete = function (t) {
+                              (t.prototype.delete = function(t) {
                                 var n = this._find(t, !1);
                                 if (n >= 0) {
                                   for (var r = this._keys.length, i = n + 1; i < r; i++)
@@ -24699,28 +24751,28 @@ and limitations under the License.
                                 }
                                 return !1;
                               }),
-                              (t.prototype.clear = function () {
+                              (t.prototype.clear = function() {
                                 (this._keys.length = 0),
                                   (this._values.length = 0),
                                   (this._cacheKey = e),
                                   (this._cacheIndex = -2);
                               }),
-                              (t.prototype.keys = function () {
+                              (t.prototype.keys = function() {
                                 return new n(this._keys, this._values, r);
                               }),
-                              (t.prototype.values = function () {
+                              (t.prototype.values = function() {
                                 return new n(this._keys, this._values, i);
                               }),
-                              (t.prototype.entries = function () {
+                              (t.prototype.entries = function() {
                                 return new n(this._keys, this._values, o);
                               }),
-                              (t.prototype['@@iterator'] = function () {
+                              (t.prototype['@@iterator'] = function() {
                                 return this.entries();
                               }),
-                              (t.prototype[a] = function () {
+                              (t.prototype[a] = function() {
                                 return this.entries();
                               }),
-                              (t.prototype._find = function (e, t) {
+                              (t.prototype._find = function(e, t) {
                                 return (
                                   this._cacheKey !== e && (this._cacheIndex = this._keys.indexOf((this._cacheKey = e))),
                                   this._cacheIndex < 0 &&
@@ -24747,43 +24799,43 @@ and limitations under the License.
                       : Map,
                   d =
                     f || 'function' != typeof Set || 'function' != typeof Set.prototype.entries
-                      ? (function () {
+                      ? (function() {
                           function e() {
                             this._map = new h();
                           }
                           return (
                             Object.defineProperty(e.prototype, 'size', {
-                              get: function () {
+                              get: function() {
                                 return this._map.size;
                               },
                               enumerable: !0,
                               configurable: !0
                             }),
-                            (e.prototype.has = function (e) {
+                            (e.prototype.has = function(e) {
                               return this._map.has(e);
                             }),
-                            (e.prototype.add = function (e) {
+                            (e.prototype.add = function(e) {
                               return this._map.set(e, e), this;
                             }),
-                            (e.prototype.delete = function (e) {
+                            (e.prototype.delete = function(e) {
                               return this._map.delete(e);
                             }),
-                            (e.prototype.clear = function () {
+                            (e.prototype.clear = function() {
                               this._map.clear();
                             }),
-                            (e.prototype.keys = function () {
+                            (e.prototype.keys = function() {
                               return this._map.keys();
                             }),
-                            (e.prototype.values = function () {
+                            (e.prototype.values = function() {
                               return this._map.values();
                             }),
-                            (e.prototype.entries = function () {
+                            (e.prototype.entries = function() {
                               return this._map.entries();
                             }),
-                            (e.prototype['@@iterator'] = function () {
+                            (e.prototype['@@iterator'] = function() {
                               return this.keys();
                             }),
-                            (e.prototype[a] = function () {
+                            (e.prototype[a] = function() {
                               return this.keys();
                             }),
                             e
@@ -24791,30 +24843,30 @@ and limitations under the License.
                         })()
                       : Set,
                   p = new (f || 'function' != typeof WeakMap
-                    ? (function () {
+                    ? (function() {
                         var e = c.create(),
                           t = r();
-                        return (function () {
+                        return (function() {
                           function e() {
                             this._key = r();
                           }
                           return (
-                            (e.prototype.has = function (e) {
+                            (e.prototype.has = function(e) {
                               var t = i(e, !1);
                               return void 0 !== t && c.has(t, this._key);
                             }),
-                            (e.prototype.get = function (e) {
+                            (e.prototype.get = function(e) {
                               var t = i(e, !1);
                               return void 0 !== t ? c.get(t, this._key) : void 0;
                             }),
-                            (e.prototype.set = function (e, t) {
+                            (e.prototype.set = function(e, t) {
                               return (i(e, !0)[this._key] = t), this;
                             }),
-                            (e.prototype.delete = function (e) {
+                            (e.prototype.delete = function(e) {
                               var t = i(e, !1);
                               return void 0 !== t && delete t[this._key];
                             }),
-                            (e.prototype.clear = function () {
+                            (e.prototype.clear = function() {
                               this._key = r();
                             }),
                             e
@@ -24840,15 +24892,14 @@ and limitations under the License.
                         }
                         function o() {
                           var e,
-                            t =
-                              ((e = 16),
-                              'function' == typeof Uint8Array
-                                ? 'undefined' != typeof crypto
-                                  ? crypto.getRandomValues(new Uint8Array(e))
-                                  : 'undefined' != typeof msCrypto
-                                  ? msCrypto.getRandomValues(new Uint8Array(e))
-                                  : a(new Uint8Array(e), e)
-                                : a(new Array(e), e));
+                            t = ((e = 16),
+                            'function' == typeof Uint8Array
+                              ? 'undefined' != typeof crypto
+                                ? crypto.getRandomValues(new Uint8Array(e))
+                                : 'undefined' != typeof msCrypto
+                                ? msCrypto.getRandomValues(new Uint8Array(e))
+                                : a(new Uint8Array(e), e)
+                              : a(new Array(e), e));
                           (t[6] = (79 & t[6]) | 64), (t[8] = (191 & t[8]) | 128);
                           for (var n = '', r = 0; r < 16; ++r) {
                             var i = t[r];
@@ -24889,7 +24940,7 @@ and limitations under the License.
                     r = v(e, t, !1);
                   if (E(r)) return n;
                   for (
-                    var i = (function (e) {
+                    var i = (function(e) {
                         var t = k(e, a);
                         if (!T(t)) throw new TypeError();
                         var n = t.call(e);
@@ -24960,7 +25011,7 @@ and limitations under the License.
                     if (S(a)) throw new TypeError();
                     return a;
                   }
-                  return (function (e, t) {
+                  return (function(e, t) {
                     if ('string' === t) {
                       var n = e.toString;
                       if (T(n)) if (!S((i = n.call(e)))) return i;
@@ -24979,7 +25030,7 @@ and limitations under the License.
                   var t = A(e, 3);
                   return 'symbol' == typeof t
                     ? t
-                    : (function (e) {
+                    : (function(e) {
                         return '' + e;
                       })(t);
                 }
@@ -25024,11 +25075,11 @@ and limitations under the License.
                 function P(e) {
                   return (e.__ = void 0), delete e.__, e;
                 }
-                t('decorate', function (e, t, n, r) {
+                t('decorate', function(e, t, n, r) {
                   if (E(n)) {
                     if (!R(e)) throw new TypeError();
                     if (!C(t)) throw new TypeError();
-                    return (function (e, t) {
+                    return (function(e, t) {
                       for (var n = e.length - 1; n >= 0; --n) {
                         var r = (0, e[n])(t);
                         if (!E(r) && !w(r)) {
@@ -25044,7 +25095,7 @@ and limitations under the License.
                   if (!S(r) && !E(r) && !w(r)) throw new TypeError();
                   return (
                     w(r) && (r = void 0),
-                    (function (e, t, n, r) {
+                    (function(e, t, n, r) {
                       for (var i = e.length - 1; i >= 0; --i) {
                         var a = (0, e[i])(t, n, r);
                         if (!E(a) && !w(a)) {
@@ -25056,12 +25107,12 @@ and limitations under the License.
                     })(e, t, (n = O(n)), r)
                   );
                 }),
-                  t('metadata', function (e, t) {
-                    return function (n, r) {
+                  t('metadata', function(e, t) {
+                    return function(n, r) {
                       if (!S(n)) throw new TypeError();
                       if (
                         !E(r) &&
-                        !(function (e) {
+                        !(function(e) {
                           switch (b(e)) {
                             case 3:
                             case 4:
@@ -25075,11 +25126,11 @@ and limitations under the License.
                       g(e, t, n, r);
                     };
                   }),
-                  t('defineMetadata', function (e, t, n, r) {
+                  t('defineMetadata', function(e, t, n, r) {
                     if (!S(n)) throw new TypeError();
                     return E(r) || (r = O(r)), g(e, t, n, r);
                   }),
-                  t('hasMetadata', function (e, t, n) {
+                  t('hasMetadata', function(e, t, n) {
                     if (!S(t)) throw new TypeError();
                     return (
                       E(n) || (n = O(n)),
@@ -25090,11 +25141,11 @@ and limitations under the License.
                       })(e, t, n)
                     );
                   }),
-                  t('hasOwnMetadata', function (e, t, n) {
+                  t('hasOwnMetadata', function(e, t, n) {
                     if (!S(t)) throw new TypeError();
                     return E(n) || (n = O(n)), y(e, t, n);
                   }),
-                  t('getMetadata', function (e, t, n) {
+                  t('getMetadata', function(e, t, n) {
                     if (!S(t)) throw new TypeError();
                     return (
                       E(n) || (n = O(n)),
@@ -25105,11 +25156,11 @@ and limitations under the License.
                       })(e, t, n)
                     );
                   }),
-                  t('getOwnMetadata', function (e, t, n) {
+                  t('getOwnMetadata', function(e, t, n) {
                     if (!S(t)) throw new TypeError();
                     return E(n) || (n = O(n)), m(e, t, n);
                   }),
-                  t('getMetadataKeys', function (e, t) {
+                  t('getMetadataKeys', function(e, t) {
                     if (!S(e)) throw new TypeError();
                     return (
                       E(t) || (t = O(t)),
@@ -25132,11 +25183,11 @@ and limitations under the License.
                       })(e, t)
                     );
                   }),
-                  t('getOwnMetadataKeys', function (e, t) {
+                  t('getOwnMetadataKeys', function(e, t) {
                     if (!S(e)) throw new TypeError();
                     return E(t) || (t = O(t)), _(e, t);
                   }),
-                  t('deleteMetadata', function (e, t, n) {
+                  t('deleteMetadata', function(e, t, n) {
                     if (!S(t)) throw new TypeError();
                     E(n) || (n = O(n));
                     var r = v(t, n, !1);
@@ -25151,7 +25202,7 @@ and limitations under the License.
         })(n || (n = {}));
       }.call(this, n(242), n(115)));
     },
-    function (e, t) {
+    function(e, t) {
       var n,
         r,
         i = (e.exports = {});
@@ -25174,7 +25225,7 @@ and limitations under the License.
           }
         }
       }
-      !(function () {
+      !(function() {
         try {
           n = 'function' == typeof setTimeout ? setTimeout : a;
         } catch (e) {
@@ -25203,7 +25254,7 @@ and limitations under the License.
           }
           (u = null),
             (l = !1),
-            (function (e) {
+            (function(e) {
               if (r === clearTimeout) return clearTimeout(e);
               if ((r === o || !r) && clearTimeout) return (r = clearTimeout), clearTimeout(e);
               try {
@@ -25222,12 +25273,12 @@ and limitations under the License.
         (this.fun = e), (this.array = t);
       }
       function v() {}
-      (i.nextTick = function (e) {
+      (i.nextTick = function(e) {
         var t = new Array(arguments.length - 1);
         if (arguments.length > 1) for (var n = 1; n < arguments.length; n++) t[n - 1] = arguments[n];
         c.push(new p(e, t)), 1 !== c.length || l || s(d);
       }),
-        (p.prototype.run = function () {
+        (p.prototype.run = function() {
           this.fun.apply(null, this.array);
         }),
         (i.title = 'browser'),
@@ -25245,23 +25296,23 @@ and limitations under the License.
         (i.emit = v),
         (i.prependListener = v),
         (i.prependOnceListener = v),
-        (i.listeners = function (e) {
+        (i.listeners = function(e) {
           return [];
         }),
-        (i.binding = function (e) {
+        (i.binding = function(e) {
           throw new Error('process.binding is not supported');
         }),
-        (i.cwd = function () {
+        (i.cwd = function() {
           return '/';
         }),
-        (i.chdir = function (e) {
+        (i.chdir = function(e) {
           throw new Error('process.chdir is not supported');
         }),
-        (i.umask = function () {
+        (i.umask = function() {
           return 0;
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(70),
         n(246),
         n(87),
@@ -25286,40 +25337,40 @@ and limitations under the License.
         n(22),
         (e.exports = n(51).Array);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       e.exports = n(120)('native-function-to-string', Function.toString);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(76),
         i = n(88),
         a = n(90),
         o = {};
-      n(40)(o, n(17)('iterator'), function () {
+      n(40)(o, n(17)('iterator'), function() {
         return this;
       }),
-        (e.exports = function (e, t, n) {
+        (e.exports = function(e, t, n) {
           (e.prototype = r(o, { next: i(1, n) })), a(e, t + ' Iterator');
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Array', { isArray: n(150) });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(152);
       r(
         r.S +
           r.F *
-            n(18)(function () {
+            n(18)(function() {
               function e() {}
               return !(Array.of.call(e) instanceof e);
             }),
         'Array',
         {
-          of: function () {
+          of: function() {
             for (var e = 0, t = arguments.length, n = new ('function' == typeof this ? this : Array)(t); t > e; )
               i(n, e, arguments[e++]);
             return (n.length = t), n;
@@ -25327,18 +25378,18 @@ and limitations under the License.
         }
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(41),
         a = [].join;
       r(r.P + r.F * (n(108) != Object || !n(42)(a)), 'Array', {
-        join: function (e) {
+        join: function(e) {
           return a.call(i(this), void 0 === e ? ',' : e);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(148),
@@ -25349,12 +25400,12 @@ and limitations under the License.
       r(
         r.P +
           r.F *
-            n(18)(function () {
+            n(18)(function() {
               i && u.call(i);
             }),
         'Array',
         {
-          slice: function (e, t) {
+          slice: function(e, t) {
             var n = s(this.length),
               r = a(this);
             if (((t = void 0 === t ? n : t), 'Array' == r)) return u.call(this, e, t);
@@ -25365,28 +25416,28 @@ and limitations under the License.
         }
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(0),
         a = n(42)([].forEach, !0);
       r(r.P + r.F * !a, 'Array', {
-        forEach: function (e) {
+        forEach: function(e) {
           return i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(252);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         return new (r(e))(t);
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(150),
         a = n(17)('species');
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t;
         return (
           i(e) &&
@@ -25396,47 +25447,47 @@ and limitations under the License.
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(3);
       r(r.P + r.F * !n(42)([].some, !0), 'Array', {
-        some: function (e) {
+        some: function(e) {
           return i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(4);
       r(r.P + r.F * !n(42)([].every, !0), 'Array', {
-        every: function (e) {
+        every: function(e) {
           return i(this, e, arguments[1]);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(177);
       r(r.P + r.F * !n(42)([].reduce, !0), 'Array', {
-        reduce: function (e) {
+        reduce: function(e) {
           return i(this, e, arguments.length, arguments[1], !1);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(177);
       r(r.P + r.F * !n(42)([].reduceRight, !0), 'Array', {
-        reduceRight: function (e) {
+        reduceRight: function(e) {
           return i(this, e, arguments.length, arguments[1], !0);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(41),
@@ -25445,7 +25496,7 @@ and limitations under the License.
         s = [].lastIndexOf,
         u = !!s && 1 / [1].lastIndexOf(1, -0) < 0;
       r(r.P + r.F * (u || !n(42)(s)), 'Array', {
-        lastIndexOf: function (e) {
+        lastIndexOf: function(e) {
           if (u) return s.apply(this, arguments) || 0;
           var t = i(this),
             n = o(t.length),
@@ -25456,31 +25507,31 @@ and limitations under the License.
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.P, 'Array', { copyWithin: n(179) }), n(91)('copyWithin');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(58)(6),
         a = 'findIndex',
         o = !0;
       a in [] &&
-        Array(1)[a](function () {
+        Array(1)[a](function() {
           o = !1;
         }),
         r(r.P + r.F * o, 'Array', {
-          findIndex: function (e) {
+          findIndex: function(e) {
             return i(this, e, arguments.length > 1 ? arguments[1] : void 0);
           }
         }),
         n(91)(a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(111)('Array');
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(53),
         n(263),
         n(113),
@@ -25501,105 +25552,105 @@ and limitations under the License.
         n(11),
         (e.exports = n(51).Object);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(77),
         i = n(123),
         a = n(112);
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = r(e),
           n = i.f;
         if (n) for (var o, s = n(e), u = a.f, c = 0; s.length > c; ) u.call(e, (o = s[c++])) && t.push(o);
         return t;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Object', { create: n(76) });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S + r.F * !n(19), 'Object', { defineProperties: n(171) });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(41),
         i = n(92).f;
-      n(45)('getOwnPropertyDescriptor', function () {
-        return function (e, t) {
+      n(45)('getOwnPropertyDescriptor', function() {
+        return function(e, t) {
           return i(r(e), t);
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(31),
         i = n(149);
-      n(45)('getPrototypeOf', function () {
-        return function (e) {
+      n(45)('getPrototypeOf', function() {
+        return function(e) {
           return i(r(e));
         };
       });
     },
-    function (e, t, n) {
-      n(45)('getOwnPropertyNames', function () {
+    function(e, t, n) {
+      n(45)('getOwnPropertyNames', function() {
         return n(184).f;
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(82).onFreeze;
-      n(45)('seal', function (e) {
-        return function (t) {
+      n(45)('seal', function(e) {
+        return function(t) {
           return e && r(t) ? e(i(t)) : t;
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = n(82).onFreeze;
-      n(45)('preventExtensions', function (e) {
-        return function (t) {
+      n(45)('preventExtensions', function(e) {
+        return function(t) {
           return e && r(t) ? e(i(t)) : t;
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      n(45)('isFrozen', function (e) {
-        return function (t) {
+      n(45)('isFrozen', function(e) {
+        return function(t) {
           return !r(t) || (!!e && e(t));
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      n(45)('isSealed', function (e) {
-        return function (t) {
+      n(45)('isSealed', function(e) {
+        return function(t) {
           return !r(t) || (!!e && e(t));
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15);
-      n(45)('isExtensible', function (e) {
-        return function (t) {
+      n(45)('isExtensible', function(e) {
+        return function(t) {
           return !!r(t) && (!e || e(t));
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Object', { is: n(274) });
     },
-    function (e, t) {
+    function(e, t) {
       e.exports =
         Object.is ||
-        function (e, t) {
+        function(e, t) {
           return e === t ? 0 !== e || 1 / e == 1 / t : e != e && t != t;
         };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      (function (e) {
-        !(function (e) {
+      (function(e) {
+        !(function(e) {
           function t(e) {
             var t = e.charCodeAt(0) << 24,
               n = 0 | s(~t),
@@ -25637,7 +25688,7 @@ and limitations under the License.
             o = Math.LN2,
             s =
               Math.clz32 ||
-              function (e) {
+              function(e) {
                 return (31 - a(e >>> 0) / o) | 0;
               },
             u = String.fromCharCode,
@@ -25647,7 +25698,7 @@ and limitations under the License.
             h = e.Uint8Array,
             d = h || Array,
             p = c.call((h ? ArrayBuffer : d).prototype);
-          (n.prototype.decode = function (e) {
+          (n.prototype.decode = function(e) {
             var n = (e && e.buffer) || e,
               r = c.call(n);
             if (r !== p && r !== f && void 0 !== e)
@@ -25660,7 +25711,7 @@ and limitations under the License.
             return n.replace(/[\xc0-\xff][\x80-\xbf]*/g, t);
           }),
             e.TextDecoder || (e.TextDecoder = n),
-            (i.prototype.encode = function (e) {
+            (i.prototype.encode = function(e) {
               for (
                 var t =
                     0 |
@@ -25680,10 +25731,10 @@ and limitations under the License.
         })('' + void 0 == typeof e ? ('' + void 0 == typeof self ? this : self) : e);
       }.call(this, n(115)));
     },
-    function (e, t) {
+    function(e, t) {
       window.MutationObserver =
         window.MutationObserver ||
-        (function (e) {
+        (function(e) {
           function t(e) {
             (this.i = []), (this.m = e);
           }
@@ -25705,7 +25756,7 @@ and limitations under the License.
           }
           function r(t, r) {
             var s = a(t, r);
-            return function (c) {
+            return function(c) {
               var l,
                 f = c.length;
               r.a &&
@@ -25714,7 +25765,7 @@ and limitations under the License.
                 c.push(new n({ type: 'characterData', target: t, oldValue: s.a })),
                 r.b && s.b && i(c, t, s.b, r.f),
                 (r.c || r.g) &&
-                  (l = (function (t, r, a, s) {
+                  (l = (function(t, r, a, s) {
                     function c(e, r, a, o, u) {
                       var c,
                         f,
@@ -25842,12 +25893,12 @@ and limitations under the License.
                   ? (t.b &&
                       n &&
                       1 === r.nodeType &&
-                      (i.b = s(r.attributes, function (e, n) {
+                      (i.b = s(r.attributes, function(e, n) {
                         return (t.f && !t.f[n.name]) || (e[n.name] = l(r, n)), e;
                       })),
                     n &&
                       (t.c || t.a || (t.b && t.g)) &&
-                      (i.c = (function (e, t) {
+                      (i.c = (function(e, t) {
                         for (var n = [], r = 0; r < e.length; r++) n[r] = t(e[r], r, e);
                         return n;
                       })(r.childNodes, e)),
@@ -25878,7 +25929,7 @@ and limitations under the License.
           }
           (t._period = 30),
             (t.prototype = {
-              observe: function (e, n) {
+              observe: function(e, n) {
                 for (
                   var i = {
                       b: !!(n.attributes || n.attributeFilter || n.attributeOldValue),
@@ -25893,40 +25944,40 @@ and limitations under the License.
                 )
                   a[o].s === e && a.splice(o, 1);
                 n.attributeFilter &&
-                  (i.f = s(n.attributeFilter, function (e, t) {
+                  (i.f = s(n.attributeFilter, function(e, t) {
                     return (e[t] = !0), e;
                   })),
                   a.push({ s: e, o: r(e, i) }),
                   this.h ||
-                    (function (e) {
+                    (function(e) {
                       !(function n() {
                         var r = e.takeRecords();
                         r.length && e.m(r, e), (e.h = setTimeout(n, t._period));
                       })();
                     })(this);
               },
-              takeRecords: function () {
+              takeRecords: function() {
                 for (var e = [], t = this.i, n = 0; n < t.length; n++) t[n].o(e);
                 return e;
               },
-              disconnect: function () {
+              disconnect: function() {
                 (this.i = []), clearTimeout(this.h), (this.h = null);
               }
             });
           var c = document.createElement('i');
           c.style.top = 0;
           var l = (c = 'null' != c.attributes.style.value)
-              ? function (e, t) {
+              ? function(e, t) {
                   return t.value;
                 }
-              : function (e, t) {
+              : function(e, t) {
                   return 'style' !== t.name ? t.value : e.style.cssText;
                 },
             f = 1;
           return t;
         })(void 0);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i =
@@ -25934,20 +25985,20 @@ and limitations under the License.
           ((r =
             Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array &&
-              function (e, t) {
+              function(e, t) {
                 e.__proto__ = t;
               }) ||
-            function (e, t) {
+            function(e, t) {
               for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
             }),
-          function (e, t) {
+          function(e, t) {
             function n() {
               this.constructor = e;
             }
             r(e, t), (e.prototype = null === t ? Object.create(t) : ((n.prototype = t.prototype), new n()));
           });
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = (function (e) {
+      var a = (function(e) {
         function t(n) {
           var r = e.call(this, 'Cannot determine a class of the requesting service "' + n + '"') || this;
           return (r.name = 'ServiceNotFoundError'), Object.setPrototypeOf(r, t.prototype), r;
@@ -25956,7 +26007,7 @@ and limitations under the License.
       })(Error);
       t.MissingProvidedServiceTypeError = a;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i =
@@ -25964,13 +26015,13 @@ and limitations under the License.
           ((r =
             Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array &&
-              function (e, t) {
+              function(e, t) {
                 e.__proto__ = t;
               }) ||
-            function (e, t) {
+            function(e, t) {
               for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
             }),
-          function (e, t) {
+          function(e, t) {
             function n() {
               this.constructor = e;
             }
@@ -25978,7 +26029,7 @@ and limitations under the License.
           });
       Object.defineProperty(t, '__esModule', { value: !0 });
       var a = n(94),
-        o = (function (e) {
+        o = (function(e) {
           function t(n) {
             var r = e.call(this) || this;
             return (
@@ -26006,12 +26057,12 @@ and limitations under the License.
         })(Error);
       t.ServiceNotFoundError = o;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var r = n(93),
         i = n(94);
-      t.Service = function (e, t) {
+      t.Service = function(e, t) {
         if (2 === arguments.length || e instanceof Function) {
           var n = { service: new i.Token() },
             a = 2 === arguments.length ? e : [],
@@ -26019,8 +26070,8 @@ and limitations under the License.
           return (
             r.Container.set({
               id: n.service,
-              factory: function (e) {
-                var t = a.map(function (t) {
+              factory: function(e) {
+                var t = a.map(function(t) {
                   return e.get(t);
                 });
                 return o.apply(void 0, t);
@@ -26029,7 +26080,7 @@ and limitations under the License.
             n
           );
         }
-        return function (t) {
+        return function(t) {
           var n = { type: t };
           'string' == typeof e || e instanceof i.Token
             ? ((n.id = e), (n.multiple = e.multiple), (n.global = e.global || !1), (n.transient = e.transient))
@@ -26043,23 +26094,23 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var r = n(93),
         i = n(94),
         a = n(188);
-      t.Inject = function (e) {
-        return function (t, n, o) {
+      t.Inject = function(e) {
+        return function(t, n, o) {
           e ||
-            (e = function () {
+            (e = function() {
               return Reflect.getMetadata('design:type', t, n);
             }),
             r.Container.registerHandler({
               object: t,
               propertyName: n,
               index: o,
-              value: function (r) {
+              value: function(r) {
                 var o;
                 if ((o = 'string' == typeof e || e instanceof i.Token ? e : e()) === Object)
                   throw new a.CannotInjectError(t, n);
@@ -26069,23 +26120,23 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var r = n(93),
         i = n(94),
         a = n(188);
-      t.InjectMany = function (e) {
-        return function (t, n, o) {
+      t.InjectMany = function(e) {
+        return function(t, n, o) {
           e ||
-            (e = function () {
+            (e = function() {
               return Reflect.getMetadata('design:type', t, n);
             }),
             r.Container.registerHandler({
               object: t,
               propertyName: n,
               index: o,
-              value: function (r) {
+              value: function(r) {
                 var o;
                 if ((o = 'string' == typeof e || e instanceof i.Token ? e : e()) === Object)
                   throw new a.CannotInjectError(t, n);
@@ -26095,18 +26146,18 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(14),
         i = n(189).set,
         a = r.MutationObserver || r.WebKitMutationObserver,
         o = r.process,
         s = r.Promise,
         u = 'process' == n(62)(o);
-      e.exports = function () {
+      e.exports = function() {
         var e,
           t,
           n,
-          c = function () {
+          c = function() {
             var r, i;
             for (u && (r = o.domain) && r.exit(); e; ) {
               (i = e.fn), (e = e.next);
@@ -26119,35 +26170,35 @@ and limitations under the License.
             (t = void 0), r && r.enter();
           };
         if (u)
-          n = function () {
+          n = function() {
             o.nextTick(c);
           };
         else if (!a || (r.navigator && r.navigator.standalone))
           if (s && s.resolve) {
             var l = s.resolve(void 0);
-            n = function () {
+            n = function() {
               l.then(c);
             };
           } else
-            n = function () {
+            n = function() {
               i.call(r, c);
             };
         else {
           var f = !0,
             h = document.createTextNode('');
           new a(c).observe(h, { characterData: !0 }),
-            (n = function () {
+            (n = function() {
               h.data = f = !f;
             });
         }
-        return function (r) {
+        return function(r) {
           var i = { fn: r, next: void 0 };
           t && (t.next = i), e || ((e = i), n()), (t = i);
         };
       };
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         try {
           return { e: !1, v: e() };
         } catch (e) {
@@ -26155,31 +26206,31 @@ and limitations under the License.
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(192);
-      e.exports = function (e) {
+      e.exports = function(e) {
         if (Array.isArray(e)) return r(e);
       };
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         if ('undefined' != typeof Symbol && Symbol.iterator in Object(e)) return Array.from(e);
       };
     },
-    function (e, t) {
-      e.exports = function () {
+    function(e, t) {
+      e.exports = function() {
         throw new TypeError(
           'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
         );
       };
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         if (Array.isArray(e)) return e;
       };
     },
-    function (e, t) {
-      e.exports = function (e, t) {
+    function(e, t) {
+      e.exports = function(e, t) {
         if ('undefined' != typeof Symbol && Symbol.iterator in Object(e)) {
           var n = [],
             r = !0,
@@ -26204,21 +26255,21 @@ and limitations under the License.
         }
       };
     },
-    function (e, t) {
-      e.exports = function () {
+    function(e, t) {
+      e.exports = function() {
         throw new TypeError(
           'Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
         );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(61),
         i = n(15),
         a = n(190),
         o = [].slice,
         s = {},
-        u = function (e, t, n) {
+        u = function(e, t, n) {
           if (!(t in s)) {
             for (var r = [], i = 0; i < t; i++) r[i] = 'a[' + i + ']';
             s[t] = Function('F,a', 'return new F(' + r.join(',') + ')');
@@ -26227,24 +26278,24 @@ and limitations under the License.
         };
       e.exports =
         Function.bind ||
-        function (e) {
+        function(e) {
           var t = r(this),
             n = o.call(arguments, 1),
-            s = function () {
+            s = function() {
               var r = n.concat(o.call(arguments));
               return this instanceof s ? u(t, r.length, r) : a(t, r, e);
             };
           return i(t.prototype) && (s.prototype = t.prototype), s;
         };
     },
-    function (e, t, n) {
-      n(292)('Uint8', 1, function (e) {
-        return function (t, n, r) {
+    function(e, t, n) {
+      n(292)('Uint8', 1, function(e) {
+        return function(t, n, r) {
           return e(this, t, n, r);
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       if (n(19)) {
         var r = n(74),
@@ -26319,46 +26370,46 @@ and limitations under the License.
           ge = s.CONSTR,
           _e = s.TYPED,
           be = s.VIEW,
-          Ee = I(1, function (e, t) {
+          Ee = I(1, function(e, t) {
             return Re(x(e, e[me]), t);
           }),
-          we = a(function () {
+          we = a(function() {
             return 1 === new H(new Uint16Array([1]).buffer)[0];
           }),
           Se =
             !!H &&
             !!H.prototype.set &&
-            a(function () {
+            a(function() {
               new H(1).set({});
             }),
-          Ae = function (e, t) {
+          Ae = function(e, t) {
             var n = p(e);
             if (n < 0 || n % t) throw q('Wrong offset!');
             return n;
           },
-          Oe = function (e) {
+          Oe = function(e) {
             if (E(e) && _e in e) return e;
             throw K(e + ' is not a typed array!');
           },
-          Re = function (e, t) {
+          Re = function(e, t) {
             if (!E(e) || !(ye in e)) throw K('It is not a typed array constructor!');
             return new e(t);
           },
-          Te = function (e, t) {
+          Te = function(e, t) {
             return Ce(x(e, e[me]), t);
           },
-          Ce = function (e, t) {
+          Ce = function(e, t) {
             for (var n = 0, r = t.length, i = Re(e, r); r > n; ) i[n] = t[n++];
             return i;
           },
-          ke = function (e, t, n) {
+          ke = function(e, t, n) {
             V(e, t, {
-              get: function () {
+              get: function() {
                 return this._d[n];
               }
             });
           },
-          Ie = function (e) {
+          Ie = function(e) {
             var t,
               n,
               r,
@@ -26378,73 +26429,73 @@ and limitations under the License.
               i[t] = f ? l(s[t], t) : s[t];
             return i;
           },
-          Ne = function () {
+          Ne = function() {
             for (var e = 0, t = arguments.length, n = Re(this, t); t > e; ) n[e] = arguments[e++];
             return n;
           },
           xe =
             !!H &&
-            a(function () {
+            a(function() {
               de.call(new H(1));
             }),
-          Pe = function () {
+          Pe = function() {
             return de.apply(xe ? fe.call(Oe(this)) : Oe(this), arguments);
           },
           je = {
-            copyWithin: function (e, t) {
+            copyWithin: function(e, t) {
               return F.call(Oe(this), e, t, arguments.length > 2 ? arguments[2] : void 0);
             },
-            every: function (e) {
+            every: function(e) {
               return X(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            fill: function (e) {
+            fill: function(e) {
               return M.apply(Oe(this), arguments);
             },
-            filter: function (e) {
+            filter: function(e) {
               return Te(this, J(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0));
             },
-            find: function (e) {
+            find: function(e) {
               return Q(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            findIndex: function (e) {
+            findIndex: function(e) {
               return ee(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            forEach: function (e) {
+            forEach: function(e) {
               W(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            indexOf: function (e) {
+            indexOf: function(e) {
               return ne(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            includes: function (e) {
+            includes: function(e) {
               return te(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            join: function (e) {
+            join: function(e) {
               return ce.apply(Oe(this), arguments);
             },
-            lastIndexOf: function (e) {
+            lastIndexOf: function(e) {
               return oe.apply(Oe(this), arguments);
             },
-            map: function (e) {
+            map: function(e) {
               return Ee(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            reduce: function (e) {
+            reduce: function(e) {
               return se.apply(Oe(this), arguments);
             },
-            reduceRight: function (e) {
+            reduceRight: function(e) {
               return ue.apply(Oe(this), arguments);
             },
-            reverse: function () {
+            reverse: function() {
               for (var e, t = Oe(this).length, n = Math.floor(t / 2), r = 0; r < n; )
                 (e = this[r]), (this[r++] = this[--t]), (this[t] = e);
               return this;
             },
-            some: function (e) {
+            some: function(e) {
               return Z(Oe(this), e, arguments.length > 1 ? arguments[1] : void 0);
             },
-            sort: function (e) {
+            sort: function(e) {
               return le.call(Oe(this), e);
             },
-            subarray: function (e, t) {
+            subarray: function(e, t) {
               var n = Oe(this),
                 r = n.length,
                 i = m(e, r);
@@ -26455,10 +26506,10 @@ and limitations under the License.
               );
             }
           },
-          Le = function (e, t) {
+          Le = function(e, t) {
             return Te(this, fe.call(Oe(this), e, t));
           },
-          De = function (e) {
+          De = function(e) {
             Oe(this);
             var t = Ae(arguments[1], 1),
               n = this.length,
@@ -26469,23 +26520,23 @@ and limitations under the License.
             for (; a < i; ) this[t + a] = r[a++];
           },
           Me = {
-            entries: function () {
+            entries: function() {
               return ae.call(Oe(this));
             },
-            keys: function () {
+            keys: function() {
               return ie.call(Oe(this));
             },
-            values: function () {
+            values: function() {
               return re.call(Oe(this));
             }
           },
-          Fe = function (e, t) {
+          Fe = function(e, t) {
             return E(e) && e[_e] && 'symbol' != typeof t && t in e && String(+t) == String(t);
           },
-          Ue = function (e, t) {
+          Ue = function(e, t) {
             return Fe(e, (t = g(t, !0))) ? f(2, e[t]) : $(e, t);
           },
-          Be = function (e, t, n) {
+          Be = function(e, t, n) {
             return !(Fe(e, (t = g(t, !0))) && E(n) && _(n, 'value')) ||
               _(n, 'get') ||
               _(n, 'set') ||
@@ -26497,26 +26548,26 @@ and limitations under the License.
           };
         ge || ((B.f = Ue), (U.f = Be)),
           o(o.S + o.F * !ge, 'Object', { getOwnPropertyDescriptor: Ue, defineProperty: Be }),
-          a(function () {
+          a(function() {
             he.call({});
           }) &&
-            (he = de = function () {
+            (he = de = function() {
               return ce.call(this);
             });
         var Ve = d({}, je);
         d(Ve, Me),
           h(Ve, pe, Me.values),
-          d(Ve, { slice: Le, set: De, constructor: function () {}, toString: he, toLocaleString: Pe }),
+          d(Ve, { slice: Le, set: De, constructor: function() {}, toString: he, toLocaleString: Pe }),
           ke(Ve, 'buffer', 'b'),
           ke(Ve, 'byteOffset', 'o'),
           ke(Ve, 'byteLength', 'l'),
           ke(Ve, 'length', 'e'),
           V(Ve, ve, {
-            get: function () {
+            get: function() {
               return this[_e];
             }
           }),
-          (e.exports = function (e, t, n, u) {
+          (e.exports = function(e, t, n, u) {
             var c = e + ((u = !!u) ? 'Clamped' : '') + 'Array',
               f = 'get' + e,
               d = 'set' + e,
@@ -26526,16 +26577,16 @@ and limitations under the License.
               _ = !p || !s.ABV,
               w = {},
               S = p && p.prototype,
-              T = function (e, n) {
+              T = function(e, n) {
                 V(e, n, {
-                  get: function () {
-                    return (function (e, n) {
+                  get: function() {
+                    return (function(e, n) {
                       var r = e._d;
                       return r.v[f](n * t + r.o, we);
                     })(this, n);
                   },
-                  set: function (e) {
-                    return (function (e, n, r) {
+                  set: function(e) {
+                    return (function(e, n, r) {
                       var i = e._d;
                       u && (r = (r = Math.round(r)) < 0 ? 0 : r > 255 ? 255 : 255 & r), i.v[d](n * t + i.o, r, we);
                     })(this, n, e);
@@ -26544,7 +26595,7 @@ and limitations under the License.
                 });
               };
             _
-              ? ((p = n(function (e, n, r, i) {
+              ? ((p = n(function(e, n, r, i) {
                   l(e, p, c, '_d');
                   var a,
                     o,
@@ -26567,16 +26618,16 @@ and limitations under the License.
                 })),
                 (S = p.prototype = A(Ve)),
                 h(S, 'constructor', p))
-              : (a(function () {
+              : (a(function() {
                   p(1);
                 }) &&
-                  a(function () {
+                  a(function() {
                     new p(-1);
                   }) &&
-                  L(function (e) {
+                  L(function(e) {
                     new p(), new p(null), new p(1.5), new p(e);
                   }, !0)) ||
-                ((p = n(function (e, n, r, i) {
+                ((p = n(function(e, n, r, i) {
                   var a;
                   return (
                     l(e, p, c),
@@ -26593,7 +26644,7 @@ and limitations under the License.
                       : new m(y(n))
                   );
                 })),
-                W(g !== Function.prototype ? R(m).concat(R(g)) : R(m), function (e) {
+                W(g !== Function.prototype ? R(m).concat(R(g)) : R(m), function(e) {
                   e in p || h(p, e, m[e]);
                 }),
                 (p.prototype = S),
@@ -26607,7 +26658,7 @@ and limitations under the License.
               h(S, me, p),
               (u ? new p(1)[ve] == c : ve in S) ||
                 V(S, ve, {
-                  get: function () {
+                  get: function() {
                     return c;
                   }
                 }),
@@ -26617,7 +26668,7 @@ and limitations under the License.
               o(
                 o.S +
                   o.F *
-                    a(function () {
+                    a(function() {
                       m.of.call(p, 1);
                     }),
                 c,
@@ -26632,7 +26683,7 @@ and limitations under the License.
               o(
                 o.P +
                   o.F *
-                    a(function () {
+                    a(function() {
                       new p(1).slice();
                     }),
                 c,
@@ -26641,10 +26692,10 @@ and limitations under the License.
               o(
                 o.P +
                   o.F *
-                    (a(function () {
+                    (a(function() {
                       return [1, 2].toLocaleString() != new p([1, 2]).toLocaleString();
                     }) ||
-                      !a(function () {
+                      !a(function() {
                         S.toLocaleString.call([1, 2]);
                       })),
                 c,
@@ -26653,9 +26704,9 @@ and limitations under the License.
               (j[c] = k ? C : I),
               r || k || h(S, pe, I);
           });
-      } else e.exports = function () {};
+      } else e.exports = function() {};
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(14),
         i = n(19),
@@ -26752,7 +26803,7 @@ and limitations under the License.
       }
       function B(e, t, n) {
         v(e.prototype, t, {
-          get: function () {
+          get: function() {
             return this[n];
           }
         });
@@ -26772,19 +26823,19 @@ and limitations under the License.
       }
       if (o.ABV) {
         if (
-          !c(function () {
+          !c(function() {
             g(1);
           }) ||
-          !c(function () {
+          !c(function() {
             new g(-1);
           }) ||
-          c(function () {
+          c(function() {
             return new g(), new g(1.5), new g(NaN), 'ArrayBuffer' != g.name;
           })
         ) {
           for (
             var q,
-              K = ((g = function (e) {
+              K = ((g = function(e) {
                 return l(this, g), new S(d(e));
               }).prototype = S.prototype),
               H = p(S),
@@ -26803,22 +26854,22 @@ and limitations under the License.
             u(
               _.prototype,
               {
-                setInt8: function (e, t) {
+                setInt8: function(e, t) {
                   G.call(this, e, (t << 24) >> 24);
                 },
-                setUint8: function (e, t) {
+                setUint8: function(e, t) {
                   G.call(this, e, (t << 24) >> 24);
                 }
               },
               !0
             );
       } else
-        (g = function (e) {
+        (g = function(e) {
           l(this, g, 'ArrayBuffer');
           var t = d(e);
           (this._b = y.call(new Array(t), 0)), (this[I] = t);
         }),
-          (_ = function (e, t, n) {
+          (_ = function(e, t, n) {
             l(this, _, 'DataView'), l(e, g, 'DataView');
             var r = e[I],
               i = f(t);
@@ -26828,67 +26879,67 @@ and limitations under the License.
           }),
           i && (B(g, 'byteLength', '_l'), B(_, 'buffer', '_b'), B(_, 'byteLength', '_l'), B(_, 'byteOffset', '_o')),
           u(_.prototype, {
-            getInt8: function (e) {
+            getInt8: function(e) {
               return (V(this, 1, e)[0] << 24) >> 24;
             },
-            getUint8: function (e) {
+            getUint8: function(e) {
               return V(this, 1, e)[0];
             },
-            getInt16: function (e) {
+            getInt16: function(e) {
               var t = V(this, 2, e, arguments[1]);
               return (((t[1] << 8) | t[0]) << 16) >> 16;
             },
-            getUint16: function (e) {
+            getUint16: function(e) {
               var t = V(this, 2, e, arguments[1]);
               return (t[1] << 8) | t[0];
             },
-            getInt32: function (e) {
+            getInt32: function(e) {
               return j(V(this, 4, e, arguments[1]));
             },
-            getUint32: function (e) {
+            getUint32: function(e) {
               return j(V(this, 4, e, arguments[1])) >>> 0;
             },
-            getFloat32: function (e) {
+            getFloat32: function(e) {
               return P(V(this, 4, e, arguments[1]), 23, 4);
             },
-            getFloat64: function (e) {
+            getFloat64: function(e) {
               return P(V(this, 8, e, arguments[1]), 52, 8);
             },
-            setInt8: function (e, t) {
+            setInt8: function(e, t) {
               $(this, 1, e, L, t);
             },
-            setUint8: function (e, t) {
+            setUint8: function(e, t) {
               $(this, 1, e, L, t);
             },
-            setInt16: function (e, t) {
+            setInt16: function(e, t) {
               $(this, 2, e, D, t, arguments[2]);
             },
-            setUint16: function (e, t) {
+            setUint16: function(e, t) {
               $(this, 2, e, D, t, arguments[2]);
             },
-            setInt32: function (e, t) {
+            setInt32: function(e, t) {
               $(this, 4, e, M, t, arguments[2]);
             },
-            setUint32: function (e, t) {
+            setUint32: function(e, t) {
               $(this, 4, e, M, t, arguments[2]);
             },
-            setFloat32: function (e, t) {
+            setFloat32: function(e, t) {
               $(this, 4, e, U, t, arguments[2]);
             },
-            setFloat64: function (e, t) {
+            setFloat64: function(e, t) {
               $(this, 8, e, F, t, arguments[2]);
             }
           });
       m(g, 'ArrayBuffer'), m(_, 'DataView'), s(_.prototype, o.VIEW, !0), (t.ArrayBuffer = g), (t.DataView = _);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(159);
       n(6)({ target: 'RegExp', proto: !0, forced: r !== /./.exec }, { exec: r });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(296);
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = e.replace(/-/g, '+').replace(/_/g, '/');
         switch (t.length % 4) {
           case 0:
@@ -26903,10 +26954,13 @@ and limitations under the License.
             throw 'Illegal base64url string!';
         }
         try {
-          return (function (e) {
+          return (function(e) {
             return decodeURIComponent(
-              r(e).replace(/(.)/g, function (e, t) {
-                var n = t.charCodeAt(0).toString(16).toUpperCase();
+              r(e).replace(/(.)/g, function(e, t) {
+                var n = t
+                  .charCodeAt(0)
+                  .toString(16)
+                  .toUpperCase();
                 return n.length < 2 && (n = '0' + n), '%' + n;
               })
             );
@@ -26916,7 +26970,7 @@ and limitations under the License.
         }
       };
     },
-    function (e, t) {
+    function(e, t) {
       function n(e) {
         this.message = e;
       }
@@ -26924,7 +26978,7 @@ and limitations under the License.
         (n.prototype.name = 'InvalidCharacterError'),
         (e.exports =
           ('undefined' != typeof window && window.atob && window.atob.bind(window)) ||
-          function (e) {
+          function(e) {
             var t = String(e).replace(/=+$/, '');
             if (t.length % 4 == 1) throw new n("'atob' failed: The string to be decoded is not correctly encoded.");
             for (
@@ -26938,14 +26992,14 @@ and limitations under the License.
             return s;
           });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = 'URLSearchParams' in self,
         i = 'Symbol' in self && 'iterator' in Symbol,
         a =
           'FileReader' in self &&
           'Blob' in self &&
-          (function () {
+          (function() {
             try {
               return new Blob(), !0;
             } catch (e) {
@@ -26968,7 +27022,7 @@ and limitations under the License.
           ],
           c =
             ArrayBuffer.isView ||
-            function (e) {
+            function(e) {
               return e && u.indexOf(Object.prototype.toString.call(e)) > -1;
             };
       function l(e) {
@@ -26981,14 +27035,14 @@ and limitations under the License.
       }
       function h(e) {
         var t = {
-          next: function () {
+          next: function() {
             var t = e.shift();
             return { done: void 0 === t, value: t };
           }
         };
         return (
           i &&
-            (t[Symbol.iterator] = function () {
+            (t[Symbol.iterator] = function() {
               return t;
             }),
           t
@@ -26997,15 +27051,15 @@ and limitations under the License.
       function d(e) {
         (this.map = {}),
           e instanceof d
-            ? e.forEach(function (e, t) {
+            ? e.forEach(function(e, t) {
                 this.append(t, e);
               }, this)
             : Array.isArray(e)
-            ? e.forEach(function (e) {
+            ? e.forEach(function(e) {
                 this.append(e[0], e[1]);
               }, this)
             : e &&
-              Object.getOwnPropertyNames(e).forEach(function (t) {
+              Object.getOwnPropertyNames(e).forEach(function(t) {
                 this.append(t, e[t]);
               }, this);
       }
@@ -27014,11 +27068,11 @@ and limitations under the License.
         e.bodyUsed = !0;
       }
       function v(e) {
-        return new Promise(function (t, n) {
-          (e.onload = function () {
+        return new Promise(function(t, n) {
+          (e.onload = function() {
             t(e.result);
           }),
-            (e.onerror = function () {
+            (e.onerror = function() {
               n(e.error);
             });
         });
@@ -27036,7 +27090,7 @@ and limitations under the License.
       function g() {
         return (
           (this.bodyUsed = !1),
-          (this._initBody = function (e) {
+          (this._initBody = function(e) {
             var t;
             (this._bodyInit = e),
               e
@@ -27064,7 +27118,7 @@ and limitations under the License.
                     this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8'));
           }),
           a &&
-            ((this.blob = function () {
+            ((this.blob = function() {
               var e = p(this);
               if (e) return e;
               if (this._bodyBlob) return Promise.resolve(this._bodyBlob);
@@ -27072,10 +27126,10 @@ and limitations under the License.
               if (this._bodyFormData) throw new Error('could not read FormData body as blob');
               return Promise.resolve(new Blob([this._bodyText]));
             }),
-            (this.arrayBuffer = function () {
+            (this.arrayBuffer = function() {
               return this._bodyArrayBuffer ? p(this) || Promise.resolve(this._bodyArrayBuffer) : this.blob().then(y);
             })),
-          (this.text = function () {
+          (this.text = function() {
             var e,
               t,
               n,
@@ -27084,7 +27138,7 @@ and limitations under the License.
             if (this._bodyBlob) return (e = this._bodyBlob), (t = new FileReader()), (n = v(t)), t.readAsText(e), n;
             if (this._bodyArrayBuffer)
               return Promise.resolve(
-                (function (e) {
+                (function(e) {
                   for (var t = new Uint8Array(e), n = new Array(t.length), r = 0; r < t.length; r++)
                     n[r] = String.fromCharCode(t[r]);
                   return n.join('');
@@ -27094,57 +27148,57 @@ and limitations under the License.
             return Promise.resolve(this._bodyText);
           }),
           o &&
-            (this.formData = function () {
+            (this.formData = function() {
               return this.text().then(E);
             }),
-          (this.json = function () {
+          (this.json = function() {
             return this.text().then(JSON.parse);
           }),
           this
         );
       }
-      (d.prototype.append = function (e, t) {
+      (d.prototype.append = function(e, t) {
         (e = l(e)), (t = f(t));
         var n = this.map[e];
         this.map[e] = n ? n + ', ' + t : t;
       }),
-        (d.prototype.delete = function (e) {
+        (d.prototype.delete = function(e) {
           delete this.map[l(e)];
         }),
-        (d.prototype.get = function (e) {
+        (d.prototype.get = function(e) {
           return (e = l(e)), this.has(e) ? this.map[e] : null;
         }),
-        (d.prototype.has = function (e) {
+        (d.prototype.has = function(e) {
           return this.map.hasOwnProperty(l(e));
         }),
-        (d.prototype.set = function (e, t) {
+        (d.prototype.set = function(e, t) {
           this.map[l(e)] = f(t);
         }),
-        (d.prototype.forEach = function (e, t) {
+        (d.prototype.forEach = function(e, t) {
           for (var n in this.map) this.map.hasOwnProperty(n) && e.call(t, this.map[n], n, this);
         }),
-        (d.prototype.keys = function () {
+        (d.prototype.keys = function() {
           var e = [];
           return (
-            this.forEach(function (t, n) {
+            this.forEach(function(t, n) {
               e.push(n);
             }),
             h(e)
           );
         }),
-        (d.prototype.values = function () {
+        (d.prototype.values = function() {
           var e = [];
           return (
-            this.forEach(function (t) {
+            this.forEach(function(t) {
               e.push(t);
             }),
             h(e)
           );
         }),
-        (d.prototype.entries = function () {
+        (d.prototype.entries = function() {
           var e = [];
           return (
-            this.forEach(function (t, n) {
+            this.forEach(function(t, n) {
               e.push([n, t]);
             }),
             h(e)
@@ -27184,7 +27238,7 @@ and limitations under the License.
           e
             .trim()
             .split('&')
-            .forEach(function (e) {
+            .forEach(function(e) {
               if (e) {
                 var n = e.split('='),
                   r = n.shift().replace(/\+/g, ' '),
@@ -27205,12 +27259,12 @@ and limitations under the License.
           (this.url = t.url || ''),
           this._initBody(e);
       }
-      (b.prototype.clone = function () {
+      (b.prototype.clone = function() {
         return new b(this, { body: this._bodyInit });
       }),
         g.call(b.prototype),
         g.call(w.prototype),
-        (w.prototype.clone = function () {
+        (w.prototype.clone = function() {
           return new w(this._bodyInit, {
             status: this.status,
             statusText: this.statusText,
@@ -27218,12 +27272,12 @@ and limitations under the License.
             url: this.url
           });
         }),
-        (w.error = function () {
+        (w.error = function() {
           var e = new w(null, { status: 0, statusText: '' });
           return (e.type = 'error'), e;
         });
       var S = [301, 302, 303, 307, 308];
-      w.redirect = function (e, t) {
+      w.redirect = function(e, t) {
         if (-1 === S.indexOf(t)) throw new RangeError('Invalid status code');
         return new w(null, { status: t, headers: { location: e } });
       };
@@ -27231,7 +27285,7 @@ and limitations under the License.
       try {
         new A();
       } catch (e) {
-        ((A = function (e, t) {
+        ((A = function(e, t) {
           (this.message = e), (this.name = t);
           var n = Error(e);
           this.stack = n.stack;
@@ -27239,46 +27293,45 @@ and limitations under the License.
           (A.prototype.constructor = A);
       }
       function O(e, t) {
-        return new Promise(function (n, r) {
+        return new Promise(function(n, r) {
           var i = new b(e, t);
           if (i.signal && i.signal.aborted) return r(new A('Aborted', 'AbortError'));
           var o = new XMLHttpRequest();
           function s() {
             o.abort();
           }
-          (o.onload = function () {
+          (o.onload = function() {
             var e,
               t,
               r = {
                 status: o.status,
                 statusText: o.statusText,
-                headers:
-                  ((e = o.getAllResponseHeaders() || ''),
-                  (t = new d()),
-                  e
-                    .replace(/\r?\n[\t ]+/g, ' ')
-                    .split(/\r?\n/)
-                    .forEach(function (e) {
-                      var n = e.split(':'),
-                        r = n.shift().trim();
-                      if (r) {
-                        var i = n.join(':').trim();
-                        t.append(r, i);
-                      }
-                    }),
-                  t)
+                headers: ((e = o.getAllResponseHeaders() || ''),
+                (t = new d()),
+                e
+                  .replace(/\r?\n[\t ]+/g, ' ')
+                  .split(/\r?\n/)
+                  .forEach(function(e) {
+                    var n = e.split(':'),
+                      r = n.shift().trim();
+                    if (r) {
+                      var i = n.join(':').trim();
+                      t.append(r, i);
+                    }
+                  }),
+                t)
               };
             r.url = 'responseURL' in o ? o.responseURL : r.headers.get('X-Request-URL');
             var i = 'response' in o ? o.response : o.responseText;
             n(new w(i, r));
           }),
-            (o.onerror = function () {
+            (o.onerror = function() {
               r(new TypeError('Network request failed'));
             }),
-            (o.ontimeout = function () {
+            (o.ontimeout = function() {
               r(new TypeError('Network request failed'));
             }),
-            (o.onabort = function () {
+            (o.onabort = function() {
               r(new A('Aborted', 'AbortError'));
             }),
             o.open(i.method, i.url, !0),
@@ -27286,12 +27339,12 @@ and limitations under the License.
               ? (o.withCredentials = !0)
               : 'omit' === i.credentials && (o.withCredentials = !1),
             'responseType' in o && a && (o.responseType = 'blob'),
-            i.headers.forEach(function (e, t) {
+            i.headers.forEach(function(e, t) {
               o.setRequestHeader(t, e);
             }),
             i.signal &&
               (i.signal.addEventListener('abort', s),
-              (o.onreadystatechange = function () {
+              (o.onreadystatechange = function() {
                 4 === o.readyState && i.signal.removeEventListener('abort', s);
               })),
             o.send(void 0 === i._bodyInit ? null : i._bodyInit);
@@ -27299,14 +27352,14 @@ and limitations under the License.
       }
       (O.polyfill = !0), self.fetch || ((self.fetch = O), (self.Headers = d), (self.Request = b), (self.Response = w));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(9);
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         for (; !Object.prototype.hasOwnProperty.call(e, t) && null !== (e = r(e)); );
         return e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n(113), Object.defineProperty(t, '__esModule', { value: !0 }), (t.brandMapping = t.cardTree = void 0);
       t.cardTree = {
@@ -27566,13 +27619,13 @@ and limitations under the License.
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(198);
       n(113), Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0), n(70), n(87), n(178);
       var i = r(n(0)),
         a = r(n(1)),
-        o = (function () {
+        o = (function() {
           function e() {
             (0, i.default)(this, e);
           }
@@ -27580,13 +27633,13 @@ and limitations under the License.
             (0, a.default)(e, null, [
               {
                 key: 'inArray',
-                value: function (e, t) {
+                value: function(e, t) {
                   return Array.from(e).indexOf(t) >= 0;
                 }
               },
               {
                 key: 'forEachBreak',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = null;
                   for (var r in e) if ((n = t(e[r]))) break;
                   return n || null;
@@ -27598,7 +27651,7 @@ and limitations under the License.
         })();
       t.default = o;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(73),
         a = n(18),
@@ -27606,23 +27659,23 @@ and limitations under the License.
         s = '[' + o + ']',
         u = RegExp('^' + s + s + '*'),
         c = RegExp(s + s + '*$'),
-        l = function (e, t, n) {
+        l = function(e, t, n) {
           var i = {},
-            s = a(function () {
+            s = a(function() {
               return !!o[e]() || '​' != '​'[e]();
             }),
             u = (i[e] = s ? t(f) : o[e]);
           n && (i[n] = u), r(r.P + r.F * s, 'String', i);
         },
-        f = (l.trim = function (e, t) {
+        f = (l.trim = function(e, t) {
           return (e = String(i(e))), 1 & t && (e = e.replace(u, '')), 2 & t && (e = e.replace(c, '')), e;
         });
       e.exports = l;
     },
-    function (e, t) {
+    function(e, t) {
       e.exports = '\t\n\v\f\r   ᠎             　\u2028\u2029\ufeff';
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.Currencies = {
@@ -28708,23 +28761,23 @@ and limitations under the License.
           }
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(220),
         i = n(125);
       e.exports = n(168)(
         'Map',
-        function (e) {
-          return function () {
+        function(e) {
+          return function() {
             return e(this, arguments.length > 0 ? arguments[0] : void 0);
           };
         },
         {
-          get: function (e) {
+          get: function(e) {
             var t = r.getEntry(i(this, 'Map'), e);
             return t && t.v;
           },
-          set: function (e, t) {
+          set: function(e, t) {
             return r.def(i(this, 'Map'), 0 === e ? 0 : e, t);
           }
         },
@@ -28733,7 +28786,7 @@ and limitations under the License.
       );
     },
     ,
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n.r(t);
       var r,
@@ -28748,7 +28801,7 @@ and limitations under the License.
         h = n.n(f),
         d =
           Object(o.Service)()(
-            ((a = i = (function () {
+            ((a = i = (function() {
               function e() {
                 l()(this, e), (this.tid = Promise.resolve(void 0));
               }
@@ -28756,13 +28809,13 @@ and limitations under the License.
                 h()(e, [
                   {
                     key: 'init',
-                    value: function (t) {
+                    value: function(t) {
                       return t && (this.tid = Promise.resolve(e.MOCKED_TID)), this.tid;
                     }
                   },
                   {
                     key: 'getTransactionId',
-                    value: function () {
+                    value: function() {
                       return this.tid;
                     }
                   }
@@ -28776,12 +28829,12 @@ and limitations under the License.
       n(12).a.testEnvironment && o.Container.set({ id: u.a, type: d }),
         o.Container.has(s.a) || o.Container.set(s.a, window);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return y;
       });
-      var r = (function () {
+      var r = (function() {
           function e() {
             return Error.call(this), (this.message = 'no elements in sequence'), (this.name = 'EmptyError'), this;
           }
@@ -28794,33 +28847,33 @@ and limitations under the License.
       function u(e) {
         return (
           void 0 === e && (e = null),
-          function (t) {
+          function(t) {
             return t.lift(new c(e));
           }
         );
       }
-      var c = (function () {
+      var c = (function() {
           function e(e) {
             this.defaultValue = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new l(e, this.defaultValue));
             }),
             e
           );
         })(),
-        l = (function (e) {
+        l = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.defaultValue = n), (r.isEmpty = !0), r;
           }
           return (
             o.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               (this.isEmpty = !1), this.destination.next(e);
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               this.isEmpty && this.destination.next(this.defaultValue), this.destination.complete();
             }),
             t
@@ -28829,33 +28882,33 @@ and limitations under the License.
       function f(e) {
         return (
           void 0 === e && (e = p),
-          function (t) {
+          function(t) {
             return t.lift(new h(e));
           }
         );
       }
-      var h = (function () {
+      var h = (function() {
           function e(e) {
             this.errorFactory = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new d(e, this.errorFactory));
             }),
             e
           );
         })(),
-        d = (function (e) {
+        d = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.errorFactory = n), (r.hasValue = !1), r;
           }
           return (
             o.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               (this.hasValue = !0), this.destination.next(e);
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               if (this.hasValue) return this.destination.complete();
               var e = void 0;
               try {
@@ -28874,32 +28927,32 @@ and limitations under the License.
       var v = n(96);
       function y(e, t) {
         var n = arguments.length >= 2;
-        return function (o) {
+        return function(o) {
           return o.pipe(
             e
-              ? Object(i.a)(function (t, n) {
+              ? Object(i.a)(function(t, n) {
                   return e(t, n, o);
                 })
               : v.a,
             Object(a.a)(1),
             n
               ? u(t)
-              : f(function () {
+              : f(function() {
                   return new r();
                 })
           );
         };
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
-        i = function () {
+        i = function() {
           return void 0 === r && (r = Boolean(window && document && document.all && !window.atob)), r;
         },
-        a = (function () {
+        a = (function() {
           var e = {};
-          return function (t) {
+          return function(t) {
             if (void 0 === e[t]) {
               var n = document.querySelector(t);
               if (window.HTMLIFrameElement && n instanceof window.HTMLIFrameElement)
@@ -28944,7 +28997,7 @@ and limitations under the License.
           i && (r.nonce = i);
         }
         if (
-          (Object.keys(r).forEach(function (e) {
+          (Object.keys(r).forEach(function(e) {
             t.setAttribute(e, r[e]);
           }),
           'function' == typeof e.insert)
@@ -28961,11 +29014,10 @@ and limitations under the License.
         return t;
       }
       var l,
-        f =
-          ((l = []),
-          function (e, t) {
-            return (l[e] = t), l.filter(Boolean).join('\n');
-          });
+        f = ((l = []),
+        function(e, t) {
+          return (l[e] = t), l.filter(Boolean).join('\n');
+        });
       function h(e, t, n, r) {
         var i = n ? '' : r.media ? '@media '.concat(r.media, ' {').concat(r.css, '}') : r.css;
         if (e.styleSheet) e.styleSheet.cssText = f(t, i);
@@ -29005,15 +29057,15 @@ and limitations under the License.
         } else
           (n = c(t)),
             (r = d.bind(null, n, t)),
-            (i = function () {
-              !(function (e) {
+            (i = function() {
+              !(function(e) {
                 if (null === e.parentNode) return !1;
                 e.parentNode.removeChild(e);
               })(n);
             });
         return (
           r(e),
-          function (t) {
+          function(t) {
             if (t) {
               if (t.css === e.css && t.media === e.media && t.sourceMap === e.sourceMap) return;
               r((e = t));
@@ -29021,10 +29073,10 @@ and limitations under the License.
           }
         );
       }
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         (t = t || {}).singleton || 'boolean' == typeof t.singleton || (t.singleton = i());
         var n = u((e = e || []), t);
-        return function (e) {
+        return function(e) {
           if (((e = e || []), '[object Array]' === Object.prototype.toString.call(e))) {
             for (var r = 0; r < n.length; r++) {
               var i = s(n[r]);
@@ -29039,27 +29091,29 @@ and limitations under the License.
         };
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = [];
         return (
-          (t.toString = function () {
-            return this.map(function (t) {
-              var n = (function (e, t) {
+          (t.toString = function() {
+            return this.map(function(t) {
+              var n = (function(e, t) {
                 var n = e[1] || '',
                   r = e[3];
                 if (!r) return n;
                 if (t && 'function' == typeof btoa) {
-                  var i =
-                      ((o = r),
-                      (s = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
-                      (u = 'sourceMappingURL=data:application/json;charset=utf-8;base64,'.concat(s)),
-                      '/*# '.concat(u, ' */')),
-                    a = r.sources.map(function (e) {
+                  var i = ((o = r),
+                    (s = btoa(unescape(encodeURIComponent(JSON.stringify(o))))),
+                    (u = 'sourceMappingURL=data:application/json;charset=utf-8;base64,'.concat(s)),
+                    '/*# '.concat(u, ' */')),
+                    a = r.sources.map(function(e) {
                       return '/*# sourceURL='.concat(r.sourceRoot || '').concat(e, ' */');
                     });
-                  return [n].concat(a).concat([i]).join('\n');
+                  return [n]
+                    .concat(a)
+                    .concat([i])
+                    .join('\n');
                 }
                 var o, s, u;
                 return [n].join('\n');
@@ -29067,7 +29121,7 @@ and limitations under the License.
               return t[2] ? '@media '.concat(t[2], ' {').concat(n, '}') : n;
             }).join('');
           }),
-          (t.i = function (e, n, r) {
+          (t.i = function(e, n, r) {
             'string' == typeof e && (e = [[null, e, '']]);
             var i = {};
             if (r)
@@ -29084,11 +29138,11 @@ and limitations under the License.
         );
       };
     },
-    function (e, t) {},
+    function(e, t) {},
     ,
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return s;
       });
       var r = n(10),
@@ -29098,13 +29152,13 @@ and limitations under the License.
       function s(e, t, n) {
         return n
           ? s(e, t).pipe(
-              Object(o.a)(function (e) {
+              Object(o.a)(function(e) {
                 return Object(i.a)(e) ? n.apply(void 0, e) : n(e);
               })
             )
-          : new r.a(function (n) {
+          : new r.a(function(n) {
               var r,
-                i = function () {
+                i = function() {
                   for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
                   return n.next(1 === e.length ? e[0] : e);
                 };
@@ -29114,31 +29168,31 @@ and limitations under the License.
                 return void n.error(e);
               }
               if (Object(a.a)(t))
-                return function () {
+                return function() {
                   return t(i, r);
                 };
             });
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return o;
       });
       var r = n(4),
         i = n(65),
         a = n(64);
       function o(e) {
-        return function (t) {
+        return function(t) {
           return t.lift(new s(e));
         };
       }
-      var s = (function () {
+      var s = (function() {
           function e(e) {
             this.notifier = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               var n = new u(e),
                 r = Object(a.a)(n, this.notifier);
               return r && !n.seenValue ? (n.add(r), t.subscribe(n)) : n;
@@ -29146,24 +29200,24 @@ and limitations under the License.
             e
           );
         })(),
-        u = (function (e) {
+        u = (function(e) {
           function t(t) {
             var n = e.call(this, t) || this;
             return (n.seenValue = !1), n;
           }
           return (
             r.a(t, e),
-            (t.prototype.notifyNext = function (e, t, n, r, i) {
+            (t.prototype.notifyNext = function(e, t, n, r, i) {
               (this.seenValue = !0), this.complete();
             }),
-            (t.prototype.notifyComplete = function () {}),
+            (t.prototype.notifyComplete = function() {}),
             t
           );
         })(i.a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return c;
       });
       var r = n(4),
@@ -29174,40 +29228,40 @@ and limitations under the License.
         u = n(133);
       function c(e, t) {
         return 'function' == typeof t
-          ? function (n) {
+          ? function(n) {
               return n.pipe(
-                c(function (n, r) {
+                c(function(n, r) {
                   return Object(u.a)(e(n, r)).pipe(
-                    Object(s.a)(function (e, i) {
+                    Object(s.a)(function(e, i) {
                       return t(n, e, r, i);
                     })
                   );
                 })
               );
             }
-          : function (t) {
+          : function(t) {
               return t.lift(new l(e));
             };
       }
-      var l = (function () {
+      var l = (function() {
           function e(e) {
             this.project = e;
           }
           return (
-            (e.prototype.call = function (e, t) {
+            (e.prototype.call = function(e, t) {
               return t.subscribe(new f(e, this.project));
             }),
             e
           );
         })(),
-        f = (function (e) {
+        f = (function(e) {
           function t(t, n) {
             var r = e.call(this, t) || this;
             return (r.project = n), (r.index = 0), r;
           }
           return (
             r.a(t, e),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               var t,
                 n = this.index++;
               try {
@@ -29217,7 +29271,7 @@ and limitations under the License.
               }
               this._innerSub(t, e, n);
             }),
-            (t.prototype._innerSub = function (e, t, n) {
+            (t.prototype._innerSub = function(e, t, n) {
               var r = this.innerSubscription;
               r && r.unsubscribe();
               var i = new a.a(this, t, n),
@@ -29226,26 +29280,26 @@ and limitations under the License.
                 (this.innerSubscription = Object(o.a)(this, e, void 0, void 0, i)),
                 this.innerSubscription !== i && s.add(this.innerSubscription);
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               var t = this.innerSubscription;
               (t && !t.closed) || e.prototype._complete.call(this), this.unsubscribe();
             }),
-            (t.prototype._unsubscribe = function () {
+            (t.prototype._unsubscribe = function() {
               this.innerSubscription = null;
             }),
-            (t.prototype.notifyComplete = function (t) {
+            (t.prototype.notifyComplete = function(t) {
               this.destination.remove(t),
                 (this.innerSubscription = null),
                 this.isStopped && e.prototype._complete.call(this);
             }),
-            (t.prototype.notifyNext = function (e, t, n, r, i) {
+            (t.prototype.notifyNext = function(e, t, n, r, i) {
               this.destination.next(t);
             }),
             t
           );
         })(i.a);
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(104),
         i = n(82).getWeak,
@@ -29259,49 +29313,49 @@ and limitations under the License.
         h = c(5),
         d = c(6),
         p = 0,
-        v = function (e) {
+        v = function(e) {
           return e._l || (e._l = new y());
         },
-        y = function () {
+        y = function() {
           this.a = [];
         },
-        m = function (e, t) {
-          return h(e.a, function (e) {
+        m = function(e, t) {
+          return h(e.a, function(e) {
             return e[0] === t;
           });
         };
       (y.prototype = {
-        get: function (e) {
+        get: function(e) {
           var t = m(this, e);
           if (t) return t[1];
         },
-        has: function (e) {
+        has: function(e) {
           return !!m(this, e);
         },
-        set: function (e, t) {
+        set: function(e, t) {
           var n = m(this, e);
           n ? (n[1] = t) : this.a.push([e, t]);
         },
-        delete: function (e) {
-          var t = d(this.a, function (t) {
+        delete: function(e) {
+          var t = d(this.a, function(t) {
             return t[0] === e;
           });
           return ~t && this.a.splice(t, 1), !!~t;
         }
       }),
         (e.exports = {
-          getConstructor: function (e, t, n, a) {
-            var c = e(function (e, r) {
+          getConstructor: function(e, t, n, a) {
+            var c = e(function(e, r) {
               s(e, c, t, '_i'), (e._t = t), (e._i = p++), (e._l = void 0), null != r && u(r, n, e[a], e);
             });
             return (
               r(c.prototype, {
-                delete: function (e) {
+                delete: function(e) {
                   if (!o(e)) return !1;
                   var n = i(e);
                   return !0 === n ? v(f(this, t)).delete(e) : n && l(n, this._i) && delete n[this._i];
                 },
-                has: function (e) {
+                has: function(e) {
                   if (!o(e)) return !1;
                   var n = i(e);
                   return !0 === n ? v(f(this, t)).has(e) : n && l(n, this._i);
@@ -29310,21 +29364,21 @@ and limitations under the License.
               c
             );
           },
-          def: function (e, t, n) {
+          def: function(e, t, n) {
             var r = i(a(t), !0);
             return !0 === r ? v(e).set(t, n) : (r[e._i] = n), e;
           },
           ufstore: v
         });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(219),
         i = n(333);
       function a(t, n, o) {
         return (
           i()
             ? (e.exports = a = Reflect.construct)
-            : (e.exports = a = function (e, t, n) {
+            : (e.exports = a = function(e, t, n) {
                 var i = [null];
                 i.push.apply(i, t);
                 var a = new (Function.bind.apply(e, i))();
@@ -29335,29 +29389,29 @@ and limitations under the License.
       }
       e.exports = a;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(15),
         i = Math.floor;
-      e.exports = function (e) {
+      e.exports = function(e) {
         return !r(e) && isFinite(e) && i(e) === e;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n.d(t, 'a', function () {
+      n.d(t, 'a', function() {
         return E;
       });
       var r,
         i = n(4),
         a = n(99),
-        o = (function (e) {
+        o = (function(e) {
           function t(t, n) {
             var r = e.call(this, t, n) || this;
             return (r.scheduler = t), (r.work = n), r;
           }
           return (
             i.a(t, e),
-            (t.prototype.schedule = function (t, n) {
+            (t.prototype.schedule = function(t, n) {
               return (
                 void 0 === n && (n = 0),
                 n > 0
@@ -29365,10 +29419,10 @@ and limitations under the License.
                   : ((this.delay = n), (this.state = t), this.scheduler.flush(this), this)
               );
             }),
-            (t.prototype.execute = function (t, n) {
+            (t.prototype.execute = function(t, n) {
               return n > 0 || this.closed ? e.prototype.execute.call(this, t, n) : this._execute(t, n);
             }),
-            (t.prototype.requestAsyncId = function (t, n, r) {
+            (t.prototype.requestAsyncId = function(t, n, r) {
               return (
                 void 0 === r && (r = 0),
                 (null !== r && r > 0) || (null === r && this.delay > 0)
@@ -29379,7 +29433,7 @@ and limitations under the License.
             t
           );
         })(n(136).a),
-        s = new ((function (e) {
+        s = new ((function(e) {
           function t() {
             return (null !== e && e.apply(this, arguments)) || this;
           }
@@ -29395,12 +29449,12 @@ and limitations under the License.
         e.subscriber.error(t);
       }
       r || (r = {});
-      var p = (function () {
+      var p = (function() {
         function e(e, t, n) {
           (this.kind = e), (this.value = t), (this.error = n), (this.hasValue = 'N' === e);
         }
         return (
-          (e.prototype.observe = function (e) {
+          (e.prototype.observe = function(e) {
             switch (this.kind) {
               case 'N':
                 return e.next && e.next(this.value);
@@ -29410,7 +29464,7 @@ and limitations under the License.
                 return e.complete && e.complete();
             }
           }),
-          (e.prototype.do = function (e, t, n) {
+          (e.prototype.do = function(e, t, n) {
             switch (this.kind) {
               case 'N':
                 return e && e(this.value);
@@ -29420,10 +29474,10 @@ and limitations under the License.
                 return n && n();
             }
           }),
-          (e.prototype.accept = function (e, t, n) {
+          (e.prototype.accept = function(e, t, n) {
             return e && 'function' == typeof e.next ? this.observe(e) : this.do(e, t, n);
           }),
-          (e.prototype.toObservable = function () {
+          (e.prototype.toObservable = function() {
             var e, t;
             switch (this.kind) {
               case 'N':
@@ -29432,10 +29486,10 @@ and limitations under the License.
                 return (
                   (e = this.error),
                   t
-                    ? new h.a(function (n) {
+                    ? new h.a(function(n) {
                         return t.schedule(d, 0, { error: e, subscriber: n });
                       })
-                    : new h.a(function (t) {
+                    : new h.a(function(t) {
                         return t.error(e);
                       })
                 );
@@ -29444,13 +29498,13 @@ and limitations under the License.
             }
             throw new Error('unexpected notification kind value');
           }),
-          (e.createNext = function (t) {
+          (e.createNext = function(t) {
             return void 0 !== t ? new e('N', t) : e.undefinedValueNotification;
           }),
-          (e.createError = function (t) {
+          (e.createError = function(t) {
             return new e('E', void 0, t);
           }),
-          (e.createComplete = function () {
+          (e.createComplete = function() {
             return e.completeNotification;
           }),
           (e.completeNotification = new e('C')),
@@ -29458,7 +29512,7 @@ and limitations under the License.
           e
         );
       })();
-      var v = (function (e) {
+      var v = (function(e) {
           function t(t, n, r) {
             void 0 === r && (r = 0);
             var i = e.call(this, t) || this;
@@ -29466,34 +29520,34 @@ and limitations under the License.
           }
           return (
             i.a(t, e),
-            (t.dispatch = function (e) {
+            (t.dispatch = function(e) {
               var t = e.notification,
                 n = e.destination;
               t.observe(n), this.unsubscribe();
             }),
-            (t.prototype.scheduleMessage = function (e) {
+            (t.prototype.scheduleMessage = function(e) {
               this.destination.add(this.scheduler.schedule(t.dispatch, this.delay, new y(e, this.destination)));
             }),
-            (t.prototype._next = function (e) {
+            (t.prototype._next = function(e) {
               this.scheduleMessage(p.createNext(e));
             }),
-            (t.prototype._error = function (e) {
+            (t.prototype._error = function(e) {
               this.scheduleMessage(p.createError(e)), this.unsubscribe();
             }),
-            (t.prototype._complete = function () {
+            (t.prototype._complete = function() {
               this.scheduleMessage(p.createComplete()), this.unsubscribe();
             }),
             t
           );
         })(c.a),
-        y = (function () {
-          return function (e, t) {
+        y = (function() {
+          return function(e, t) {
             (this.notification = e), (this.destination = t);
           };
         })(),
         m = n(67),
         g = n(131),
-        _ = (function (e) {
+        _ = (function(e) {
           function t(t, n, r) {
             void 0 === t && (t = Number.POSITIVE_INFINITY), void 0 === n && (n = Number.POSITIVE_INFINITY);
             var i = e.call(this) || this;
@@ -29511,16 +29565,16 @@ and limitations under the License.
           }
           return (
             i.a(t, e),
-            (t.prototype.nextInfiniteTimeWindow = function (t) {
+            (t.prototype.nextInfiniteTimeWindow = function(t) {
               var n = this._events;
               n.push(t), n.length > this._bufferSize && n.shift(), e.prototype.next.call(this, t);
             }),
-            (t.prototype.nextTimeWindow = function (t) {
+            (t.prototype.nextTimeWindow = function(t) {
               this._events.push(new b(this._getNow(), t)),
                 this._trimBufferThenGetEvents(),
                 e.prototype.next.call(this, t);
             }),
-            (t.prototype._subscribe = function (e) {
+            (t.prototype._subscribe = function(e) {
               var t,
                 n = this._infiniteTimeWindow,
                 r = n ? this._events : this._trimBufferThenGetEvents(),
@@ -29536,10 +29590,10 @@ and limitations under the License.
               else for (o = 0; o < a && !e.closed; o++) e.next(r[o].value);
               return this.hasError ? e.error(this.thrownError) : this.isStopped && e.complete(), t;
             }),
-            (t.prototype._getNow = function () {
+            (t.prototype._getNow = function() {
               return (this.scheduler || s).now();
             }),
-            (t.prototype._trimBufferThenGetEvents = function () {
+            (t.prototype._trimBufferThenGetEvents = function() {
               for (
                 var e = this._getNow(),
                   t = this._bufferSize,
@@ -29556,8 +29610,8 @@ and limitations under the License.
             t
           );
         })(a.a),
-        b = (function () {
-          return function (e, t) {
+        b = (function() {
+          return function(e, t) {
             (this.time = e), (this.value = t);
           };
         })();
@@ -29565,9 +29619,9 @@ and limitations under the License.
         var r;
         return (
           (r = e && 'object' == typeof e ? e : { bufferSize: e, windowTime: t, refCount: !1, scheduler: n }),
-          function (e) {
+          function(e) {
             return e.lift(
-              (function (e) {
+              (function(e) {
                 var t,
                   n,
                   r = e.bufferSize,
@@ -29579,24 +29633,24 @@ and limitations under the License.
                   c = 0,
                   l = !1,
                   f = !1;
-                return function (e) {
+                return function(e) {
                   c++,
                     (t && !l) ||
                       ((l = !1),
                       (t = new _(i, o, u)),
                       (n = e.subscribe({
-                        next: function (e) {
+                        next: function(e) {
                           t.next(e);
                         },
-                        error: function (e) {
+                        error: function(e) {
                           (l = !0), t.error(e);
                         },
-                        complete: function () {
+                        complete: function() {
                           (f = !0), (n = void 0), t.complete();
                         }
                       })));
                   var r = t.subscribe(this);
-                  this.add(function () {
+                  this.add(function() {
                     c--, r.unsubscribe(), n && !f && s && 0 === c && (n.unsubscribe(), (n = void 0), (t = void 0));
                   });
                 };
@@ -29606,26 +29660,26 @@ and limitations under the License.
         );
       }
     },
-    function (e, t, n) {
+    function(e, t, n) {
       n(240), n(306), (e.exports = n(353));
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(14).isFinite;
       r(r.S, 'Number', {
-        isFinite: function (e) {
+        isFinite: function(e) {
           return 'number' == typeof e && i(e);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(24),
         a = n(216),
         o = ''.endsWith;
       r(r.P + r.F * n(217)('endsWith'), 'String', {
-        endsWith: function (e) {
+        endsWith: function(e) {
           var t = a(this, e, 'endsWith'),
             n = arguments.length > 1 ? arguments[1] : void 0,
             r = i(t.length),
@@ -29635,39 +29689,39 @@ and limitations under the License.
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Math', {
-        trunc: function (e) {
+        trunc: function(e) {
           return (e > 0 ? Math.floor : Math.ceil)(e);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Number', { MIN_SAFE_INTEGER: -9007199254740991 });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Number', { MAX_SAFE_INTEGER: 9007199254740991 });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(326),
         a = n(232),
         o = /Version\/10\.\d+(\.\d+)?( Mobile\/\w+)? Safari\//.test(a);
       r(r.P + r.F * o, 'String', {
-        padStart: function (e) {
+        padStart: function(e) {
           return i(this, e, arguments.length > 1 ? arguments[1] : void 0, !0);
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(24),
         i = n(327),
         a = n(73);
-      e.exports = function (e, t, n, o) {
+      e.exports = function(e, t, n, o) {
         var s = String(a(e)),
           u = s.length,
           c = void 0 === n ? ' ' : String(n),
@@ -29678,11 +29732,11 @@ and limitations under the License.
         return h.length > f && (h = h.slice(0, f)), o ? h + s : s + h;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(59),
         i = n(73);
-      e.exports = function (e) {
+      e.exports = function(e) {
         var t = String(i(this)),
           n = '',
           a = r(e);
@@ -29691,31 +29745,31 @@ and limitations under the License.
         return n;
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
-      n(329)('link', function (e) {
-        return function (t) {
+      n(329)('link', function(e) {
+        return function(t) {
           return e(this, 'a', 'href', t);
         };
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(18),
         a = n(73),
         o = /"/g,
-        s = function (e, t, n, r) {
+        s = function(e, t, n, r) {
           var i = String(a(e)),
             s = '<' + t;
           return '' !== n && (s += ' ' + n + '="' + String(r).replace(o, '&quot;') + '"'), s + '>' + i + '</' + t + '>';
         };
-      e.exports = function (e, t) {
+      e.exports = function(e, t) {
         var n = {};
         (n[e] = t(s)),
           r(
             r.P +
               r.F *
-                i(function () {
+                i(function() {
                   var t = ''[e]('"');
                   return t !== t.toLowerCase() || t.split('"').length > 3;
                 }),
@@ -29724,23 +29778,23 @@ and limitations under the License.
           );
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Reflect', { ownKeys: n(236) });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(315),
         i = n(125);
       n(168)(
         'WeakSet',
-        function (e) {
-          return function () {
+        function(e) {
+          return function() {
             return e(this, arguments.length > 0 ? arguments[0] : void 0);
           };
         },
         {
-          add: function (e) {
+          add: function(e) {
             return r.def(i(this, 'WeakSet'), e, !0);
           }
         },
@@ -29749,7 +29803,7 @@ and limitations under the License.
         !0
       );
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r,
         i = n(14),
@@ -29765,19 +29819,19 @@ and limitations under the License.
         p = s.getWeak,
         v = Object.isExtensible,
         y = c.ufstore,
-        m = function (e) {
-          return function () {
+        m = function(e) {
+          return function() {
             return e(this, arguments.length > 0 ? arguments[0] : void 0);
           };
         },
         g = {
-          get: function (e) {
+          get: function(e) {
             if (l(e)) {
               var t = p(e);
               return !0 === t ? y(f(this, 'WeakMap')).get(e) : t ? t[this._i] : void 0;
             }
           },
-          set: function (e, t) {
+          set: function(e, t) {
             return c.def(f(this, 'WeakMap'), e, t);
           }
         },
@@ -29786,10 +29840,10 @@ and limitations under the License.
         d &&
         (u((r = c.getConstructor(m, 'WeakMap')).prototype, g),
         (s.NEED = !0),
-        a(['delete', 'has', 'get', 'set'], function (e) {
+        a(['delete', 'has', 'get', 'set'], function(e) {
           var t = _.prototype,
             n = t[e];
-          o(t, e, function (t, i) {
+          o(t, e, function(t, i) {
             if (l(t) && !v(t)) {
               this._f || (this._f = new r());
               var a = this._f[e](t, i);
@@ -29799,30 +29853,30 @@ and limitations under the License.
           });
         }));
     },
-    function (e, t) {
-      e.exports = function () {
+    function(e, t) {
+      e.exports = function() {
         if ('undefined' == typeof Reflect || !Reflect.construct) return !1;
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6);
       r(r.S, 'Number', { isInteger: n(317) });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       var r = n(6),
         i = n(24),
         a = n(216),
         o = ''.startsWith;
       r(r.P + r.F * n(217)('startsWith'), 'String', {
-        startsWith: function (e) {
+        startsWith: function(e) {
           var t = a(this, e, 'startsWith'),
             n = i(Math.min(arguments.length > 1 ? arguments[1] : void 0, t.length)),
             r = String(e);
@@ -29830,7 +29884,7 @@ and limitations under the License.
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(9),
         i = n(219),
         a = n(337),
@@ -29838,7 +29892,7 @@ and limitations under the License.
       function s(t) {
         var n = 'function' == typeof Map ? new Map() : void 0;
         return (
-          (e.exports = s = function (e) {
+          (e.exports = s = function(e) {
             if (null === e || !a(e)) return e;
             if ('function' != typeof e) throw new TypeError('Super expression must either be null or a function');
             if (void 0 !== n) {
@@ -29860,22 +29914,22 @@ and limitations under the License.
       }
       e.exports = s;
     },
-    function (e, t) {
-      e.exports = function (e) {
+    function(e, t) {
+      e.exports = function(e) {
         return -1 !== Function.toString.call(e).indexOf('[native code]');
       };
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(6),
         i = n(317),
         a = Math.abs;
       r(r.S, 'Number', {
-        isSafeInteger: function (e) {
+        isSafeInteger: function(e) {
           return i(e) && a(e) <= 9007199254740991;
         }
       });
     },
-    function (e, t, n) {
+    function(e, t, n) {
       var r = n(308),
         i = n(340);
       'string' == typeof (i = i.__esModule ? i.default : i) && (i = [[e.i, i, '']]);
@@ -29883,7 +29937,7 @@ and limitations under the License.
         o = (r(i, a), i.locals ? i.locals : {});
       e.exports = o;
     },
-    function (e, t, n) {
+    function(e, t, n) {
       (t = n(309)(!1)).push([
         e.i,
         ".notification-frame {\n  font-size: 1.3rem;\n  line-height: 1.6rem;\n  color: #fff;\n  border: 0.1rem solid;\n  border-radius: 0.4rem;\n  padding: 1.1rem 0.8rem 1.3rem;\n  position: relative;\n  opacity: 0;\n  width: 100%;\n  height: 91px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  transition: opacity;\n  box-sizing: border-box;\n}\n.notification-frame:after {\n  content: 'x';\n  display: block;\n  position: absolute;\n  top: 0;\n  right: 0.6rem;\n  visibility: hidden;\n}\n.notification-frame--info,\n.notification-frame--error,\n.notification-frame--warning,\n.notification-frame--success {\n  opacity: 1;\n}\n.notification-frame--info {\n  background-color: #6d6d6d;\n  border-color: #6d6d6d;\n  color: #fff;\n}\n.notification-frame--error {\n  background-color: #ff4545;\n  border-color: #ff4545;\n  color: #fff;\n}\n.notification-frame--warning {\n  background-color: #ffc23a;\n  border-color: #ffc23a;\n  color: #fff;\n}\n.notification-frame--success {\n  background-color: #01cb4d;\n  border-color: #01cb4d;\n  color: #fff;\n}\n",
@@ -29903,7 +29957,7 @@ and limitations under the License.
     ,
     ,
     ,
-    function (e, t, n) {
+    function(e, t, n) {
       'use strict';
       n.r(t);
       n(84), n(53), n(26), n(22), n(11), n(43);
@@ -29928,7 +29982,7 @@ and limitations under the License.
         E = n.n(b),
         w = n(48),
         S = n(5),
-        A = (function () {
+        A = (function() {
           function e() {
             l()(this, e), (this._name = '');
           }
@@ -29938,19 +29992,19 @@ and limitations under the License.
               [
                 {
                   key: 'iframeSrc',
-                  get: function () {
+                  get: function() {
                     return this._iframeSrc;
                   },
-                  set: function (e) {
+                  set: function(e) {
                     this._iframeSrc = e;
                   }
                 },
                 {
                   key: 'name',
-                  get: function () {
+                  get: function() {
                     return this._name;
                   },
-                  set: function (e) {
+                  set: function(e) {
                     this._name = e;
                   }
                 }
@@ -29958,7 +30012,7 @@ and limitations under the License.
               [
                 {
                   key: 'getComponentAddress',
-                  value: function (e) {
+                  value: function(e) {
                     return e === S.a.CARD_NUMBER_COMPONENT_NAME
                       ? S.a.CARD_NUMBER_COMPONENT
                       : e === S.a.SECURITY_CODE_COMPONENT_NAME
@@ -29974,7 +30028,7 @@ and limitations under the License.
                 },
                 {
                   key: 'createFormElement',
-                  value: function (e, t) {
+                  value: function(e, t) {
                     var n = document.createElement(e);
                     return n.setAttribute('id', t), n.setAttribute('class', t), n;
                   }
@@ -29984,7 +30038,7 @@ and limitations under the License.
             h()(e, [
               {
                 key: 'create',
-                value: function (t, n, r) {
+                value: function(t, n, r) {
                   var i = e.getComponentAddress(t),
                     a = new URLSearchParams(n).toString(),
                     o = new URLSearchParams(r).toString();
@@ -29997,7 +30051,7 @@ and limitations under the License.
               },
               {
                 key: 'mount',
-                value: function (t, n) {
+                value: function(t, n) {
                   var r = e.createFormElement('iframe', t);
                   if (
                     (r.setAttribute('src', this.iframeSrc),
@@ -30031,7 +30085,7 @@ and limitations under the License.
         k = n(37),
         I = n(3),
         N = n(68),
-        x = (function () {
+        x = (function() {
           function e(t, n, r, i, a, o) {
             l()(this, e),
               (this.messageBus = I.Container.get(T.a)),
@@ -30052,27 +30106,27 @@ and limitations under the License.
             h()(e, [
               {
                 key: 'registerElements',
-                value: function (e, t) {
-                  t.map(function (t, n) {
+                value: function(e, t) {
+                  t.map(function(t, n) {
                     document.getElementById(t).appendChild(e[n]);
                   });
                 }
               },
               {
                 key: 'configureFormFieldsAmount',
-                value: function (e) {
+                value: function(e) {
                   return [];
                 }
               },
               {
                 key: 'setElementsFields',
-                value: function () {
+                value: function() {
                   return [];
                 }
               },
               {
                 key: '_getStyles',
-                value: function (e) {
+                value: function(e) {
                   for (var t in e) if (e[t] instanceof Object) return e;
                   return (e = { defaultStyles: e });
                 }
@@ -30087,7 +30141,7 @@ and limitations under the License.
         if ('undefined' == typeof Symbol || null == e[Symbol.iterator]) {
           if (
             Array.isArray(e) ||
-            (e = (function (e, t) {
+            (e = (function(e, t) {
               if (!e) return;
               if ('string' == typeof e) return L(e, t);
               var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -30097,13 +30151,13 @@ and limitations under the License.
             })(e))
           ) {
             var t = 0,
-              n = function () {};
+              n = function() {};
             return {
               s: n,
-              n: function () {
+              n: function() {
                 return t >= e.length ? { done: !0 } : { done: !1, value: e[t++] };
               },
-              e: function (e) {
+              e: function(e) {
                 throw e;
               },
               f: n
@@ -30118,17 +30172,17 @@ and limitations under the License.
           a = !0,
           o = !1;
         return {
-          s: function () {
+          s: function() {
             r = e[Symbol.iterator]();
           },
-          n: function () {
+          n: function() {
             var e = r.next();
             return (a = e.done), e;
           },
-          e: function (e) {
+          e: function(e) {
             (o = !0), (i = e);
           },
-          f: function () {
+          f: function() {
             try {
               a || null == r.return || r.return();
             } finally {
@@ -30147,7 +30201,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -30159,31 +30213,30 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
       }
-      var F = (function (e) {
+      var F = (function(e) {
         m()(r, e);
         var t,
-          n =
-            ((t = r),
-            function () {
-              var e,
-                n = E()(t);
-              if (M()) {
-                var r = E()(this).constructor;
-                e = Reflect.construct(n, arguments, r);
-              } else e = n.apply(this, arguments);
-              return _()(this, e);
-            });
+          n = ((t = r),
+          function() {
+            var e,
+              n = E()(t);
+            if (M()) {
+              var r = E()(this).constructor;
+              e = Reflect.construct(n, arguments, r);
+            } else e = n.apply(this, arguments);
+            return _()(this, e);
+          });
         function r(e, t, i, a, o, s, u, c, f, h, d, p) {
           var v;
           return (
             l()(this, r),
             ((v = n.call(this, e, t, i, a, u, d))._messageBusEvent = { data: { message: '' }, type: '' }),
-            (v._createSubmitButton = function () {
+            (v._createSubmitButton = function() {
               var e = document.getElementById(S.a.MERCHANT_FORM_SELECTOR),
                 t = v._buttonId ? document.getElementById(v._buttonId) : null;
               return (
@@ -30204,7 +30257,7 @@ and limitations under the License.
           h()(r, [
             {
               key: 'init',
-              value: function () {
+              value: function() {
                 this._deferJsinitOnLoad(),
                   this._preventFormSubmit(),
                   this._createSubmitButton(),
@@ -30216,7 +30269,7 @@ and limitations under the License.
             },
             {
               key: 'configureFormFieldsAmount',
-              value: function (e) {
+              value: function(e) {
                 (this._fieldsToSubmitLength = this.fieldsToSubmit.length),
                   (this._isCardWithNoCvv = e && r.NO_CVV_CARDS.includes(this._getCardType(e))),
                   (this._noFieldConfiguration =
@@ -30238,9 +30291,9 @@ and limitations under the License.
             },
             {
               key: 'registerElements',
-              value: function (e, t) {
+              value: function(e, t) {
                 e.length === t.length &&
-                  t.forEach(function (t, n) {
+                  t.forEach(function(t, n) {
                     var r = document.getElementById(t);
                     null !== r && r.appendChild(e[n]);
                   });
@@ -30248,7 +30301,7 @@ and limitations under the License.
             },
             {
               key: 'setElementsFields',
-              value: function () {
+              value: function() {
                 return this._configurationForStandardCard
                   ? [
                       this.componentIds.cardNumber,
@@ -30265,40 +30318,40 @@ and limitations under the License.
             },
             {
               key: '_deferJsinitOnLoad',
-              value: function () {
+              value: function() {
                 !this._deferInit && this._startOnLoad && this._publishSubmitEvent(!0);
               }
             },
             {
               key: '_disableFormField',
-              value: function (e, t, n) {
+              value: function(e, t, n) {
                 var r = { data: e, type: t };
                 this.messageBus.publish(r);
               }
             },
             {
               key: '_disableSubmitButton',
-              value: function (e) {
+              value: function(e) {
                 this._submitButton && this._setSubmitButtonProperties(this._submitButton, e);
               }
             },
             {
               key: '_getCardType',
-              value: function (e) {
+              value: function(e) {
                 var t = p()(e);
                 if (t.payload.pan) return P.iinLookup.lookup(t.payload.pan).type;
               }
             },
             {
               key: '_getSecurityCodeLength',
-              value: function (e) {
+              value: function(e) {
                 var t = p()(e);
                 if (t.payload.pan) return P.iinLookup.lookup(t.payload.pan).cvcLength.slice(-1)[0];
               }
             },
             {
               key: '_initCardNumberFrame',
-              value: function (e) {
+              value: function(e) {
                 (this._cardNumber = new A()),
                   this._cardNumber.create(S.a.CARD_NUMBER_COMPONENT_NAME, e, this.params),
                   (this._cardNumberMounted = this._cardNumber.mount(S.a.CARD_NUMBER_IFRAME)),
@@ -30307,7 +30360,7 @@ and limitations under the License.
             },
             {
               key: '_initExpiryDateFrame',
-              value: function (e) {
+              value: function(e) {
                 (this._expirationDate = new A()),
                   this._expirationDate.create(S.a.EXPIRATION_DATE_COMPONENT_NAME, e, this.params),
                   (this._expirationDateMounted = this._expirationDate.mount(S.a.EXPIRATION_DATE_IFRAME)),
@@ -30316,7 +30369,7 @@ and limitations under the License.
             },
             {
               key: '_initSecurityCodeFrame',
-              value: function (e) {
+              value: function(e) {
                 (this._securityCode = new A()),
                   this._securityCode.create(S.a.SECURITY_CODE_COMPONENT_NAME, e, this.params),
                   (this._securityCodeMounted = this._securityCode.mount(S.a.SECURITY_CODE_IFRAME)),
@@ -30325,18 +30378,18 @@ and limitations under the License.
             },
             {
               key: '_initAnimatedCardFrame',
-              value: function () {
+              value: function() {
                 this._animatedCard = new A();
-                var e = (function (e) {
+                var e = (function(e) {
                   for (var t = 1; t < arguments.length; t++) {
                     var n = null != arguments[t] ? arguments[t] : {};
                     t % 2
-                      ? D(Object(n), !0).forEach(function (t) {
+                      ? D(Object(n), !0).forEach(function(t) {
                           o()(e, t, n[t]);
                         })
                       : Object.getOwnPropertyDescriptors
                       ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                      : D(Object(n)).forEach(function (t) {
+                      : D(Object(n)).forEach(function(t) {
                           Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                         });
                   }
@@ -30351,7 +30404,7 @@ and limitations under the License.
             },
             {
               key: '_initCardFrames',
-              value: function () {
+              value: function() {
                 var e = this.styles.defaultStyles,
                   t = this.styles,
                   n = t.cardNumber,
@@ -30372,7 +30425,7 @@ and limitations under the License.
             },
             {
               key: '_initSubscribes',
-              value: function () {
+              value: function() {
                 this._submitFormListener(),
                   this._subscribeBlockSubmit(),
                   this._validateFieldsAfterSubmit(),
@@ -30381,14 +30434,14 @@ and limitations under the License.
             },
             {
               key: '_onInput',
-              value: function () {
+              value: function() {
                 var e = { data: O.a.parseForm(), type: T.a.EVENTS_PUBLIC.UPDATE_MERCHANT_FIELDS };
                 this.messageBus.publish(e);
               }
             },
             {
               key: '_publishSubmitEvent',
-              value: function (e) {
+              value: function(e) {
                 var t = {
                   data: { bypassCards: this._bypassCards, deferInit: e, fieldsToSubmit: this.fieldsToSubmit },
                   type: T.a.EVENTS_PUBLIC.SUBMIT_FORM
@@ -30398,7 +30451,7 @@ and limitations under the License.
             },
             {
               key: '_publishValidatedFieldState',
-              value: function (e, t) {
+              value: function(e, t) {
                 (this._messageBusEvent.type = t),
                   (this._messageBusEvent.data.message = e.message),
                   this.messageBus.publish(this._messageBusEvent);
@@ -30406,7 +30459,7 @@ and limitations under the License.
             },
             {
               key: '_setMerchantInputListeners',
-              value: function () {
+              value: function() {
                 var e,
                   t = j(O.a.getAllFormElements(document.getElementById(S.a.MERCHANT_FORM_SELECTOR)));
                 try {
@@ -30422,7 +30475,7 @@ and limitations under the License.
             },
             {
               key: '_setInitValues',
-              value: function (e, t, n, r, i, a, o, s) {
+              value: function(e, t, n, r, i, a, o, s) {
                 (this._validation = new k.a()),
                   (this._translator = new C.a(this.params.locale)),
                   (this._buttonId = e),
@@ -30442,7 +30495,7 @@ and limitations under the License.
             },
             {
               key: '_setSubmitButtonProperties',
-              value: function (e, t) {
+              value: function(e, t) {
                 var n;
                 return (
                   t === w.a.BLOCKED
@@ -30461,22 +30514,22 @@ and limitations under the License.
             },
             {
               key: '_submitFormListener',
-              value: function () {
+              value: function() {
                 var e = this;
                 this._submitButton &&
-                  this._submitButton.addEventListener(r.CLICK_EVENT, function () {
+                  this._submitButton.addEventListener(r.CLICK_EVENT, function() {
                     e._publishSubmitEvent(e._deferInit);
                   }),
-                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.CALL_SUBMIT_EVENT, function () {
+                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.CALL_SUBMIT_EVENT, function() {
                     e._publishSubmitEvent(e._deferInit);
                   });
               }
             },
             {
               key: '_subscribeBlockSubmit',
-              value: function () {
+              value: function() {
                 var e = this;
-                this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BLOCK_FORM, function (t) {
+                this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BLOCK_FORM, function(t) {
                   e._disableSubmitButton(t),
                     e._disableFormField(t, T.a.EVENTS_PUBLIC.BLOCK_CARD_NUMBER, S.a.CARD_NUMBER_IFRAME),
                     e._disableFormField(t, T.a.EVENTS_PUBLIC.BLOCK_EXPIRATION_DATE, S.a.EXPIRATION_DATE_IFRAME),
@@ -30486,9 +30539,9 @@ and limitations under the License.
             },
             {
               key: '_validateFieldsAfterSubmit',
-              value: function () {
+              value: function() {
                 var e = this;
-                this.messageBus.subscribe(T.a.EVENTS.VALIDATE_FORM, function (t) {
+                this.messageBus.subscribe(T.a.EVENTS.VALIDATE_FORM, function(t) {
                   var n = t.cardNumber,
                     r = t.expirationDate,
                     i = t.securityCode;
@@ -30500,8 +30553,8 @@ and limitations under the License.
             },
             {
               key: '_preventFormSubmit',
-              value: function () {
-                document.getElementById(S.a.MERCHANT_FORM_SELECTOR).addEventListener(r.SUBMIT_EVENT, function (e) {
+              value: function() {
+                document.getElementById(S.a.MERCHANT_FORM_SELECTOR).addEventListener(r.SUBMIT_EVENT, function(e) {
                   return e.preventDefault();
                 });
               }
@@ -30529,100 +30582,99 @@ and limitations under the License.
         K = 'jwt.update',
         H = 'payments.setupComplete',
         Y = 'payments.validated',
-        z =
-          (n(71),
-          (function () {
-            function e() {
-              l()(this, e);
-            }
-            return (
-              h()(
-                e,
-                [
-                  {
-                    key: 'init',
-                    value: function () {
-                      var t = this;
-                      this._insertGALibrary(),
-                        this._createGAScript()
-                          .then(function () {
-                            t._insertGAScript()
-                              .then(function () {
-                                e._disableUserIDTracking();
-                              })
-                              .catch(function (e) {
-                                throw new Error(e);
-                              });
-                          })
-                          .catch(function (e) {
-                            throw new Error(e);
-                          });
-                    }
-                  },
-                  {
-                    key: '_createGAScript',
-                    value: function () {
-                      var t = this;
-                      return new Promise(function (n, r) {
-                        (t._gaScript = document.createElement('script')),
-                          (t._gaScript.type = 'text/javascript'),
-                          (t._gaScript.id = 'googleAnalytics'),
-                          (t._gaScriptContent = document.createTextNode(e._returnScriptWithFeatures())),
-                          t._gaScript.appendChild(t._gaScriptContent),
-                          n((t._communicate = e.TRANSLATION_SCRIPT_SUCCEEDED)),
-                          r((t._communicate = e.TRANSLATION_SCRIPT_FAILED));
-                      });
-                    }
-                  },
-                  {
-                    key: '_insertGALibrary',
-                    value: function () {
-                      O.a.insertScript('head', { async: 'async', src: e.GA_SCRIPT_SRC, id: 'googleAnalytics' });
-                    }
-                  },
-                  {
-                    key: '_insertGAScript',
-                    value: function () {
-                      var t = this;
-                      return new Promise(function (n, r) {
-                        document.getElementById('googleAnalytics') ||
-                          (document.head.appendChild(t._gaScript),
-                          n((t._communicate = e.TRANSLATION_SCRIPT_APPENDED)),
-                          r((t._communicate = e.TRANSLATION_SCRIPT_APPENDED_FAILURE)));
-                      });
-                    }
+        z = (n(71),
+        (function() {
+          function e() {
+            l()(this, e);
+          }
+          return (
+            h()(
+              e,
+              [
+                {
+                  key: 'init',
+                  value: function() {
+                    var t = this;
+                    this._insertGALibrary(),
+                      this._createGAScript()
+                        .then(function() {
+                          t._insertGAScript()
+                            .then(function() {
+                              e._disableUserIDTracking();
+                            })
+                            .catch(function(e) {
+                              throw new Error(e);
+                            });
+                        })
+                        .catch(function(e) {
+                          throw new Error(e);
+                        });
                   }
-                ],
-                [
-                  {
-                    key: 'sendGaData',
-                    value: function (e, t, n, r) {
-                      if (!window.ga) return !1;
-                      window.ga('send', { hitType: e, eventCategory: t, eventAction: n, eventLabel: r });
-                    }
-                  },
-                  {
-                    key: '_disableUserIDTracking',
-                    value: function () {
-                      return (window['ga-disable-UA-'.concat(e.GA_MEASUREMENT_ID, '-Y')] = !0);
-                    }
-                  },
-                  {
-                    key: '_returnScriptWithFeatures',
-                    value: function () {
-                      return ''
-                        .concat(e.GA_INIT_SCRIPT_CONTENT, '\n    ')
-                        .concat(e.GA_DISABLE_COOKIES, '\n    ')
-                        .concat(e.GA_IP_ANONYMIZATION, '\n    ')
-                        .concat(e.GA_DISABLE_ADVERTISING_FEATURES, '\n    ')
-                        .concat(e.GA_PAGE_VIEW);
-                    }
+                },
+                {
+                  key: '_createGAScript',
+                  value: function() {
+                    var t = this;
+                    return new Promise(function(n, r) {
+                      (t._gaScript = document.createElement('script')),
+                        (t._gaScript.type = 'text/javascript'),
+                        (t._gaScript.id = 'googleAnalytics'),
+                        (t._gaScriptContent = document.createTextNode(e._returnScriptWithFeatures())),
+                        t._gaScript.appendChild(t._gaScriptContent),
+                        n((t._communicate = e.TRANSLATION_SCRIPT_SUCCEEDED)),
+                        r((t._communicate = e.TRANSLATION_SCRIPT_FAILED));
+                    });
                   }
-                ]
-              ),
-              e
-            );
-          })());
+                },
+                {
+                  key: '_insertGALibrary',
+                  value: function() {
+                    O.a.insertScript('head', { async: 'async', src: e.GA_SCRIPT_SRC, id: 'googleAnalytics' });
+                  }
+                },
+                {
+                  key: '_insertGAScript',
+                  value: function() {
+                    var t = this;
+                    return new Promise(function(n, r) {
+                      document.getElementById('googleAnalytics') ||
+                        (document.head.appendChild(t._gaScript),
+                        n((t._communicate = e.TRANSLATION_SCRIPT_APPENDED)),
+                        r((t._communicate = e.TRANSLATION_SCRIPT_APPENDED_FAILURE)));
+                    });
+                  }
+                }
+              ],
+              [
+                {
+                  key: 'sendGaData',
+                  value: function(e, t, n, r) {
+                    if (!window.ga) return !1;
+                    window.ga('send', { hitType: e, eventCategory: t, eventAction: n, eventLabel: r });
+                  }
+                },
+                {
+                  key: '_disableUserIDTracking',
+                  value: function() {
+                    return (window['ga-disable-UA-'.concat(e.GA_MEASUREMENT_ID, '-Y')] = !0);
+                  }
+                },
+                {
+                  key: '_returnScriptWithFeatures',
+                  value: function() {
+                    return ''
+                      .concat(e.GA_INIT_SCRIPT_CONTENT, '\n    ')
+                      .concat(e.GA_DISABLE_COOKIES, '\n    ')
+                      .concat(e.GA_IP_ANONYMIZATION, '\n    ')
+                      .concat(e.GA_DISABLE_ADVERTISING_FEATURES, '\n    ')
+                      .concat(e.GA_PAGE_VIEW);
+                  }
+                }
+              ]
+            ),
+            e
+          );
+        })());
       (z.GA_MEASUREMENT_ID = U.a.GA_MEASUREMENT_ID),
         (z.GA_INIT_SCRIPT_CONTENT =
           'window.ga=window.ga||function(){(ga.q=ga.q||[]).\n  push(arguments)};ga.l=+new Date;\n'),
@@ -30637,7 +30689,7 @@ and limitations under the License.
         (z.TRANSLATION_SCRIPT_APPENDED_FAILURE = 'Google Analytics: an error occurred appending script');
       var G = n(36),
         W = n(72),
-        J = (function () {
+        J = (function() {
           function e(t, n, r, i, a, o, s) {
             var u = this;
             l()(this, e),
@@ -30656,7 +30708,7 @@ and limitations under the License.
               (this._framesHub = I.Container.get(G.a)),
               this._setLiveStatus(),
               this._onInit(),
-              this.messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function (e) {
+              this.messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function(e) {
                 var t = e.newJwt;
                 (u._jwtUpdated = !0), (u._jwt = t), u._publishRequestTypesEvent(u._requestTypes);
               });
@@ -30665,7 +30717,7 @@ and limitations under the License.
             h()(e, null, [
               {
                 key: '_isCardEnrolledAndNotFrictionless',
-                value: function (e) {
+                value: function(e) {
                   return 'Y' === e.enrolled && void 0 !== e.acsurl;
                 }
               }
@@ -30673,7 +30725,7 @@ and limitations under the License.
             h()(e, [
               {
                 key: '_authenticateCard',
-                value: function (e) {
+                value: function(e) {
                   Cardinal.continue(
                     'cca',
                     { AcsUrl: e.acsurl, Payload: e.threedpayload },
@@ -30684,28 +30736,28 @@ and limitations under the License.
               },
               {
                 key: '_cardinalSetup',
-                value: function () {
+                value: function() {
                   Cardinal.setup(q, { jwt: this._cardinalCommerceJWT });
                 }
               },
               {
                 key: '_cardinalTrigger',
-                value: function () {
+                value: function() {
                   return Cardinal.trigger(K, this._cardinalCommerceJWT);
                 }
               },
               {
                 key: '_onCardinalLoad',
-                value: function () {
+                value: function() {
                   var e = this;
                   Cardinal.configure(U.a.CARDINAL_COMMERCE.CONFIG),
                     Cardinal.off(H),
                     Cardinal.off(Y),
-                    Cardinal.on(H, function () {
+                    Cardinal.on(H, function() {
                       e._onCardinalSetupComplete(),
                         z.sendGaData('event', 'Cardinal', 'init', 'Cardinal Setup Completed');
                     }),
-                    Cardinal.on(Y, function (t, n) {
+                    Cardinal.on(Y, function(t, n) {
                       e._onCardinalValidated(t, n),
                         z.sendGaData('event', 'Cardinal', 'validate', 'Cardinal payment validated');
                     }),
@@ -30714,7 +30766,7 @@ and limitations under the License.
               },
               {
                 key: '_onCardinalSetupComplete',
-                value: function () {
+                value: function() {
                   var e = this;
                   if (this._startOnLoad) {
                     var t = new N.a(this._jwt).payload.pan;
@@ -30726,7 +30778,7 @@ and limitations under the License.
                     this.messageBus.publish(n);
                   } else {
                     var r = { type: T.a.EVENTS_PUBLIC.LOAD_CARDINAL };
-                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BIN_PROCESS, function (t) {
+                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BIN_PROCESS, function(t) {
                       var n = t.value;
                       e._performBinDetection(n);
                     }),
@@ -30736,7 +30788,7 @@ and limitations under the License.
               },
               {
                 key: '_onCardinalValidated',
-                value: function (e, t) {
+                value: function(e, t) {
                   var n = e.ActionCode,
                     r = e.ErrorNumber,
                     i = e.ErrorDescription,
@@ -30762,22 +30814,22 @@ and limitations under the License.
               },
               {
                 key: '_performBinDetection',
-                value: function (e) {
+                value: function(e) {
                   return Cardinal.trigger($, e);
                 }
               },
               {
                 key: '_threeDSetup',
-                value: function () {
+                value: function() {
                   var e = this;
-                  O.a.insertScript('head', { src: this._sdkAddress, id: 'cardinalCommerce' }).then(function () {
+                  O.a.insertScript('head', { src: this._sdkAddress, id: 'cardinalCommerce' }).then(function() {
                     return e._onCardinalLoad();
                   });
                 }
               },
               {
                 key: '_authorizePayment',
-                value: function (e) {
+                value: function(e) {
                   (e = e || {}) && (e.cachetoken = this._cardinalCommerceCacheToken);
                   var t = { data: e, type: T.a.EVENTS_PUBLIC.PROCESS_PAYMENTS };
                   this.messageBus.publish(t), z.sendGaData('event', 'Cardinal', 'auth', 'Cardinal auth completed');
@@ -30785,18 +30837,18 @@ and limitations under the License.
               },
               {
                 key: '_initSubscriptions',
-                value: function () {
+                value: function() {
                   var e = this;
-                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.LOAD_CONTROL_FRAME, function () {
+                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.LOAD_CONTROL_FRAME, function() {
                     e._onLoadControlFrame();
                   }),
-                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.THREEDINIT_RESPONSE, function (t) {
+                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.THREEDINIT_RESPONSE, function(t) {
                       e._onThreeDInitEvent(t);
                     }),
-                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BY_PASS_INIT, function () {
+                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BY_PASS_INIT, function() {
                       e._onBypassJsInitEvent();
                     }),
-                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.THREEDQUERY, function (t) {
+                    this.messageBus.subscribe(T.a.EVENTS_PUBLIC.THREEDQUERY, function(t) {
                       e._onThreeDQueryEvent(t);
                     }),
                     this._initSubmitEventListener();
@@ -30804,28 +30856,28 @@ and limitations under the License.
               },
               {
                 key: '_publishRequestTypesEvent',
-                value: function (e) {
+                value: function(e) {
                   var t = this;
-                  this._framesHub.waitForFrame(S.a.CONTROL_FRAME_IFRAME).subscribe(function () {
+                  this._framesHub.waitForFrame(S.a.CONTROL_FRAME_IFRAME).subscribe(function() {
                     t.messageBus.publish({ data: { requestTypes: e }, type: T.a.EVENTS_PUBLIC.SET_REQUEST_TYPES });
                   });
                 }
               },
               {
                 key: '_onInit',
-                value: function () {
+                value: function() {
                   this._initSubscriptions(), this._publishRequestTypesEvent(this._requestTypes);
                 }
               },
               {
                 key: '_onLoadControlFrame',
-                value: function () {
+                value: function() {
                   this._cachetoken ? this._bypassInitRequest() : this._threeDInitRequest();
                 }
               },
               {
                 key: '_onBypassJsInitEvent',
-                value: function () {
+                value: function() {
                   (this._cardinalCommerceJWT = this._threedinit),
                     (this._cardinalCommerceCacheToken = this._cachetoken),
                     this._threeDSetup();
@@ -30833,7 +30885,7 @@ and limitations under the License.
               },
               {
                 key: '_onThreeDInitEvent',
-                value: function (e) {
+                value: function(e) {
                   var t, n;
                   e && ((t = e.cachetoken), (n = e.threedinit)),
                     (this._cardinalCommerceJWT = n),
@@ -30843,33 +30895,33 @@ and limitations under the License.
               },
               {
                 key: '_onThreeDQueryEvent',
-                value: function (e) {
+                value: function(e) {
                   this._threeDQueryRequest(e);
                 }
               },
               {
                 key: '_bypassInitRequest',
-                value: function () {
+                value: function() {
                   var e = { data: this._cachetoken, type: T.a.EVENTS_PUBLIC.BY_PASS_INIT };
                   this.messageBus.publish(e);
                 }
               },
               {
                 key: '_setLiveStatus',
-                value: function () {
+                value: function() {
                   this._livestatus && (this._sdkAddress = U.a.CARDINAL_COMMERCE.SONGBIRD_LIVE_URL);
                 }
               },
               {
                 key: '_threeDInitRequest',
-                value: function () {
+                value: function() {
                   var e = { type: T.a.EVENTS_PUBLIC.THREEDINIT_REQUEST };
                   this.messageBus.publish(e);
                 }
               },
               {
                 key: '_threeDQueryRequest',
-                value: function (t) {
+                value: function(t) {
                   e._isCardEnrolledAndNotFrictionless(t)
                     ? (this._authenticateCard(t),
                       z.sendGaData('event', 'Cardinal', 'auth', 'Cardinal card authenticated'))
@@ -30878,9 +30930,9 @@ and limitations under the License.
               },
               {
                 key: '_initSubmitEventListener',
-                value: function () {
+                value: function() {
                   var e = this;
-                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BY_PASS_CARDINAL, function (t) {
+                  this.messageBus.subscribe(T.a.EVENTS_PUBLIC.BY_PASS_CARDINAL, function(t) {
                     var n = t.pan,
                       r = { expirydate: t.expirydate, pan: n, securitycode: t.securitycode };
                     e._byPassAuthorizePayment(r);
@@ -30889,7 +30941,7 @@ and limitations under the License.
               },
               {
                 key: '_byPassAuthorizePayment',
-                value: function (e) {
+                value: function(e) {
                   var t = { data: e, type: T.a.EVENTS_PUBLIC.PROCESS_PAYMENTS };
                   this.messageBus.publish(t);
                 }
@@ -30903,7 +30955,7 @@ and limitations under the License.
         if ('undefined' == typeof Symbol || null == e[Symbol.iterator]) {
           if (
             Array.isArray(e) ||
-            (e = (function (e, t) {
+            (e = (function(e, t) {
               if (!e) return;
               if ('string' == typeof e) return Q(e, t);
               var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -30913,13 +30965,13 @@ and limitations under the License.
             })(e))
           ) {
             var t = 0,
-              n = function () {};
+              n = function() {};
             return {
               s: n,
-              n: function () {
+              n: function() {
                 return t >= e.length ? { done: !0 } : { done: !1, value: e[t++] };
               },
-              e: function (e) {
+              e: function(e) {
                 throw e;
               },
               f: n
@@ -30934,17 +30986,17 @@ and limitations under the License.
           a = !0,
           o = !1;
         return {
-          s: function () {
+          s: function() {
             r = e[Symbol.iterator]();
           },
-          n: function () {
+          n: function() {
             var e = r.next();
             return (a = e.done), e;
           },
-          e: function (e) {
+          e: function(e) {
             (o = !0), (i = e);
           },
-          f: function () {
+          f: function() {
             try {
               a || null == r.return || r.return();
             } finally {
@@ -30963,25 +31015,24 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
       }
-      var te = (function (e) {
+      var te = (function(e) {
         m()(r, e);
         var t,
-          n =
-            ((t = r),
-            function () {
-              var e,
-                n = E()(t);
-              if (ee()) {
-                var r = E()(this).constructor;
-                e = Reflect.construct(n, arguments, r);
-              } else e = n.apply(this, arguments);
-              return _()(this, e);
-            });
+          n = ((t = r),
+          function() {
+            var e,
+              n = E()(t);
+            if (ee()) {
+              var r = E()(this).constructor;
+              e = Reflect.construct(n, arguments, r);
+            } else e = n.apply(this, arguments);
+            return _()(this, e);
+          });
         function r(e, t, i, a, o, s, u, c, f, h) {
           var d;
           return (
@@ -31002,10 +31053,10 @@ and limitations under the License.
           h()(r, [
             {
               key: 'requestTypes',
-              get: function () {
+              get: function() {
                 return this._requestTypes;
               },
-              set: function (e) {
+              set: function(e) {
                 this._requestTypes = e;
               }
             }
@@ -31013,7 +31064,7 @@ and limitations under the License.
           h()(r, [
             {
               key: 'init',
-              value: function () {
+              value: function() {
                 this._initFormFields(),
                   this._setMerchantInputListeners(),
                   this._setTransactionCompleteListener(),
@@ -31022,8 +31073,8 @@ and limitations under the License.
             },
             {
               key: 'registerElements',
-              value: function (e, t) {
-                t.map(function (t, n) {
+              value: function(e, t) {
+                t.map(function(t, n) {
                   var r = document.getElementById(t);
                   e[n] && r.appendChild(e[n]);
                 });
@@ -31031,14 +31082,14 @@ and limitations under the License.
             },
             {
               key: 'setElementsFields',
-              value: function () {
+              value: function() {
                 var e = [];
                 return e.push(S.a.MERCHANT_FORM_SELECTOR), e;
               }
             },
             {
               key: '_getSubmitFields',
-              value: function (e) {
+              value: function(e) {
                 var t = this._submitFields;
                 return (
                   e.hasOwnProperty('jwt') && -1 === t.indexOf('jwt') && t.push('jwt'),
@@ -31049,7 +31100,7 @@ and limitations under the License.
             },
             {
               key: '_initFormFields',
-              value: function () {
+              value: function() {
                 var e = this.styles.defaultStyles,
                   t = this.styles.controlFrame;
                 (t = Object.assign({}, e, t)),
@@ -31066,7 +31117,7 @@ and limitations under the License.
             },
             {
               key: '_isThreedComplete',
-              value: function (e) {
+              value: function(e) {
                 return (
                   'THREEDQUERY' === this.requestTypes[this.requestTypes.length - 1] &&
                   ((!J._isCardEnrolledAndNotFrictionless(e) && 'THREEDQUERY' === e.requesttypedescription) ||
@@ -31076,20 +31127,20 @@ and limitations under the License.
             },
             {
               key: '_isTransactionFinished',
-              value: function (e) {
+              value: function(e) {
                 return !!r.COMPLETED_REQUEST_TYPES.includes(e.requesttypedescription) || !!this._isThreedComplete(e);
               }
             },
             {
               key: '_onInput',
-              value: function (e) {
+              value: function(e) {
                 var t = { data: O.a.parseForm(), type: T.a.EVENTS_PUBLIC.UPDATE_MERCHANT_FIELDS };
                 this._messageBus.publish(t);
               }
             },
             {
               key: '_onTransactionComplete',
-              value: function (e) {
+              value: function(e) {
                 if (
                   ((this._isTransactionFinished(e) || '0' !== e.errorcode) &&
                     this._messageBus.publish({ data: e, type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUBMIT_CALLBACK }, !0),
@@ -31102,7 +31153,7 @@ and limitations under the License.
             },
             {
               key: '_setMerchantInputListeners',
-              value: function () {
+              value: function() {
                 var e,
                   t = X(O.a.getAllFormElements(this._merchantForm));
                 try {
@@ -31118,12 +31169,12 @@ and limitations under the License.
             },
             {
               key: '_setTransactionCompleteListener',
-              value: function () {
+              value: function() {
                 var e = this;
-                this._messageBus.subscribe(T.a.EVENTS_PUBLIC.TRANSACTION_COMPLETE, function (t) {
+                this._messageBus.subscribe(T.a.EVENTS_PUBLIC.TRANSACTION_COMPLETE, function(t) {
                   if ('APPLEPAY' === t.walletsource) {
                     var n = e._localStorage.getItem('completePayment');
-                    setTimeout(function () {
+                    setTimeout(function() {
                       'true' === n && e._onTransactionComplete(t);
                     }, 500);
                   } else e._onTransactionComplete(t);
@@ -31132,7 +31183,7 @@ and limitations under the License.
             },
             {
               key: '_shouldSubmitForm',
-              value: function (e) {
+              value: function(e) {
                 return (
                   (this._submitOnSuccess && '0' === e.errorcode && this._isTransactionFinished(e)) ||
                   (this._submitOnError && '0' !== e.errorcode)
@@ -31147,7 +31198,7 @@ and limitations under the License.
         if ('undefined' == typeof Symbol || null == e[Symbol.iterator]) {
           if (
             Array.isArray(e) ||
-            (e = (function (e, t) {
+            (e = (function(e, t) {
               if (!e) return;
               if ('string' == typeof e) return re(e, t);
               var n = Object.prototype.toString.call(e).slice(8, -1);
@@ -31157,13 +31208,13 @@ and limitations under the License.
             })(e))
           ) {
             var t = 0,
-              n = function () {};
+              n = function() {};
             return {
               s: n,
-              n: function () {
+              n: function() {
                 return t >= e.length ? { done: !0 } : { done: !1, value: e[t++] };
               },
-              e: function (e) {
+              e: function(e) {
                 throw e;
               },
               f: n
@@ -31178,17 +31229,17 @@ and limitations under the License.
           a = !0,
           o = !1;
         return {
-          s: function () {
+          s: function() {
             r = e[Symbol.iterator]();
           },
-          n: function () {
+          n: function() {
             var e = r.next();
             return (a = e.done), e;
           },
-          e: function (e) {
+          e: function(e) {
             (o = !0), (i = e);
           },
-          f: function () {
+          f: function() {
             try {
               a || null == r.return || r.return();
             } finally {
@@ -31203,7 +31254,7 @@ and limitations under the License.
         return r;
       }
       te.COMPLETED_REQUEST_TYPES = ['AUTH', 'CACHETOKENISE', 'ACCOUNTCHECK'];
-      var ie = (function () {
+      var ie = (function() {
         function e() {
           l()(this, e),
             (this._inputs = document.getElementsByTagName(e.INPUT_MARKUP)),
@@ -31214,13 +31265,13 @@ and limitations under the License.
           h()(e, [
             {
               key: 'init',
-              value: function () {
+              value: function() {
                 this._setMerchantFieldsProperties();
               }
             },
             {
               key: '_setMerchantFieldsProperties',
-              value: function () {
+              value: function() {
                 var t,
                   n = ne(this._getMerchantInputs().inputs);
                 try {
@@ -31242,9 +31293,9 @@ and limitations under the License.
             },
             {
               key: '_getMerchantInputs',
-              value: function () {
+              value: function() {
                 return {
-                  inputs: Array.from(this._inputs).filter(function (t) {
+                  inputs: Array.from(this._inputs).filter(function(t) {
                     return t.hasAttribute(e.DATA_ATTRIBUTE_NAME);
                   })
                 };
@@ -31252,8 +31303,8 @@ and limitations under the License.
             },
             {
               key: '_onKeyPress',
-              value: function (t) {
-                t.addEventListener(e.KEYPRESS_EVENT, function () {
+              value: function(t) {
+                t.addEventListener(e.KEYPRESS_EVENT, function() {
                   k.a.resetValidationProperties(t);
                 });
               }
@@ -31282,7 +31333,7 @@ and limitations under the License.
           telephone: 'phoneNumber',
           town: 'locality'
         },
-        fe = (function () {
+        fe = (function() {
           function e(t, n) {
             var r = this;
             l()(this, e),
@@ -31293,21 +31344,21 @@ and limitations under the License.
                 walletvalidationurl: ''
               }),
               (this._applePayButtonProps = {}),
-              (this._addApplePayButton = function () {
+              (this._addApplePayButton = function() {
                 return O.a.appendChildIntoDOM(r._placement, r.createApplePayButton());
               }),
-              (this._ifApplePayButtonTextIsValid = function (t) {
+              (this._ifApplePayButtonTextIsValid = function(t) {
                 return e.AVAILABLE_BUTTON_TEXTS.includes(t);
               }),
-              (this._ifApplePayButtonStyleIsValid = function (t) {
+              (this._ifApplePayButtonStyleIsValid = function(t) {
                 return e.AVAILABLE_BUTTON_STYLES.includes(t);
               }),
-              (this._applePayButtonClickHandler = function (e, t) {
-                document.getElementById(e).addEventListener(t, function () {
+              (this._applePayButtonClickHandler = function(e, t) {
+                document.getElementById(e).addEventListener(t, function() {
                   r._paymentProcess();
                 });
               }),
-              (this._ifBrowserSupportsApplePayVersion = function (e) {
+              (this._ifBrowserSupportsApplePayVersion = function(e) {
                 return ue.supportsVersion(e);
               }),
               (this._configProvider = t),
@@ -31316,7 +31367,7 @@ and limitations under the License.
               (this._messageBus = I.Container.get(T.a)),
               (this._localStorage = I.Container.get(Z.a)),
               (this._config$ = this._configProvider.getConfig$()),
-              this._config$.subscribe(function (e) {
+              this._config$.subscribe(function(e) {
                 var t = e.applePay,
                   n = e.jwt,
                   i = e.datacenterurl;
@@ -31327,7 +31378,7 @@ and limitations under the License.
               }),
               this._localStorage.setItem('completePayment', ''),
               (this._completion = { errors: [], status: ue ? this.getPaymentSuccessStatus() : '' }),
-              this._messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function (e) {
+              this._messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function(e) {
                 var t = e.newJwt;
                 r._configurePaymentProcess(t), r._setAmountAndCurrency();
               });
@@ -31336,25 +31387,25 @@ and limitations under the License.
             h()(e, [
               {
                 key: 'applePayButtonProps',
-                get: function () {
+                get: function() {
                   return this._applePayButtonProps;
                 }
               },
               {
                 key: 'payment',
-                get: function () {
+                get: function() {
                   return this._payment;
                 },
-                set: function (e) {
+                set: function(e) {
                   this._payment = e;
                 }
               },
               {
                 key: 'jwt',
-                set: function (e) {
+                set: function(e) {
                   this._jwt = e;
                 },
-                get: function () {
+                get: function() {
                   return this._jwt;
                 }
               }
@@ -31362,13 +31413,13 @@ and limitations under the License.
             h()(e, [
               {
                 key: 'ifApplePayIsAvailable',
-                value: function () {
+                value: function() {
                   return !!ue;
                 }
               },
               {
                 key: 'setApplePayVersion',
-                value: function () {
+                value: function() {
                   for (var t = e.APPLE_PAY_MAX_VERSION; t >= e.APPLE_PAY_MIN_VERSION; --t) {
                     if (this._ifBrowserSupportsApplePayVersion(t)) return void (this.applePayVersion = t);
                     if (t === e.APPLE_PAY_MIN_VERSION) return void (this.applePayVersion = e.APPLE_PAY_MIN_VERSION);
@@ -31377,43 +31428,43 @@ and limitations under the License.
               },
               {
                 key: 'createApplePayButton',
-                value: function () {
+                value: function() {
                   return O.a.createHtmlElement.apply(this, [this._applePayButtonProps, 'div']);
                 }
               },
               {
                 key: 'isUserLoggedToAppleAccount',
-                value: function () {
+                value: function() {
                   return ue.canMakePayments();
                 }
               },
               {
                 key: 'checkApplePayWalletCardAvailability',
-                value: function () {
+                value: function() {
                   return ue.canMakePaymentsWithActiveCard(this._merchantId);
                 }
               },
               {
                 key: 'getApplePaySessionObject',
-                value: function () {
+                value: function() {
                   return new ue(this.applePayVersion, this._paymentRequest);
                 }
               },
               {
                 key: 'getPaymentSuccessStatus',
-                value: function () {
+                value: function() {
                   return ue.STATUS_SUCCESS;
                 }
               },
               {
                 key: 'getPaymentFailureStatus',
-                value: function () {
+                value: function() {
                   return ue.STATUS_FAILURE;
                 }
               },
               {
                 key: '_configurePaymentProcess',
-                value: function (e) {
+                value: function(e) {
                   var t = this._applePayConfig,
                     n = t.sitesecurity,
                     r = t.placement,
@@ -31434,7 +31485,7 @@ and limitations under the License.
               },
               {
                 key: '_setSupportedNetworks',
-                value: function () {
+                value: function() {
                   var t;
                   if (
                     ((t =
@@ -31455,7 +31506,7 @@ and limitations under the License.
               },
               {
                 key: '_setApplePayButtonProps',
-                value: function (t, n) {
+                value: function(t, n) {
                   this._ifApplePayButtonStyleIsValid(n)
                     ? (this._buttonStyle = n)
                     : (this._buttonStyle = e.AVAILABLE_BUTTON_STYLES[0]),
@@ -31469,7 +31520,7 @@ and limitations under the License.
               },
               {
                 key: '_setAmountAndCurrency',
-                value: function () {
+                value: function() {
                   return (
                     this._paymentRequest.total.amount && this._paymentRequest.currencyCode
                       ? ((this._paymentRequest.total.amount = this._stJwtInstance.mainamount),
@@ -31481,7 +31532,7 @@ and limitations under the License.
               },
               {
                 key: '_onInit',
-                value: function (e, t) {
+                value: function(e, t) {
                   this.ifApplePayIsAvailable() &&
                     (this._configurePaymentProcess(this.jwt),
                     this.setApplePayVersion(),
@@ -31494,20 +31545,20 @@ and limitations under the License.
               },
               {
                 key: '_onValidateMerchantRequest',
-                value: function () {
+                value: function() {
                   var e = this;
-                  this._session.onvalidatemerchant = function (t) {
+                  this._session.onvalidatemerchant = function(t) {
                     return (
                       (e._validateMerchantRequestData.walletvalidationurl = t.validationURL),
                       (e._validateMerchantRequestData.walletmerchantid = e._merchantId),
                       e.payment
                         .walletVerify(e._validateMerchantRequestData)
-                        .then(function (t) {
+                        .then(function(t) {
                           var n = t.response;
                           e._onValidateMerchantResponseSuccess(n),
                             z.sendGaData('event', 'Apple Pay', 'merchant validation', 'Apple Pay merchant validated');
                         })
-                        .catch(function (t) {
+                        .catch(function(t) {
                           var n = t.errorcode,
                             r = t.errormessage;
                           e._onValidateMerchantResponseFailure(t),
@@ -31526,9 +31577,9 @@ and limitations under the License.
               },
               {
                 key: '_onPaymentAuthorized',
-                value: function () {
+                value: function() {
                   var e = this;
-                  this._session.onpaymentauthorized = function (t) {
+                  this._session.onpaymentauthorized = function(t) {
                     return (
                       (e.paymentDetails = JSON.stringify(t.payment)),
                       e.payment
@@ -31537,7 +31588,7 @@ and limitations under the License.
                           { walletsource: e._validateMerchantRequestData.walletsource, wallettoken: e.paymentDetails },
                           O.a.parseForm()
                         )
-                        .then(function (t) {
+                        .then(function(t) {
                           var n = t.response,
                             r = n.errorcode,
                             i = n.errormessage;
@@ -31547,7 +31598,7 @@ and limitations under the License.
                             z.sendGaData('event', 'Apple Pay', 'payment', 'Apple Pay payment completed'),
                             e._localStorage.setItem('completePayment', 'true');
                         })
-                        .catch(function () {
+                        .catch(function() {
                           e._messageBus.publish({ type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
                             e._notification.error(R.a.translations.PAYMENT_ERROR),
                             e._session.completePayment({ status: e.getPaymentFailureStatus(), errors: [] }),
@@ -31559,9 +31610,9 @@ and limitations under the License.
               },
               {
                 key: '_onPaymentCanceled',
-                value: function () {
+                value: function() {
                   var e = this;
-                  this._session.oncancel = function (t) {
+                  this._session.oncancel = function(t) {
                     e._notification.warning(R.a.translations.PAYMENT_CANCELLED),
                       z.sendGaData('event', 'Apple Pay', 'payment status', 'Apple Pay payment cancelled');
                   };
@@ -31569,7 +31620,7 @@ and limitations under the License.
               },
               {
                 key: '_onValidateMerchantResponseSuccess',
-                value: function (e) {
+                value: function(e) {
                   var t = e.requestid,
                     n = e.walletsession;
                   n
@@ -31580,15 +31631,15 @@ and limitations under the License.
               },
               {
                 key: '_onValidateMerchantResponseFailure',
-                value: function (e) {
+                value: function(e) {
                   this._session.abort(), this._notification.error(R.a.translations.MERCHANT_VALIDATION_FAILURE);
                 }
               },
               {
                 key: '_subscribeStatusHandlers',
-                value: function () {
+                value: function() {
                   var e = this;
-                  (this._session.onpaymentmethodselected = function (t) {
+                  (this._session.onpaymentmethodselected = function(t) {
                     t.paymentMethod;
                     e._session.completePaymentMethodSelection({
                       newTotal: {
@@ -31598,7 +31649,7 @@ and limitations under the License.
                       }
                     });
                   }),
-                    (this._session.onshippingmethodselected = function (t) {
+                    (this._session.onshippingmethodselected = function(t) {
                       t.paymentMethod;
                       e._session.completeShippingMethodSelection({
                         newTotal: {
@@ -31608,7 +31659,7 @@ and limitations under the License.
                         }
                       });
                     }),
-                    (this._session.onshippingcontactselected = function (t) {
+                    (this._session.onshippingcontactselected = function(t) {
                       t.shippingContact;
                       e._session.completeShippingContactSelection({
                         newTotal: {
@@ -31622,7 +31673,7 @@ and limitations under the License.
               },
               {
                 key: '_paymentProcess',
-                value: function () {
+                value: function() {
                   this._localStorage.setItem('completePayment', 'false'),
                     (this._session = this.getApplePaySessionObject()),
                     this._onValidateMerchantRequest(),
@@ -31634,11 +31685,11 @@ and limitations under the License.
               },
               {
                 key: '_applePayProcess',
-                value: function () {
+                value: function() {
                   var t = this;
                   ue &&
                     (this.isUserLoggedToAppleAccount()
-                      ? this.checkApplePayWalletCardAvailability().then(function () {
+                      ? this.checkApplePayWalletCardAvailability().then(function() {
                           t._applePayButtonClickHandler(e.APPLE_PAY_BUTTON_ID, 'click'),
                             z.sendGaData('event', 'Apple Pay', 'init', 'Apple Pay can make payments');
                         })
@@ -31652,7 +31703,7 @@ and limitations under the License.
               },
               {
                 key: '_handleApplePayError',
-                value: function (e) {
+                value: function(e) {
                   var t = e.errorcode;
                   if (this._ifBrowserSupportsApplePayVersion(this.applePayVersion) && '0' !== t) {
                     var n = e.errormessage,
@@ -31678,7 +31729,7 @@ and limitations under the License.
               },
               {
                 key: '_displayNotification',
-                value: function (e, t) {
+                value: function(e, t) {
                   '0' === e
                     ? (this._messageBus.publish({ type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUCCESS_CALLBACK }, !0),
                       this._notification.success(R.a.translations.PAYMENT_SUCCESS))
@@ -31688,13 +31739,13 @@ and limitations under the License.
               },
               {
                 key: '_addButtonHandler',
-                value: function (e, t, n, r) {
+                value: function(e, t, n, r) {
                   var i = this,
                     a = document.getElementById(e),
                     o = t || 'click',
                     s = n;
                   if (!a) return !1;
-                  a.addEventListener(o, function () {
+                  a.addEventListener(o, function() {
                     'success' === s
                       ? (i._notification.success(r),
                         i._messageBus.publish({ type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUCCESS_CALLBACK }, !0))
@@ -31734,7 +31785,7 @@ and limitations under the License.
           'vPay'
         ])),
         (fe.VERSION_5_SUPPORTED_NETWORKS = fe.BASIC_SUPPORTED_NETWORKS.concat(['elo', 'mada']));
-      var he = (function () {
+      var he = (function() {
         function e() {
           l()(this, e);
         }
@@ -31742,20 +31793,20 @@ and limitations under the License.
           h()(e, null, [
             {
               key: 'begin',
-              value: function () {
+              value: function() {
                 var e = this;
                 return fetch(U.a.APPLE_PAY_URLS.MOCK_DATA_URL)
-                  .then(function (e) {
+                  .then(function(e) {
                     return e.json();
                   })
-                  .then(function (t) {
+                  .then(function(t) {
                     e._handleResponse(t);
                   });
               }
             },
             {
               key: '_handleResponse',
-              value: function (e) {
+              value: function(e) {
                 return (
                   'SUCCESS' === e.status
                     ? ((this.STATUS_SUCCESS = e.status), this.onpaymentauthorized(e))
@@ -31773,35 +31824,34 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
       }
       (he.STATUS_FAILURE = 'FAILURE'),
-        (he.completePayment = function () {
+        (he.completePayment = function() {
           return !0;
         }),
-        (he.completeMerchantValidation = function () {
+        (he.completeMerchantValidation = function() {
           return !0;
         }),
-        (he.completePaymentMethodSelection = function () {
+        (he.completePaymentMethodSelection = function() {
           return !0;
         });
-      var pe = (function (e) {
+      var pe = (function(e) {
         m()(r, e);
         var t,
-          n =
-            ((t = r),
-            function () {
-              var e,
-                n = E()(t);
-              if (de()) {
-                var r = E()(this).constructor;
-                e = Reflect.construct(n, arguments, r);
-              } else e = n.apply(this, arguments);
-              return _()(this, e);
-            });
+          n = ((t = r),
+          function() {
+            var e,
+              n = E()(t);
+            if (de()) {
+              var r = E()(this).constructor;
+              e = Reflect.construct(n, arguments, r);
+            } else e = n.apply(this, arguments);
+            return _()(this, e);
+          });
         function r() {
           return l()(this, r), n.apply(this, arguments);
         }
@@ -31809,51 +31859,51 @@ and limitations under the License.
           h()(r, [
             {
               key: 'ifApplePayIsAvailable',
-              value: function () {
+              value: function() {
                 return !0;
               }
             },
             {
               key: 'setApplePayVersion',
-              value: function () {
+              value: function() {
                 this.applePayVersion = 5;
               }
             },
             {
               key: 'isUserLoggedToAppleAccount',
-              value: function () {
+              value: function() {
                 return !0;
               }
             },
             {
               key: 'checkApplePayWalletCardAvailability',
-              value: function () {
-                return new Promise(function (e, t) {
+              value: function() {
+                return new Promise(function(e, t) {
                   e(!0);
                 });
               }
             },
             {
               key: 'getApplePaySessionObject',
-              value: function () {
+              value: function() {
                 return he;
               }
             },
             {
               key: 'getPaymentSuccessStatus',
-              value: function () {
+              value: function() {
                 return he.STATUS_SUCCESS;
               }
             },
             {
               key: 'getPaymentFailureStatus',
-              value: function () {
+              value: function() {
                 return he.STATUS_FAILURE;
               }
             },
             {
               key: 'createApplePayButton',
-              value: function () {
+              value: function() {
                 return O.a.createHtmlElement.apply(this, [
                   { src: '../../../images/apple-pay.png', id: 'st-apple-pay' },
                   'img'
@@ -31869,25 +31919,24 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
       }
-      var ye = (function (e) {
+      var ye = (function(e) {
         m()(r, e);
         var t,
-          n =
-            ((t = r),
-            function () {
-              var e,
-                n = E()(t);
-              if (ve()) {
-                var r = E()(this).constructor;
-                e = Reflect.construct(n, arguments, r);
-              } else e = n.apply(this, arguments);
-              return _()(this, e);
-            });
+          n = ((t = r),
+          function() {
+            var e,
+              n = E()(t);
+            if (ve()) {
+              var r = E()(this).constructor;
+              e = Reflect.construct(n, arguments, r);
+            } else e = n.apply(this, arguments);
+            return _()(this, e);
+          });
         function r() {
           return l()(this, r), n.apply(this, arguments);
         }
@@ -31895,31 +31944,31 @@ and limitations under the License.
           h()(r, [
             {
               key: '_performBinDetection',
-              value: function (e) {
+              value: function(e) {
                 return !0;
               }
             },
             {
               key: '_onCardinalLoad',
-              value: function () {
+              value: function() {
                 this._onCardinalSetupComplete();
               }
             },
             {
               key: '_threeDSetup',
-              value: function () {
+              value: function() {
                 this._onCardinalLoad();
               }
             },
             {
               key: '_authenticateCard',
-              value: function () {
+              value: function() {
                 var e = this;
                 return fetch(U.a.CARDINAL_COMMERCE.MOCK.AUTHENTICATE_CARD_URL)
-                  .then(function (e) {
+                  .then(function(e) {
                     return e.json();
                   })
-                  .then(function (t) {
+                  .then(function(t) {
                     e._onCardinalValidated(t.data, t.jwt);
                   });
               }
@@ -31933,14 +31982,14 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
         }
         return n;
       }
-      var ge = (function () {
+      var ge = (function() {
         function e(t, n) {
           var r = this;
           l()(this, e),
@@ -31960,24 +32009,24 @@ and limitations under the License.
               paymentRequest: { currencyCode: '', subtotal: '', total: '' },
               settings: {}
             }),
-            (this.createVisaButton = function () {
+            (this.createVisaButton = function() {
               return O.a.createHtmlElement.apply(r, [r.visaCheckoutButtonProps, 'img']);
             }),
-            (this.attachVisaButton = function () {
+            (this.attachVisaButton = function() {
               return O.a.appendChildIntoDOM(r._placement, r.createVisaButton());
             }),
-            (this._setConfiguration = function (e, t) {
+            (this._setConfiguration = function(e, t) {
               return t || e
-                ? (function (e) {
+                ? (function(e) {
                     for (var t = 1; t < arguments.length; t++) {
                       var n = null != arguments[t] ? arguments[t] : {};
                       t % 2
-                        ? me(Object(n), !0).forEach(function (t) {
+                        ? me(Object(n), !0).forEach(function(t) {
                             o()(e, t, n[t]);
                           })
                         : Object.getOwnPropertyDescriptors
                         ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                        : me(Object(n)).forEach(function (t) {
+                        : me(Object(n)).forEach(function(t) {
                             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                           });
                     }
@@ -31990,7 +32039,7 @@ and limitations under the License.
             (this._messageBus = I.Container.get(T.a)),
             (this._notification = I.Container.get(W.a)),
             (this._config$ = this._configProvider.getConfig$()),
-            this._config$.subscribe(function (e) {
+            this._config$.subscribe(function(e) {
               var t = e.visaCheckout,
                 n = e.jwt,
                 i = e.datacenterurl,
@@ -32002,7 +32051,7 @@ and limitations under the License.
                 r._configurePaymentProcess(n),
                 r._initVisaFlow();
             }),
-            this._messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function (e) {
+            this._messageBus.subscribe(T.a.EVENTS_PUBLIC.UPDATE_JWT, function(e) {
               var t = e.newJwt;
               r._configurePaymentProcess(t);
             });
@@ -32011,37 +32060,37 @@ and limitations under the License.
           h()(e, [
             {
               key: 'payment',
-              get: function () {
+              get: function() {
                 return this._payment;
               },
-              set: function (e) {
+              set: function(e) {
                 this._payment = e;
               }
             },
             {
               key: 'paymentDetails',
-              set: function (e) {
+              set: function(e) {
                 this._paymentDetails = e;
               },
-              get: function () {
+              get: function() {
                 return this._paymentDetails;
               }
             },
             {
               key: 'paymentStatus',
-              get: function () {
+              get: function() {
                 return this._paymentStatus;
               },
-              set: function (e) {
+              set: function(e) {
                 this._paymentStatus = e;
               }
             },
             {
               key: 'responseMessage',
-              get: function () {
+              get: function() {
                 return this._responseMessage;
               },
-              set: function (e) {
+              set: function(e) {
                 this._responseMessage = e;
               }
             }
@@ -32049,7 +32098,7 @@ and limitations under the License.
           h()(e, [
             {
               key: 'setInitConfiguration',
-              value: function (e, t, n, r) {
+              value: function(e, t, n, r) {
                 (this._initConfiguration.apikey = r),
                   (this._initConfiguration.paymentRequest = this.getInitPaymentRequest(e, n)),
                   (this._initConfiguration.settings = this._setConfiguration({ locale: n.locale }, t));
@@ -32057,7 +32106,7 @@ and limitations under the License.
             },
             {
               key: 'customizeVisaButton',
-              value: function (e) {
+              value: function(e) {
                 var t = e.color,
                   n = e.size,
                   r = new URL(this.visaCheckoutButtonProps.src);
@@ -32071,7 +32120,7 @@ and limitations under the License.
             },
             {
               key: 'getInitPaymentRequest',
-              value: function (e, t) {
+              value: function(e, t) {
                 var n = this._initConfiguration.paymentRequest;
                 return (
                   (n.currencyCode = t.currencyiso3a),
@@ -32083,7 +32132,7 @@ and limitations under the License.
             },
             {
               key: 'onSuccess',
-              value: function (t) {
+              value: function(t) {
                 var n = this;
                 (this.paymentDetails = JSON.stringify(t)),
                   (this.paymentStatus = e.VISA_PAYMENT_STATUS.SUCCESS),
@@ -32093,14 +32142,14 @@ and limitations under the License.
                       { walletsource: this._walletSource, wallettoken: this.paymentDetails },
                       O.a.parseForm()
                     )
-                    .then(function () {
+                    .then(function() {
                       (n.paymentStatus = e.VISA_PAYMENT_STATUS.SUCCESS),
                         n._getResponseMessage(n.paymentStatus),
                         n._messageBus.publish({ type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUCCESS_CALLBACK }, !0),
                         n._notification.success(n.responseMessage),
                         z.sendGaData('event', 'Visa Checkout', 'payment status', 'Visa Checkout payment success');
                     })
-                    .catch(function (t) {
+                    .catch(function(t) {
                       (n.paymentStatus = e.VISA_PAYMENT_STATUS.ERROR),
                         n._getResponseMessage(n.paymentStatus),
                         n._messageBus.publish({ type: T.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK }, !0),
@@ -32110,7 +32159,7 @@ and limitations under the License.
             },
             {
               key: 'onError',
-              value: function () {
+              value: function() {
                 (this.paymentStatus = e.VISA_PAYMENT_STATUS.ERROR),
                   this._getResponseMessage(this.paymentStatus),
                   this._notification.error(this.responseMessage),
@@ -32120,7 +32169,7 @@ and limitations under the License.
             },
             {
               key: 'onCancel',
-              value: function () {
+              value: function() {
                 (this.paymentStatus = e.VISA_PAYMENT_STATUS.WARNING),
                   this._getResponseMessage(this.paymentStatus),
                   this._notification.warning(this.responseMessage),
@@ -32129,28 +32178,28 @@ and limitations under the License.
             },
             {
               key: 'initPaymentConfiguration',
-              value: function () {
+              value: function() {
                 V.init(this._initConfiguration);
               }
             },
             {
               key: 'paymentStatusHandler',
-              value: function () {
+              value: function() {
                 var t = this;
-                V.on(e.VISA_PAYMENT_RESPONSE_TYPES.SUCCESS, function (e) {
+                V.on(e.VISA_PAYMENT_RESPONSE_TYPES.SUCCESS, function(e) {
                   t.onSuccess(e);
                 }),
-                  V.on(e.VISA_PAYMENT_RESPONSE_TYPES.ERROR, function () {
+                  V.on(e.VISA_PAYMENT_RESPONSE_TYPES.ERROR, function() {
                     t.onError();
                   }),
-                  V.on(e.VISA_PAYMENT_RESPONSE_TYPES.CANCEL, function () {
+                  V.on(e.VISA_PAYMENT_RESPONSE_TYPES.CANCEL, function() {
                     t.onCancel();
                   });
               }
             },
             {
               key: '_configurePaymentProcess',
-              value: function (e) {
+              value: function(e) {
                 var t = this._visaCheckoutConfig,
                   n = t.merchantId,
                   r = t.livestatus,
@@ -32172,16 +32221,16 @@ and limitations under the License.
             },
             {
               key: '_initVisaFlow',
-              value: function () {
+              value: function() {
                 var e = this;
-                O.a.insertScript('body', { src: this._sdkAddress, id: 'visaCheckout' }).then(function () {
+                O.a.insertScript('body', { src: this._sdkAddress, id: 'visaCheckout' }).then(function() {
                   e.attachVisaButton(), e.initPaymentConfiguration(), e.paymentStatusHandler();
                 });
               }
             },
             {
               key: '_setLiveStatus',
-              value: function () {
+              value: function() {
                 this._livestatus &&
                   ((this.visaCheckoutButtonProps.src = U.a.VISA_CHECKOUT_URLS.LIVE_BUTTON_URL),
                   (this._sdkAddress = U.a.VISA_CHECKOUT_URLS.LIVE_SDK));
@@ -32189,7 +32238,7 @@ and limitations under the License.
             },
             {
               key: '_getResponseMessage',
-              value: function (t) {
+              value: function(t) {
                 switch (t) {
                   case e.VISA_PAYMENT_STATUS.SUCCESS:
                     this.responseMessage = R.a.translations.PAYMENT_SUCCESS;
@@ -32211,7 +32260,7 @@ and limitations under the License.
         if (Reflect.construct.sham) return !1;
         if ('function' == typeof Proxy) return !0;
         try {
-          return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+          return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), !0;
         } catch (e) {
           return !1;
         }
@@ -32223,44 +32272,43 @@ and limitations under the License.
           SUCCESS: 'payment.success'
         });
       var be,
-        Ee = (function (e) {
+        Ee = (function(e) {
           m()(r, e);
           var t,
-            n =
-              ((t = r),
-              function () {
-                var e,
-                  n = E()(t);
-                if (_e()) {
-                  var r = E()(this).constructor;
-                  e = Reflect.construct(n, arguments, r);
-                } else e = n.apply(this, arguments);
-                return _()(this, e);
-              });
+            n = ((t = r),
+            function() {
+              var e,
+                n = E()(t);
+              if (_e()) {
+                var r = E()(this).constructor;
+                e = Reflect.construct(n, arguments, r);
+              } else e = n.apply(this, arguments);
+              return _()(this, e);
+            });
           function r() {
             return l()(this, r), n.apply(this, arguments);
           }
           return (
             h()(r, [
-              { key: 'initPaymentConfiguration', value: function () {} },
+              { key: 'initPaymentConfiguration', value: function() {} },
               {
                 key: 'paymentStatusHandler',
-                value: function () {
+                value: function() {
                   var e = this;
-                  O.a.addListener(this.visaCheckoutButtonProps.id, 'click', function () {
+                  O.a.addListener(this.visaCheckoutButtonProps.id, 'click', function() {
                     e._handleMockedData();
                   });
                 }
               },
               {
                 key: '_handleMockedData',
-                value: function () {
+                value: function() {
                   var e = this;
                   return fetch(U.a.VISA_CHECKOUT_URLS.MOCK_DATA_URL)
-                    .then(function (e) {
+                    .then(function(e) {
                       return e.json();
                     })
-                    .then(function (t) {
+                    .then(function(t) {
                       var n = t.payment,
                         r = t.status;
                       e._proceedFlowWithMockedData(n, r);
@@ -32269,7 +32317,7 @@ and limitations under the License.
               },
               {
                 key: '_proceedFlowWithMockedData',
-                value: function (e, t) {
+                value: function(e, t) {
                   'SUCCESS' === t
                     ? this.onSuccess(e)
                     : 'ERROR' === t
@@ -32347,11 +32395,26 @@ and limitations under the License.
           componentIds: Te.a
             .object()
             .keys({
-              animatedCard: Te.a.string().allow('').default('st-animated-card'),
-              cardNumber: Te.a.string().allow('').default('st-card-number'),
-              expirationDate: Te.a.string().allow('').default('st-expiration-date'),
-              notificationFrame: Te.a.string().allow('').default('st-notification-frame'),
-              securityCode: Te.a.string().allow('').default('st-security-code')
+              animatedCard: Te.a
+                .string()
+                .allow('')
+                .default('st-animated-card'),
+              cardNumber: Te.a
+                .string()
+                .allow('')
+                .default('st-card-number'),
+              expirationDate: Te.a
+                .string()
+                .allow('')
+                .default('st-expiration-date'),
+              notificationFrame: Te.a
+                .string()
+                .allow('')
+                .default('st-notification-frame'),
+              securityCode: Te.a
+                .string()
+                .allow('')
+                .default('st-security-code')
             })
             .allow({})
             .default({}),
@@ -32515,7 +32578,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -32531,7 +32594,7 @@ and limitations under the License.
         qe,
         Ke =
           Object(I.Service)()(
-            (be = (function () {
+            (be = (function() {
               function e() {
                 l()(this, e);
               }
@@ -32539,7 +32602,7 @@ and limitations under the License.
                 h()(e, [
                   {
                     key: 'resolve',
-                    value: function (e) {
+                    value: function(e) {
                       this._validate(e, Ce);
                       var t = {
                         analytics: this._getValueOrDefault(e.analytics, Le.analytics),
@@ -32579,14 +32642,14 @@ and limitations under the License.
                   },
                   {
                     key: '_validate',
-                    value: function (e, t) {
+                    value: function(e, t) {
                       var n = t.validate(e).error;
                       if (n) throw n;
                     }
                   },
                   {
                     key: '_getValueOrDefault',
-                    value: function (e, t) {
+                    value: function(e, t) {
                       switch (Oe()(e)) {
                         case 'undefined':
                           return t;
@@ -32605,18 +32668,18 @@ and limitations under the License.
                   },
                   {
                     key: '_setApmConfig',
-                    value: function (e, t) {
+                    value: function(e, t) {
                       return e && Object.keys(e).length
-                        ? (function (e) {
+                        ? (function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                               var n = null != arguments[t] ? arguments[t] : {};
                               t % 2
-                                ? De(Object(n), !0).forEach(function (t) {
+                                ? De(Object(n), !0).forEach(function(t) {
                                     o()(e, t, n[t]);
                                   })
                                 : Object.getOwnPropertyDescriptors
                                 ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                                : De(Object(n)).forEach(function (t) {
+                                : De(Object(n)).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                                   });
                             }
@@ -32627,7 +32690,7 @@ and limitations under the License.
                   },
                   {
                     key: '_setComponentIds',
-                    value: function (e) {
+                    value: function(e) {
                       return e && Object.keys(e).length
                         ? {
                             animatedCard: this._getValueOrDefault(e.animatedCard, Ne.animatedCard),
@@ -32641,7 +32704,7 @@ and limitations under the License.
                   },
                   {
                     key: '_setComponentsProperties',
-                    value: function (e) {
+                    value: function(e) {
                       return e && Object.keys(e).length
                         ? {
                             defaultPaymentType: this._getValueOrDefault(e.defaultPaymentType, Pe.defaultPaymentType),
@@ -32654,7 +32717,7 @@ and limitations under the License.
                   },
                   {
                     key: '_setPlaceholders',
-                    value: function (e) {
+                    value: function(e) {
                       return e && Object.keys(e).length
                         ? {
                             pan: this._getValueOrDefault(e.pan, je.pan),
@@ -32666,7 +32729,7 @@ and limitations under the License.
                   },
                   {
                     key: '_resolveCybertonicaApiKey',
-                    value: function (e) {
+                    value: function(e) {
                       return '' === e ? '' : this._getValueOrDefault(e, Le.cybertonicaApiKey);
                     }
                   }
@@ -32677,7 +32740,7 @@ and limitations under the License.
           ) || be,
         He =
           Object(I.Service)()(
-            (Me = (function () {
+            (Me = (function() {
               function e() {
                 l()(this, e);
               }
@@ -32685,7 +32748,7 @@ and limitations under the License.
                 h()(e, [
                   {
                     key: 'validate',
-                    value: function (e) {
+                    value: function(e) {
                       return Ce.validate(e).error || null;
                     }
                   }
@@ -32702,7 +32765,7 @@ and limitations under the License.
                 void 0 === Ke ? Object : Ke,
                 void 0 === He ? Object : He
               ])(
-                ((Be = Ue = (function () {
+                ((Be = Ue = (function() {
                   function e(t, n, r) {
                     l()(this, e), (this.storage = t), (this.resolver = n), (this.validator = r);
                   }
@@ -32710,7 +32773,7 @@ and limitations under the License.
                     h()(e, [
                       {
                         key: 'update',
-                        value: function (t) {
+                        value: function(t) {
                           this.storage.setItem(e.STORAGE_KEY, null);
                           var n = this.resolver.resolve(t),
                             r = this.validator.validate(n);
@@ -32735,7 +32798,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -32753,7 +32816,7 @@ and limitations under the License.
                 void 0 === Z.a ? Object : Z.a,
                 void 0 === Je.a ? Object : Je.a
               ])(
-                ((qe = $e = (function () {
+                ((qe = $e = (function() {
                   function e(t, n, r) {
                     var i = this;
                     l()(this, e),
@@ -32764,12 +32827,12 @@ and limitations under the License.
                       (this._notificationFrameElement = document.getElementById(
                         this._configProvider.getConfig().componentIds.notificationFrame
                       )),
-                      this._messageBus.subscribe(T.a.EVENTS_PUBLIC.NOTIFICATION, function (e) {
+                      this._messageBus.subscribe(T.a.EVENTS_PUBLIC.NOTIFICATION, function(e) {
                         i._displayNotification(e);
                       }),
                       I.Container.get(G.a)
                         .waitForFrame(S.a.CONTROL_FRAME_IFRAME)
-                        .subscribe(function () {
+                        .subscribe(function() {
                           i._translator = new C.a(i._browserLocalStorage.getItem('locale'));
                         }),
                       this.applyStyles();
@@ -32778,7 +32841,7 @@ and limitations under the License.
                     h()(e, [
                       {
                         key: '_getMessageClass',
-                        value: function (e) {
+                        value: function(e) {
                           return this._messageMap.get(e.toLowerCase());
                         }
                       }
@@ -32786,7 +32849,7 @@ and limitations under the License.
                     h()(e, [
                       {
                         key: 'applyStyles',
-                        value: function () {
+                        value: function() {
                           new We.a(this.getAllowedStyles()).inject(
                             this._configProvider.getConfig().styles.notificationFrame
                           );
@@ -32794,7 +32857,7 @@ and limitations under the License.
                       },
                       {
                         key: 'getAllowedStyles',
-                        value: function () {
+                        value: function() {
                           var t = {
                               'background-color-body': { property: 'background-color', selector: 'body' },
                               'color-body': { property: 'color', selector: 'body' },
@@ -32808,16 +32871,16 @@ and limitations under the License.
                             i = '.'.concat(e.NOTIFICATION_CLASSES.success).concat(n),
                             a = '.'.concat(e.NOTIFICATION_CLASSES.warning).concat(n),
                             s = '.'.concat(e.NOTIFICATION_CLASSES.info).concat(n);
-                          return (t = (function (e) {
+                          return (t = (function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                               var n = null != arguments[t] ? arguments[t] : {};
                               t % 2
-                                ? Ze(Object(n), !0).forEach(function (t) {
+                                ? Ze(Object(n), !0).forEach(function(t) {
                                     o()(e, t, n[t]);
                                   })
                                 : Object.getOwnPropertyDescriptors
                                 ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-                                : Ze(Object(n)).forEach(function (t) {
+                                : Ze(Object(n)).forEach(function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
                                   });
                             }
@@ -32865,13 +32928,13 @@ and limitations under the License.
                       },
                       {
                         key: '_insertContent',
-                        value: function (e) {
+                        value: function(e) {
                           this._notificationFrameElement.textContent = this._translator.translate(e);
                         }
                       },
                       {
                         key: '_setDataNotificationColorAttribute',
-                        value: function (t) {
+                        value: function(t) {
                           switch (t) {
                             case e.MESSAGE_TYPES.error:
                               this._notificationFrameElement.setAttribute('data-notification-color', 'red');
@@ -32892,7 +32955,7 @@ and limitations under the License.
                       },
                       {
                         key: '_setAttributeClass',
-                        value: function (t) {
+                        value: function(t) {
                           var n = this._getMessageClass(t);
                           this._notificationFrameElement.classList.add(S.a.NOTIFICATION_FRAME_CORE_CLASS),
                             n &&
@@ -32903,9 +32966,9 @@ and limitations under the License.
                       },
                       {
                         key: '_autoHide',
-                        value: function (t) {
+                        value: function(t) {
                           var n = this,
-                            r = window.setTimeout(function () {
+                            r = window.setTimeout(function() {
                               n._notificationFrameElement.classList.remove(t),
                                 n._notificationFrameElement.classList.remove(S.a.NOTIFICATION_FRAME_CORE_CLASS),
                                 n._insertContent(''),
@@ -32915,7 +32978,7 @@ and limitations under the License.
                       },
                       {
                         key: '_displayNotification',
-                        value: function (e) {
+                        value: function(e) {
                           var t = e.content,
                             n = e.type;
                           this._notificationFrameElement && (this._insertContent(t), this._setAttributeClass(n));
@@ -32942,7 +33005,7 @@ and limitations under the License.
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
           t &&
-            (r = r.filter(function (t) {
+            (r = r.filter(function(t) {
               return Object.getOwnPropertyDescriptor(e, t).enumerable;
             })),
             n.push.apply(n, r);
@@ -32953,12 +33016,12 @@ and limitations under the License.
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
           t % 2
-            ? nt(Object(n), !0).forEach(function (t) {
+            ? nt(Object(n), !0).forEach(function(t) {
                 o()(e, t, n[t]);
               })
             : Object.getOwnPropertyDescriptors
             ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n))
-            : nt(Object(n)).forEach(function (t) {
+            : nt(Object(n)).forEach(function(t) {
                 Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
               });
         }
@@ -32978,7 +33041,7 @@ and limitations under the License.
               void 0 === T.a ? Object : T.a,
               void 0 === tt ? Object : tt
             ])(
-              ((et = Qe = (function () {
+              ((et = Qe = (function() {
                 function e(t, n, r, i, a, o, s, u, c) {
                   l()(this, e),
                     (this._config = t),
@@ -32998,19 +33061,19 @@ and limitations under the License.
                   h()(e, [
                     {
                       key: 'submitCallback',
-                      set: function (e) {
+                      set: function(e) {
                         e ? this.on('submit', e) : this.off('submit');
                       }
                     },
                     {
                       key: 'successCallback',
-                      set: function (e) {
+                      set: function(e) {
                         e ? this.on('success', e) : this.off('success');
                       }
                     },
                     {
                       key: 'errorCallback',
-                      set: function (e) {
+                      set: function(e) {
                         e ? this.on('error', e) : this.off('error');
                       }
                     }
@@ -33018,27 +33081,27 @@ and limitations under the License.
                   h()(e, [
                     {
                       key: 'on',
-                      value: function (e, t) {
+                      value: function(e, t) {
                         var n = {
                           success: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUCCESS_CALLBACK,
                           error: T.a.EVENTS_PUBLIC.CALL_MERCHANT_ERROR_CALLBACK,
                           submit: T.a.EVENTS_PUBLIC.CALL_MERCHANT_SUBMIT_CALLBACK
                         };
-                        this._messageBus.subscribe(n[e], function (e) {
+                        this._messageBus.subscribe(n[e], function(e) {
                           t(e);
                         });
                       }
                     },
-                    { key: 'off', value: function (e) {} },
+                    { key: 'off', value: function(e) {} },
                     {
                       key: 'Components',
-                      value: function (e) {
+                      value: function(e) {
                         var t = this;
                         this._framesHub.waitForFrame(S.a.CONTROL_FRAME_IFRAME).subscribe(
-                          (function () {
+                          (function() {
                             var n = u()(
                               i.a.mark(function n(r) {
-                                return i.a.wrap(function (n) {
+                                return i.a.wrap(function(n) {
                                   for (;;)
                                     switch ((n.prev = n.next)) {
                                       case 0:
@@ -33060,7 +33123,7 @@ and limitations under the License.
                                 }, n);
                               })
                             );
-                            return function (e) {
+                            return function(e) {
                               return n.apply(this, arguments);
                             };
                           })()
@@ -33069,7 +33132,7 @@ and limitations under the License.
                     },
                     {
                       key: 'ApplePay',
-                      value: function (e) {
+                      value: function(e) {
                         var t = this.Environment().applepay;
                         return (
                           (this._config = this._configService.update(
@@ -33081,7 +33144,7 @@ and limitations under the License.
                     },
                     {
                       key: 'VisaCheckout',
-                      value: function (e) {
+                      value: function(e) {
                         var t = this.Environment().visa;
                         return (
                           (this._config = this._configService.update(
@@ -33093,20 +33156,20 @@ and limitations under the License.
                     },
                     {
                       key: 'updateJWT',
-                      value: function (t) {
+                      value: function(t) {
                         if (!t) throw Error(this._translation.translate(e.JWT_NOT_SPECIFIED_MESSAGE));
                         var n;
                         (this._config = rt({}, this._config, { jwt: t })),
                           this._configService.update(this._config),
                           (n = ae.a.updateJWTValue(t)),
-                          Object(v.debounce)(function () {
+                          Object(v.debounce)(function() {
                             return n;
                           }, e.DEBOUNCE_JWT_VALUE);
                       }
                     },
                     {
                       key: 'destroy',
-                      value: function () {
+                      value: function() {
                         this._messageBus.publish({ type: T.a.EVENTS_PUBLIC.DESTROY }, !0);
                         var e = window.Cardinal;
                         e && (e.off(H), e.off(Y)), this._communicator.close();
@@ -33114,7 +33177,7 @@ and limitations under the License.
                     },
                     {
                       key: 'init',
-                      value: function () {
+                      value: function() {
                         (S.a.MERCHANT_FORM_SELECTOR = this._config.formId),
                           this.initCallbacks(),
                           this.Storage(),
@@ -33128,7 +33191,7 @@ and limitations under the License.
                     },
                     {
                       key: 'CardinalCommerce',
-                      value: function () {
+                      value: function() {
                         return new (0, this.Environment().cardinal)(
                           this._config.components.startOnLoad,
                           this._config.jwt,
@@ -33142,7 +33205,7 @@ and limitations under the License.
                     },
                     {
                       key: 'CardFrames',
-                      value: function () {
+                      value: function() {
                         this._cardFrames = new F(
                           this._config.jwt,
                           this._config.origin,
@@ -33161,7 +33224,7 @@ and limitations under the License.
                     },
                     {
                       key: 'CommonFrames',
-                      value: function () {
+                      value: function() {
                         this._commonFrames = new te(
                           this._config.jwt,
                           this._config.origin,
@@ -33178,7 +33241,7 @@ and limitations under the License.
                     },
                     {
                       key: 'Environment',
-                      value: function () {
+                      value: function() {
                         return {
                           applepay: U.a.testEnvironment ? pe : fe,
                           cardinal: U.a.testEnvironment ? ye : J,
@@ -33188,7 +33251,7 @@ and limitations under the License.
                     },
                     {
                       key: 'Storage',
-                      value: function () {
+                      value: function() {
                         this._storage.setItem(
                           e.MERCHANT_TRANSLATIONS_STORAGE,
                           JSON.stringify(this._config.translations)
@@ -33198,7 +33261,7 @@ and limitations under the License.
                     },
                     {
                       key: 'displayLiveStatus',
-                      value: function (e) {
+                      value: function(e) {
                         e ||
                           console.log(
                             '%cThe %csecure%c//%ctrading %cLibrary is currently working in test mode. Please check your configuration.',
@@ -33212,10 +33275,10 @@ and limitations under the License.
                     },
                     {
                       key: 'watchForFrameUnload',
-                      value: function () {
+                      value: function() {
                         var e = this,
                           t = [!1, !1],
-                          n = new MutationObserver(function () {
+                          n = new MutationObserver(function() {
                             var r = document.getElementById(S.a.CONTROL_FRAME_IFRAME);
                             t.push(Boolean(r)), t.shift();
                             var i = t[0],
@@ -33227,7 +33290,7 @@ and limitations under the License.
                     },
                     {
                       key: 'initCallbacks',
-                      value: function () {
+                      value: function() {
                         this._config.submitCallback && (this.submitCallback = this._config.submitCallback),
                           this._config.successCallback && (this.successCallback = this._config.successCallback),
                           this._config.errorCallback && (this.errorCallback = this._config.errorCallback);
@@ -33245,7 +33308,7 @@ and limitations under the License.
             ) || Xe)
         ) || Xe;
       Object(I.Inject)(Se.a)(it, void 0, 0);
-      t.default = function (e) {
+      t.default = function(e) {
         return I.Container.get(Ye).update(e), I.Container.get(it);
       };
     }

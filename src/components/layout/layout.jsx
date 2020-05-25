@@ -6,7 +6,7 @@ import { LayoutStyled } from './layout.styled';
 import { Header } from '../header/header';
 import '../../../static/libraries/st.css';
 
-export const Layout = (props) => {
+export const Layout = props => {
   return (
     <LayoutStyled>
       <Header siteTitle="SecureTrading" />

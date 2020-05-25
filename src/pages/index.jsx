@@ -18,17 +18,17 @@ class IndexPage extends Component {
       var testVariable = 'This is what we have got after submit' + stringified;
       console.error(testVariable);
     };
-    this.instance.successCallback = function () {
+    this.instance.successCallback = function() {
       alert('Success alert');
     };
-    this.instance.errorCallback = function () {
+    this.instance.errorCallback = function() {
       alert('This is error message');
     };
     this.instance.Components(this.config.components);
     this.instance.ApplePay(this.config.applePay);
     this.instance.VisaCheckout(this.config.visaCheckout);
     var self = this;
-    document.getElementById('example-form-amount').addEventListener('input', function () {
+    document.getElementById('example-form-amount').addEventListener('input', function() {
       self.instance.updateJWT(
         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU'
       );
