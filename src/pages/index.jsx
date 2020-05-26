@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
-import SecureTrading from '../../static/libraries/st';
 import { config } from '../config';
 
 class IndexPage extends Component {
@@ -12,7 +11,7 @@ class IndexPage extends Component {
   loadST() {
     var parsedUrl = new URL(window.location.href);
     this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
-    this.instance = SecureTrading({ ...this.config });
+    this.instance = SecureTrading(this.config);
     this.instance.submitCallback = function someFancyfunction(data) {
       var stringified = JSON.stringify(data);
       var testVariable = 'This is what we have got after submit' + stringified;
@@ -30,7 +29,7 @@ class IndexPage extends Component {
     var self = this;
     document.getElementById('example-form-amount').addEventListener('input', function() {
       self.instance.updateJWT(
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4MDk5NzkwNi4zMDkxNjAyLCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.oOPREb22jCttr6tOgKMqCeuFLSkVKRwSKW9U64WJTvU'
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU5MDE1NDgwNy4wNzQ5ODg2LCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIyMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.eXAxDB5yOaM-63k6tf0634ojvQo7zDuuXeAKmP3DtGw'
       );
     });
   }
