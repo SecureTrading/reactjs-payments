@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
-import SecureTrading from '../../static/libraries/st';
+// import SecureTrading from '../../static/libraries/st';
 import { config } from '../config';
 
 class IndexPage extends Component {
+  constructor() {
+    super();
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = '../../static/libraries/st';
+    // script.onload = () => {};
+    document.head.appendChild(script);
+  }
   componentDidMount() {
     this.config = config;
     this.loadST();
@@ -38,7 +46,8 @@ class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <form id="st-form" className="example-form" autoComplete="off" noValidate>
+        <form id="st-form" className="example-form" autoComplete="off" noValidate ref={el => (this.div = el)}>
+          {}
           <h1 className="example-form__title">
             <img style={{ maxWidth: '200px' }} src="./images/st.png" />
             <span>
