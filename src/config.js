@@ -15,7 +15,7 @@ export const config = {
         amount: '10.0'
       }
     },
-    placement: 'st-apple-pay',
+    placement: 'st-apple-pay'
   },
   buttonId: 'merchant-submit-button',
   bypassCards: ['VISA', 'MASTERCARD', 'AMEX', 'DISCOVER', 'JCB', 'DINERS'],
