@@ -15,8 +15,7 @@ export const config = {
         amount: '10.0'
       }
     },
-    placement: 'st-apple-pay',
-    requestTypes: ['RISKDEC', 'ACCOUNTCHECK', 'THREEDQUERY', 'AUTH']
+    placement: 'st-apple-pay'
   },
   buttonId: 'merchant-submit-button',
   bypassCards: ['VISA', 'MASTERCARD', 'AMEX', 'DISCOVER', 'JCB', 'DINERS'],
@@ -45,7 +44,7 @@ export const config = {
     threedinit: ''
   },
   jwt:
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU4OTE4NDk2NC42MDA2MTE3LCJwYXlsb2FkIjp7ImJhc2VhbW91bnQiOiIxMDAwIiwiYWNjb3VudHR5cGVkZXNjcmlwdGlvbiI6IkVDT00iLCJjdXJyZW5jeWlzbzNhIjoiR0JQIiwic2l0ZXJlZmVyZW5jZSI6InRlc3RfamFtZXMzODY0MSIsImxvY2FsZSI6ImVuX0dCIn19.LPDuKKWZM18wvjPxm2zhTVTYYgMziKZylmjsyNY80WM',
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU5MDQ4MTUxNC4yOTgyMjM3LCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIxMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.s-8swpeDJccIrsLY_AjcN7uN-daSUc3k6uf_wZPmdRw',
   livestatus: 0,
   origin: '',
   panIcon: true,
@@ -96,7 +95,6 @@ export const config = {
       subtotal: '20.00'
     },
     placement: 'st-visa-checkout',
-    requestTypes: ['RISKDEC', 'ACCOUNTCHECK', 'THREEDQUERY', 'AUTH'],
     settings: {
       displayName: 'My Test Site'
     }
