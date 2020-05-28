@@ -39,7 +39,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "docker": "docker-compose up -d",
+    "docker:build": "docker build -t securetrading1/reactjs-payments .",
+    "docker:build:test": "docker build -t securetrading1/reactjs-payments --build-arg environment=test ."
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import environment from "./environment/environment"
 
 export default function HTML(props) {
   return (
@@ -11,7 +12,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script src="./libraries/st.js"/>
+        <script src={environment.st_library_url}/>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
