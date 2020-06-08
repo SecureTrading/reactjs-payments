@@ -292,7 +292,7 @@ input:-webkit-autofill.error-field {
 .notification-frame--error,
 .notification-frame--info,
 .notification-frame--success,
-.notification-frame--warning {
+.notification-frame--cancel {
   opacity: 1;
 }
 .notification-frame--info {
@@ -305,7 +305,7 @@ input:-webkit-autofill.error-field {
   border-color: #ff4545;
   color: #fff;
 }
-.notification-frame--warning {
+.notification-frame--cancel {
   background-color: #ffc23a;
   border-color: #ffc23a;
   color: #fff;
