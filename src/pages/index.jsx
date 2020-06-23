@@ -1,37 +1,51 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
-import { config } from '../config';
+import environment from '../environment/environment';
 
 class IndexPage extends Component {
   componentDidMount() {
-    this.config = config;
-    this.loadST();
+    var self = this;
+
+    self.loadConfig().then(function(config) {
+      self.loadST(config);
+    });
   }
 
-  loadST() {
-    var parsedUrl = new URL(window.location.href);
-    this.config.jwt = parsedUrl.searchParams.get('jwt') || this.config.jwt;
-    this.instance = SecureTrading(this.config);
-    this.instance.submitCallback = function someFancyfunction(data) {
+  loadST(config) {
+    var instance = SecureTrading(config);
+
+    instance.submitCallback = function someFancyfunction(data) {
       var stringified = JSON.stringify(data);
       var testVariable = 'This is what we have got after submit' + stringified;
       console.error(testVariable);
     };
-    this.instance.successCallback = function() {
+    instance.successCallback = function() {
       alert('Success alert');
     };
-    this.instance.errorCallback = function() {
+    instance.errorCallback = function() {
       alert('This is error message');
     };
-    this.instance.Components(this.config.components);
-    this.instance.ApplePay(this.config.applePay);
-    this.instance.VisaCheckout(this.config.visaCheckout);
-    var self = this;
+    instance.Components(config.components);
+    instance.ApplePay(config.applePay);
+    instance.VisaCheckout(config.visaCheckout);
+
     document.getElementById('example-form-amount').addEventListener('input', function() {
-      self.instance.updateJWT(
+      instance.updateJWT(
         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU5MDE1NDgwNy4wNzQ5ODg2LCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIyMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.eXAxDB5yOaM-63k6tf0634ojvQo7zDuuXeAKmP3DtGw'
       );
     });
+  }
+
+  loadConfig() {
+    return window.fetch(environment.config_url)
+      .then(function(response) {
+        return response.json();
+      })
+      .catch(function(error) {
+        console.error('Failed to load config: ' + error + '. Falling back to defaults.');
+
+        return require('../../static/config.json');
+      });
   }
 
   render() {
