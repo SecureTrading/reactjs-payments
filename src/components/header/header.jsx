@@ -7,10 +7,19 @@ export const Header = () => (
   <HeaderStyled>
     <ul>
       <Link to="/" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
-        ReactJS Secure Trading
+        Home
       </Link>
-      <Link to="/animated-card" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
-        ReactJS STJS Animated Card
+      <Link to="/payment-details" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+        Payment Details
+      </Link>
+      <Link to="/personal-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+        Personal Data
+      </Link>
+      <Link to="/contact-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+        Contact Data
+      </Link>
+      <Link to="/st-payment" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+        Payment
       </Link>
     </ul>
   </HeaderStyled>
