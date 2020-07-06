@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
+import { Link } from 'gatsby';
 
 class ContactData extends Component {
   render() {
@@ -53,6 +54,9 @@ class ContactData extends Component {
             </div>
           </div>
         </fieldset>
+        <Link to="/st-payment" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
+          Step 4: <strong>Payment</strong>
+        </Link>
       </Layout>
     );
   }

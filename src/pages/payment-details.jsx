@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
+import { Link } from 'gatsby';
 
 class PaymentDetails extends Component {
   render() {
@@ -66,6 +67,9 @@ class PaymentDetails extends Component {
             </div>
           </div>
         </fieldset>
+        <Link to="/personal-data" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
+          Step 2: <strong>Personal Data</strong>
+        </Link>
       </Layout>
     );
   }
