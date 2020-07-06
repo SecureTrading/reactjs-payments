@@ -9,7 +9,7 @@ class Layout extends Component {
     return (
       <LayoutStyled>
         <Header siteTitle="SecureTrading" />
-        <main style={{ minHeight: '47rem' }}>
+        <main style={{ minHeight: '90vh' }}>
           <form role="form" name="st-form" id="st-form" className="st-form" autoComplete="off" noValidate>
             <div id="st-popup" className="st-popup" />
             <div id="st-notification-frame" className="st-form__group" />

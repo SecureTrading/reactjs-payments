@@ -14,9 +14,27 @@ class IndexPage extends Component {
           <h1 className="st-header__title">Example Form</h1>
         </header>
         <p>This is an example form simulating SPA; please click link below</p>
-        <Link to="/payment-details" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
-          Payment Details
-        </Link>
+        <div
+          className="st-navigation"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '20px 0'
+          }}
+        >
+          <Link
+            to="/payment-details"
+            style={{
+              textDecoration: 'none',
+              padding: '1rem 2rem',
+              backgroundColor: '#e61c5b',
+              borderRadius: '11px',
+              color: '#fff'
+            }}
+          >
+            Start Calculation
+          </Link>
+        </div>
       </Layout>
     );
   }

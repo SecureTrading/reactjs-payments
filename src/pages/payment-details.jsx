@@ -67,11 +67,30 @@ class PaymentDetails extends Component {
             </div>
           </div>
         </fieldset>
-        <Link to="/personal-data" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
-          Step 2: <strong>Personal Data</strong>
-        </Link>
+        <div
+          className="st-navigation"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '20px 0'
+          }}
+        >
+          <Link
+            to="/personal-data"
+            style={{
+              textDecoration: 'none',
+              padding: '1rem 2rem',
+              backgroundColor: '#e61c5b',
+              borderRadius: '11px',
+              color: '#fff'
+            }}
+          >
+            Step 2: <strong>Personal Data</strong>
+          </Link>
+        </div>
       </Layout>
     );
   }
 }
+
 export default PaymentDetails;

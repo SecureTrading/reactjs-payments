@@ -54,9 +54,27 @@ class ContactData extends Component {
             </div>
           </div>
         </fieldset>
-        <Link to="/st-payment" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
-          Step 4: <strong>Payment</strong>
-        </Link>
+        <div
+          className="st-navigation"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '20px 0'
+          }}
+        >
+          <Link
+            to="/st-payment"
+            style={{
+              textDecoration: 'none',
+              padding: '1rem 2rem',
+              backgroundColor: '#e61c5b',
+              borderRadius: '11px',
+              color: '#fff'
+            }}
+          >
+            Step 4: <strong>Payment</strong>
+          </Link>
+        </div>
       </Layout>
     );
   }

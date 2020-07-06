@@ -70,11 +70,30 @@ class PersonalData extends Component {
             </div>
           </div>
         </fieldset>
-        <Link to="/contact-data" style={{ color: '#000', textDecoration: 'none', padding: '1rem 2rem' }}>
-          Step 3: <strong>Contact Data</strong>
-        </Link>
+        <div
+          className="st-navigation"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '20px 0'
+          }}
+        >
+          <Link
+            to="/contact-data"
+            style={{
+              textDecoration: 'none',
+              padding: '1rem 2rem',
+              backgroundColor: '#e61c5b',
+              borderRadius: '11px',
+              color: '#fff'
+            }}
+          >
+            Step 3: <strong>Contact Data</strong>
+          </Link>
+        </div>
       </Layout>
     );
   }
 }
+
 export default PersonalData;
