@@ -29992,7 +29992,7 @@ and limitations under the License.
             };
       function l(e) {
         if (('string' != typeof e && (e = String(e)), /[^a-z0-9\-#$%&'*+.^_`|~]/i.test(e)))
-          throw new TypeError('Invalid character in header field name');
+          throw new TypeError('Invalid character in navigation field name');
         return e.toLowerCase();
       }
       function f(e) {
