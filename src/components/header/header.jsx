@@ -9,16 +9,19 @@ export const Header = () => (
       <Link to="/" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
         Home
       </Link>
-      <Link to="/payment-details" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+      <Link
+        to="/payment-details/payment-details"
+        style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}
+      >
         Payment Details
       </Link>
-      <Link to="/personal-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+      <Link to="/personal-data/personal-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
         Personal Data
       </Link>
-      <Link to="/contact-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+      <Link to="/contact-data/contact-data" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
         Contact Data
       </Link>
-      <Link to="/st-payment" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
+      <Link to="/st-payment/st-payment" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
         Payment
       </Link>
     </ul>
