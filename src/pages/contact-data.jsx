@@ -1,12 +1,11 @@
 import React from 'react';
-import Layout from '../../components/layout/layout';
-import { Link } from 'gatsby';
-import { Heading } from '../../components/heading/heading';
+import Layout from '../components/layout/layout';
+import { Heading } from '../components/heading/heading';
 
 const ContactData = () => {
   return (
     <Layout>
-      <Heading title={'Step 4: Contact Data'} />
+      <Heading title={'Contact Data'} />
       <fieldset className="st-form__fieldset">
         <legend>Contact data:</legend>
         <div className="st-form__section st-form__section--horizontal">
@@ -55,27 +54,6 @@ const ContactData = () => {
           </div>
         </div>
       </fieldset>
-      <div
-        className="st-navigation"
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          margin: '20px 0'
-        }}
-      >
-        <Link
-          to="/st-payment/st-payment"
-          style={{
-            textDecoration: 'none',
-            padding: '1rem 2rem',
-            backgroundColor: '#e61c5b',
-            borderRadius: '11px',
-            color: '#fff'
-          }}
-        >
-          Step 5: <strong>Payment</strong>
-        </Link>
-      </div>
     </Layout>
   );
 };

@@ -1,12 +1,11 @@
 import React from 'react';
-import Layout from '../../components/layout/layout';
-import { Link } from 'gatsby';
-import { Heading } from '../../components/heading/heading';
+import Layout from '../components/layout/layout';
+import { Heading } from '../components/heading/heading';
 
 const PersonalData = () => {
   return (
     <Layout>
-      <Heading title={'Step 3: Personal Data'} />
+      <Heading title={'Personal Data'} />
       <fieldset className="st-form__fieldset">
         <legend>Personal data:</legend>
         <div className="st-form__section st-form__section--horizontal">
@@ -71,27 +70,6 @@ const PersonalData = () => {
           </div>
         </div>
       </fieldset>
-      <div
-        className="st-navigation"
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          margin: '20px 0'
-        }}
-      >
-        <Link
-          to="/contact-data/contact-data"
-          style={{
-            textDecoration: 'none',
-            padding: '1rem 2rem',
-            backgroundColor: '#e61c5b',
-            borderRadius: '11px',
-            color: '#fff'
-          }}
-        >
-          Step 4: <strong>Contact Data</strong>
-        </Link>
-      </div>
     </Layout>
   );
 };

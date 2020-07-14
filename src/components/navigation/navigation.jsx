@@ -8,16 +8,16 @@ export const Navigation = () => (
       <Link to="/" style={NavigationLinkStyles}>
         Home
       </Link>
-      <Link to="/payment-details/payment-details" style={NavigationLinkStyles}>
+      <Link to="/payment-details" style={NavigationLinkStyles}>
         Payment Details
       </Link>
-      <Link to="/personal-data/personal-data" style={NavigationLinkStyles}>
+      <Link to="/personal-data" style={NavigationLinkStyles}>
         Personal Data
       </Link>
-      <Link to="/contact-data/contact-data" style={NavigationLinkStyles}>
+      <Link to="/contact-data" style={NavigationLinkStyles}>
         Contact Data
       </Link>
-      <Link to="/st-payment/st-payment" style={NavigationLinkStyles}>
+      <Link to="/" style={NavigationLinkStyles}>
         Payment
       </Link>
     </ul>
