@@ -1,151 +1,96 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout/layout';
 import environment from '../environment/environment';
+import '../../static/libraries/st.css';
+import { Heading } from '../components/heading/heading';
 
-class IndexPage extends Component {
+const newJwt =
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU5MDE1NDgwNy4wNzQ5ODg2LCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIyMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.eXAxDB5yOaM-63k6tf0634ojvQo7zDuuXeAKmP3DtGw';
+
+class Index extends Component {
   componentDidMount() {
-    var self = this;
+    const self = this;
 
     self.loadConfig().then(function(config) {
       self.loadST(config);
     });
   }
 
+  initUpdateJwtListener() {
+    document.getElementById('example-form-amount').addEventListener('input', () => this.instance.updateJWT(newJwt));
+  }
+
   loadST(config) {
-    var instance = SecureTrading(config);
+    const { components, applePay, visaCheckout } = config;
+    this.instance = SecureTrading(config);
 
-    instance.submitCallback = function someFancyfunction(data) {
-      var stringified = JSON.stringify(data);
-      var testVariable = 'This is what we have got after submit' + stringified;
-      console.error(testVariable);
+    this.instance.submitCallback = data => {
+      console.error(`This is what we have got after submit ${JSON.stringify(data)}`);
     };
-    instance.successCallback = function() {
-      alert('Success alert');
-    };
-    instance.errorCallback = function() {
-      alert('This is error message');
-    };
-    instance.Components(config.components);
-    instance.ApplePay(config.applePay);
-    instance.VisaCheckout(config.visaCheckout);
 
-    document.getElementById('example-form-amount').addEventListener('input', function() {
-      instance.updateJWT(
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhbTAzMTAuYXV0b2FwaSIsImlhdCI6MTU5MDE1NDgwNy4wNzQ5ODg2LCJwYXlsb2FkIjp7Im1haW5hbW91bnQiOiIyMC4wMCIsImFjY291bnR0eXBlZGVzY3JpcHRpb24iOiJFQ09NIiwiY3VycmVuY3lpc28zYSI6IkdCUCIsInNpdGVyZWZlcmVuY2UiOiJ0ZXN0X2phbWVzMzg2NDEiLCJsb2NhbGUiOiJlbl9HQiJ9fQ.eXAxDB5yOaM-63k6tf0634ojvQo7zDuuXeAKmP3DtGw'
-      );
-    });
+    this.instance.successCallback = () => alert('Success alert');
+    this.instance.errorCallback = () => alert('This is error message');
+    this.instance.Components(components);
+    this.instance.ApplePay(applePay);
+    this.instance.VisaCheckout(visaCheckout);
+    this.initUpdateJwtListener();
   }
 
   loadConfig() {
-    return window.fetch(environment.config_url)
-      .then(function(response) {
-        return response.json();
-      })
-      .catch(function(error) {
-        console.error('Failed to load config: ' + error + '. Falling back to defaults.');
-
-        return require('../../static/config.json');
+    return window
+      .fetch(environment.config_url)
+      .then(response => response.json())
+      .catch(error => {
+        console.error(`Failed to load config: ${error}. Falling back to defaults.`);
       });
   }
 
   render() {
     return (
       <Layout>
-        <form id="st-form" className="example-form" autoComplete="off" noValidate>
-          <h1 className="example-form__title">
-            <img style={{ maxWidth: '200px' }} src="./images/st.png" />
-            <span>
-              AMOUNT: <strong>10.00 GBP</strong>
-            </span>
-          </h1>
-          <div className="example-form__section example-form__section--horizontal">
-            <div className="example-form__group">
-              <label htmlFor="example-form-name" className="example-form__label">
-                AMOUNT
-              </label>
-              <input
-                id="example-form-amount"
-                className="example-form__input"
-                type="number"
-                placeholder=""
-                name="myBillAmount"
-                data-st-name="billingamount"
-              />
-            </div>
-          </div>
+        <Heading title={'Payment'} />
+        <div className="st-form__field">
+          <label htmlFor="example-form-amount" className="st-form__label">
+            amount:
+            <abbr title="required" aria-label="required">
+              *
+            </abbr>
+          </label>
+          <input
+            type="number"
+            name="myBillAmount"
+            id="example-form-amount"
+            className="st-form__input"
+            placeholder="myBillAmount"
+            data-st-name="billingamount"
+            autoComplete="amount"
+          />
+        </div>
+        <fieldset className="st-form__fieldset">
+          <legend>APM's:</legend>
+          <div id="st-visa-checkout" className="st-form__group" />
+          <div id="st-apple-pay" className="st-form__group" />
+        </fieldset>
 
-          <div className="example-form__section example-form__section--horizontal">
-            <div className="example-form__group">
-              <label htmlFor="example-form-name" className="example-form__label">
-                NAME
-              </label>
-              <input
-                id="example-form-name"
-                className="example-form__input"
-                type="text"
-                placeholder="John Doe"
-                autoComplete="name"
-                name="myBillName"
-                data-st-name="billingfirstname"
-              />
-            </div>
-            <div className="example-form__group">
-              <label htmlFor="example-form-email" className="example-form__label">
-                E-MAIL
-              </label>
-              <input
-                id="example-form-email"
-                className="example-form__input"
-                type="email"
-                placeholder="test@mail.com"
-                autoComplete="email"
-                name="myBillEmail"
-                data-st-name="billingemail"
-              />
-            </div>
-            <div className="example-form__group">
-              <label htmlFor="example-form-phone" className="example-form__label">
-                PHONE
-              </label>
-              <input
-                id="example-form-phone"
-                className="example-form__input"
-                type="tel"
-                placeholder="+00 000 000 000"
-                autoComplete="tel"
-                name="myBillTel"
-              />
-            </div>
-          </div>
+        <fieldset className="st-form__fieldset">
+          <legend>Credit card details:</legend>
+          <div id="st-card-number" className="st-form__group" />
+          <div id="st-expiration-date" className="st-form__group" />
+          <div id="st-security-code" className="st-form__group" />
+        </fieldset>
 
-          <div className="example-form__spacer" />
+        <div id="st-animated-card" className="st-form__st-animated-card" />
 
-          <div className="example-form__section">
-            <div id="st-notification-frame" className="example-form__group" />
-            <div id="st-card-number" className="example-form__group" />
-            <div id="st-expiration-date" className="example-form__group" />
-            <div id="st-security-code" className="example-form__group" />
-            <div className="example-form__spacer" />
-          </div>
+        <div id="st-control-frame" className="st-form__group" />
 
-          <div className="example-form__section">
-            <div className="example-form__group example-form__group--submit">
-              <button type="submit" className="example-form__button" id="merchant-submit-button">
-                Zapłać
-              </button>
-            </div>
-          </div>
-
-          <div className="example-form__section">
-            <div id="st-control-frame" className="example-form__group" />
-            <div id="st-visa-checkout" className="example-form__group" />
-            <div id="st-apple-pay" className="example-form__group" />
-          </div>
-          <div id="st-animated-card" />
-        </form>
+        <div className="st-form__group st-form__group--submit">
+          <button type="submit" className="st-form__button" id="merchant-submit-button">
+            Zapłać
+          </button>
+        </div>
       </Layout>
     );
   }
 }
 
-export default IndexPage;
+export default Index;

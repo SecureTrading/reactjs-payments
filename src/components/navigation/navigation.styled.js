@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeaderStyled = styled.header`
+const NavigationStyled = styled.header`
   padding: 0 4rem;
   background-color: #e61c5b;
   color: #fff;
@@ -9,3 +9,7 @@ export const HeaderStyled = styled.header`
   align-items: flex-start;
   justify-content: space-between;
 `;
+
+const NavigationLinkStyles = { color: '#fff', textDecoration: 'none', padding: '1rem 2rem' };
+
+export { NavigationLinkStyles, NavigationStyled };

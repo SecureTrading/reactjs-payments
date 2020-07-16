@@ -1,20 +1,12 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
-import { HeaderStyled } from './header.styled';
 
-export const Header = () => (
-  <HeaderStyled>
-    <ul>
-      <Link to="/" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
-        ReactJS Secure Trading
-      </Link>
-      <Link to="/animated-card" style={{ color: '#fff', textDecoration: 'none', padding: '1rem 2rem' }}>
-        ReactJS STJS Animated Card
-      </Link>
-    </ul>
-  </HeaderStyled>
-);
-
-Header.propTypes = { siteTitle: PropTypes.string };
-Header.defaultProps = { siteTitle: `` };
+export const Header = props => {
+  return (
+    <header className="st-header">
+      <figure className="st-header__logo">
+        <img src={props.logo} alt="Secure Trading logo" title="Secure Trading" role="img" />
+      </figure>
+      <h1 className="st-header__title">{props.title}</h1>
+    </header>
+  );
+};
