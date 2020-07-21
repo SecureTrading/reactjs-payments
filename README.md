@@ -23,6 +23,32 @@ It's based on [GatsbyJS](https://www.gatsbyjs.org/) and [Styled Components](http
 
     Open the `reactjs-payments` directory in your code editor of choice and edit `src/pages/index.jsx`. Save your changes and the browser will update in real time!
 
+3. ** Run it!**
+
+#### Dev server
+`npm start`
+
+    
+#### For running docker locally:
+
+You need `js-payments` in the sibling directory.
+  
+
+    ..
+     ├── js-payments
+     ├── reactjs-payments
+
+1. In `js-payments`
+  - `npm run build:dev`
+
+2. In `reactjs-payments`
+  - `npm run docker:build`
+  - `npm run docker`
+
+#### For running automated tests:
+
+`npm run docker:build:test`
+  
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
