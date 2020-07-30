@@ -121,3 +121,9 @@ input:-webkit-autofill.error-field {
   align-items: center;
   margin-bottom: 2rem;
 }
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}

@@ -1,25 +1,24 @@
 import React from 'react';
 import '../../style.css';
-import PropTypes from 'prop-types';
+import '../../example.css';
 import { Footer } from '../footer/footer';
 import { LayoutStyled } from './layout.styled';
-import { Header } from '../header/header';
-import '../../../static/libraries/st.css';
+import { Navigation } from '../navigation/navigation';
 
-export const Layout = props => {
+const Layout = props => {
   return (
     <LayoutStyled>
-      <Header siteTitle="SecureTrading" />
-      <main style={{ minHeight: '47rem' }}>
-        <div>{props.children}</div>
+      <Navigation siteTitle="SecureTrading" />
+      <main style={{ minHeight: '90vh' }}>
+        <form role="form" name="st-form" id="st-form" className="st-form" autoComplete="off" noValidate>
+          <div id="st-popup" className="st-popup" />
+          <div id="st-notification-frame" className="st-form__group st-notifications" />
+          {props.children}
+        </form>
       </main>
       <Footer />
     </LayoutStyled>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
 };
 
 export default Layout;

@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export const LinkStyled = styled.span`
-  color: #fff !important;
-  text-decoration: none !important;
+const LinkStyled = styled.span`
   padding: 1rem 2rem;
-  font-size: 1.8rem;
+  background-color: #e61c5b;
+  border-radius: 11px;
 `;
 
-export const GatsbyLinkStyle = { color: '#fff', textDecoration: 'none' };
+const LinkStyles = {
+  color: '#fff',
+  textDecoration: 'none'
+};
+
+export { LinkStyled, LinkStyles };
