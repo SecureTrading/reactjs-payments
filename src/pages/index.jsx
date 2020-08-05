@@ -20,6 +20,34 @@ class Index extends Component {
     document.getElementById('example-form-amount').addEventListener('input', () => this.instance.updateJWT(newJwt));
   }
 
+  displayPopup(id, text, tp) {
+    if (!document.getElementById(id)) {
+      var div = document.createElement('div');
+      div.innerText = text;
+      div.setAttribute('id', id);
+      div.setAttribute(
+        'style',
+        'display: flex; justify-content: center; position: fixed; height: 70px;right:0;color: white;padding: 0 50px;align-items: center;border-radius: 10px;font-family: Verdana;font-size: 20px;z-index:2'
+      );
+      div.style.backgroundColor = tp;
+      switch (tp) {
+        case 'green':
+          div.style.top = 0;
+          break;
+        case 'blue':
+          div.style.top = '100px';
+          break;
+        default:
+          div.style.bottom = 0;
+      }
+      var popup = document.getElementById('st-popup');
+      popup.appendChild(div);
+      setTimeout(function() {
+        popup.removeChild(div);
+      }, 3000);
+    }
+  }
+
   loadST(config) {
     const { components, applePay, visaCheckout } = config;
     this.instance = SecureTrading(config);
@@ -28,8 +56,9 @@ class Index extends Component {
       console.error(`This is what we have got after submit ${JSON.stringify(data)}`);
     };
 
-    this.instance.successCallback = () => alert('Success alert');
-    this.instance.errorCallback = () => alert('This is error message');
+    this.instance.successCallback = () => this.displayPopup('success-popup', 'This is success message', 'green');
+    this.instance.errorCallback = () => this.displayPopup('error-popup', 'This is error message', 'red');
+    this.instance.cancelCallback = () => this.displayPopup('cancel-popup', 'This is cancel message', '#ffc23a');
     this.instance.Components(components);
     this.instance.ApplePay(applePay);
     this.instance.VisaCheckout(visaCheckout);
@@ -88,6 +117,7 @@ class Index extends Component {
             Zapłać
           </button>
         </div>
+        <div id="st-popup" />
       </Layout>
     );
   }
