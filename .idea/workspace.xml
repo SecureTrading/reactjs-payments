@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="76734af7-3aa0-4a53-9567-77caffab7b01" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/cert/minica-key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/cert/minica.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/cert/reactjs.securetrading.net/cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/cert/reactjs.securetrading.net/key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/reactjs-app.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cert/cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cert/key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.styled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/heading/heading.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/image/image.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.styled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/link/link.styled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/navigation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/navigation.styled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/animatedCardExampleConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/environment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/environment.local.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/environment.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/example.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/animated-card.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact-data.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/payment-details.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/personal-data.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/st.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/libraries/st.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/libraries/st.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="archive-repo" />
+                    <option name="lastUsedInstant" value="1600087818" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1599218229" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dependabot/npm_and_yarn/develop/gatsby-2.24.47" />
+                    <option name="lastUsedInstant" value="1597267491" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dependabot/npm_and_yarn/develop/gatsby-plugin-manifest-2.4.23" />
+                    <option name="lastUsedInstant" value="1597267369" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="locators-and-deleting-alerts" />
+                    <option name="lastUsedInstant" value="1596627382" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1600087838" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/test-rep/reactjs-payments" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="ProjectId" id="1WhuCAYh9odwOJJ1zxRhBGSDuDo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/libraries" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\workspace\reactjs-payments\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\reactjs-payments\src\pages" />
+      <recent name="C:\workspace\reactjs-payments\src\pages\st-payment" />
+      <recent name="C:\workspace\reactjs-payments\src\pages\personal-data" />
+      <recent name="C:\workspace\reactjs-payments\src\pages\payment-details" />
+      <recent name="C:\workspace\reactjs-payments\src\pages\index" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\reactjs-payments\static\libraries" />
+      <recent name="C:\workspace\reactjs-payments\public\libraries" />
+      <recent name="C:\workspace\reactjs-payments\static" />
+      <recent name="C:\workspace\reactjs-payments\src\stjs" />
+      <recent name="C:\workspace\reactjs-payments\src\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.clean">
+    <configuration name="clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="clean" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="develop" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="develop" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docker" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker:build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docker:build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.clean" />
+        <item itemvalue="npm.docker" />
+        <item itemvalue="npm.docker:build" />
+        <item itemvalue="npm.develop" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76734af7-3aa0-4a53-9567-77caffab7b01" name="Default Changelist" comment="" />
+      <created>1579614017629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579614017629</updated>
+      <workItem from="1579614019293" duration="5589000" />
+      <workItem from="1579619691203" duration="2840000" />
+      <workItem from="1579771734197" duration="1119000" />
+      <workItem from="1579773517737" duration="15000" />
+      <workItem from="1579777375665" duration="2695000" />
+      <workItem from="1579781661025" duration="508000" />
+      <workItem from="1579782185718" duration="7000" />
+      <workItem from="1579855213403" duration="4764000" />
+      <workItem from="1579860033143" duration="4857000" />
+      <workItem from="1580120867977" duration="7292000" />
+      <workItem from="1580129824927" duration="5728000" />
+      <workItem from="1580139490512" duration="78000" />
+      <workItem from="1580139921117" duration="110000" />
+      <workItem from="1580141330521" duration="1723000" />
+      <workItem from="1580143072015" duration="29000" />
+      <workItem from="1580143216675" duration="126000" />
+      <workItem from="1580206560292" duration="5318000" />
+      <workItem from="1580215633106" duration="1647000" />
+      <workItem from="1580228983608" duration="1508000" />
+      <workItem from="1580234256683" duration="30568000" />
+      <workItem from="1580384752007" duration="3506000" />
+      <workItem from="1580391956387" duration="1745000" />
+      <workItem from="1580461492558" duration="866000" />
+      <workItem from="1580473421606" duration="5416000" />
+      <workItem from="1580478891654" duration="1928000" />
+      <workItem from="1580481419248" duration="261000" />
+      <workItem from="1580481696719" duration="1273000" />
+      <workItem from="1580485406103" duration="622000" />
+      <workItem from="1580718557852" duration="689000" />
+      <workItem from="1580830572830" duration="2243000" />
+      <workItem from="1580891956096" duration="1490000" />
+      <workItem from="1580895834710" duration="6838000" />
+      <workItem from="1580905907138" duration="10262000" />
+      <workItem from="1580981916797" duration="17738000" />
+      <workItem from="1581031220330" duration="734000" />
+      <workItem from="1581033135315" duration="12021000" />
+      <workItem from="1581319752915" duration="686000" />
+      <workItem from="1581323389284" duration="9368000" />
+      <workItem from="1581335422448" duration="1399000" />
+      <workItem from="1581337272147" duration="3181000" />
+      <workItem from="1581340886787" duration="2416000" />
+      <workItem from="1581411853970" duration="9000" />
+      <workItem from="1581411875921" duration="5652000" />
+      <workItem from="1581421431111" duration="618000" />
+      <workItem from="1587454928759" duration="815000" />
+      <workItem from="1588968250482" duration="3844000" />
+      <workItem from="1589184677884" duration="307000" />
+      <workItem from="1589351605010" duration="2293000" />
+      <workItem from="1590393894719" duration="3719000" />
+      <workItem from="1590420101851" duration="1748000" />
+      <workItem from="1590475987610" duration="3332000" />
+      <workItem from="1590483969394" duration="673000" />
+      <workItem from="1590500553476" duration="2336000" />
+      <workItem from="1590562255572" duration="930000" />
+      <workItem from="1590577550347" duration="770000" />
+      <workItem from="1590655980412" duration="5267000" />
+      <workItem from="1591125244666" duration="708000" />
+      <workItem from="1591126025161" duration="1829000" />
+      <workItem from="1591303929168" duration="673000" />
+      <workItem from="1591354587698" duration="2216000" />
+      <workItem from="1591605783115" duration="591000" />
+      <workItem from="1591606501953" duration="2353000" />
+      <workItem from="1592909227924" duration="937000" />
+      <workItem from="1592983897875" duration="348000" />
+      <workItem from="1593441333912" duration="1216000" />
+      <workItem from="1593511503136" duration="43000" />
+      <workItem from="1593517192567" duration="6157000" />
+      <workItem from="1593638124745" duration="4851000" />
+      <workItem from="1593808803915" duration="9494000" />
+      <workItem from="1594026694400" duration="1350000" />
+      <workItem from="1594045406054" duration="9577000" />
+      <workItem from="1594117887804" duration="2029000" />
+      <workItem from="1594276653162" duration="608000" />
+      <workItem from="1594630331721" duration="652000" />
+      <workItem from="1594637636211" duration="631000" />
+      <workItem from="1594712595691" duration="4860000" />
+      <workItem from="1594991472125" duration="3802000" />
+      <workItem from="1595226068122" duration="11000" />
+      <workItem from="1595226965222" duration="6335000" />
+      <workItem from="1595237381928" duration="3776000" />
+      <workItem from="1595317918290" duration="7397000" />
+      <workItem from="1595329746925" duration="483000" />
+      <workItem from="1595331139907" duration="650000" />
+      <workItem from="1596123460604" duration="628000" />
+      <workItem from="1596528047129" duration="993000" />
+      <workItem from="1596533254407" duration="536000" />
+      <workItem from="1596537073455" duration="659000" />
+      <workItem from="1596627329173" duration="547000" />
+      <workItem from="1597267324197" duration="928000" />
+      <workItem from="1598967334468" duration="1413000" />
+      <workItem from="1599218028702" duration="887000" />
+      <workItem from="1600087706001" duration="946000" />
+      <workItem from="1600088703422" duration="113000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1596537684362">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596537684362" />
+    <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594994722427" />
+    <state width="1921" height="263" key="GridCell.Tab.0.bottom" timestamp="1599219008362">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596627883380" />
+    <state width="1921" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599219008362" />
+    <state width="1921" height="290" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590661590521" />
+    <state width="1921" height="263" key="GridCell.Tab.0.center" timestamp="1599219008362">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="263" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596627883380" />
+    <state width="1921" height="263" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599219008362" />
+    <state width="1921" height="290" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590661590521" />
+    <state width="1921" height="263" key="GridCell.Tab.0.left" timestamp="1599219008362">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="263" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596627883380" />
+    <state width="1921" height="263" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599219008362" />
+    <state width="1921" height="290" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590661590521" />
+    <state width="1921" height="263" key="GridCell.Tab.0.right" timestamp="1599219008362">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="263" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596627883380" />
+    <state width="1921" height="263" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599219008362" />
+    <state width="1921" height="290" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590661590521" />
+    <state x="126" y="63" key="MergeDialog" timestamp="1597267527631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="126" y="63" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597267527631" />
+    <state x="840" y="80" width="708" height="574" key="MultipleFileMergeDialog" timestamp="1597267631535">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="840" y="80" width="708" height="574" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597267631535" />
+    <state x="2760" y="80" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594046254065" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1597296448902">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597296448902" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1596537684362">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596537684362" />
+    <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594994722427" />
+    <state x="632" y="236" width="656" height="568" key="find.popup" timestamp="1596528180134">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="632" y="236" width="656" height="568" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596528180134" />
+    <state x="2552" y="236" width="656" height="628" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594994381547" />
+    <state x="826" y="356" width="250" height="338" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1595318641660">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="826" y="356" width="250" height="338" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595318641660" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599218125811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599218125811" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595232080750" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590657364936" />
+  </component>
+</project>
